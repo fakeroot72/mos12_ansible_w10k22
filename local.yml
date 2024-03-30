@@ -1,0 +1,14 @@
+- hosts: localhost
+  name: cofigure w10k22
+  user: root
+  connection: local
+  become: yes
+
+#  pre_tasks:
+#  - name: download data
+#    ansible.builtin.dnf:
+#      update_cache: true
+#    changed_when: false
+
+  tasks:
+
