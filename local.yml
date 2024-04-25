@@ -1,14 +1,297 @@
 - hosts: localhost
-  name: cofigure w10k22
+  name: configure PC for school 1580
   user: root
   connection: local
   become: yes
+#  vars:
+#    needw10k22:  "'w10k22' in inventory_hostname or 'mos-qt3hhx' in inventory_hostname"
 
 #  pre_tasks:
-#  - name: download data
-#    ansible.builtin.dnf:
-#      update_cache: true
-#    changed_when: false
 
   tasks:
+
+  - name: touch feedback start
+    ansible.builtin.uri:
+      url: "https://bf726e13342a.hosting.myjino.ru/mos12_ansible/touch/{{ ansible_hostname }}/start"
+      status_code: 404
+
+  - name: create user for ansible tasks
+    ansible.builtin.user:
+      name: ansible
+      system: yes
+
+  - name: add ansible into sudoers
+    ansible.builtin.copy:
+      src: files/ansible_sudoers
+      dest: /etc/sudoers.d/ansible_sudoers
+      owner: root
+      group: root
+      mode: 0440
+
+  - name: change owner of /opt/.lycu1580/ to ansible:ansible
+    ansible.builtin.command: chown -R ansible:ansible /opt/.lycu1580/
+    args:
+      warn: false
+
+  - name: add ansible into cron 
+    ansible.builtin.cron:
+      user: ansible
+      name: "ansible job"
+      minute: "*/10"
+      job: "ansible-pull -o -d /opt/.lycu1580/ -U https://hub.mos.ru/1580/mos12_ansible.git &>> /tmp/ansible-pull_cron.log"
+
+  - name: add alive job into cron 
+    ansible.builtin.cron:
+      user: ansible
+      name: "alive job"
+      minute: "*/9"
+      job: "sh /opt/.lycu1580/files/alive.sh &>> /tmp/ansible-alive_cron.log"
+
+  - name: update repositories
+    ansible.builtin.dnf:
+      update_cache: true
+    changed_when: false
+
+# needed for correct migration from old version
+#  - name: delete old files and dirs
+#     ansible.builtin.file:
+#      path: "{{ item }}"
+#      state: absent
+#    loop:
+#      - /home/wallpaper_1580-warning.jpg
+#      - /home/wallpaper_1580.jpg
+#      - /home/powermanagementprofilesrc
+#      - /home/powermanagementprofilesrc-p1580
+#      - /home/plasma_init_script.sh
+#      - /home/PascalABC.sh
+#      - /home/T-FLEX_CAD.sh
+#      - /home/KOMPAS_3D_LT.sh
+#      - /home/KOMPAS_3D_21.sh
+#      - /opt/processing/
+#      - /opt/idea-IC/
+#      - /opt/student_dot_wine-kompas/
+#      - /home/admin/.ansible/
+#      - /home/user/.ansible/
+#      - /home/student_w10k22_current/
+
+  - name: turn off password viewer
+    ansible.builtin.dnf:
+      name: plasma5-kwalletmanager
+      state: absent
+
+  - name: install software
+    ansible.builtin.dnf:
+      name:
+# best console editor
+      - vim
+# monitoring and controlling
+      - veyon
+# virtual machine
+      - virtualbox
+# video making
+      - obs-studio
+# squid and squidguard
+      - squidguard
+# on-screen annotation tool
+      - gromit
+# programming environments
+      - geany
+      - vscode
+# python
+      - pycharm-community
+      - wing-101
+      - wing-personal
+# c++
+      - gcc-c++ 
+      - gdb
+      - codeblocks
+      - qt-creator
+# pascal
+      - fpc
+      - lazarus
+      - pascalabcnet
+# java
+      - java-17-openjdk-devel
+# go
+      - golang
+# rust
+      - rust
+# scrarch
+      - scratch-desktop
+# robot
+      - lego-mindstorms-udev-rules
+      - trik-studio
+      - arduino-ide
+# 3d
+      - blender
+# kompas on wine prepare
+      - wine-stable
+      - kompas3d-wine-helper
+
+  - name: clear dnf cache
+    ansible.builtin.command: dnf clean all
+    args:
+      warn: false
+
+  - name: turn off virtualbox network brige
+    ansible.builtin.copy:
+      src: files/blacklist-vboxnetflt.conf
+      dest: /etc/modprobe.d/blacklist-vboxnetflt.conf
+      owner: root
+      group: root
+      mode: 0644
+
+  - name: create squid domains files from squidguard domain
+    ansible.builtin.command: sh files/squid_converter.sh
+#    args:
+#      warn: false
+
+  - name: deny access to squidguard db directory
+    ansible.builtin.file:
+      path: /usr/share/squidGuard-1.5/db/
+      mode: 0750
+
+  - name: create local directory
+    ansible.builtin.file:
+      path: /opt/.lycu1580/local/
+      state: directory
+      owner: ansible
+      group: ansible
+      mode: 0755
+
+  - name: squid local default rule
+    ansible.builtin.copy:
+      content: '# http_access deny all'
+      dest: /opt/.lycu1580/local/squid_default_rule.conf
+
+  - name: install squid.conf
+    ansible.builtin.copy:
+      src: files/squid.conf
+      dest: /etc/squid/squid.conf
+      owner: root
+      group: root
+      mode: 0640
+
+  - name: enable squid
+    ansible.builtin.systemd:
+      name: squid
+      enabled: true
+
+  - name: start or restart squid
+    ansible.builtin.systemd:
+      name: squid
+      state: restarted
+      daemon_reload: true
+
+  - name: enable chromium incognito by default
+    ansible.builtin.copy:
+      src: files/10-chromium-default-incognito.sh
+      dest: /etc/profile.d/10-chromium-default-incognito.sh
+      owner: root
+      group: root
+      mode: 0755
+
+  - name: deny cron use for student and teacher
+    ansible.builtin.copy:
+      src: files/cron.deny
+      dest: /etc/cron.deny
+      owner: root
+      group: root
+      mode: 0644
+
+  - name: create user for pupils
+    ansible.builtin.user:
+      name: student
+      password: "$6$IL7SHzFwRyqpGVpR$oLVkEjqfOOz.9uU2MAwzEZUcxTdC9dkrRtHIbKV6nu/PCNANyQQ8yhsiKmgmgEZI6fPdquDd5aE5EoDcUOOth."
+      groups: dialout, vboxusers
+
+  - name: install clearing script for student
+    ansible.builtin.copy:
+      src: files/rc.local
+      dest: /etc/rc.local
+      owner: root
+      group: root
+      mode: 0750
+
+  - name: turn on autologin for 1580
+    ansible.builtin.shell: py-ini-config set /etc/sddm.conf Autologin User student
+
+  - name: create user for teacher
+    ansible.builtin.user:
+      name: teacher
+      password: "$6$buTXdEN1iPfkP6hw$lJZYntugYdGIw8ehcc3dFdp4.eqN7vzY967zZ0mOeOtGvBAtMRVA2BlCcJ6budwt7KgyodwrkjoKQZFVf7L5g0"
+      groups: dialout, student, vboxusers
+
+  - name: grant access to veyon only for teacher
+    ansible.builtin.file:
+      path: "{{ item }}"
+      group: teacher
+      mode: 0750
+    loop:
+      - /usr/bin/veyon-cli
+      - /usr/bin/veyon-master
+
+# needed for correct migration from old version
+#  - name: check if /opt/.lycu1580/ exist or not
+#    ansible.builtin.stat:
+#      path: /opt/.lycu1580/
+#    register: opt_dot_lycu1580
+
+# needed for correct migration from old version
+#  - name: delete old files and dirs
+#    ansible.builtin.file:
+#      path: /home/ansible/.ansible/tmp/
+#      state: absent
+#    when: not opt_dot_lycu1580.stat.exists
+
+# needed for correct migration from old version
+#  - name: create dir for ansible pull
+#    ansible.builtin.file:
+#      path: /opt/.lycu1580/
+#      state: directory
+#      owner: ansible
+#      group: ansible
+#    when: not opt_dot_lycu1580.stat.exists
+
+# needed for correct migration from old version
+#  - name: delete old files and dirs
+#    ansible.builtin.file:
+#      path: "{{ item }}"
+#      state: absent
+#    loop:
+#      - /home/ansible/.ansible/pull/
+#      - /root/.ansible/
+
+#  - name: create dir for studetn w10k22 vdi
+#    ansible.builtin.file:
+#      path: /home/student_w10k22_vdi_current/
+#      state: directory
+#      owner: root
+#      group: root
+
+#  - name: download student_dot_wine_klt_pabc
+#    ansible.builtin.command: "sh files/student_dot_wine_klt_pabc_download.sh"
+#
+#  - name: download w10pabc.vdi
+#    ansible.builtin.command: "sh files/w10pabc_vdi_download.sh"
+#    when: "'1580-2-418-17' in ansible_hostname"
+#
+#  - name: download w10k22.vdi
+#    ansible.builtin.command: "sh files/w10k22_vdi_download.sh"
+#    when: "'m1580-1-205' in ansible_hostname or 'm1580-1-208' in ansible_hostname or 'm1580-1-209' in ansible_hostname or '1580-2-418-17' in ansible_hostname or '1580-2-it2-333' in ansible_hostname"
+#
+#  - name: download w10vs2022.vdi
+#    ansible.builtin.command: "sh files/w10vs2022_vdi_download.sh"
+#    when: "'m1580-1-205' in ansible_hostname or '1580-2-418-17' in ansible_hostname"
+
+  - name: touch feedback end
+    ansible.builtin.uri:
+      url: "https://bf726e13342a.hosting.myjino.ru/mos12_ansible/touch/{{ ansible_hostname }}/end"
+      status_code: 404
+
+  - name: run iptables script
+    ansible.builtin.command: "sh files/iptables.sh"
+#    when: "'m1580-2-418' in ansible_hostname"
+#    when: "'m1580-2-418' in ansible_hostname or 'n1580-2-it3' in ansible_hostname or 'n1580-2-it4' in ansible_hostname"
+#    when: "'noonemos-qt3hhx' in ansible_hostname"
 

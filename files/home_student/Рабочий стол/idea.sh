@@ -1,0 +1,1 @@
+/opt/.lycu1580/files/opt_1580/idea-IC/bin/idea.sh
