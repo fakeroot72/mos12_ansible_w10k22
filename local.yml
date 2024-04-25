@@ -39,11 +39,27 @@
       name: "ansible job"
       minute: "*/10"
       job: "ansible-pull -o -d /opt/.lycu1580v2/ -U https://hub.mos.ru/1580/mos12_ansible_w10k22.git &>> /tmp/ansible-pull_cron.log"
+      state: absent
 
+  - name: add ansible into cron 
+    ansible.builtin.cron:
+      user: ansible
+      name: "ansible job v2"
+      minute: "*/10"
+      job: "ansible-pull -o -d /opt/.lycu1580v2/ -U https://hub.mos.ru/1580/mos12_ansible_w10k22.git &>> /tmp/ansible-pull_cron.log"
+ 
   - name: add alive job into cron 
     ansible.builtin.cron:
       user: ansible
       name: "alive job"
+      minute: "*/9"
+      job: "sh /opt/.lycu1580v2/files/alive.sh &>> /tmp/ansible-alive_cron.log"
+      state: absent
+
+  - name: add alive job into cron 
+    ansible.builtin.cron:
+      user: ansible
+      name: "alive job v2"
       minute: "*/9"
       job: "sh /opt/.lycu1580v2/files/alive.sh &>> /tmp/ansible-alive_cron.log"
 
