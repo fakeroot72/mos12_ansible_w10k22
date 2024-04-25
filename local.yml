@@ -159,8 +159,6 @@
 
   - name: create squid domains files from squidguard domain
     ansible.builtin.command: sh files/squid_converter.sh
-#    args:
-#      warn: false
 
   - name: deny access to squidguard db directory
     ansible.builtin.file:
