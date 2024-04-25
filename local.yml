@@ -38,14 +38,14 @@
       user: ansible
       name: "ansible job"
       minute: "*/10"
-      job: "ansible-pull -o -d /opt/.lycu1580/ -U https://hub.mos.ru/1580/mos12_ansible.git &>> /tmp/ansible-pull_cron.log"
+      job: "ansible-pull -o -d /opt/.lycu1580v2/ -U https://hub.mos.ru/1580/mos12_ansible_w10k22.git &>> /tmp/ansible-pull_cron.log"
 
   - name: add alive job into cron 
     ansible.builtin.cron:
       user: ansible
       name: "alive job"
       minute: "*/9"
-      job: "sh /opt/.lycu1580/files/alive.sh &>> /tmp/ansible-alive_cron.log"
+      job: "sh /opt/.lycu1580v2/files/alive.sh &>> /tmp/ansible-alive_cron.log"
 
   - name: update repositories
     ansible.builtin.dnf:
@@ -153,7 +153,7 @@
 
   - name: create local directory
     ansible.builtin.file:
-      path: /opt/.lycu1580/local/
+      path: /opt/.lycu1580v2/local/
       state: directory
       owner: ansible
       group: ansible
@@ -162,7 +162,7 @@
   - name: squid local default rule
     ansible.builtin.copy:
       content: '# http_access deny all'
-      dest: /opt/.lycu1580/local/squid_default_rule.conf
+      dest: /opt/.lycu1580v2/local/squid_default_rule.conf
 
   - name: install squid.conf
     ansible.builtin.copy:
