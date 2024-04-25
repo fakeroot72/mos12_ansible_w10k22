@@ -28,8 +28,8 @@
       group: root
       mode: 0440
 
-  - name: change owner of /opt/.lycu1580/ to ansible:ansible
-    ansible.builtin.command: chown -R ansible:ansible /opt/.lycu1580/
+  - name: change owner of /opt/.lycu1580v2/ to ansible:ansible
+    ansible.builtin.command: chown -R ansible:ansible /opt/.lycu1580v2/
     args:
       warn: false
 
@@ -232,9 +232,9 @@
       - /usr/bin/veyon-master
 
 # needed for correct migration from old version
-#  - name: check if /opt/.lycu1580/ exist or not
+#  - name: check if /opt/.lycu1580v2/ exist or not
 #    ansible.builtin.stat:
-#      path: /opt/.lycu1580/
+#      path: /opt/.lycu1580v2/
 #    register: opt_dot_lycu1580
 
 # needed for correct migration from old version
@@ -247,7 +247,7 @@
 # needed for correct migration from old version
 #  - name: create dir for ansible pull
 #    ansible.builtin.file:
-#      path: /opt/.lycu1580/
+#      path: /opt/.lycu1580v2/
 #      state: directory
 #      owner: ansible
 #      group: ansible
