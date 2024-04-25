@@ -36,7 +36,7 @@ rm -f /home/student/.config/autostart/mos-welcome-pages.desktop
 [ `hostname | grep p1580` ] && rsync -a --chown=student:student /opt/.lycu1580v2/files/opt_1580/powermanagementprofilesrc-p1580 /home/student/.config/powermanagementprofilesrc
 
 # update dot wine
-rsync -a --delete --chown=student:student /opt/.lycu1580v2/files/opt_1580/student_dot_wine-kompas/ /home/student_dot_wine-kompas_current/
+# rsync -a --delete --chown=student:student /opt/.lycu1580v2/files/opt_1580/student_dot_wine-kompas/ /home/student_dot_wine-kompas_current/
 
 # remove PascalABC old script if it is absent
 [ ! -f /opt/.lycu1580v2/local/student_dot_wine_klt_pabc_tbz/ready01.timestamp ] && rm /home/student/Рабочий\ стол/PascalABC_old.sh
