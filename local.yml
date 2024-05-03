@@ -15,6 +15,17 @@
       url: "https://bf726e13342a.hosting.myjino.ru/mos12_ansible/touch/{{ ansible_hostname }}/start/v2/"
       status_code: 404
 
+# needed for correct migration from old version
+  - name: check if /opt/.lycu1580/local/ exist or not
+    ansible.builtin.stat:
+      path: /opt/.lycu1580/local/
+    register: opt_dot_lycu1580_local
+
+# needed for correct migration from old version
+  - name: delete old files and dirs
+    ansible.builtin.shell: mv /opt/.lycu1580/local/ /opt/.lycu1580v2/local/
+    when: not opt_dot_lycu1580.stat.exists
+
   - name: create user for ansible tasks
     ansible.builtin.user:
       name: ansible
@@ -68,27 +79,6 @@
       update_cache: true
     changed_when: false
 
-# needed for correct migration from old version
-#  - name: delete old files and dirs
-#     ansible.builtin.file:
-#      path: "{{ item }}"
-#      state: absent
-#    loop:
-#      - /home/wallpaper_1580-warning.jpg
-#      - /home/wallpaper_1580.jpg
-#      - /home/powermanagementprofilesrc
-#      - /home/powermanagementprofilesrc-p1580
-#      - /home/plasma_init_script.sh
-#      - /home/PascalABC.sh
-#      - /home/T-FLEX_CAD.sh
-#      - /home/KOMPAS_3D_LT.sh
-#      - /home/KOMPAS_3D_21.sh
-#      - /opt/processing/
-#      - /opt/idea-IC/
-#      - /opt/student_dot_wine-kompas/
-#      - /home/admin/.ansible/
-#      - /home/user/.ansible/
-#      - /home/student_w10k22_current/
 
   - name: turn off password viewer
     ansible.builtin.dnf:
@@ -246,42 +236,10 @@
       - /usr/bin/veyon-master
 
 # needed for correct migration from old version
-#  - name: check if /opt/.lycu1580v2/ exist or not
-#    ansible.builtin.stat:
-#      path: /opt/.lycu1580v2/
-#    register: opt_dot_lycu1580
-
-# needed for correct migration from old version
-#  - name: delete old files and dirs
-#    ansible.builtin.file:
-#      path: /home/ansible/.ansible/tmp/
-#      state: absent
-#    when: not opt_dot_lycu1580.stat.exists
-
-# needed for correct migration from old version
-#  - name: create dir for ansible pull
-#    ansible.builtin.file:
-#      path: /opt/.lycu1580v2/
-#      state: directory
-#      owner: ansible
-#      group: ansible
-#    when: not opt_dot_lycu1580.stat.exists
-
-# needed for correct migration from old version
-#  - name: delete old files and dirs
-#    ansible.builtin.file:
-#      path: "{{ item }}"
-#      state: absent
-#    loop:
-#      - /home/ansible/.ansible/pull/
-#      - /root/.ansible/
-
-#  - name: create dir for studetn w10k22 vdi
-#    ansible.builtin.file:
-#      path: /home/student_w10k22_vdi_current/
-#      state: directory
-#      owner: root
-#      group: root
+  - name: delete old files and dirs
+     ansible.builtin.file:
+      path: /opt/.lycu1580/
+      state: absent
 
 #  - name: download student_dot_wine_klt_pabc
 #    ansible.builtin.command: "sh files/student_dot_wine_klt_pabc_download.sh"
