@@ -6,8 +6,8 @@ exec >> /tmp/ansible-student_dot_wine_klt_pabc-download.log 2>&1
 
 start_dir=`pwd`
 
-md5_dir=/opt/.lycu1580/files/student_dot_wine_klt_pabc_tbz_md5/ 
-local_dir=/opt/.lycu1580/local/student_dot_wine_klt_pabc_tbz/
+md5_dir=/opt/.lycu1580v2/files/student_dot_wine_klt_pabc_tbz_md5/ 
+local_dir=/opt/.lycu1580v2/local/student_dot_wine_klt_pabc_tbz/
 base_url=https://bf726e13342a.hosting.myjino.ru/mos12_ansible/student_dot_wine_klt_pabc_tbz/
 
 [ -f $local_dir/ready01.timestamp ] && exit

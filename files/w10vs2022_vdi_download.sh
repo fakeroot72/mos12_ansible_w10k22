@@ -6,9 +6,9 @@ exec >> /tmp/ansible-w10vs2022-download.log 2>&1
 
 start_dir=`pwd`
 
-md5_dir=/opt/.lycu1580/files/w10vs2022_vdi_bz_md5/ 
-local_dir=/opt/.lycu1580/local/w10vs2022_vdi/
-destination=/opt/.lycu1580/local/w10vs2022_vdi/w10vs2022.vdi
+md5_dir=/opt/.lycu1580v2/files/w10vs2022_vdi_bz_md5/ 
+local_dir=/opt/.lycu1580v2/local/w10vs2022_vdi/
+destination=/opt/.lycu1580v2/local/w10vs2022_vdi/w10vs2022.vdi
 base_url=https://bf726e13342a.hosting.myjino.ru/mos12_ansible/w10vs2022_vdi_bz/
 
 [ -f $local_dir/ready04.timestamp ] && exit
