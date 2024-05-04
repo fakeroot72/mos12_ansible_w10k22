@@ -229,11 +229,14 @@
   - name: grant access to veyon only for teacher
     ansible.builtin.file:
       path: "{{ item }}"
-      group: teacher
-      mode: 0750
+      group: root
+      mode: 0755
     loop:
       - /usr/bin/veyon-cli
       - /usr/bin/veyon-master
+
+   - name: configure veyon
+     ansible.builtin.command: "sh files/veyon/veyon.sh"
 
 # needed for correct migration from old version
   - name: delete old files and dirs
