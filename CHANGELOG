@@ -1,4 +1,5 @@
 - restart sshd
+- restart sshd
 - fix local.yml
 - squid stat and new veyon
 - squid stat and new veyon

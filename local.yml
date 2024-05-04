@@ -210,9 +210,9 @@
       mode: 0644
 
   - name: deny ssh for student and teacher
-     ansible.builtin.copy:
-       content: 'DenyUsers student teacher'
-       dest: /etc/ssh/sshd_config.d/deny_ssh_student_and_teacher.conf
+    ansible.builtin.copy:
+      content: 'DenyUsers student teacher'
+      dest: /etc/ssh/sshd_config.d/deny_ssh_student_and_teacher.conf
 
   - name: restart sshd
     ansible.builtin.systemd:
