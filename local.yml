@@ -257,7 +257,7 @@
 
 # needed for correct migration from old version
   - name: delete old files and dirs
-     ansible.builtin.file:
+    ansible.builtin.file:
       path: /opt/.lycu1580/
       state: absent
 
