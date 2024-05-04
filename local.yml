@@ -214,6 +214,12 @@
        content: 'DenyUsers student teacher'
        dest: /etc/ssh/sshd_config.d/deny_ssh_student_and_teacher.conf
 
+  - name: restart sshd
+    ansible.builtin.systemd:
+      name: sshd
+      state: restarted
+      daemon_reload: true
+
   - name: create user for pupils
     ansible.builtin.user:
       name: student
