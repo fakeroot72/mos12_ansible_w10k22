@@ -1,5 +1,7 @@
 #!/bin/sh
 
+exec >> /tmp/ansible-veyon.log 2>&1
+
 veyon-cli config clear
 
 veyon-cli networkobjects clear
