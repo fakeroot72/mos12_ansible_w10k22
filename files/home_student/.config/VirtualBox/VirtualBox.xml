@@ -15,7 +15,6 @@
       <ExtraDataItem name="GUI/SuppressMessages" value="remindAboutMouseIntegration"/>
     </ExtraData>
     <MachineRegistry>
-      <MachineEntry uuid="{cb9f2ede-7c18-4851-903e-3f32ec88dbcc}" src="/home/student/VirtualBox VMs/w10k22_without_update/w10k22_without_update.vbox"/>
       <MachineEntry uuid="{a31a8f08-24af-4446-89c8-2744ea09dd30}" src="/home/student/VirtualBox VMs/w10k22/w10k22.vbox"/>
       <MachineEntry uuid="{00fd8dde-d306-4ac8-96f4-592e3e7271d3}" src="/home/student/VirtualBox VMs/w10vs2022/w10vs2022.vbox"/>
       <MachineEntry uuid="{c1df1809-8aba-4590-8b44-c9def608005c}" src="/home/student/VirtualBox VMs/w10pabc/w10pabc.vbox"/>
