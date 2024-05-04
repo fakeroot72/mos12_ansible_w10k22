@@ -1,4 +1,4 @@
- #!/bin/sh
+#!/bin/sh
 
 veyon-cli config clear
 
@@ -14,14 +14,14 @@ veyon-cli authkeys setaccessgroup teacher/public teacher
 
 for f in `ls files/veyon/networkobjects/*.mac?`
 do
-    echo files/veyon/networkobjects/$f
-    veyon-cli networkobjects import files/veyon/networkobjects/$f location $f format "%name%;%mac%"
+    place=`echo $f | awk -F"/" '{print $4}'`
+    veyon-cli networkobjects import $f location $place format "%name%;%host%;%mac%"
 done
 
 for f in `ls files/veyon/networkobjects/*.ip?`
 do
-    echo files/veyon/networkobjects/$f
-    veyon-cli networkobjects import files/veyon/networkobjects/$f location $f format "%name%;%host%"
+    place=`echo $f | awk -F"/" '{print $4}'`
+    veyon-cli networkobjects import $f location $place format "%name%;%host%"
 done
 
 veyon-cli service restart
