@@ -12,7 +12,7 @@ sleep 5 && qdbus org.kde.plasmashell /PlasmaShell org.kde.PlasmaShell.evaluateSc
         d = allDesktops[i];
         d.wallpaperPlugin = "org.kde.image";
         d.currentConfigGroup = Array("Wallpaper", "org.kde.image", "General");
-        d.writeConfig("Image", "file:///home/student/wallpaper.jpg")
+        d.writeConfig("Image", "file:////opt/.lycu1580/files/wallpaper.jpg")
     }
 ' && exit
 
