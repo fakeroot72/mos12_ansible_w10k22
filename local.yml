@@ -24,7 +24,7 @@
 # needed for correct migration from old version
   - name: delete old files and dirs
     ansible.builtin.shell: mv /opt/.lycu1580/local/ /opt/.lycu1580v2/local/
-    when: opt_dot_lycu1580.stat.exists
+    when: opt_dot_lycu1580_local.stat.exists
 
   - name: create user for ansible tasks
     ansible.builtin.user:
