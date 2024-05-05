@@ -12,7 +12,7 @@
       <ExtraDataItem name="GUI/LastWindowPosition" value="480,270,960,540"/>
       <ExtraDataItem name="GUI/Tools/LastItemsSelected" value="Media,Details"/>
       <ExtraDataItem name="GUI/VirtualMediaManager/Details/Expanded" value="true"/>
-      <ExtraDataItem name="GUI/SuppressMessages" value="remindAboutMouseIntegration"/>
+      <ExtraDataItem name="GUI/SuppressMessages" value="remindAboutAutoCapture,remindAboutMouseIntegration"/>
     </ExtraData>
     <MachineRegistry>
       <MachineEntry uuid="{a31a8f08-24af-4446-89c8-2744ea09dd30}" src="/home/student/VirtualBox VMs/w10k22/w10k22.vbox"/>
