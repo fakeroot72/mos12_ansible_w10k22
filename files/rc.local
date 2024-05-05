@@ -34,8 +34,12 @@ rm -f /home/student/.config/autostart/mos-welcome-pages.desktop
 # set pannel power managment settings in IT-polygon
 [ `hostname | grep p1580` ] && rsync -a --chown=student:student /opt/.lycu1580v2/files/opt_1580/powermanagementprofilesrc-p1580 /home/student/.config/powermanagementprofilesrc
 
+[ ! -f /opt/.lycu1580v2/local/student_dot_wine_k21_tflex_pabc_tbz/ready01.timestamp ] && rm /home/student/Рабочий\ стол/KOMPAS_3D_21.sh
+[ ! -f /opt/.lycu1580v2/local/student_dot_wine_k21_tflex_pabc_tbz/ready01.timestamp ] && rm /home/student/Рабочий\ стол/T-FLEX_CAD.sh
+[ ! -f /opt/.lycu1580v2/local/student_dot_wine_k21_tflex_pabc_tbz/ready01.timestamp ] && rm /home/student/Рабочий\ стол/PascalABC.sh
+
 # remove PascalABC old script if it is absent
-[ ! -f /opt/.lycu1580v2/local/student_dot_wine_klt_pabc_tbz/ready01.timestamp ] && rm /home/student/Рабочий\ стол/PascalABC.sh
+[ ! -f /opt/.lycu1580v2/local/student_dot_wine_klt_pabc_tbz/ready01.timestamp ] && rm /home/student/Рабочий\ стол/PascalABC_old.sh
 
 # update student_dot_wine_klt_pabc_current
 [ -f /opt/.lycu1580v2/local/student_dot_wine_klt_pabc_tbz/ready01.timestamp ] && rsync -a --delete --chown=student:student /opt/.lycu1580v2/local/student_dot_wine_klt_pabc_tbz/student_dot_wine_klt_pabc/ /home/student_dot_wine_klt_pabc_current/
