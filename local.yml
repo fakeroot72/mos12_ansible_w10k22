@@ -164,7 +164,7 @@
 
   - name: squid local default rule
     ansible.builtin.copy:
-      content: 'http_access deny all'
+      content: '# http_access deny all'
       dest: /opt/.lycu1580v2/local/squid_default_rule.conf
 
   - name: inet white list only
