@@ -27,7 +27,7 @@ do
     iptables -A OUTPUT -d $i -j ACCEPT
 done
 
-#iptables -A OUTPUT -p tcp --dport 80 -j DROP # блокируем исходящий http
-#iptables -A OUTPUT -p tcp --dport 443 -j DROP # блокируем исходящий https
-#iptables -P OUTPUT DROP # блокируем всё исходящее, кроме разрешенногоiptables -A OUTPUT -o lo -j ACCEPT # loopback
+iptables -A OUTPUT -p tcp --dport 80 -j DROP # блокируем исходящий http
+iptables -A OUTPUT -p tcp --dport 443 -j DROP # блокируем исходящий https
+iptables -P OUTPUT DROP # блокируем всё исходящее, кроме разрешенного
 
