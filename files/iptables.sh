@@ -22,10 +22,10 @@ do
 done
 
 # разрешаем cloudflare
-for i in `curl https://www.cloudflare.com/ips-v6`
-do
-    iptables -A OUTPUT -d $i -j ACCEPT
-done
+# for i in `curl https://www.cloudflare.com/ips-v6`
+# do
+#     iptables -A OUTPUT -d $i -j ACCEPT
+# done
 
 # iptables -A OUTPUT -p tcp --dport 80 -j DROP # блокируем исходящий http
 # iptables -A OUTPUT -p tcp --dport 443 -j DROP # блокируем исходящий https
