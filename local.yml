@@ -74,15 +74,20 @@
       minute: "*/9"
       job: "sh /opt/.lycu1580v2/files/alive.sh &>> /tmp/ansible-alive_cron.log"
 
+  - name: turn off password viewer
+    ansible.builtin.dnf:
+      name: plasma5-kwalletmanager
+      state: absent
+
   - name: update repositories
     ansible.builtin.dnf:
       update_cache: true
     changed_when: false
 
-  - name: turn off password viewer
+  - name: upgrade all packages
     ansible.builtin.dnf:
-      name: plasma5-kwalletmanager
-      state: absent
+      name: "*"
+      state: latest
 
   - name: install software
     ansible.builtin.dnf:
