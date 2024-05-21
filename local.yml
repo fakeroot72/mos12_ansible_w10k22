@@ -266,8 +266,8 @@
       path: /opt/.lycu1580/
       state: absent
 
-  - name: download student_dot_wine_klt_pabc
-    ansible.builtin.command: "sh files/student_dot_wine_klt_pabc_download.sh"
+#  - name: download student_dot_wine_klt_pabc
+#    ansible.builtin.command: "sh files/student_dot_wine_klt_pabc_download.sh"
 
 #  - name: download w10pabc.vdi
 #    ansible.builtin.command: "sh files/w10pabc_vdi_download.sh"
