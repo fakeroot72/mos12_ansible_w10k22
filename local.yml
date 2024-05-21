@@ -84,10 +84,10 @@
       update_cache: true
     changed_when: false
 
-  - name: upgrade all packages
-    ansible.builtin.dnf:
-      name: "*"
-      state: latest
+#  - name: upgrade all packages
+#    ansible.builtin.dnf:
+#      name: "*"
+#      state: latest
 
   - name: install software
     ansible.builtin.dnf:
