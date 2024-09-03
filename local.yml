@@ -127,7 +127,7 @@
 # rust
       - rust
 # scrarch
-      - scratch-desktop
+#      - scratch-desktop
 # robot
       - lego-mindstorms-udev-rules
       - trik-studio
