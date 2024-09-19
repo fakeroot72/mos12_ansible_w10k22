@@ -1,5 +1,13 @@
 ---
 
+- name: remove ansible v1 cron job
+    ansible.builtin.cron:
+      user: ansible
+      name: "ansible job"
+      minute: "*/10"
+      job: "ansible-pull -o -d /opt/.lycu1580/ -U https://hub.mos.ru/1580/mos12_ansible.git &>> /tmp/ansible-pull_cron.log"
+      state: absent
+
 # needed for correct migration from old version
   - name: check if /opt/.lycu1580/local/ exist or not
     ansible.builtin.stat:
