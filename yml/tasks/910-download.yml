@@ -76,7 +76,7 @@
     ansible.builtin.file:
       path: "{{ base_path }}/local/w10vs2022_vdi/"
       state: absent
-    when: "w10vs2022_r_item in ansible_hostnamet"
+    when: "w10vs2022_r_item in ansible_hostname"
     loop: "{{ w10vs2022_r }}"
     loop_control:
       loop_var: w10vs2022_r_item
