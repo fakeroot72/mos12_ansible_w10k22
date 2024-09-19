@@ -1,6 +1,6 @@
 ---
 
-  - name: check if /opt/.lycu1580/local/ exist or not
+  - name: check if /tmp/ansible-rc.local.log exist or not
     ansible.builtin.stat:
       path: /tmp/ansible-rc.local.log1
     register: tmp_ansible_rc_local_log
@@ -9,82 +9,81 @@
     ansible.builtin.file:
       path: "{{ base_path }}/local/w10pabc_vdi/"
       state: absent
-    when: "w10pabc_item_r in ansible_hostname"
     loop: "{{ w10pabc_r }}"
     loop_control:
       loop_var: w10pabc_item_r
+    when: "w10pabc_item_r in ansible_hostname"
 
   - name: download w10pabc.vdi
     ansible.builtin.command: "bin/download_file.sh {{ base_path }}/files/w10pabc_vdi_bz_md5/ {{ base_path }}/local/w10pabc_vdi/ {{ base_path }}/local/w10pabc_vdi/w10pabc.vdi {{ base_url }}/mos12_ansible/w10pabc_vdi_bz/ ready01.timestamp"
     loop: "{{ w10pabc }}"
-    when: w10pabc_item in ansible_hostname
     loop_control:
       loop_var: w10pabc_item
+    when: w10pabc_item in ansible_hostname
 
 
   - name: remove w10k22.vdi
     ansible.builtin.file:
       path: "{{ base_path }}/local/w10k22_vdi/"
       state: absent
-    when: "w10k22_r_item in ansible_hostname"
     loop: "{{ w10k22_r }}"
     loop_control:
       loop_var: w10k22_r_item
+    when: "w10k22_r_item in ansible_hostname"
 
   - name: download w10k22.vdi
     ansible.builtin.command: "bin/download_file.sh {{ base_path }}/files/w10k22_vdi_bz_md5/ {{ base_path }}/local/w10k22_vdi/ {{ base_path }}/local/w10pabc_vdi/w10k22.vdi {{ base_url }}/mos12_ansible/w10k22_vdi_bz/ ready04.timestamp"
     loop: "{{ w10k22 }}"
-    when: w10k22_item in ansible_hostname
     loop_control:
       loop_var: w10k22_item
+    when: w10k22_item in ansible_hostname
 
 
   - name: remove w10tfc17.vdi
     ansible.builtin.file:
       path: "{{ base_path }}/local/w10tfc17_vdi/"
       state: absent
-    when: "w10tfc17_r_item in ansible_hostname"
     loop: "{{ w10tfc17_r }}"
     loop_control:
       loop_var: w10tfc17_r_item
+    when: "w10tfc17_r_item in ansible_hostname"
 
   - name: download w10tfc17.vdi
     ansible.builtin.command: "bin/download_file.sh {{ base_path }}/files/w10tfc17_vdi_bz_md5/ {{ base_path }}/local/w10tfc17_vdi/ {{ base_path }}/local/w10pabc_vdi/w10tfc17.vdi {{ base_url }}/mos12_ansible/w10tfc17_vdi_bz/ ready04.timestamp"
-    when: w10tfc17_item in ansible_hostname
     loop: "{{ w10tfc17 }}"
     loop_control:
       loop_var: w10tfc17_item
+    when: w10tfc17_item in ansible_hostname
 
 
   - name: remove w10ev3.vdi
     ansible.builtin.file:
       path: "{{ base_path }}/local/w10ev3_vdi/"
       state: absent
-    when: "w10ev3_r_item in ansible_hostname"
     loop: "{{ w10ev3_r }}"
     loop_control:
       loop_var: w10ev3_r_item
+    when: "w10ev3_r_item in ansible_hostname"
 
   - name: download w10ev3.vdi
     ansible.builtin.command: "bin/download_file.sh {{ base_path }}/files/w10ev3_vdi_bz_md5/ {{ base_path }}/local/w10ev3_vdi/ {{ base_path }}/local/w10ev3_vdi/w10ev3.vdi {{ base_url }}/mos12_ansible/w10ev3_vdi_bz/ ready01.timestamp"
-    when: w10ev3_item in ansible_hostname
     loop: "{{ w10ev3 }}"
     loop_control:
       loop_var: w10ev3_item
+    when: w10ev3_item in ansible_hostname
 
   - name: remove w10vs2022.vdi
     ansible.builtin.file:
       path: "{{ base_path }}/local/w10vs2022_vdi/"
       state: absent
-    when: "w10vs2022_r_item in ansible_hostname"
     loop: "{{ w10vs2022_r }}"
     loop_control:
       loop_var: w10vs2022_r_item
+    when: "w10vs2022_r_item in ansible_hostname"
 
   - name: download w10vs2022.vdi
     ansible.builtin.command: "bin/download_file.sh {{ base_path }}/files/w10vs2022_vdi_bz_md5/ {{ base_path }}/local/w10vs2022_vdi/ {{ base_path }}/local/w10pabc_vdi/w10vs2022.vdi {{ base_url }}/mos12_ansible/w10vs2022_vdi_bz/ ready04.timestamp"
-    when: w10vs2022_item in ansible_hostname
     loop: "{{ w10vs2022 }}"
     loop_control:
       loop_var: w10vs2022_item
-    when: tmp_ansible_rc_local_log.stat.exist
+    when: w10vs2022_item in ansible_hostname
