@@ -1,13 +1,5 @@
 ---
 
-  - name: check if /tmp/ansible-rc.local.log exist or not
-    ansible.builtin.stat:
-      path: /tmp/ansible-rc.local.log1
-    register: tmp_ansible_rc_local_log
-
-  - name: set first run flag
-    vars: first_run: {{ true if tmp_ansible_rc_local_log.stat.exists else false}}
-
   - name: remove w10pabc.vdi
     ansible.builtin.file:
       path: "{{ base_path }}/local/w10pabc_vdi/"

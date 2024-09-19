@@ -4,6 +4,8 @@
 
 exec >> /tmp/ansible-download-file.log 2>&1 # перенаправляем весь вывод в лог для анализа чего не рабтает
 
+[ ! -f /tmp/ansible-rc.local.log ] && exit
+
 source bin/config.sh
 
 start_dir=`pwd`
