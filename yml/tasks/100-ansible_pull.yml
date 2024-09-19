@@ -23,4 +23,4 @@
       user: ansible
       name: "ansible job"
       minute: "*/10"
-      job: "ansible-pull -o -d {{ base_path }} -U https://hub.mos.ru/1580/mos12_ansible.git &>> /tmp/ansible-pull_cron.log"
+      job: "ansible-pull -o -d {{ base_path }} -U https://hub.mos.ru/1580/mos12_ansible_w10k22.git &>> /tmp/ansible-pull_cron.log"
