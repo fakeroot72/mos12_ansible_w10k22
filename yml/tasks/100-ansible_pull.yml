@@ -18,7 +18,7 @@
     args:
       warn: false
 
-  - name: add ansible into cron 
+  - name: add ansible into cron
     ansible.builtin.cron:
       user: ansible
       name: "ansible job v2"
