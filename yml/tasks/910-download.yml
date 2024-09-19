@@ -32,7 +32,6 @@
       loop_var: w10k22_r_item
 
   - name: download w10k22.vdi
-    ansible.builtin.command: "sh files/w10k22_vdi_download.sh"
     ansible.builtin.command: "bin/download_file.sh {{ base_path }}/files/w10k22_vdi_bz_md5/ {{ base_path }}/local/w10k22_vdi/ {{ base_path }}/local/w10pabc_vdi/w10k22.vdi {{ base_url }}/mos12_ansible/w10k22_vdi_bz/ ready04.timestamp"
     loop: "{{ w10k22 }}"
     when: w10k22_item in ansible_hostname
@@ -50,7 +49,6 @@
       loop_var: w10tfc17_r_item
 
   - name: download w10tfc17.vdi
-    ansible.builtin.command: "sh files/w10tfc17_vdi_download.sh"
     ansible.builtin.command: "bin/download_file.sh {{ base_path }}/files/w10tfc17_vdi_bz_md5/ {{ base_path }}/local/w10tfc17_vdi/ {{ base_path }}/local/w10pabc_vdi/w10tfc17.vdi {{ base_url }}/mos12_ansible/w10tfc17_vdi_bz/ ready04.timestamp"
     when: w10tfc17_item in ansible_hostname
     loop: "{{ w10tfc17 }}"
@@ -68,7 +66,6 @@
       loop_var: w10ev3_r_item
 
   - name: download w10ev3.vdi
-    ansible.builtin.command: "sh files/w10ev3_vdi_download.sh"
     ansible.builtin.command: "bin/download_file.sh {{ base_path }}/files/w10ev3_vdi_bz_md5/ {{ base_path }}/local/w10ev3_vdi/ {{ base_path }}/local/w10ev3_vdi/w10ev3.vdi {{ base_url }}/mos12_ansible/w10ev3_vdi_bz/ ready01.timestamp"
     when: w10ev3_item in ansible_hostname
     loop: "{{ w10ev3 }}"
@@ -85,8 +82,7 @@
       loop_var: w10vs2022_r_item
 
   - name: download w10vs2022.vdi
-    ansible.builtin.command: "sh files/w10vs2022_vdi_download.sh"
-    ansible.builtin.command: "bin/download_file.sh {{ base_path }}/files/w10vs2022_vdi_bz_md5/ {{ base_path }}/local/w10vs2022_vdi/ {{ base_path }}/local/w10pabc_vdi/w10vs2022.vdi {{ base_url }}/mos12_ansible/w10vs2022_vdi_bz/ ready01.timestamp"
+    ansible.builtin.command: "bin/download_file.sh {{ base_path }}/files/w10vs2022_vdi_bz_md5/ {{ base_path }}/local/w10vs2022_vdi/ {{ base_path }}/local/w10pabc_vdi/w10vs2022.vdi {{ base_url }}/mos12_ansible/w10vs2022_vdi_bz/ ready04.timestamp"
     when: w10vs2022_item in ansible_hostname
     loop: "{{ w10vs2022 }}"
     loop_control:
