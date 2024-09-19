@@ -1,5 +1,39 @@
 ---
 
+  - name: remove processing.tar
+    ansible.builtin.file:
+      path: "{{ base_path }}/local/processing_tar/"
+      state: absent
+    loop: "{{ processing_r }}"
+    loop_control:
+      loop_var: processing_item_r
+    when: processing_item_r in ansible_hostname
+
+  - name: download processing.tar
+    ansible.builtin.command: "bin/download_folder.sh {{ base_path }}/files/processing_tar_bz_md5/ {{ base_path }}/local/processing_tar/ {{ base_path }}/local/processing_tar/processing.tar {{ base_url }}/mos12_ansible/processing_tar_bz/ ready01.timestamp"
+    loop: "{{ processing }}"
+    loop_control:
+      loop_var: processing_item
+    when: processing_item in ansible_hostname
+
+
+  - name: remove idea-IC.tar
+    ansible.builtin.file:
+      path: "{{ base_path }}/local/idea-IC_tar/"
+      state: absent
+    loop: "{{ idea_ic_r }}"
+    loop_control:
+      loop_var: idea_ic_item_r
+    when: idea_ic_item_r in ansible_hostname
+
+  - name: download idea_ic.tar
+    ansible.builtin.command: "bin/download_folder.sh {{ base_path }}/files/idea_ic_tar_bz_md5/ {{ base_path }}/local/idea_ic_tar/ {{ base_path }}/local/idea_ic_tar/idea_ic.tar {{ base_url }}/mos12_ansible/idea_ic_tar_bz/ ready01.timestamp"
+    loop: "{{ idea_ic }}"
+    loop_control:
+      loop_var: idea_ic_item
+    when: idea_ic_item in ansible_hostname
+
+
   - name: remove w10pabc.vdi
     ansible.builtin.file:
       path: "{{ base_path }}/local/w10pabc_vdi/"
