@@ -1,0 +1,6 @@
+---
+
+  - name: update repositories
+    ansible.builtin.dnf:
+      update_cache: true
+    changed_when: false

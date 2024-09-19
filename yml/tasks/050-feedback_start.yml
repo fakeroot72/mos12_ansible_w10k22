@@ -1,0 +1,6 @@
+---
+
+  - name: touch feedback start
+    ansible.builtin.uri:
+      url: "{{ base_url }}/{{ base_name }}/touch/{{ ansible_hostname }}/start/{{ base_version }}/"
+      status_code: 404

@@ -1,0 +1,48 @@
+---
+#  - name: upgrade all packages
+#    ansible.builtin.dnf:
+#      name: "*"
+#      state: latest
+
+  - name: install software
+    ansible.builtin.dnf:
+      name:
+# best console editor
+      - vim
+# video making
+      - obs-studio
+# on-screen annotation tool
+      - gromit
+# programming environments
+      - geany
+      - vscode
+# python
+      - pycharm-community
+      - wing-101
+      - wing-personal
+# c++
+      - gcc-c++ 
+      - gdb
+      - codeblocks
+      - qt-creator
+# pascal
+      - fpc
+      - lazarus
+      - pascalabcnet
+# java
+      - java-17-openjdk-devel
+# go
+      - golang
+# rust
+      - rust
+# scrarch
+#      - scratch-desktop
+# robot
+      - lego-mindstorms-udev-rules
+      - trik-studio
+      - arduino-ide
+# 3d
+      - blender
+# kompas on wine prepare
+      - wine-stable
+      - kompas3d-wine-helper

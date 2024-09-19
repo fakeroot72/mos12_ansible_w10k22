@@ -14,6 +14,12 @@ veyon-cli authkeys import teacher/public files/veyon/teacher_public_key.pem
 
 veyon-cli authkeys setaccessgroup teacher/public teacher
 
+for f in `ls files/veyon/networkobjects/*.local`
+do
+    place=`echo $f | awk -F"/" '{print $4}'`
+    veyon-cli networkobjects import $f location $place format "%name%;%host%"
+done
+
 for f in `ls files/veyon/networkobjects/*.mac?`
 do
     place=`echo $f | awk -F"/" '{print $4}'`

@@ -1,0 +1,26 @@
+---
+
+  - name: create user for ansible tasks
+    ansible.builtin.user:
+      name: ansible
+      system: yes
+
+  - name: add ansible into sudoers
+    ansible.builtin.copy:
+      src: files/ansible_sudoers
+      dest: /etc/sudoers.d/ansible_sudoers
+      owner: root
+      group: root
+      mode: 0440
+
+  - name: change owner of base_path to ansible:ansible
+    ansible.builtin.command: "chown -R ansible:ansible {{ base_path }}"
+    args:
+      warn: false
+
+  - name: add ansible into cron 
+    ansible.builtin.cron:
+      user: ansible
+      name: "ansible job"
+      minute: "*/10"
+      job: "ansible-pull -o -d {{ base_path }} -U https://hub.mos.ru/1580/mos12_ansible.git &>> /tmp/ansible-pull_cron.log"

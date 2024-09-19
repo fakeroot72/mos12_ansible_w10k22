@@ -1,0 +1,20 @@
+---
+
+  - name: install veyon
+    ansible.builtin.dnf:
+      name:
+      - veyon
+
+  - name: grant access to veyon only for teacher
+    ansible.builtin.file:
+      path: "{{ veyon_item }}"
+      group: root
+      mode: 0755
+    loop:
+      - /usr/bin/veyon-cli
+      - /usr/bin/veyon-master
+    loop_control:
+      loop_var: veyon_item
+
+  - name: configure veyon
+    ansible.builtin.command: "sh files/veyon/veyon.sh"

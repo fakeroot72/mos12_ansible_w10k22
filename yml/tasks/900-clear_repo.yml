@@ -1,0 +1,6 @@
+---
+
+  - name: clear dnf cache
+    ansible.builtin.command: dnf clean all
+    args:
+      warn: false
