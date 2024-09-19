@@ -1,6 +1,6 @@
 ---
 
-- name: remove ansible v1 cron job
+  - name: remove ansible v1 cron job
     ansible.builtin.cron:
       user: ansible
       name: "ansible job"
