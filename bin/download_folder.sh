@@ -1,6 +1,6 @@
 #!/bin/sh
 
-[ `ps auxw | grep download_file.sh | wc -l` -gt 3 ] && exit
+[ `ps auxw | grep download_folder.sh | wc -l` -gt 3 ] && exit
 
 exec >> /tmp/ansible-download-folder.log 2>&1 # перенаправляем весь вывод в лог для анализа чего не рабтает
 

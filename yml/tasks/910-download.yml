@@ -19,7 +19,7 @@
 
   - name: remove idea-IC.tar
     ansible.builtin.file:
-      path: "{{ base_path }}/local/idea-IC_tar/"
+      path: "{{ base_path }}/local/idea_ic_tar/"
       state: absent
     loop: "{{ idea_ic_r }}"
     loop_control:
@@ -27,7 +27,7 @@
     when: idea_ic_item_r in ansible_hostname
 
   - name: download idea_ic.tar
-    ansible.builtin.command: "bin/download_folder.sh {{ base_path }}/files/idea_ic_tar_bz_md5/ {{ base_path }}/local/idea_ic_tar/ {{ base_path }}/local/idea_ic_tar/idea_ic.tar {{ base_url }}/mos12_ansible/idea_ic_tar_bz/ ready01.timestamp {{ base_path }}/local/idea_ic_tar/idea-IC/"
+    ansible.builtin.command: "bin/download_folder.sh {{ base_path }}/files/idea_ic_tar_bz_md5/ {{ base_path }}/local/idea_ic_tar/ {{ base_path }}/local/idea_ic_tar/idea-IC.tar {{ base_url }}/mos12_ansible/idea-IC_tar_bz/ ready01.timestamp {{ base_path }}/local/idea_ic_tar/idea-IC/"
     loop: "{{ idea_ic }}"
     loop_control:
       loop_var: idea_ic_item
