@@ -10,7 +10,7 @@
     when: processing_item_r in ansible_hostname
 
   - name: download processing.tar
-    ansible.builtin.command: "bin/download_folder.sh {{ base_path }}/files/processing_tar_bz_md5/ {{ base_path }}/local/processing_tar/ {{ base_path }}/local/processing_tar/processing.tar {{ base_url }}/mos12_ansible/processing_tar_bz/ ready01.timestamp"
+    ansible.builtin.command: "bin/download_folder.sh {{ base_path }}/files/processing_tar_bz_md5/ {{ base_path }}/local/processing_tar/ {{ base_path }}/local/processing_tar/processing.tar {{ base_url }}/mos12_ansible/processing_tar_bz/ ready01.timestamp {{ base_path }}/local/processing_tar//processing/"
     loop: "{{ processing }}"
     loop_control:
       loop_var: processing_item
@@ -27,7 +27,7 @@
     when: idea_ic_item_r in ansible_hostname
 
   - name: download idea_ic.tar
-    ansible.builtin.command: "bin/download_folder.sh {{ base_path }}/files/idea_ic_tar_bz_md5/ {{ base_path }}/local/idea_ic_tar/ {{ base_path }}/local/idea_ic_tar/idea_ic.tar {{ base_url }}/mos12_ansible/idea_ic_tar_bz/ ready01.timestamp"
+    ansible.builtin.command: "bin/download_folder.sh {{ base_path }}/files/idea_ic_tar_bz_md5/ {{ base_path }}/local/idea_ic_tar/ {{ base_path }}/local/idea_ic_tar/idea_ic.tar {{ base_url }}/mos12_ansible/idea_ic_tar_bz/ ready01.timestamp {{ base_path }}/local/idea_ic_tar/idea-IC/"
     loop: "{{ idea_ic }}"
     loop_control:
       loop_var: idea_ic_item

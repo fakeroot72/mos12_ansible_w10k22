@@ -15,6 +15,7 @@ local_dir=$2
 destination=$3
 base_url=$4
 flag_file=$5
+destination_folder=$6
 
 [ -f $local_dir/$flag_file ] && exit
 
@@ -39,6 +40,7 @@ then
     cat $local_dir/*.?? | bunzip2 -c - > $destination && \
         cd $local_dir && \
         md5sum -c $destination.md5 && \
+        rm -rf $destination_folder && \
         tar xpf $destination && \
         rm -f $destination && \
         cd $start_dir && \
