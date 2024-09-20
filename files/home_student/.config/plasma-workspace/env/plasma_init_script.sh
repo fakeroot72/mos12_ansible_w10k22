@@ -14,7 +14,7 @@ do
                 d = allDesktops[i];
                 d.wallpaperPlugin = "org.kde.image";
                 d.currentConfigGroup = Array("Wallpaper", "org.kde.image", "General");
-                d.writeConfig("Image", "file:///opt/.lycu1580/files/wallpaper_001-warning.jpg")
+                d.writeConfig("Image", "file:///opt/.lycu1580v2/files/wallpaper_001-warning.jpg")
             }
         ' && exit
 
@@ -27,7 +27,7 @@ do
                 d = allDesktops[i];
                 d.wallpaperPlugin = "org.kde.image";
                 d.currentConfigGroup = Array("Wallpaper", "org.kde.image", "General");
-                d.writeConfig("Image", "file:///opt/.lycu1580/files/wallpaper_1580-warning.jpg")
+                d.writeConfig("Image", "file:///opt/.lycu1580v2/files/wallpaper_1580-warning.jpg")
             }
         ' && exit
 

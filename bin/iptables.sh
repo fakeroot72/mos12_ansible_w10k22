@@ -32,4 +32,3 @@ done
 # iptables -A OUTPUT -p tcp --dport 80 -j DROP # блокируем исходящий http
 # iptables -A OUTPUT -p tcp --dport 443 -j DROP # блокируем исходящий https
 # iptables -P OUTPUT DROP # блокируем всё исходящее, кроме разрешенного
-

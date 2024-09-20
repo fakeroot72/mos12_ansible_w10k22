@@ -12,4 +12,3 @@ hn=`hostname`
 url=`echo $line | awk '{print $1}'`
 
 curl -I $base_url/$base_name/touch/$hn/web/$url/$base_version/
-
