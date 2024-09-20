@@ -3,10 +3,15 @@
 ## Установка
 
 ```
-sudo dnf -y update
-sudo dnf -y install ansible git
-sudo ansible-pull -d /opt/.lycu1580/ -U https://hub.mos.ru/1580/mos12_ansible_w10k22.git 
+dnf -y update
+dnf -y install ansible git
+ansible-pull -d /opt/.lycu1580/ -U https://hub.mos.ru/1580/mos12_ansible_w10k22.git 
 reboot
+```
+
+Все команды в отду строку:
+```
+dnf -y update && dnf -y install ansible git && ansible-pull -d /opt/.lycu1580/ -U https://hub.mos.ru/1580/mos12_ansible_w10k22.git && reboot
 ```
 
 Команды собраны в файле [install.sh](https://hub.mos.ru/1580/mos12_ansible_w10k22/-/blob/main/docs/install.sh)
