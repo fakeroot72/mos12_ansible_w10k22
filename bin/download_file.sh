@@ -40,6 +40,6 @@ then
         cd $local_dir && \
         md5sum -c $destination.md5 && \
         cd $start_dir && \
-        rm -f $local_dir/*.?? && \
+        rm -f $local_dir/*.?? ?? \
         date > $local_dir/$flag_file
 fi
