@@ -2,7 +2,7 @@
 
 exec >> /tmp/ansible-alive_cron.log 2>&1
 
-source bin/config.sh
+source /opt/.lycu1580v2/bin/config.sh
 
 hn=`hostname`
 disk=`df -h / | awk '{print $4}' | tail -n 1`
@@ -11,4 +11,5 @@ mac=`ip link | grep link | grep -v loopback | awk '{print $2}' | tr '\n' '-'`
 mem=`free -h | head -n 2 | tail -n 1 | awk '{print $2}'`
 uptime=`uptime | tr " " "="`
 
-curl -I https://bf726e13342a.hosting.myjino.ru/mos12_ansible/touch/$hn/alive/$disk/$ip/$mac/$mem/$uptime/v1/
+curl -I https://bf726e13342a.hosting.myjino.ru/mos12_ansible/touch/$hn/alive/$disk/$ip/$mac/$mem/$uptime/v2/
+
