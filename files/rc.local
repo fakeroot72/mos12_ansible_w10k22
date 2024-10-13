@@ -6,7 +6,7 @@ base_path="/opt/.lycu1580v2/"
 
 # backup
 BACKUP=/home/backup-student-from-`date +%Y_%m_%d-%H_%M_%S`
-mv /home/student/ $BACKUP
+[ ! "`hostname | grep n1580-2-418`" ] && mv /home/student/ $BACKUP
 chown root:teacher $BACKUP
 chmod 0750 $BACKUP
 
