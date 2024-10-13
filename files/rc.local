@@ -31,6 +31,7 @@ rm -f /home/student/.config/autostart/mos-welcome-pages.desktop
 [ ! -f $base_path/local/w10vs2022_vdi/ready04.timestamp ] && rm /home/student/Рабочий\ стол/Visual_Studio_2022_windows_vm.sh
 
 [ ! -f $base_path/local/processing_tar/ready01.timestamp ] && rm /home/student/Рабочий\ стол/processing.sh
+[ ! -f $base_path/local/idea_ic_tar/ready01.timestamp ] && rm /home/student/Рабочий\ стол/idea.sh
 
 # do not automatically start chromium on pannels
 [ `hostname | grep p1580` ] && rm /home/student/.config/autostart/chromium.desktop
