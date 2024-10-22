@@ -46,3 +46,5 @@
 # kompas on wine prepare
       - wine-stable
       - kompas3d-wine-helper
+# sqlitebrowser
+      - sqlitebrowser
