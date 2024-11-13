@@ -36,7 +36,8 @@
 # rust
       - rust
 # scrarch
-#      - scratch-desktop
+      - python3-pyscrlink
+      - scratch-desktop
 # robot
       - lego-mindstorms-udev-rules
       - trik-studio
