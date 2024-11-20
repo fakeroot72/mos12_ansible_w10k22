@@ -49,3 +49,5 @@
       - kompas3d-wine-helper
 # sqlitebrowser
       - sqlitebrowser
+# internet
+      - yandex-browser
