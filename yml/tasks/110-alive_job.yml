@@ -1,8 +1,8 @@
 ---
 
-  - name: add alive job into cron 
-    ansible.builtin.cron:
-      user: ansible
-      name: "alive job"
-      minute: "*/9"
-      job: "sh {{ base_path }}bin/alive.sh &>> /tmp/ansible-alive_cron.log"
+- name: add alive job into cron 
+  ansible.builtin.cron:
+    user: ansible
+    name: "alive job"
+    minute: "*/9"
+    job: "sh {{ base_path }}bin/alive.sh &>> /tmp/ansible-alive_cron.log"

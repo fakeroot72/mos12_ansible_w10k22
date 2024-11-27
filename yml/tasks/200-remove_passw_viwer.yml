@@ -1,6 +1,6 @@
 ---
 
-  - name: turn off password viewer
-    ansible.builtin.dnf:
-      name: plasma5-kwalletmanager
-      state: absent
+- name: turn off password viewer
+  ansible.builtin.dnf:
+    name: plasma5-kwalletmanager
+    state: absent

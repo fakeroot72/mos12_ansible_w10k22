@@ -1,26 +1,26 @@
 ---
 
-  - name: remove ansible v1 cron job
-    ansible.builtin.cron:
-      user: ansible
-      name: "ansible job"
-      minute: "*/10"
-      job: "ansible-pull -o -d /opt/.lycu1580/ -U https://hub.mos.ru/1580/mos12_ansible.git &>> /tmp/ansible-pull_cron.log"
-      state: absent
+- name: remove ansible v1 cron job
+  ansible.builtin.cron:
+    user: ansible
+    name: "ansible job"
+    minute: "*/10"
+    job: "ansible-pull -o -d /opt/.lycu1580/ -U https://hub.mos.ru/1580/mos12_ansible.git &>> /tmp/ansible-pull_cron.log"
+    state: absent
 
 # needed for correct migration from old version
-  - name: check if /opt/.lycu1580/local/ exist or not
-    ansible.builtin.stat:
-      path: /opt/.lycu1580/local/
-    register: opt_dot_lycu1580_local
+- name: check if /opt/.lycu1580/local/ exist or not
+  ansible.builtin.stat:
+    path: /opt/.lycu1580/local/
+  register: opt_dot_lycu1580_local
 
 # needed for correct migration from old version
-  - name: delete old files and dirs
-    ansible.builtin.shell: mv /opt/.lycu1580/local/ /opt/.lycu1580v2/local/
-    when: opt_dot_lycu1580_local.stat.exists
+- name: delete old files and dirs
+  ansible.builtin.shell: mv /opt/.lycu1580/local/ /opt/.lycu1580v2/local/
+  when: opt_dot_lycu1580_local.stat.exists
 
 # needed for correct migration from old version
-  - name: delete old files and dirs
-    ansible.builtin.file:
-      path: /opt/.lycu1580/
-      state: absent
+- name: delete old files and dirs
+  ansible.builtin.file:
+    path: /opt/.lycu1580/
+    state: absent

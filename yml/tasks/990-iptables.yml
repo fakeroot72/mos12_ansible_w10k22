@@ -1,4 +1,4 @@
 ---
 
-  - name: run iptables script
-    ansible.builtin.command: "sh bin/iptables.sh"
+- name: run iptables script
+  ansible.builtin.command: "sh bin/iptables.sh"

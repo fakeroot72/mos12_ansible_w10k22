@@ -1,43 +1,43 @@
 ---
 
-  - name: deny cron use for student and teacher
-    ansible.builtin.copy:
-      src: files/cron.deny
-      dest: /etc/cron.deny
-      owner: root
-      group: root
-      mode: 0644
+- name: deny cron use for student and teacher
+  ansible.builtin.copy:
+    src: files/cron.deny
+    dest: /etc/cron.deny
+    owner: root
+    group: root
+    mode: 0644
 
-  - name: deny ssh for student and teacher
-    ansible.builtin.copy:
-      content: 'DenyUsers student teacher'
-      dest: /etc/ssh/sshd_config.d/deny_ssh_student_and_teacher.conf
+- name: deny ssh for student and teacher
+  ansible.builtin.copy:
+    content: 'DenyUsers student teacher'
+    dest: /etc/ssh/sshd_config.d/deny_ssh_student_and_teacher.conf
 
-  - name: restart sshd
-    ansible.builtin.systemd:
-      name: sshd
-      state: restarted
-      daemon_reload: true
+- name: restart sshd
+  ansible.builtin.systemd:
+    name: sshd
+    state: restarted
+    daemon_reload: true
 
-  - name: create user for pupils
-    ansible.builtin.user:
-      name: student
-      password: "$6$IL7SHzFwRyqpGVpR$oLVkEjqfOOz.9uU2MAwzEZUcxTdC9dkrRtHIbKV6nu/PCNANyQQ8yhsiKmgmgEZI6fPdquDd5aE5EoDcUOOth."
-      groups: dialout, vboxusers
+- name: create user for pupils
+  ansible.builtin.user:
+    name: student
+    password: "$6$IL7SHzFwRyqpGVpR$oLVkEjqfOOz.9uU2MAwzEZUcxTdC9dkrRtHIbKV6nu/PCNANyQQ8yhsiKmgmgEZI6fPdquDd5aE5EoDcUOOth."
+    groups: dialout, vboxusers
 
-  - name: install clearing script for student
-    ansible.builtin.copy:
-      src: files/rc.local
-      dest: /etc/rc.local
-      owner: root
-      group: root
-      mode: 0750
+- name: install clearing script for student
+  ansible.builtin.copy:
+    src: files/rc.local
+    dest: /etc/rc.local
+    owner: root
+    group: root
+    mode: 0750
 
-  - name: turn on autologin for 1580
-    ansible.builtin.shell: py-ini-config set /etc/sddm.conf Autologin User student
+- name: turn on autologin for 1580
+  ansible.builtin.shell: py-ini-config set /etc/sddm.conf Autologin User student
 
-  - name: create user for teacher
-    ansible.builtin.user:
-      name: teacher
-      password: "$6$buTXdEN1iPfkP6hw$lJZYntugYdGIw8ehcc3dFdp4.eqN7vzY967zZ0mOeOtGvBAtMRVA2BlCcJ6budwt7KgyodwrkjoKQZFVf7L5g0"
-      groups: dialout, student, vboxusers
+- name: create user for teacher
+  ansible.builtin.user:
+    name: teacher
+    password: "$6$buTXdEN1iPfkP6hw$lJZYntugYdGIw8ehcc3dFdp4.eqN7vzY967zZ0mOeOtGvBAtMRVA2BlCcJ6budwt7KgyodwrkjoKQZFVf7L5g0"
+    groups: dialout, student, vboxusers

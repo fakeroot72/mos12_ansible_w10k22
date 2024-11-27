@@ -1,7 +1,10 @@
 ---
 
-  - name: upgrade all packages
-    ansible.builtin.dnf:
-      name: "*"
-      state: latest
-    when: "'m1580-2-418' in ansible_hostname"
+- name: upgrade all packages
+  ansible.builtin.dnf:
+    name: "*"
+    state: latest
+  loop: "{{ uptodate }}"
+  loop_control:
+    loop_var: uptodate_item
+  when: uptodate_item in ansible_hostname
