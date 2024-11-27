@@ -30,8 +30,10 @@
     ansible.builtin.copy:
       content: 'http_access deny all'
       dest: "{{ base_path }}/local/squid_default_rule.conf"
-    when: "item in ansible_hostname"
     loop: "{{ squid_white }}"
+    loop_control:
+      loop_var: squid_white_item
+    when: "squid_white_item in ansible_hostname"
 
   - name: install squid.conf
     ansible.builtin.copy:
