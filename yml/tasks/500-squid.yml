@@ -1,63 +1,63 @@
 ---
 
-  - name: install squid
-    ansible.builtin.dnf:
-      name:
-      - squidguard
+- name: install squid
+  ansible.builtin.dnf:
+    name:
+    - squidguard
 
-  - name: create squid domains files from squidguard domain
-    ansible.builtin.command: sh bin/squid_converter.sh
+- name: create squid domains files from squidguard domain
+  ansible.builtin.command: sh bin/squid_converter.sh
 
-  - name: deny access to squidguard db directory
-    ansible.builtin.file:
-      path: /usr/share/squidGuard-1.5/db/
-      mode: 0750
+- name: deny access to squidguard db directory
+  ansible.builtin.file:
+    path: /usr/share/squidGuard-1.5/db/
+    mode: 0750
 
-  - name: create local directory
-    ansible.builtin.file:
-      path: "{{ base_path }}/local/"
-      state: directory
-      owner: ansible
-      group: ansible
-      mode: 0755
+- name: create local directory
+  ansible.builtin.file:
+    path: "{{ base_path }}/local/"
+    state: directory
+    owner: ansible
+    group: ansible
+    mode: 0755
 
-  - name: squid local default rule
-    ansible.builtin.copy:
-      content: '# http_access deny all'
-      dest: "{{ base_path }}/local/squid_default_rule.conf"
+- name: squid local default rule
+  ansible.builtin.copy:
+    content: '# http_access deny all'
+    dest: "{{ base_path }}/local/squid_default_rule.conf"
 
-  - name: inet white list only
-    ansible.builtin.copy:
-      content: 'http_access deny all'
-      dest: "{{ base_path }}/local/squid_default_rule.conf"
-    loop: "{{ squid_white }}"
-    loop_control:
-      loop_var: squid_white_item
-    when: "squid_white_item in ansible_hostname"
+- name: inet white list only
+  ansible.builtin.copy:
+    content: 'http_access deny all'
+    dest: "{{ base_path }}/local/squid_default_rule.conf"
+  loop: "{{ squid_white }}"
+  loop_control:
+    loop_var: squid_white_item
+  when: "squid_white_item in ansible_hostname"
 
-  - name: install squid.conf
-    ansible.builtin.copy:
-      src: files/squid.conf
-      dest: /etc/squid/squid.conf
-      owner: root
-      group: root
-      mode: 0640
+- name: install squid.conf
+  ansible.builtin.copy:
+    src: files/squid.conf
+    dest: /etc/squid/squid.conf
+    owner: root
+    group: root
+    mode: 0640
 
-  - name: enable squid
-    ansible.builtin.systemd:
-      name: squid
-      enabled: true
+- name: enable squid
+  ansible.builtin.systemd:
+    name: squid
+    enabled: true
 
-  - name: start or restart squid
-    ansible.builtin.systemd:
-      name: squid
-      state: restarted
-      daemon_reload: true
+- name: start or restart squid
+  ansible.builtin.systemd:
+    name: squid
+    state: restarted
+    daemon_reload: true
 
-  - name: enable chromium incognito by default
-    ansible.builtin.copy:
-      src: files/10-chromium-default-incognito.sh
-      dest: /etc/profile.d/10-chromium-default-incognito.sh
-      owner: root
-      group: root
-      mode: 0755
+- name: enable chromium incognito by default
+  ansible.builtin.copy:
+    src: files/10-chromium-default-incognito.sh
+    dest: /etc/profile.d/10-chromium-default-incognito.sh
+    owner: root
+    group: root
+    mode: 0755
