@@ -25,10 +25,10 @@
     - python3-numpy
     - python3-pandas
 # c++
-    - gcc-c++ 
-    - gdb
-    - codeblocks
-    - qt-creator
+#    - gcc-c++ 
+#    - gdb
+#    - codeblocks
+#    - qt-creator
 # pascal
 #    - fpc
 #    - lazarus
