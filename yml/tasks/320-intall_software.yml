@@ -36,11 +36,11 @@
 # java
 #    - java-17-openjdk-devel
 # go
-    - golang
+#    - golang
 # rust
-    - rust
+#    - rust
 # scrarch
-    - python3-pyscrlink
+#    - python3-pyscrlink
     - scratch-desktop
 # robot
 #    - lego-mindstorms-udev-rules
