@@ -30,9 +30,9 @@
     - codeblocks
     - qt-creator
 # pascal
-    - fpc
-    - lazarus
-    - pascalabcnet
+#    - fpc
+#    - lazarus
+#    - pascalabcnet
 # java
     - java-17-openjdk-devel
 # go
