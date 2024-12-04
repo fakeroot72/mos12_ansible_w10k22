@@ -6,7 +6,7 @@
 
 - name: install software
   ansible.builtin.dnf:
-    name:
+    name: 
 # best console editor
     - vim
 # video making
@@ -43,9 +43,9 @@
     - python3-pyscrlink
     - scratch-desktop
 # robot
-    - lego-mindstorms-udev-rules
-    - trik-studio
-    - arduino-ide
+#    - lego-mindstorms-udev-rules
+#    - trik-studio
+#    - arduino-ide
 # 3d
     - blender
 # kompas on wine prepare
