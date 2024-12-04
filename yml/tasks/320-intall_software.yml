@@ -34,7 +34,7 @@
 #    - lazarus
 #    - pascalabcnet
 # java
-    - java-17-openjdk-devel
+#    - java-17-openjdk-devel
 # go
     - golang
 # rust
