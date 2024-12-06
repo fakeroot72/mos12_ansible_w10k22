@@ -16,6 +16,7 @@
     </ExtraData>
     <MachineRegistry>
       <MachineEntry uuid="{555dbb05-439b-4a2a-8dc2-015231c2d663}" src="/home/student/VirtualBox VMs/olymp-windows/olymp-windows.vbox"/>
+      <MachineEntry uuid="{b7854556-71d7-4afc-b91f-fb08b96c4c44}" src="/home/student/VirtualBox VMs/olymp-linux/olymp-linux.vbox"/>
       <MachineEntry uuid="{c1df1809-8aba-4590-8b44-c9def608005c}" src="/home/student/VirtualBox VMs/w10pabc/w10pabc.vbox"/>
       <MachineEntry uuid="{a31a8f08-24af-4446-89c8-2744ea09dd30}" src="/home/student/VirtualBox VMs/w10k22/w10k22.vbox"/>
       <MachineEntry uuid="{7b454271-afaf-4415-a23a-884e1a64a88d}" src="/home/student/VirtualBox VMs/w10tfc17/w10tfc17.vbox"/>
