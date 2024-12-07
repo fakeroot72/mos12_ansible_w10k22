@@ -20,7 +20,7 @@
   loop: "{{ olymp_windows }}"
   loop_control:
     loop_var: olymp_windows_item_f
-  when: olymp_windows_item_f in ansible_hostnam
+  when: olymp_windows_item_f in ansible_hostname
 
 
 - name: delete olymp-windows_vdi directory
