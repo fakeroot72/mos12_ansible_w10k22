@@ -1,6 +1,6 @@
 ---
 
-olymp-windows:
+olymp_windows:
   - m1580-1-205
   - m1580-1-206
   - m1580-1-207
@@ -13,5 +13,5 @@ olymp-windows:
   - m1580-2-426
   - m1580-2-427
 
-olymp-windows_r:
+olymp_windows_r:
   - nowhere

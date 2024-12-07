@@ -7,20 +7,20 @@
     owner: ansible
     group: ansible
     mode: 0755
-  loop: "{{ olymp-windows }}"
+  loop: "{{ olymp_windows }}"
   loop_control:
-    loop_var: olymp-windows_item_d
-  when: olymp-windows_item_d in ansible_hostname
+    loop_var: olymp_windows_item_d
+  when: olymp_windows_item_d in ansible_hostname
 
 - name: download olymp-windows
   ansible.builtin.get_url:
     url: http://10.171.219.67/vdi/olymp-windows.vdi.gz
     dest: "{{ base_path }}/local/olymp-windows_vdi/olymp-windows.vdi"
     checksum: md5:http://10.171.219.67/vdi/olymp-windows.vdi.md5
-  loop: "{{ olymp-windows }}"
+  loop: "{{ olymp_windows }}"
   loop_control:
-    loop_var: olymp-windows_item_f
-  when: olymp-windows_item_f in ansible_hostnam
+    loop_var: olymp_windows_item_f
+  when: olymp_windows_item_f in ansible_hostnam
 
 
 - name: delete olymp-windows_vdi directory
@@ -30,7 +30,7 @@
     owner: ansible
     group: ansible
     mode: 0755
-  loop: "{{ olymp-windows_r }}"
+  loop: "{{ olymp_windows_r }}"
   loop_control:
-    loop_var: olymp-windows_r_item
-  when: olymp-windows_r_item in ansible_hostname
+    loop_var: olymp_windows_r_item
+  when: olymp_windows_r_item in ansible_hostname
