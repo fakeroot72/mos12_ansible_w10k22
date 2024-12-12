@@ -2,3 +2,7 @@
 
 - name: run iptables script
   ansible.builtin.command: "sh bin/iptables.sh"
+  loop: "{{ iptables }}"
+  loop_control:
+    loop_var: iptables_item
+  when: iptables_item in ansible_hostname
