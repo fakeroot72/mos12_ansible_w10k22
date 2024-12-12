@@ -16,6 +16,8 @@ iptables -A OUTPUT -p udp --dport 53 -j ACCEPT # DNS
 # iptables -A OUTPUT -d 194.58.88.173 -j ACCEPT # olympiads.ru - для региона
 # iptables -A OUTPUT -d 158.160.74.243 -j ACCEPT # ejudge.msk.ru - для региона
 iptables -A OUTPUT -d 81.177.135.190 -j ACCEPT # разрешаем sdo.1580.ru
+iptables -A OUTPUT -d 81.177.135.185 -j ACCEPT # разрешаем sdo24.1580.ru
+iptables -A OUTPUT -d 81.177.136.113 -j ACCEPT # разрешаем bf726e13342a.hosting.myjino.ru 
 
 # разрешаем cloudflare
 #for i in `curl https://www.cloudflare.com/ips-v4`
