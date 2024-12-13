@@ -1,3 +1,4 @@
+- iptables counter allow
 - olymp-windows off
 - touch repo
 - inet off sdo only
