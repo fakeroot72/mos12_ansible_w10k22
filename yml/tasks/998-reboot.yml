@@ -1,7 +1,8 @@
 ---
 
 - name: reboot 
-  ansible.builtin.reboot:
+#  ansible.builtin.reboot:
+  ansible.builtin.command: /sbin/reboot
   loop: "{{ reboot }}"
   loop_control:
     loop_var: reboot_item
