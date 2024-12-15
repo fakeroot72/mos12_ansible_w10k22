@@ -1,7 +1,8 @@
 ---
 
 - name: shutdown 
-  community.general.shutdown:
+#  community.general.shutdown:
+  ansible.builtin.command: /sbin/shutdown -h now
   loop: "{{ shutdown }}"
   loop_control:
     loop_var: shutdown_item
