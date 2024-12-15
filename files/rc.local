@@ -6,7 +6,7 @@ source /opt/.lycu1580v2/bin/config.sh
 
 # backup
 BACKUP=/home/backup-student-from-`date +%Y_%m_%d-%H_%M_%S`
-# mv /home/student/ $BACKUP
+mv /home/student/ $BACKUP
 chown root:teacher $BACKUP
 chmod 0750 $BACKUP
 
