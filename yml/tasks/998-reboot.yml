@@ -1,0 +1,8 @@
+---
+
+- name: reboot 
+  ansible.builtin.reboot:
+  loop: "{{ reboot }}"
+  loop_control:
+    loop_var: reboot_item
+  when: reboot_item in ansible_hostname

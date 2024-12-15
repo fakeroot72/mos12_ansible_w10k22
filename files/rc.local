@@ -2,11 +2,11 @@
 
 exec >> /tmp/ansible-rc.local.log 2>&1
 
-base_path="/opt/.lycu1580v2/"
+source /opt/.lycu1580v2/bin/config.sh
 
 # backup
 BACKUP=/home/backup-student-from-`date +%Y_%m_%d-%H_%M_%S`
-[ ! "`hostname | grep n1580-2-210---`" ] && mv /home/student/ $BACKUP
+# mv /home/student/ $BACKUP
 chown root:teacher $BACKUP
 chmod 0750 $BACKUP
 
@@ -24,6 +24,8 @@ rm -f /home/student/.config/autostart/mos-welcome-pages.desktop
 #rm /home/student/Рабочий\ стол/KOMPAS_3D_21.sh
 
 # remove VistualBox start scripts if no ready
+[ ! -f $base_path/local/olymp-windows_vdi/olymp-windows.vdi ] && rm /home/student/Рабочий\ стол/olymp-windows_vm.sh
+[ ! -f $base_path/local/olymp-linux_vdi/olymp-linux.vdi ] && rm /home/student/Рабочий\ стол/olymp-linux_vm.sh
 [ ! -f $base_path/local/w10pabc_vdi/ready01.timestamp ] && rm /home/student/Рабочий\ стол/PascalABC_windows_vm.sh
 [ ! -f $base_path/local/w10k22_vdi/ready04.timestamp ] && rm /home/student/Рабочий\ стол/KOMPAS_3D_22_windows_vm.sh
 [ ! -f $base_path/local/w10tfc17_vdi/ready01.timestamp ] && rm /home/student/Рабочий\ стол/T-FLEX_CAD_17_windows_wm.sh

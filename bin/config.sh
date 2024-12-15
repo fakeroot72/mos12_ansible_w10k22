@@ -27,5 +27,17 @@ host_in_and_not() {
     return 1
 }
 
-#exec >> /tmp/ansible-.log 2>&1
-#source bin/config.sh
+# exec >> /tmp/ansible-.log 2>&1
+# source bin/config.sh
+# host_in_and_not "$student_clear" "$student_clear_exclude"
+# if [ "$?" = "1" ]
+# then
+#     clear_student_home
+#     wallpapers=$wallpapers"-warning"
+# fi
+
+# set_default_wallpapers() {
+#    echo 55
+#    # ставим картинку
+#    cp $1 /usr/share/design/school/backgrounds/default.png
+# }

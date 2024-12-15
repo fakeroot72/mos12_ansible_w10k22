@@ -1,0 +1,8 @@
+---
+
+- name: shutdown 
+  community.general.shutdown:
+  loop: "{{ shutdown }}"
+  loop_control:
+    loop_var: shutdown_item
+  when: shutdown_item in ansible_hostname
