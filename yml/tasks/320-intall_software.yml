@@ -1,8 +1,4 @@
 ---
-#  - name: upgrade all packages
-#    ansible.builtin.dnf:
-#      name: "*"
-#      state: latest
 
 - name: install software
   ansible.builtin.dnf:
@@ -25,32 +21,32 @@
     - python3-numpy
     - python3-pandas
 # c++
-#    - gcc-c++ 
-#    - gdb
-#    - codeblocks
-#    - qt-creator
+    - gcc-c++ 
+    - gdb
+    - codeblocks
+    - qt-creator
 # pascal
-#    - fpc
-#    - lazarus
-#    - pascalabcnet
+    - fpc
+    - lazarus
+    - pascalabcnet
 # java
-#    - java-17-openjdk-devel
+    - java-17-openjdk-devel
 # go
-#    - golang
+    - golang
 # rust
-#    - rust
+    - rust
 # scrarch
-#    - python3-pyscrlink
+    - python3-pyscrlink
     - scratch-desktop
 # robot
-#    - lego-mindstorms-udev-rules
-#    - trik-studio
-#    - arduino-ide
+    - lego-mindstorms-udev-rules
+    - trik-studio
+    - arduino-ide
 # 3d
     - blender
 # kompas on wine prepare
-#    - wine-stable
-#    - kompas3d-wine-helper
+    - wine-stable
+    - kompas3d-wine-helper
 # sqlitebrowser
     - sqlitebrowser
 # internet
