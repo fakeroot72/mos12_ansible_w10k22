@@ -72,4 +72,4 @@
     owner: root
     group: root
     mode: 0755
-  when: "m1580-2-418 in ansible_hostname"
+  when: "'m1580-2-418' in ansible_hostname"
