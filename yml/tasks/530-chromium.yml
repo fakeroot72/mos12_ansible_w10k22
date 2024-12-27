@@ -1,0 +1,22 @@
+---
+
+- name: set chromium flags
+  ansible.builtin.copy:
+    dest: /etc/profile.d/10-chromium-default-incognito.sh
+    content: |
+      #!/bin/sh
+      export CHROMIUM_USER_FLAGS="--incognito"
+    owner: root
+    group: root
+    mode: 0755
+
+- name: set chromium politics
+  ansible.builtin.copy:
+    dest: /etc/chromium/policies/managed/policies.json
+    content: |
+      {
+        "URLBlocklist": ["yandex.ru/games", "games.mail.ru", "chrome://settings"],
+      }
+    owner: root
+    group: root
+    mode: 0644
