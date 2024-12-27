@@ -10,6 +10,14 @@
     group: root
     mode: 0755
 
+- name: create chromium politics directory
+  ansible.builtin.file:
+    path: "/etc/chromium/policies/managed/"
+    state: directory
+    owner: root
+    group: root
+    mode: 0755
+
 - name: set chromium politics
   ansible.builtin.copy:
     dest: /etc/chromium/policies/managed/policies.json
