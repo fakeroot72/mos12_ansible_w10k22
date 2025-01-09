@@ -20,13 +20,8 @@
 
 - name: set chromium politics
   ansible.builtin.copy:
+    src: files/chromium-policies.json
     dest: /etc/chromium/policies/managed/policies.json
-    content: |
-      {
-        "HomepageLocation": "sdo.1580.ru",
-        "URLBlocklist": [],
-        "URLAllowlist": ["chrome://policy/"],
-      }
     owner: root
     group: root
     mode: 0644
