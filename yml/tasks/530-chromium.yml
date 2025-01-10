@@ -24,4 +24,16 @@
     dest: /etc/chromium/policies/managed/policies.json
     owner: root
     group: root
+
+- name: set chromium politics white
+  ansible.builtin.copy:
+    src: files/chromium-policies-white.json
+    dest: /etc/chromium/policies/managed/policies.json
+    owner: root
+    group: root
     mode: 0644
+    mode: 0644
+  loop: "{{ chromium_white }}"
+  loop_control:
+  loop_var: chromium_white_item
+  when: chromium_white_item in ansible_hostname
