@@ -35,5 +35,5 @@
     mode: 0644
   loop: "{{ chromium_white }}"
   loop_control:
-  loop_var: chromium_white_item
+    loop_var: chromium_white_item
   when: chromium_white_item in ansible_hostname
