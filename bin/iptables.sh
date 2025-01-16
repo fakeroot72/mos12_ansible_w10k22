@@ -23,8 +23,8 @@ iptables -A OUTPUT -p udp --dport 5353 -j ACCEPT
 iptables -A OUTPUT -p udp --dport 123 -j ACCEPT
 
 # for sdo.1580.ru
-iptables -A OUTPUT -d 81.177.135.190 -j ACCEPT # разрешаем sdo.1580.ru
-iptables -A OUTPUT -d 81.177.135.185 -j ACCEPT # разрешаем sdo24.1580.ru
+#iptables -A OUTPUT -d 81.177.135.190 -j ACCEPT # разрешаем sdo.1580.ru
+#iptables -A OUTPUT -d 81.177.135.185 -j ACCEPT # разрешаем sdo24.1580.ru
 iptables -A OUTPUT -d 81.177.136.113 -j ACCEPT # разрешаем bf726e13342a.hosting.myjino.ru 
 iptables -A OUTPUT -d 88.212.202.50 -j ACCEPT # разрешаем liveinternet.ru 
 iptables -A OUTPUT -d 88.212.201.204 -j ACCEPT # разрешаем counter.yadro.ru 
