@@ -17,7 +17,10 @@ rsync -a --chown=student:student /etc/skel/ /home/student/
 rsync -a --chown=student:student $base_path/files/home_student/ /home/student/
 
 #for olymp
-[ ! -f /home/olymp/Рабочий\ стол/olymp-windows_vm.sh ] && rsync -a --chown=olymp:olymp $base_path/files/home_olymp/ /home/olymp/
+#[ ! -f /home/olymp/Рабочий\ стол/olymp-windows_vm.sh ] && 
+rsync -a --chown=olymp:olymp $base_path/files/home_olymp/ /home/olymp/
+#chown olymp $base_path/local/olymp-windows_vdi/olymp-windows.vdi
+#chown olymp $base_path/local/olymp-linux_vdi/olymp-linux.vdi
 
 # remove mos welcome
 rm -f /home/student/.config/autostart/mos-welcome-pages.desktop
@@ -70,7 +73,7 @@ rmmod vboxnetflt
 
 hostname | grep m1580-2-427 && exit
 
-date +%F |grep 2025-01-18 && hostname | grep m1580-2-418-17 && /opt/.lycu1580v2/bin/iptables.sh
+date +%F |grep 2025-01-17 && hostname | grep m1580-2-418-17 && /opt/.lycu1580v2/bin/iptables.sh
 
 exit
 

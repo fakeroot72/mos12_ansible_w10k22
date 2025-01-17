@@ -11,7 +11,7 @@
     <MediaRegistry>
       <HardDisks>
         <HardDisk uuid="{15d147e6-495a-4394-a629-7d1a066e2761}" location="/opt/.lycu1580v2/local/olymp-windows_vdi/olymp-windows.vdi" format="vdi" type="Immutable">
-          <HardDisk uuid="{5981cad4-7aaa-4a33-837e-c24d6ed02838}" location="Snapshots/{5981cad4-7aaa-4a33-837e-c24d6ed02838}.vdi" format="vdi" autoReset="true"/>
+          <HardDisk uuid="{5981cad4-7aaa-4a33-837e-c24d6ed02838}" location="Snapshots/{5981cad4-7aaa-4a33-837e-c24d6ed02838}.vdi" format="vdi" autoReset="false"/>
         </HardDisk>
       </HardDisks>
     </MediaRegistry>

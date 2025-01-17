@@ -36,6 +36,13 @@
 - name: turn on autologin for 1580
   ansible.builtin.shell: py-ini-config set /etc/sddm.conf Autologin User student
 
+- name: turn on autologin for 1580 user olymp
+  ansible.builtin.shell: py-ini-config set /etc/sddm.conf Autologin User olymp
+  loop: "{{ user_olymp }}"
+  loop_control:
+    loop_var: user_olymp_item
+  when: user_olymp_item in ansible_hostname
+
 - name: create user for teacher
   ansible.builtin.user:
     name: teacher

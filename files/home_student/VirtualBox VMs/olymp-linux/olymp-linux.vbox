@@ -10,7 +10,7 @@
     <MediaRegistry>
       <HardDisks>
         <HardDisk uuid="{fa916c50-acd3-4ef8-9fcd-b09dc4f4759d}" location="/opt/.lycu1580v2/local/olymp-linux_vdi/olymp-linux.vdi" format="vdi" type="Immutable">
-          <HardDisk uuid="{7795592c-5866-4f4c-9248-ba3014b51daf}" location="Snapshots/{7795592c-5866-4f4c-9248-ba3014b51daf}.vdi" format="vdi" autoReset="true"/>
+          <HardDisk uuid="{7795592c-5866-4f4c-9248-ba3014b51daf}" location="Snapshots/{7795592c-5866-4f4c-9248-ba3014b51daf}.vdi" format="vdi" autoReset="false"/>
         </HardDisk>
       </HardDisks>
     </MediaRegistry>

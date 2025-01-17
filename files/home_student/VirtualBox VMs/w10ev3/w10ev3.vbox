@@ -10,7 +10,7 @@
     <MediaRegistry>
       <HardDisks>
         <HardDisk uuid="{7cd82085-3240-4368-8ba2-6e6bfaaf93f9}" location="/opt/.lycu1580v2/local/w10ev3_vdi/w10ev3.vdi" format="vdi" type="Immutable">
-          <HardDisk uuid="{34a56a78-dd99-44e4-ad9b-95ba1fd400e7}" location="Snapshots/{34a56a78-dd99-44e4-ad9b-95ba1fd400e7}.vdi" format="vdi" autoReset="true"/>
+          <HardDisk uuid="{34a56a78-dd99-44e4-ad9b-95ba1fd400e7}" location="Snapshots/{34a56a78-dd99-44e4-ad9b-95ba1fd400e7}.vdi" format="vdi" autoReset="false"/>
         </HardDisk>
       </HardDisks>
     </MediaRegistry>
