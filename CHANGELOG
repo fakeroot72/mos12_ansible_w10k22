@@ -1,3 +1,6 @@
+- fix iptables
+- add iptables off
+- test on 418-2-17
 - test on 418-2-17
 - config olymp inet
 - config olymp inet

@@ -15,11 +15,6 @@ lidAction=8
 powerButtonAction=8
 triggerLidActionWhenExternalMonitorPresent=true
 
-[AC][SuspendSession]
-idleTime=36000000
-suspendThenHibernate=false
-suspendType=8
-
 [Battery]
 icon=battery-060
 
