@@ -18,7 +18,11 @@ rsync -a --chown=student:student $base_path/files/home_student/ /home/student/
 
 #for olymp
 #[ ! -f /home/olymp/Рабочий\ стол/olymp-windows_vm.sh ] && 
-rsync -a --chown=olymp:olymp $base_path/files/home_olymp/ /home/olymp/
+
+rsync -au --chown=olymp:olymp $base_path/files/home_olymp/ /home/olymp/
+#cp $base_path/files/home_olymp/.config/powermanagementprofilesrc /home/olymp/.config/powermanagementprofilesrc
+#cp $base_path/files/home_olymp/ /home/olymp/.config/powermanagementprofilesrc
+#cp $base_path/files/home_olymp/: /home/olymp/.config/powermanagementprofilesrc
 #chown olymp $base_path/local/olymp-windows_vdi/olymp-windows.vdi
 #chown olymp $base_path/local/olymp-linux_vdi/olymp-linux.vdi
 
