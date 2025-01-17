@@ -2,7 +2,7 @@
 
 exec >> /tmp/ansible-iptables.log 2>&1
 
-source bin/config.sh
+source /opt/.lycu1580v2/bin/config.sh
 
 iptables -F
 
