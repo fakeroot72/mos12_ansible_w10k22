@@ -4,6 +4,8 @@ exec >> /tmp/ansible-iptables.log 2>&1
 
 source /opt/.lycu1580v2/bin/config.sh
 
+rm -rf /home/backup*
+
 iptables -F
 
 #iptables -P INPUT ACCEPT
