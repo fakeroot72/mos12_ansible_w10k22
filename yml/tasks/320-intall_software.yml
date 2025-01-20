@@ -1,13 +1,13 @@
 ---
 
-- name: Install needed network manager libs
-  ansible.builtin.package:
-    name:
-      - networkmanager-libnm
-      - nm-connection-editor
-      - libsemanage-python
-      - policycoreutils-python
-    state: present
+#- name: Install needed network manager libs
+#  ansible.builtin.package:
+#    name:
+#      - NetworkManager-libnm
+#      - nm-connection-editor
+#      - libsemanage-python
+#      - policycoreutils-python
+#    state: present
 
 - name: install software
   ansible.builtin.dnf:

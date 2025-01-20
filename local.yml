@@ -5,6 +5,8 @@
   user: root
   connection: local
   become: yes
+  collections:
+    - community.general
 
 #  pre_tasks:
 
