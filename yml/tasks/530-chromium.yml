@@ -36,4 +36,4 @@
   loop: "{{ chromium_white }}"
   loop_control:
     loop_var: chromium_white_item
-  when: chromium_white_item in ansible_hostname
+  when: chromium_white_item in ansible_hostname and ansible_hostname not in chromium_white_exclude
