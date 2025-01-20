@@ -18,8 +18,7 @@ rsync -a --chown=student:student $base_path/files/home_student/ /home/student/
 
 #for olymp
 #[ ! -f /home/olymp/Рабочий\ стол/olymp-windows_vm.sh ] && 
-
-rsync -au --chown=olymp:olymp $base_path/files/home_olymp/ /home/olymp/
+#rsync -au --chown=olymp:olymp $base_path/files/home_olymp/ /home/olymp/
 #cp $base_path/files/home_olymp/.config/powermanagementprofilesrc /home/olymp/.config/powermanagementprofilesrc
 #cp $base_path/files/home_olymp/ /home/olymp/.config/powermanagementprofilesrc
 #cp $base_path/files/home_olymp/: /home/olymp/.config/powermanagementprofilesrc
@@ -75,17 +74,19 @@ done
 # disable virtualbox network brige
 rmmod vboxnetflt
 
-hostname | grep m1580-2-427 && exit
 
-date +"%F%R" | grep 2025-01-2009 && exit
-date +"%F%R" | grep 2025-01-2010 && exit
-date +"%F%R" | grep 2025-01-2014 && exit
-date +"%F%R" | grep 2025-01-2015 && exit
-date +"%F%R" | grep 2025-01-2016 && exit
+# for olymp
+#hostname | grep m1580-2-427 && exit
+
+#date +"%F%R" | grep 2025-01-2009 && exit
+#date +"%F%R" | grep 2025-01-2010 && exit
+#date +"%F%R" | grep 2025-01-2014 && exit
+#date +"%F%R" | grep 2025-01-2015 && exit
+#date +"%F%R" | grep 2025-01-2016 && exit
 
 # date +%F |grep 2025-01-17 && hostname | grep m1580-2-418-17 && /opt/.lycu1580v2/bin/iptables.sh
 
-exit
+#exit
 
-date +%F |grep 2025-01-18 && hostname | grep m1580-2 && /opt/.lycu1580v2/bin/iptables.sh
-date +%F |grep 2025-01-20 && hostname | grep m1580-2 && /opt/.lycu1580v2/bin/iptables.sh
+#date +%F |grep 2025-01-18 && hostname | grep m1580-2 && /opt/.lycu1580v2/bin/iptables.sh
+#date +%F |grep 2025-01-20 && hostname | grep m1580-2 && /opt/.lycu1580v2/bin/iptables.sh
