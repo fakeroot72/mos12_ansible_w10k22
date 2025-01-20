@@ -1,0 +1,12 @@
+---
+
+- name: Create the wifi connection
+  community.general.nmcli:
+    type: wifi
+    conn_name: 15801580
+    ssid: 15801580
+    wifi_sec:
+      key-mgmt: wpa-psk
+      psk: 15801580
+    autoconnect: true
+    state: present
