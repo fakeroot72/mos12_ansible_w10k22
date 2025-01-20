@@ -3,7 +3,7 @@
 - name: Install needed network manager libs
   ansible.builtin.package:
     name:
-      - NetworkManager-libnm
+      - networkmanager-libnm
       - nm-connection-editor
       - libsemanage-python
       - policycoreutils-python
