@@ -15,14 +15,14 @@ do
 
     [ "$data" = "" ] && continue
 
-    host=`echo $data | awk -F"/" '{print $4}'`
+    host=`echo $data | awk -F"/" '{print $5}'`
     echo $host
 
-    macs=`echo $data | awk -F"/" '{print $8}'`
+    macs=`echo $data | awk -F"/" '{print $9}'`
     mac1=`echo $macs | awk -F"-" '{print $1}'`
     mac2=`echo $macs | awk -F"-" '{print $2}'`
 
-    ips=`echo $data | awk -F"/" '{print $7}'`
+    ips=`echo $data | awk -F"/" '{print $8}'`
     ip1=`echo $ips | awk -F"-" '{print $1}' | awk -F"=" '{print $1}'`
     ip2=`echo $ips | awk -F"-" '{print $2}' | awk -F"=" '{print $1}'`
 
