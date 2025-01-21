@@ -1,0 +1,11 @@
+---
+
+- name: grant access to yandex browser only for teacher
+  ansible.builtin.file:
+    path: "{{ yandex_browser_item }}"
+    group: teacher
+    mode: 0750
+  loop:
+    - /opt/yandex/browser/yandex-browser
+  loop_control:
+    loop_var: yandex_browser_item
