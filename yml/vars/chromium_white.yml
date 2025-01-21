@@ -6,7 +6,8 @@ chromium_white:
   - xc1580
   - m1580-2-418
   - m1580-2-422
-  - xn1580
+  - n1580-2-it3
+  - n1580-2-it4
 
 chromium_white_exclude:
   - m1580-1-205-0
