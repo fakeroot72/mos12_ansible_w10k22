@@ -9,7 +9,7 @@
   <Machine uuid="{4ba47d01-2790-49bb-84d7-d6ff9c52c075}" name="w10ev3" OSType="Windows10_64" snapshotFolder="Snapshots" lastStateChange="2024-09-17T15:22:30Z">
     <MediaRegistry>
       <HardDisks>
-        <HardDisk uuid="{7cd82085-3240-4368-8ba2-6e6bfaaf93f9}" location="/opt/.lycu1580v2/local/w10ev3_vdi/w10ev3.vdi" format="vdi" type="Immutable">
+        <HardDisk uuid="{7cd82085-3240-4368-8ba2-6e6bfaaf93f9}" location="/opt/.lycu1580v2/local/w10ev3_vdi/w10ev3.vdi" format="vdi" type="Normal">
           <HardDisk uuid="{34a56a78-dd99-44e4-ad9b-95ba1fd400e7}" location="Snapshots/{34a56a78-dd99-44e4-ad9b-95ba1fd400e7}.vdi" format="vdi" autoReset="false"/>
         </HardDisk>
       </HardDisks>
