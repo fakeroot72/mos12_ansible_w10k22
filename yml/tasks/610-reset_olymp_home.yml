@@ -1,0 +1,18 @@
+---
+
+# needed for correct migration from old version
+#- name: check if /opt/.lycu1580/local/ exist or not
+#  ansible.builtin.stat:
+#    path: /opt/.lycu1580/local/
+#  register: opt_dot_lycu1580_local
+
+# del olymp user home
+#- name: del olymp user home
+#  ansible.builtin.shell: mv /opt/.lycu1580/local/ /opt/.lycu1580v2/local/
+# when: opt_dot_lycu1580_local.stat.exists
+
+# del olymp user home
+- name: del olymp user home
+  ansible.builtin.file:
+    path: /home/olymp/
+    state: absent
