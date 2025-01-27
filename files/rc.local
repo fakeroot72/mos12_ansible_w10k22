@@ -23,10 +23,10 @@ rsync -a --chown=student:student /etc/skel/ /home/student/
 rsync -a --chown=student:student $base_path/files/home_student/ /home/student/
 
 # create new standart olymp home
-#rsync -a --chown=student:student /etc/skel/ /home/olymp/
+#rsync -a --chown=olymp:olymp /etc/skel/ /home/olymp/
 
 # add 1580 files for olymp
-#rsync -a --chown=student:student $base_path/files/home_olymp/ /home/olymp/
+#rsync -a --chown=olymp:olymp $base_path/files/home_olymp/ /home/olymp/
 
 #for olymp
 #[ ! -f /home/olymp/Рабочий\ стол/olymp-windows_vm.sh ] && 
@@ -67,14 +67,14 @@ rm -f /home/student/.config/autostart/mos-welcome-pages.desktop
 
 # update dot wine
 # rsync -a --delete --chown=student:student /opt/.lycu1580/files/opt_1580/student_dot_wine-kompas/ 
-rm -rf /home/student_dot_wine-kompas_current/
+# rm -rf /home/student_dot_wine-kompas_current/
 
 # remove PascalABC old script if it is absent
 #[ ! -f /opt/.lycu1580/local/student_dot_wine_klt_pabc_tbz/ready01.timestamp ] && rm /home/student/Рабочий\ стол/PascalABC_old.sh
 
 # update student_dot_wine_klt_pabc_current
 # [ -f /opt/.lycu1580/local/student_dot_wine_klt_pabc_tbz/ready01.timestamp ] && rsync -a --delete --chown=student:student /opt/.lycu1580/local/student_dot_wine_klt_pabc_tbz/student_dot_wine_klt_pabc/ 
-rm -rf /home/student_dot_wine_klt_pabc_current/
+# rm -rf /home/student_dot_wine_klt_pabc_current/
 
 # delete old (not today) backups
 DATE=`date +%Y_%m_%d`
