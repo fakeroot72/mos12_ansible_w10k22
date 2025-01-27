@@ -4,17 +4,29 @@ exec >> /tmp/ansible-rc.local.log 2>&1
 
 source /opt/.lycu1580v2/bin/config.sh
 
-# backup
+# backup student
 BACKUP=/home/backup-student-from-`date +%Y_%m_%d-%H_%M_%S`
 mv /home/student/ $BACKUP
 chown root:teacher $BACKUP
 chmod 0750 $BACKUP
 
-# create new standart home
+# backup olymp
+#BACKUP=/home/backup-olymp-from-`date +%Y_%m_%d-%H_%M_%S`
+#mv /home/olymp/ $BACKUP
+#chown root:teacher $BACKUP
+#chmod 0750 $BACKUP
+
+# create new standart student home
 rsync -a --chown=student:student /etc/skel/ /home/student/
 
-# add 1580 files
+# add 1580 files for student
 rsync -a --chown=student:student $base_path/files/home_student/ /home/student/
+
+# create new standart olymp home
+#rsync -a --chown=student:student /etc/skel/ /home/olymp/
+
+# add 1580 files for olymp
+#rsync -a --chown=student:student $base_path/files/home_olymp/ /home/olymp/
 
 #for olymp
 #[ ! -f /home/olymp/Рабочий\ стол/olymp-windows_vm.sh ] && 
