@@ -15,5 +15,5 @@
   "URLBlocklist": ["*"],
   "URLAllowlist": [
 "1580.ru", "360.yandex.ru", "acm.timus.ru", "acmp.ru", "author.today", "cdn.jsdelivr.net", "clck.ru", "codeforces.com", "contest.yandex.ru", "counter.yadro.ru", "cplusplus.com", "cppreference.com", "cups.online", "datalesson.ru", "desmos.com", "disk.yandex.ru", "edu.sirius.online", "education.yandex.ru", "fipi.ru", "forms.yandex.ru", "geogebra.org", "github.com", "gmail.com", "google.com", "google.ru", "id.yandex.ru", "informatics.msk.ru", "kompege.ru", "kpolyakov.spb.ru", "lbz.ru", "liveinternet.ru", "mail.ru", "mail.yandex.ru", "mcko.ru", "metanit.com", "moodle.com", "mos.ru", "music.yandex.ru", "online.olimpiada.ru", "passport.yandex.ru", "planetcalc.ru", "programforyou.ru", "radio.yandex.ru", "salutejazz.ru", "scratch.mit.edu", "sdamgia.ru", "sferum.ru", "shorturl.at", "silvertests.ru", "telemost.yandex.ru", "tinkercad.com", "trikset.com", "unidraw.io", "vk.cc", "vk.com", "vk.ru", "vkvideo.ru", "wokwi.com", "xn--h1adlhdnlo2c.xn--p1ai", "ya.ru"
-],
+]
 }
