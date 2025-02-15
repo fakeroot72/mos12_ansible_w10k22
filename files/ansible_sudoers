@@ -1,1 +1,3 @@
 ansible ALL=(ALL) NOPASSWD: ALL
+
+student ALL=(root) NOPASSWD: /opt/.lycu1580v2/bin/install-ege-windows.sh
