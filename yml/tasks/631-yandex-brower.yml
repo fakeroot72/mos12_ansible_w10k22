@@ -7,5 +7,6 @@
     mode: 0750
   loop:
     - /opt/yandex/browser/yandex-browser
+    - /opt/yandex/browser/yandex_browser
   loop_control:
     loop_var: yandex_browser_item
