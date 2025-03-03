@@ -3,7 +3,6 @@
 - name: turn off password viewer
   ansible.builtin.dnf:
     name:
-    - firefox
     - plasma5-kwalletmanager
     - squid
     - squidguard
