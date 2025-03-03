@@ -11,10 +11,10 @@ chown root:teacher $BACKUP
 chmod 0750 $BACKUP
 
 # backup olymp
-#BACKUP=/home/backup-olymp-from-`date +%Y_%m_%d-%H_%M_%S`
-#mv /home/olymp/ $BACKUP
-#chown root:teacher $BACKUP
-#chmod 0750 $BACKUP
+# BACKUP=/home/backup-olymp-from-`date +%Y_%m_%d-%H_%M_%S`
+# mv /home/olymp/ $BACKUP
+# chown root:teacher $BACKUP
+# chmod 0750 $BACKUP
 
 # create new standart student home
 rsync -a --chown=student:student /etc/skel/ /home/student/
@@ -23,7 +23,7 @@ rsync -a --chown=student:student /etc/skel/ /home/student/
 rsync -a --chown=student:student $base_path/files/home_student/ /home/student/
 
 # create new standart olymp home
-#rsync -a --chown=olymp:olymp /etc/skel/ /home/olymp/
+rsync -a --chown=olymp:olymp /etc/skel/ /home/olymp/
 
 # add 1580 files for olymp
 #rsync -a --chown=olymp:olymp $base_path/files/home_olymp/ /home/olymp/
