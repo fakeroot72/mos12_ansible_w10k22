@@ -3,9 +3,11 @@
 - name: grant access to yandex browser only for teacher
   ansible.builtin.file:
     path: "{{ yandex_browser_item }}"
-    group: teacher
+    group: olymp
     mode: 0750
   loop:
+    - /usr/lib64/firefox/firefox
+    - /usr/lib64/firefox/firefox-bin
     - /opt/yandex/browser/yandex-browser
     - /opt/yandex/browser/yandex_browser
   loop_control:

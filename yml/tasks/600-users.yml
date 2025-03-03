@@ -47,7 +47,7 @@
   ansible.builtin.user:
     name: teacher
     password: "$6$buTXdEN1iPfkP6hw$lJZYntugYdGIw8ehcc3dFdp4.eqN7vzY967zZ0mOeOtGvBAtMRVA2BlCcJ6budwt7KgyodwrkjoKQZFVf7L5g0"
-    groups: dialout, student, vboxusers
+    groups: dialout, olymp, student, vboxusers
 
 - name: create user for olympiads
   ansible.builtin.user:
