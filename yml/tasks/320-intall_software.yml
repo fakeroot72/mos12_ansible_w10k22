@@ -59,4 +59,5 @@
 # sqlitebrowser
     - sqlitebrowser
 # internet
+    - firefox
     - yandex-browser
