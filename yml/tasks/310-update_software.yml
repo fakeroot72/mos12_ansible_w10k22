@@ -4,7 +4,7 @@
   ansible.builtin.dnf:
     name: "*"
     state: latest
-  loop: "{{ uptodate }}"
-  loop_control:
-    loop_var: uptodate_item
-  when: uptodate_item in ansible_hostname
+  # loop: "{{ uptodate }}"
+  # loop_control:
+  #   loop_var: uptodate_item
+  # when: uptodate_item in ansible_hostname
