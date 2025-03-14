@@ -4,7 +4,7 @@
   ansible.builtin.file:
     path: "{{ browser_item }}"
     group: olymp
-    mode: 0750
+    mode: 0755
   loop:
     - /usr/lib64/firefox/firefox
     - /usr/lib64/firefox/firefox-bin
