@@ -11,7 +11,9 @@
 
 - name: install software
   ansible.builtin.dnf:
-    name: 
+    name:
+# the kostil
+    - mos-appstore-wheel-only
 # best console editor
     - vim
 # video making
