@@ -102,7 +102,7 @@ rmmod vboxnetflt
 #exit
 
 #date +%F |grep 2025-01-18 && hostname | grep m1580-2 && /opt/.lycu1580v2/bin/iptables.sh
-#date +%F |grep 2025-01-20 && hostname | grep m1580-2 && /opt/.lycu1580v2/bin/iptables.sh
+date +%F |grep 2025-04-05 && hostname | grep m1580-1 && /opt/.lycu1580v2/bin/iptables.sh
 
 # for oge
 gpasswd olymp -a examen

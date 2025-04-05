@@ -25,11 +25,11 @@ iptables -A OUTPUT -p udp --dport 5353 -j ACCEPT
 iptables -A OUTPUT -p udp --dport 123 -j ACCEPT
 
 # for sdo.1580.ru
-#iptables -A OUTPUT -d 81.177.135.190 -j ACCEPT # разрешаем sdo.1580.ru
-#iptables -A OUTPUT -d 81.177.135.185 -j ACCEPT # разрешаем sdo24.1580.ru
-#iptables -A OUTPUT -d 81.177.136.113 -j ACCEPT # разрешаем bf726e13342a.hosting.myjino.ru 
-#iptables -A OUTPUT -d 88.212.202.50 -j ACCEPT # разрешаем liveinternet.ru 
-#iptables -A OUTPUT -d 88.212.201.204 -j ACCEPT # разрешаем counter.yadro.ru 
+iptables -A OUTPUT -d 81.177.135.190 -j ACCEPT # разрешаем sdo.1580.ru
+iptables -A OUTPUT -d 81.177.135.185 -j ACCEPT # разрешаем sdo24.1580.ru
+iptables -A OUTPUT -d 81.177.136.113 -j ACCEPT # разрешаем bf726e13342a.hosting.myjino.ru 
+iptables -A OUTPUT -d 88.212.202.50 -j ACCEPT # разрешаем liveinternet.ru 
+iptables -A OUTPUT -d 88.212.201.204 -j ACCEPT # разрешаем counter.yadro.ru 
 
 # разрешаем cloudflare
 # for i in `curl https://www.cloudflare.com/ips-v4`
@@ -103,8 +103,8 @@ iptables -A OUTPUT -p udp --dport 123 -j ACCEPT
 #iptables -A OUTPUT -d 91.221.70.4 -j ACCEPT
 
 # vsoch reg 2025
-iptables -A OUTPUT -d 194.58.88.173 -j ACCEPT # olympiads.ru
-iptables -A OUTPUT -d 89.169.165.116 -j ACCEPT # msk-ejudge.ru
+#iptables -A OUTPUT -d 194.58.88.173 -j ACCEPT # olympiads.ru
+#iptables -A OUTPUT -d 89.169.165.116 -j ACCEPT # msk-ejudge.ru
 
 # block
 # iptables -A OUTPUT -p tcp --dport 80 -j DROP # блокируем исходящий http
