@@ -45,7 +45,7 @@ iptables -A OUTPUT -d 88.212.201.204 -j ACCEPT # разрешаем counter.yadr
 # for vsosh
 
 # Локальная сеть ДОНМ для доступа ко всем ресурсам, для простоты конфигурирования
-#iptables -A OUTPUT -d 10.0.0.0/8 -j ACCEPT
+iptables -A OUTPUT -d 10.0.0.0/8 -j ACCEPT
 
 # school.mos.ru Необходим для работы тестирующей системы МЭШ и "Магазина приложений" МОС
 #iptables -A OUTPUT -d 94.79.51.81 -j ACCEPT
