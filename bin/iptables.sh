@@ -42,8 +42,6 @@ iptables -A OUTPUT -d 88.212.201.204 -j ACCEPT # разрешаем counter.yadr
 #     iptables -A OUTPUT -d $i -j ACCEPT
 # done
 
-# for vsosh
-
 # Локальная сеть ДОНМ для доступа ко всем ресурсам, для простоты конфигурирования
 iptables -A OUTPUT -d 10.0.0.0/8 -j ACCEPT
 
@@ -85,19 +83,19 @@ iptables -A OUTPUT -d 10.0.0.0/8 -j ACCEPT
 #iptables -A OUTPUT -d 77.88.21.119 -j ACCEPT
 
 # repo.os.mos.ru Репозитории МОС, для установки пакетов, если возникнет необходимость доставить приложения.
-#iptables -A OUTPUT -d 37.230.149.17 -j ACCEPT
+iptables -A OUTPUT -d 37.230.149.17 -j ACCEPT
 
 # marketplace.visualstudio.com Магазин расширений для VSCode
-#iptables -A OUTPUT -d 13.107.42.18 -j ACCEPT
+iptables -A OUTPUT -d 13.107.42.18 -j ACCEPT
 
 # ms-vscode.gallerycdn.vsassets.io Необходим для скачивания расширений для VSCode
-#iptables -A OUTPUT -d 68.232.34.200 -j ACCEPT
+iptables -A OUTPUT -d 68.232.34.200 -j ACCEPT
 
 # ms-vscode.gallery.vsassets.io Необходим для скачивания расширений для VSCode
-#iptables -A OUTPUT -d 13.107.6.175 -j ACCEPT
+iptables -A OUTPUT -d 13.107.6.175 -j ACCEPT
 
 # az764295.vo.msecnd.net Необходим для скачивания расширений для VSCode
-#iptables -A OUTPUT -d 152.199.19.160 -j ACCEPT
+iptables -A OUTPUT -d 152.199.19.160 -j ACCEPT
 
 # it-help-school.ru Этот сайт, для доступа к техническим инструкциям
 #iptables -A OUTPUT -d 91.221.70.4 -j ACCEPT

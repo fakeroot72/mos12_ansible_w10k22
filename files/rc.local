@@ -87,23 +87,13 @@ done
 # disable virtualbox network brige
 rmmod vboxnetflt
 
-
-# for olymp
-#hostname | grep m1580-2-427 && exit
-
-#date +"%F%R" | grep 2025-01-2009 && exit
-#date +"%F%R" | grep 2025-01-2010 && exit
-#date +"%F%R" | grep 2025-01-2014 && exit
-#date +"%F%R" | grep 2025-01-2015 && exit
-#date +"%F%R" | grep 2025-01-2016 && exit
-
-# date +%F |grep 2025-01-17 && hostname | grep m1580-2-418-17 && /opt/.lycu1580v2/bin/iptables.sh
-
-hostname | grep p1580-2 && exit
-
-#date +%F |grep 2025-01-18 && hostname | grep m1580-2 && /opt/.lycu1580v2/bin/iptables.sh
-date +%F |grep 2025-04-11 && hostname | grep 1580-2 && /opt/.lycu1580v2/bin/iptables.sh
-date +%F |grep 2025-04-09 && hostname | grep 1580-2-418 && /opt/.lycu1580v2/bin/iptables.sh
-
 # for oge
 gpasswd olymp -a examen
+
+# not block inet on pannels
+hostname | grep p1580-2 && exit
+
+#date +"%F%R" | grep 2025-01-2016 && exit
+
+#date +%F |grep 2025-04-10 && hostname | grep 1580-2-418 && /opt/.lycu1580v2/bin/iptables.sh
+date +%F |grep 2025-04-11 && hostname | grep 1580-2-418 && /opt/.lycu1580v2/bin/iptables.sh
