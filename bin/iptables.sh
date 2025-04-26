@@ -43,7 +43,7 @@ do
     iptables -A OUTPUT -d $i -j ACCEPT
 done
 
-# for i in `curl https://www.cloudflare.com/ips-v6`
+for i in `curl https://www.cloudflare.com/ips-v6`
 do
     iptables -A OUTPUT -d $i -j ACCEPT
 done
