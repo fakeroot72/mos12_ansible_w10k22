@@ -43,10 +43,10 @@ do
     iptables -A OUTPUT -d $i -j ACCEPT
 done
 
-for i in `curl https://www.cloudflare.com/ips-v6`
-do
-    iptables -A OUTPUT -d $i -j ACCEPT
-done
+# for i in `curl https://www.cloudflare.com/ips-v6`
+# do
+#     iptables -A OUTPUT -d $i -j ACCEPT
+# done
 
 # Локальная сеть ДОНМ для доступа ко всем ресурсам, для простоты конфигурирования
 iptables -A OUTPUT -d 10.0.0.0/8 -j ACCEPT
