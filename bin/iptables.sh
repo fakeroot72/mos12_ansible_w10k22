@@ -31,18 +31,19 @@ iptables -A OUTPUT -d 81.177.136.113 -j ACCEPT # разрешаем bf726e13342a
 iptables -A OUTPUT -d 88.212.202.50 -j ACCEPT # разрешаем liveinternet.ru 
 iptables -A OUTPUT -d 88.212.201.204 -j ACCEPT # разрешаем counter.yadro.ru 
 
-# for codeforces.com
-iptables -A OUTPUT -d 95.163.252.67 -j ACCEPT
-iptables -A OUTPUT -d 172.67.68.254 -j ACCEPT
-iptables -A OUTPUT -d 104.26.6.164 -j ACCEPT
-iptables -A OUTPUT -d 104.26.7.164 -j ACCEPT
+# for codeforces.com - требует проверки
+# iptables -A OUTPUT -d 95.163.252.67 -j ACCEPT
+# iptables -A OUTPUT -d 172.67.68.254 -j ACCEPT
+# iptables -A OUTPUT -d 104.26.6.164 -j ACCEPT
+# iptables -A OUTPUT -d 104.26.7.164 -j ACCEPT
 
 # разрешаем cloudflare
-for i in `curl https://www.cloudflare.com/ips-v4`
-do
-    iptables -A OUTPUT -d $i -j ACCEPT
-done
+# for i in `curl https://www.cloudflare.com/ips-v4`
+# do
+#     iptables -A OUTPUT -d $i -j ACCEPT
+# done
 
+# ip v6 не срабатывает
 # for i in `curl https://www.cloudflare.com/ips-v6`
 # do
 #     iptables -A OUTPUT -d $i -j ACCEPT
