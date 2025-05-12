@@ -96,5 +96,5 @@ hostname | grep p1580-2 && exit
 #date +"%F%R" | grep 2025-01-2016 && exit
 
 #date +%F |grep 2025-04-29 && hostname | grep 1580-2-420 && /opt/.lycu1580v2/bin/iptables.sh
-#date +%F |grep 2025-04-29 && hostname | grep 1580-2-425 && /opt/.lycu1580v2/bin/iptables.sh
-#date +%F |grep 2025-04-29 && hostname | grep 1580-2-426 && /opt/.lycu1580v2/bin/iptables.sh
+date +%F |grep 2025-05-17 && hostname | grep 1580-1 && /opt/.lycu1580v2/bin/iptables.sh
+date +%F |grep 2025-05-17 && hostname | grep 1580-2 && /opt/.lycu1580v2/bin/iptables.sh
