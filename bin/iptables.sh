@@ -31,6 +31,10 @@ iptables -A OUTPUT -d 81.177.136.113 -j ACCEPT # разрешаем bf726e13342a
 iptables -A OUTPUT -d 88.212.202.50 -j ACCEPT # разрешаем liveinternet.ru 
 iptables -A OUTPUT -d 88.212.201.204 -j ACCEPT # разрешаем counter.yadro.ru 
 
+# for wokwi.com
+iptables -A OUTPUT -d 188.114.99.224 -j ACCEPT
+iptables -A OUTPUT -d 188.114.98.224 -j ACCEPT
+
 # for codeforces.com - требует проверки
 # iptables -A OUTPUT -d 95.163.252.67 -j ACCEPT
 # iptables -A OUTPUT -d 172.67.68.254 -j ACCEPT
