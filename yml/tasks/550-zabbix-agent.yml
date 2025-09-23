@@ -1,0 +1,7 @@
+---
+
+- name: setup server for zabbix-agent
+  ansible.builtin.copy:
+    content: 'ServerActive=zabbix.1580.ru'
+    dest: /etc/zabbix/zabbix_agentd.d/server.conf
+
