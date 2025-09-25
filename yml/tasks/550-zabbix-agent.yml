@@ -21,7 +21,7 @@
     state: absent
 
 - name: Enable and restart zabbix-agent service
-  ansible.builtin.systemd_service:
+  ansible.builtin.systemd:
     name: zabbix-agent
     enabled: true
     state: restarted
