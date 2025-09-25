@@ -1,7 +1,27 @@
 ---
 
+- name: install zabbix-agent
+  ansible.builtin.dnf:
+    name: zabbix-agent
+
 - name: setup server for zabbix-agent
   ansible.builtin.copy:
-    content: 'ServerActive=zabbix.1580.ru'
-    dest: /etc/zabbix/zabbix_agentd.d/server.conf
+    content: |
+      PidFile=/run/zabbix/zabbix_agentd.pid
+      LogFile=/var/log/zabbix/zabbix_agentd.log
+      LogFileSize=0
+      Server=
+      ServerActive=zabbix.1580.ru
+      HostnameItem=system.hostname
+    dest: /etc/zabbix_agentd.conf
 
+- name: Remove /etc/zabbix/zabbix_agentd.d/server.conf
+  ansible.builtin.file:
+    path: /etc/zabbix/zabbix_agentd.d/server.conf
+    state: absent
+
+- name: Enable and restart zabbix-agent service
+  ansible.builtin.systemd_service:
+    name: zabbix-agent
+    enabled: true
+    state: restarted

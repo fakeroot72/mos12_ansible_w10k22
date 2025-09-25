@@ -63,5 +63,3 @@
 # internet
     - firefox
     - yandex-browser
-# monitoring
-    - zabbix-agent
