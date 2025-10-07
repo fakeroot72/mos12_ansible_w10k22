@@ -11,7 +11,7 @@ reboot
 
 Все команды в отду строку:
 ```
-dnf -y update && dnf -y install ansible git && ansible-pull -d /opt/.lycu1580v2/ -U https://hub.mos.ru/1580/mos12_ansible_w10k22.git && reboot
+rm -rf /opt/.lycu1580v2/; dnf -y update && dnf -y install ansible git && ansible-pull -d /opt/.lycu1580v2/ -U https://hub.mos.ru/1580/mos12_ansible_w10k22.git && reboot
 ```
 
 Команды собраны в файле [install.sh](https://hub.mos.ru/1580/mos12_ansible_w10k22/-/blob/main/docs/install.sh)

@@ -1,5 +1,8 @@
 #!/bin/sh
 
+echo Delete previous install && \
+rm -rf /opt/.lycu1580v2/ ; \
+
 echo Updating packages && \
 dnf -y update && \
 
