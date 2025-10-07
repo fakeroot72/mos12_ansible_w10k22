@@ -11,7 +11,7 @@
       LogFile=/var/log/zabbix/zabbix_agentd.log
       LogFileSize=0
       Server=
-      ServerActive=zabbix.1580.ru
+      ServerActive=zabbix.1580.ru:32000
       HostnameItem=system.hostname
     dest: /etc/zabbix_agentd.conf
 
