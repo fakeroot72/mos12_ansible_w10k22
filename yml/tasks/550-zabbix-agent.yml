@@ -15,11 +15,6 @@
       HostnameItem=system.hostname
     dest: /etc/zabbix_agentd.conf
 
-- name: Remove /etc/zabbix/zabbix_agentd.d/server.conf
-  ansible.builtin.file:
-    path: /etc/zabbix/zabbix_agentd.d/server.conf
-    state: absent
-
 - name: Enable and restart zabbix-agent service
   ansible.builtin.systemd:
     name: zabbix-agent

@@ -3,17 +3,17 @@
 - name: set empty /etc/environment
   ansible.builtin.copy:
     content: |
-        # http_proxy="squid.1580.ru:30028"
-        # https_proxy="squid.1580.ru:30028"
-        # no_proxy="localhost,127.0.0.1,hub.mos.ru,sdo.1580.ru"
+      # http_proxy="http://squid.1580.ru:30028"
+      # https_proxy="http://squid.1580.ru:30028"
+      # no_proxy="localhost,127.0.0.1,hub.mos.ru,sdo.1580.ru"
     dest: /etc/environment
 
 - name: set empty /etc/environment
   ansible.builtin.copy:
     content: |
-        http_proxy="http://squid.1580.ru:30028"
-        https_proxy="http://squid.1580.ru:30028"
-        no_proxy="localhost,127.0.0.1,hub.mos.ru,sdo.1580.ru"
+      http_proxy="http://squid.1580.ru:30028"
+      https_proxy="http://squid.1580.ru:30028"
+      no_proxy="localhost,127.0.0.1,hub.mos.ru,sdo.1580.ru"
     dest: /etc/environment
   loop: "{{ proxy_default }}"
   loop_control:

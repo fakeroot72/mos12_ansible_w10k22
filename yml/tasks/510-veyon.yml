@@ -2,8 +2,7 @@
 
 - name: install veyon
   ansible.builtin.dnf:
-    name:
-    - veyon
+    name: veyon
 
 - name: grant access to veyon only for teacher
   ansible.builtin.file:

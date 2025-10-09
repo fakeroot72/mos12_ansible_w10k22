@@ -1,0 +1,7 @@
+---
+
+# del olymp user home
+- name: del olymp user home
+  ansible.builtin.file:
+    path: /home/olymp/
+    state: absent

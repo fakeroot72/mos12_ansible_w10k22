@@ -2,12 +2,11 @@
 
 - name: install virtualbox
   ansible.builtin.dnf:
-    name:
-    - virtualbox
+    name: virtualbox
 
 - name: turn off virtualbox network brige
   ansible.builtin.copy:
-    src: files/blacklist-vboxnetflt.conf
+    content: "blacklist vboxnetflt"
     dest: /etc/modprobe.d/blacklist-vboxnetflt.conf
     owner: root
     group: root
