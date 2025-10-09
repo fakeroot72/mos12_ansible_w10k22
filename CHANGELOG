@@ -1,3 +1,4 @@
+- some refactors
 - try default proxy in 2-418 with http
 - try default proxy in 2-418
 - add default proxy draft
