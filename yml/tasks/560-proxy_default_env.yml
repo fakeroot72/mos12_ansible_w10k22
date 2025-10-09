@@ -11,11 +11,11 @@
 - name: set empty /etc/environment
   ansible.builtin.copy:
     content: |
-        http_proxy="squid.1580.ru:30028"
-        https_proxy="squid.1580.ru:30028"
+        http_proxy="http://squid.1580.ru:30028"
+        https_proxy="http://squid.1580.ru:30028"
         no_proxy="localhost,127.0.0.1,hub.mos.ru,sdo.1580.ru"
     dest: /etc/environment
-  loop: "{{ proxy_default}}"
+  loop: "{{ proxy_default }}"
   loop_control:
     loop_var: proxy_default_item
   when: proxy_default_item in ansible_hostname and ansible_hostname not in proxy_default_exclude
