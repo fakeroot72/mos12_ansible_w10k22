@@ -63,3 +63,5 @@
 # internet
     - firefox
     - yandex-browser
+# lite version
+    - xfce
