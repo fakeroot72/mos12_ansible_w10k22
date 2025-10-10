@@ -2,7 +2,9 @@
 
 - name: deny cron use for student and teacher
   ansible.builtin.copy:
-    src: files/cron.deny
+    content: |
+      student
+      teacher
     dest: /etc/cron.deny
     owner: root
     group: root
