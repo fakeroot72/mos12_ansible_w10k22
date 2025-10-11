@@ -6,17 +6,17 @@
     password: "$6$IL7SHzFwRyqpGVpR$oLVkEjqfOOz.9uU2MAwzEZUcxTdC9dkrRtHIbKV6nu/PCNANyQQ8yhsiKmgmgEZI6fPdquDd5aE5EoDcUOOth."
     groups: dialout, vboxusers
 
-- name: create user for teacher
-  ansible.builtin.user:
-    name: teacher
-    password: "$6$buTXdEN1iPfkP6hw$lJZYntugYdGIw8ehcc3dFdp4.eqN7vzY967zZ0mOeOtGvBAtMRVA2BlCcJ6budwt7KgyodwrkjoKQZFVf7L5g0"
-    groups: dialout, olymp, student, vboxusers
-
 - name: create user for olympiads
   ansible.builtin.user:
     name: olymp
     password: "$6$rgp4zdmguxjYZ2Tj$aIRKlvJN32VgY0nfgno/uCJdjnkxyF.0oTqDlF9SC1oJnPcMOcOC7wrOorO9xjJxPOfpHRnDK6ppMMWoX4v0D0"
     groups: dialout, vboxusers
+
+- name: create user for teacher
+  ansible.builtin.user:
+    name: teacher
+    password: "$6$buTXdEN1iPfkP6hw$lJZYntugYdGIw8ehcc3dFdp4.eqN7vzY967zZ0mOeOtGvBAtMRVA2BlCcJ6budwt7KgyodwrkjoKQZFVf7L5g0"
+    groups: dialout, olymp, student, vboxusers
 
 - name: change passw for admin
   ansible.builtin.user:
