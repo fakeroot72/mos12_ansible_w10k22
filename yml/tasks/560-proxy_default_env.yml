@@ -3,9 +3,11 @@
 - name: set empty /etc/environment
   ansible.builtin.copy:
     content: |
-      # http_proxy="http://squid.1580.ru:30028"
-      # https_proxy="http://squid.1580.ru:30028"
-      # no_proxy="localhost,127.0.0.1,hub.mos.ru,sdo.1580.ru"
+      #
+      # This file is parsed by pam_env module
+      #
+      # Syntax: simple "KEY=VAL" pairs on separate lines
+      #
     dest: /etc/environment
 
 - name: set empty /etc/environment
