@@ -1,3 +1,4 @@
+- fix: link to install.sh in readme
 - fix: user create sequence
 - switch to proxy
 - some refactoring

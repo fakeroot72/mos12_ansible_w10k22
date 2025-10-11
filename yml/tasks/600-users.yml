@@ -70,7 +70,7 @@
     content: |
       [Autologin]
       #Relogin=false
-      Session=01plasma
+      #Session=01plasma
       User=student
     dest: /etc/sddm.conf.d/1580.conf
     owner: root
