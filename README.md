@@ -18,7 +18,7 @@ rm -rf /opt/.lycu1580v2/; dnf -y update && dnf -y install ansible git && ansible
 
 Для скачивания можно использовать команду:
 ```
-wget https://hub.mos.ru/1580/mos12_ansible_w10k22/-/raw/main/install.sh
+wget https://hub.mos.ru/1580/mos12_ansible_w10k22/-/raw/main/docs/install.sh?inline=false
 ```
 
 Для запуска необходимо ввести:
