@@ -34,7 +34,7 @@
         "ChromeAppsEnabled":              false,
         "DefaultSearchProviderEnabled":   true,
         "DefaultSearchProviderSearchURL": "https://ya.ru/search/?text={searchTerms}",
-        "DefaultSearchProviderName":       "Яндекс",
+        "DefaultSearchProviderName":       "Яндекс"
         ]
       }
     dest: /etc/chromium/policies/managed/policies.json
