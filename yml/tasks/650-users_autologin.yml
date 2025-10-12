@@ -9,33 +9,35 @@
 - name: recover default sddm.conf
   ansible.builtin.copy:
     content: |
-      #[Theme]
-      #Current=mos-auth
-      #[Users]
-      #MinimumUid=10000000
-      #MaximumUid=2000000000
-      [Autologin]
-      #Relogin=false
-      #Session=01plasma
-      User=student
+      [Theme]
+      Current=mos-auth
+      [Users]
+      MinimumUid=10000000
+      MaximumUid=2000000000
     dest: /etc/sddm.conf
     owner: root
     group: root
     mode: 0644
 
-- name: turn on autologin for 1580 xfce
+- name: add autologin for student
   ansible.builtin.copy:
     content: |
-      #[Theme]
-      #Current=mos-auth
-      #[Users]
-      #MinimumUid=10000000
-      #MaximumUid=2000000000
+      [Autologin]
+      #Relogin=false
+      #Session=01plasma
+      User=student
+    dest: /etc/sddm.conf.d/1580-autologin-user.conf
+    owner: root
+    group: root
+    mode: 0644
+
+- name: select xfce session
+  ansible.builtin.copy:
+    content: |
       [Autologin]
       #Relogin=false
       Session=xfce
-      User=student
-    dest: /etc/sddm.conf
+    dest:  /etc/sddm.conf.d/1580-autologin-session.conf
     owner: root
     group: root
     mode: 0644

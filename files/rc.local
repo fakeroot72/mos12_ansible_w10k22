@@ -4,8 +4,6 @@ exec >> /tmp/ansible-rc.local.log 2>&1
 
 source /opt/.lycu1580v2/bin/config.sh
 
-exit
-
 # backup student
 BACKUP=/home/backup-student-from-`date +%Y_%m_%d-%H_%M_%S`
 mv /home/student/ $BACKUP
