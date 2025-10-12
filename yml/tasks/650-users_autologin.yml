@@ -50,7 +50,7 @@
     - xm1580-1-215
     - xm1580-2-210
     - xm1580-2-418
-    - xn1580-2-418
+    - n1580-2-418
     - xm1580-2-419
     - xn1580-2-420
     - xm1580-2-422
@@ -59,8 +59,8 @@
     - xm1580-2-427
     - xn1580-2-it1
     - xc1580-2-it2
-    - xn1580-2-it3
-    - xn1580-2-it4
+    - n1580-2-it3
+    - n1580-2-it4
   loop_control:
     loop_var: xfce_item
   when: xfce_item in ansible_hostname

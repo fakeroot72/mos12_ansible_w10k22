@@ -1,3 +1,4 @@
+- fix veyon place in ansible sequence and disable change user permission
 - xfce on
 - try fix autologin
 - try fix autologin
