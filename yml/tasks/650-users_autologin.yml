@@ -17,7 +17,7 @@
     group: root
     mode: 0644
 
-  - name: turn on autologin for 1580
+- name: turn on autologin for 1580
   ansible.builtin.copy:
     content: |
       #[Autologin]
