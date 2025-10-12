@@ -17,7 +17,7 @@
       https_proxy="http://squid.1580.ru:30028"
       no_proxy="localhost,127.0.0.1,hub.mos.ru,sdo.1580.ru"
     dest: /etc/environment
-  var:
+  vars:
     proxy_default_exclude:
       - m1580-1-205-0
       - m1580-1-206-0
