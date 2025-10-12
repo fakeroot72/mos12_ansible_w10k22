@@ -17,6 +17,26 @@
       https_proxy="http://squid.1580.ru:30028"
       no_proxy="localhost,127.0.0.1,hub.mos.ru,sdo.1580.ru"
     dest: /etc/environment
+  var:
+    proxy_default_exclude:
+      - m1580-1-205-0
+      - m1580-1-206-0
+      - m1580-1-207-0
+      - m1580-1-208-0
+      - m1580-1-209-0
+      - m1580-1-215-0
+      - m1580-2-418-0
+      - m1580-2-419-0
+      - m1580-2-422-0
+      - m1580-2-425-0
+      - m1580-2-426-0
+      - m1580-2-427-0
+      - n1580-2-it1-0
+      - c1580-2-it2-0
+      - n1580-2-it3-0
+      - n1580-2-it4-0
+      - n1580-4-110-0
+      - n1580-4-209-0
   loop:
   - m1580-1-205
   - m1580-1-206
@@ -47,23 +67,3 @@
   loop_control:
     loop_var: proxy_default_item
   when: proxy_default_item in ansible_hostname and ansible_hostname not in proxy_default_exclude
-  var:
-    proxy_default_exclude:
-      - m1580-1-205-0
-      - m1580-1-206-0
-      - m1580-1-207-0
-      - m1580-1-208-0
-      - m1580-1-209-0
-      - m1580-1-215-0
-      - m1580-2-418-0
-      - m1580-2-419-0
-      - m1580-2-422-0
-      - m1580-2-425-0
-      - m1580-2-426-0
-      - m1580-2-427-0
-      - n1580-2-it1-0
-      - c1580-2-it2-0
-      - n1580-2-it3-0
-      - n1580-2-it4-0
-      - n1580-4-110-0
-      - n1580-4-209-0
