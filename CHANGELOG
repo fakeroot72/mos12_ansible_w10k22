@@ -1,3 +1,4 @@
+- xfce on n418, it4, it3
 - fix veyon place in ansible sequence and disable change user permission
 - xfce on
 - try fix autologin
