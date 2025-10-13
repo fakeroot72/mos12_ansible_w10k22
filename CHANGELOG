@@ -1,4 +1,5 @@
 - fix chromium pol
+- fix chromium pol
 - fix README install commands
 - xfce on n418, it4, it3
 - fix veyon place in ansible sequence and disable change user permission
