@@ -11,9 +11,9 @@
     content: |
       [Theme]
       Current=mos-auth
-      [Users]
-      MinimumUid=10000000
-      MaximumUid=2000000000
+      #[Users]
+      #MinimumUid=10000000
+      #MaximumUid=2000000000
     dest: /etc/sddm.conf
     owner: root
     group: root
