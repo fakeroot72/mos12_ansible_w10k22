@@ -6,11 +6,11 @@
     state: absent
 
 
-- name: recover default sddm.conf
+- name: disable default sddm.conf
   ansible.builtin.copy:
     content: |
-      [Theme]
-      Current=mos-auth
+      #[Theme]
+      #Current=mos-auth
       #[Users]
       #MinimumUid=10000000
       #MaximumUid=2000000000
