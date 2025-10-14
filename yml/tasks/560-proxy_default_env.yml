@@ -15,7 +15,7 @@
     content: |
       http_proxy="http://squid.1580.ru:30028"
       https_proxy="http://squid.1580.ru:30028"
-      no_proxy="localhost,127.0.0.1,.mcko.ru,.mos.ru,.sdo.1580.ru,.silvertests.ru,.gppc.ru"
+      no_proxy="localhost,127.0.0.1,.mcko.ru,.mos.ru,sdo.1580.ru,silvertests.ru,spt.gppc.ru"
     dest: /etc/environment
   vars:
     proxy_default_exclude:
