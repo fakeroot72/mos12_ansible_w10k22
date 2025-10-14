@@ -4,7 +4,7 @@
 #  ansible.builtin.reboot:
   ansible.builtin.command: /sbin/reboot
   loop:
-    - m1580-1-205
+    - xm1580-1-205
     - xm1580-1-206
     - m1580-1-207
     - m1580-1-208
