@@ -13,8 +13,8 @@
 - name: set empty /etc/environment
   ansible.builtin.copy:
     content: |
-      http_proxy="http://squid.1580.ru:30028"
-      https_proxy="http://squid.1580.ru:30028"
+      http_proxy="http://squid.1580.ru:80"
+      https_proxy="http://squid.1580.ru:80"
       no_proxy="localhost,127.0.0.1,sdo.1580.ru,silvertests.ru,spt.gppc.ru"
     dest: /etc/environment
   vars:
