@@ -25,15 +25,17 @@ iptables -A OUTPUT -p udp --dport 5353 -j ACCEPT
 iptables -A OUTPUT -p udp --dport 123 -j ACCEPT
 
 # for sdo.1580.ru
-iptables -A OUTPUT -d 81.177.135.190 -j ACCEPT # разрешаем sdo.1580.ru
-iptables -A OUTPUT -d 81.177.135.185 -j ACCEPT # разрешаем sdo24.1580.ru
-iptables -A OUTPUT -d 81.177.136.113 -j ACCEPT # разрешаем bf726e13342a.hosting.myjino.ru 
-iptables -A OUTPUT -d 88.212.202.50 -j ACCEPT # разрешаем liveinternet.ru 
-iptables -A OUTPUT -d 88.212.201.204 -j ACCEPT # разрешаем counter.yadro.ru 
+iptables -A OUTPUT -d 217.107.34.59 -j ACCEPT # разрешаем sdo.1580.ru
+
+# for squid.1580.ru
+iptables -A OUTPUT -d 195.161.114.165 -j ACCEPT # разрешаем squid.1580.ru
+
+# for silvertests.ru
+iptables -A OUTPUT -d 37.79.254.196 -j ACCEPT # разрешаем silvertests.ru
 
 # for wokwi.com
-iptables -A OUTPUT -d 188.114.99.224 -j ACCEPT
-iptables -A OUTPUT -d 188.114.98.224 -j ACCEPT
+#iptables -A OUTPUT -d 188.114.99.224 -j ACCEPT
+#iptables -A OUTPUT -d 188.114.98.224 -j ACCEPT
 
 # for codeforces.com - требует проверки
 # iptables -A OUTPUT -d 95.163.252.67 -j ACCEPT
@@ -97,16 +99,16 @@ iptables -A OUTPUT -d 10.0.0.0/8 -j ACCEPT
 iptables -A OUTPUT -d 37.230.149.17 -j ACCEPT
 
 # marketplace.visualstudio.com Магазин расширений для VSCode
-iptables -A OUTPUT -d 13.107.42.18 -j ACCEPT
+#iptables -A OUTPUT -d 13.107.42.18 -j ACCEPT
 
 # ms-vscode.gallerycdn.vsassets.io Необходим для скачивания расширений для VSCode
-iptables -A OUTPUT -d 68.232.34.200 -j ACCEPT
+#iptables -A OUTPUT -d 68.232.34.200 -j ACCEPT
 
 # ms-vscode.gallery.vsassets.io Необходим для скачивания расширений для VSCode
-iptables -A OUTPUT -d 13.107.6.175 -j ACCEPT
+#iptables -A OUTPUT -d 13.107.6.175 -j ACCEPT
 
 # az764295.vo.msecnd.net Необходим для скачивания расширений для VSCode
-iptables -A OUTPUT -d 152.199.19.160 -j ACCEPT
+#iptables -A OUTPUT -d 152.199.19.160 -j ACCEPT
 
 # it-help-school.ru Этот сайт, для доступа к техническим инструкциям
 #iptables -A OUTPUT -d 91.221.70.4 -j ACCEPT
@@ -116,7 +118,7 @@ iptables -A OUTPUT -d 152.199.19.160 -j ACCEPT
 #iptables -A OUTPUT -d 89.169.165.116 -j ACCEPT # msk-ejudge.ru
 
 # block
-# iptables -A OUTPUT -p tcp --dport 80 -j DROP # блокируем исходящий http
-# iptables -A OUTPUT -p tcp --dport 443 -j DROP # блокируем исходящий https
+iptables -A OUTPUT -p tcp --dport 80 -j DROP # блокируем исходящий http
+iptables -A OUTPUT -p tcp --dport 443 -j DROP # блокируем исходящий https
 
-iptables -P OUTPUT DROP # блокируем всё исходящее, кроме разрешенного
+#iptables -P OUTPUT DROP # блокируем всё исходящее, кроме разрешенного
