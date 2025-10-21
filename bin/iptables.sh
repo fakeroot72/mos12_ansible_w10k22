@@ -24,26 +24,29 @@ iptables -A OUTPUT -p udp --dport 5353 -j ACCEPT
 # Разрешаем соединения на UDP порт 123 для работы NTP
 iptables -A OUTPUT -p udp --dport 123 -j ACCEPT
 
-# for sdo.1580.ru
-iptables -A OUTPUT -d 217.107.34.59 -j ACCEPT # разрешаем sdo.1580.ru
+# Разрешаем sdo.1580.ru
+iptables -A OUTPUT -d 217.107.34.59 -j ACCEPT
 
-# for squid.1580.ru
-iptables -A OUTPUT -d 195.161.114.165 -j ACCEPT # разрешаем squid.1580.ru
+# Разрешаем squid.1580.ru
+iptables -A OUTPUT -d 195.161.114.165 -j ACCEPT
 
-# for silvertests.ru
-iptables -A OUTPUT -d 37.79.254.196 -j ACCEPT # разрешаем silvertests.ru
+# Разрешаем silvertests.ru
+iptables -A OUTPUT -d 37.79.254.196 -j ACCEPT
 
-# for wokwi.com
+# Разрешаем bf726e13342a.hosting.myjino.ru
+iptables -A OUTPUT -d 81.177.136.113 -j ACCEPT # разрешаем bf726e13342a.hosting.myjino.ru
+
+# Разрешаем wokwi.com
 #iptables -A OUTPUT -d 188.114.99.224 -j ACCEPT
 #iptables -A OUTPUT -d 188.114.98.224 -j ACCEPT
 
-# for codeforces.com - требует проверки
+# Разрешаем codeforces.com - требует проверки
 # iptables -A OUTPUT -d 95.163.252.67 -j ACCEPT
 # iptables -A OUTPUT -d 172.67.68.254 -j ACCEPT
 # iptables -A OUTPUT -d 104.26.6.164 -j ACCEPT
 # iptables -A OUTPUT -d 104.26.7.164 -j ACCEPT
 
-# разрешаем cloudflare
+# Разрешаем cloudflare
 # for i in `curl https://www.cloudflare.com/ips-v4`
 # do
 #     iptables -A OUTPUT -d $i -j ACCEPT
@@ -59,19 +62,20 @@ iptables -A OUTPUT -d 37.79.254.196 -j ACCEPT # разрешаем silvertests.r
 iptables -A OUTPUT -d 10.0.0.0/8 -j ACCEPT
 
 # school.mos.ru Необходим для работы тестирующей системы МЭШ и "Магазина приложений" МОС
-#iptables -A OUTPUT -d 94.79.51.81 -j ACCEPT
-#iptables -A OUTPUT -d 94.79.51.82 -j ACCEPT
-#iptables -A OUTPUT -d 94.79.51.83 -j ACCEPT
+iptables -A OUTPUT -d 94.79.51.81 -j ACCEPT
+iptables -A OUTPUT -d 94.79.51.82 -j ACCEPT
+iptables -A OUTPUT -d 94.79.51.83 -j ACCEPT
 
 # uchebnik.mos.ru Необходим для работы тестирующей системы МЭШ
-#iptables -A OUTPUT -d 94.79.51.81 -j ACCEPT
-#iptables -A OUTPUT -d 94.79.51.82 -j ACCEPT
-#iptables -A OUTPUT -d 94.79.51.83 -j ACCEPT
+iptables -A OUTPUT -d 94.79.51.81 -j ACCEPT
+iptables -A OUTPUT -d 94.79.51.82 -j ACCEPT
+iptables -A OUTPUT -d 94.79.51.83 -j ACCEPT
 
 # login.mos.ru Необходим для авторизации в МЭШ. Сам сайт login.mos.ru открывать не нужно, он делает редирект на mos.ru
-#iptables -A OUTPUT -d 94.79.51.169 -j ACCEPT
-#iptables -A OUTPUT -d 94.79.51.170 -j ACCEPT
-#iptables -A OUTPUT -d 94.79.51.171 -j ACCEPT
+iptables -A OUTPUT -d 94.79.51.169 -j ACCEPT
+iptables -A OUTPUT -d 94.79.51.170 -j ACCEPT
+iptables -A OUTPUT -d 94.79.51.171 -j ACCEPT
+iptables -A OUTPUT -d 94.79.51.136 -j ACCEPT
 
 # online.olimpiada.ru Резервная тестирующая система
 #iptables -A OUTPUT -d 46.235.186.69 -j ACCEPT
