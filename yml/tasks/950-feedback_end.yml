@@ -3,4 +3,4 @@
 - name: touch feedback end
   ansible.builtin.uri:
     url: "{{ base_url }}/{{ base_name }}/touch/{{ ansible_hostname }}/end/{{ base_version }}/"
-    failed_when: false
+  failed_when: false
