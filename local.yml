@@ -10,7 +10,7 @@
   vars:
     base_name: "mos12_ansible"
     base_path: "/opt/.lycu1580v2/"
-    base_url: "https://bf726e13342a.hosting.myjino.ru/"
+    base_url: "http://bf726e13342a.hosting.myjino.ru/"
     base_version: "v2"
 
 #  pre_tasks:
