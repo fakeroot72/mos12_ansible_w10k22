@@ -62,20 +62,20 @@ iptables -A OUTPUT -d 81.177.136.113 -j ACCEPT # разрешаем bf726e13342a
 iptables -A OUTPUT -d 10.0.0.0/8 -j ACCEPT
 
 # school.mos.ru Необходим для работы тестирующей системы МЭШ и "Магазина приложений" МОС
-iptables -A OUTPUT -d 94.79.51.81 -j ACCEPT
-iptables -A OUTPUT -d 94.79.51.82 -j ACCEPT
-iptables -A OUTPUT -d 94.79.51.83 -j ACCEPT
-
 # uchebnik.mos.ru Необходим для работы тестирующей системы МЭШ
 iptables -A OUTPUT -d 94.79.51.81 -j ACCEPT
 iptables -A OUTPUT -d 94.79.51.82 -j ACCEPT
 iptables -A OUTPUT -d 94.79.51.83 -j ACCEPT
+iptables -A OUTPUT -d 94.79.51.184 -j ACCEPT
+iptables -A OUTPUT -d 94.79.51.185 -j ACCEPT
+iptables -A OUTPUT -d 94.79.51.186 -j ACCEPT
 
 # login.mos.ru Необходим для авторизации в МЭШ. Сам сайт login.mos.ru открывать не нужно, он делает редирект на mos.ru
 iptables -A OUTPUT -d 94.79.51.169 -j ACCEPT
 iptables -A OUTPUT -d 94.79.51.170 -j ACCEPT
 iptables -A OUTPUT -d 94.79.51.171 -j ACCEPT
 iptables -A OUTPUT -d 94.79.51.136 -j ACCEPT
+iptables -A OUTPUT -d 94.79.51.137 -j ACCEPT
 
 # online.olimpiada.ru Резервная тестирующая система
 #iptables -A OUTPUT -d 46.235.186.69 -j ACCEPT
