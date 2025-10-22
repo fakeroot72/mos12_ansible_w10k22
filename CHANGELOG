@@ -1,3 +1,4 @@
+- update iptables for squid and no proxy host list 1580
 - update iptables for squid 1580
 - turn off check status on feedback url
 - turn off check status on feedback url

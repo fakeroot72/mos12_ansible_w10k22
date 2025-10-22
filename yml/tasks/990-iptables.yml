@@ -2,6 +2,25 @@
 
 - name: run iptables script
   ansible.builtin.command: "bin/iptables.sh"
+  var: iptables_exclude:
+    - m1580-1-205-0
+    - m1580-1-206-0
+    - m1580-1-207-0
+    - m1580-1-208-0
+    - m1580-1-209-0
+    - m1580-1-215-0
+    - m1580-2-418-0
+    - m1580-2-419-0
+    - m1580-2-422-0
+    - m1580-2-425-0
+    - m1580-2-426-0
+    - m1580-2-427-0
+    - n1580-2-it1-0
+    - c1580-2-it2-0
+    - n1580-2-it3-0
+    - n1580-2-it4-0
+    - n1580-4-110-0
+    - n1580-4-209-0
   loop:
     - xm1580-1-205
     - xm1580-1-206
@@ -10,7 +29,7 @@
     - xm1580-1-209
     - xm1580-1-215
     - xm1580-2-210
-    - xm1580-2-418
+    - m1580-2-418
     - xn1580-2-418
     - xm1580-2-419
     - xn1580-2-420
@@ -24,4 +43,4 @@
     - xn1580-2-it4
   loop_control:
     loop_var: iptables_item
-  when: iptables_item in ansible_hostname
+  when: iptables_item in ansible_hostname and ansible_hostname not in iptables_exclude
