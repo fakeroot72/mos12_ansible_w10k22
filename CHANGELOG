@@ -1,3 +1,4 @@
+- iptables in rclocal for m418
 - turn on iptables in 418 in rc.local
 - turn on iptables in 418 in rc.local
 - proxy at 418-0
