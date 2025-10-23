@@ -98,8 +98,31 @@ hostname | grep p1580 && exit
 date +"%F" | grep 2025-10-25 && rm -rf /etc/environment
 date +"%F" | grep 2025-10-25 && exit
 
-#date +%F |grep 2025-05-17 && hostname | grep 1580-1 && /opt/.lycu1580v2/bin/iptables.sh
-#date +%F |grep 2025-05-20 && hostname | grep 1580-2 && /opt/.lycu1580v2/bin/iptables.sh
+hostname | grep p1580 && exit
+hostname | grep "\-0" && exit
+
+hostname | grep 1580-1-205-0 && exit
+hostname | grep 1580-1-206-0 && exit
+hostname | grep 1580-1-207-0 && exit
+hostname | grep 1580-1-208-0 && exit
+hostname | grep 1580-1-209-0 && exit
+hostname | grep 1580-1-215-0 && exit
+hostname | grep xm1580-2-418-0 && exit
+hostname | grep 1580-2-419-0 && exit
+hostname | grep 1580-2-422-0 && exit
+hostname | grep 1580-2-425-0 && exit
+hostname | grep 1580-2-426-0 && exit
+hostname | grep 1580-2-427-0 && exit
+hostname | grep 1580-2-it1-0 && exit
+hostname | grep 1580-2-it2-0 && exit
+hostname | grep 1580-2-it3-0 && exit
+hostname | grep 1580-2-it4-0 && exit
+hostname | grep 1580-4-110-0 && exit
+hostname | grep 1580-4-209-0 && exit
+hostname | grep 1580-4-220-0 && exit
+hostname | grep 1580-4-309-0 && exit
+hostname | grep 1580-4-320-0 && exit
+hostname | grep 1580-4-403-0 && exit
 
 date +"%F" | grep 2025-10-24 && hostname | grep c1580-2 && /opt/.lycu1580v2/bin/iptables.sh
 date +"%F" | grep 2025-10-24 && hostname | grep m1580-2 && /opt/.lycu1580v2/bin/iptables.sh
