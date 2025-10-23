@@ -96,6 +96,8 @@ hostname | grep p1580 && exit
 # date +"%F%R" - with time
 
 date +"%F" | grep 2025-10-25 && rm -rf /etc/environment
+date +"%F" | grep 2025-10-25 && echo "[Autologin]" > /etc/sddm.conf.d/1580-autologin-user.conf
+date +"%F" | grep 2025-10-25 && echo "User=olymp" >> /etc/sddm.conf.d/1580-autologin-user.conf
 date +"%F" | grep 2025-10-25 && exit
 
 hostname | grep p1580 && exit
