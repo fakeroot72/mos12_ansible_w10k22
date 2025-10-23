@@ -93,6 +93,7 @@ gpasswd olymp -a examen
 # not block inet on pannels
 hostname | grep p1580 && exit
 
+# date +"%F%R" - with time
 
 date +"%F" | grep 2025-10-25 && rm -rf /etc/environment
 date +"%F" | grep 2025-10-25 && exit

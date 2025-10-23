@@ -1,3 +1,4 @@
+- prepare for 25.10
 - turn on iptables in soft mode in 1580-2
 - iptables in rclocal for m418
 - turn on iptables in 418 in rc.local
