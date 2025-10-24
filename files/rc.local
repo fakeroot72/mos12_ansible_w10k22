@@ -93,10 +93,10 @@ gpasswd olymp -a examen
 
 # date +"%F%R" - with time
 
-hostname | grep n1580-2-418-28 | date +"%F%R" | grep 2025-10-2509 && [ -f /etc/environment ] && mv /etc/environment /etc/environment.1580
-hostname | grep n1580-2-418-28 | date +"%F%R" | grep 2025-10-2509 && echo "[Autologin]" > /etc/sddm.conf.d/1580-autologin-user.conf
-hostname | grep n1580-2-418-28 | date +"%F%R" | grep 2025-10-2509 && echo "User=olymp" >> /etc/sddm.conf.d/1580-autologin-user.conf
-hostname | grep n1580-2-418-28 | date +"%F%R" | grep 2025-10-2509 && exit
+hostname | grep n1580-2-418-28 | date +"%F%R" | grep 2025-10-2409 && [ -f /etc/environment ] && mv /etc/environment /etc/environment.1580
+hostname | grep n1580-2-418-28 | date +"%F%R" | grep 2025-10-2409 && echo "[Autologin]" > /etc/sddm.conf.d/1580-autologin-user.conf
+hostname | grep n1580-2-418-28 | date +"%F%R" | grep 2025-10-2409 && echo "User=olymp" >> /etc/sddm.conf.d/1580-autologin-user.conf
+hostname | grep n1580-2-418-28 | date +"%F%R" | grep 2025-10-2409 && exit
 
 hostname | grep m1580-1 | date +"%F" | grep 2025-10-25 && [ -f /etc/environment ] && mv /etc/environment /etc/environment.1580
 hostname | grep m1580-1 | date +"%F" | grep 2025-10-25 && echo "[Autologin]" > /etc/sddm.conf.d/1580-autologin-user.conf
