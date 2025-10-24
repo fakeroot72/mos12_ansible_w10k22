@@ -34,7 +34,10 @@ iptables -A OUTPUT -d 195.161.114.165 -j ACCEPT
 iptables -A OUTPUT -d 37.79.254.196 -j ACCEPT
 
 # Разрешаем bf726e13342a.hosting.myjino.ru
-iptables -A OUTPUT -d 81.177.136.113 -j ACCEPT # разрешаем bf726e13342a.hosting.myjino.ru
+iptables -A OUTPUT -d 81.177.136.113 -j ACCEPT
+
+# Разрешаем hub.mos.ru
+iptables -A OUTPUT -d 94.79.51.150 -j ACCEPT
 
 # Разрешаем wokwi.com
 #iptables -A OUTPUT -d 188.114.99.224 -j ACCEPT
