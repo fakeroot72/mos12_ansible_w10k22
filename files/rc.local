@@ -22,6 +22,9 @@ rsync -a --chown=student:student /etc/skel/ /home/student/
 # add 1580 files for student
 rsync -a --chown=student:student $base_path/files/home_student/ /home/student/
 
+# add chromium incognito flag to student
+echo 'export CHROMIUM_USER_FLAGS="--incognito"' >> /home/student/.bashrc
+
 # create new standart olymp home
 rsync -a --chown=olymp:olymp /etc/skel/ /home/olymp/
 
