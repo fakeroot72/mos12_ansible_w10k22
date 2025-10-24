@@ -90,16 +90,22 @@ rmmod vboxnetflt
 # for oge
 gpasswd olymp -a examen
 
-# not block inet on pannels
-hostname | grep p1580 && exit
 
 # date +"%F%R" - with time
 
-date +"%F" | grep 2025-10-25 && rm -rf /etc/environment
-date +"%F" | grep 2025-10-25 && echo "[Autologin]" > /etc/sddm.conf.d/1580-autologin-user.conf
-date +"%F" | grep 2025-10-25 && echo "User=olymp" >> /etc/sddm.conf.d/1580-autologin-user.conf
-date +"%F" | grep 2025-10-25 && exit
+hostname | grep m1580-1 | date +"%F" | grep 2025-10-25 && [ -f /etc/environment ] && mv /etc/environment /etc/environment.1580
+hostname | grep m1580-1 | date +"%F" | grep 2025-10-25 && echo "[Autologin]" > /etc/sddm.conf.d/1580-autologin-user.conf
+hostname | grep m1580-1 | date +"%F" | grep 2025-10-25 && echo "User=olymp" >> /etc/sddm.conf.d/1580-autologin-user.conf
+hostname | grep m1580-1 | date +"%F" | grep 2025-10-25 && exit
 
+hostname | grep m1580-2 | date +"%F" | grep 2025-10-25 && [ -f /etc/environment ] && mv /etc/environment /etc/environment.1580
+hostname | grep m1580-2 | date +"%F" | grep 2025-10-25 && echo "[Autologin]" > /etc/sddm.conf.d/1580-autologin-user.conf
+hostname | grep m1580-2 | date +"%F" | grep 2025-10-25 && echo "User=olymp" >> /etc/sddm.conf.d/1580-autologin-user.conf
+hostname | grep m1580-2 | date +"%F" | grep 2025-10-25 && exit
+
+[ -f /etc/environment.1580 ] && mv /etc/environment.1580 /etc/environment
+
+# not block inet on pannels
 hostname | grep p1580 && exit
 hostname | grep "\-0" && exit
 
