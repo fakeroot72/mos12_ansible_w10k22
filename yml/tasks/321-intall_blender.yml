@@ -1,0 +1,8 @@
+---
+
+- name: install blender
+  ansible.builtin.dnf:
+    name:
+    - blender
+    - blender-intel-reemit
+    - task-kernel
