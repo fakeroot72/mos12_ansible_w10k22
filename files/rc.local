@@ -108,7 +108,7 @@ hostname | grep m1580-2 && date +"%F" | grep 2025-10-25 && echo "[Autologin]" > 
 hostname | grep m1580-2 && date +"%F" | grep 2025-10-25 && echo "User=olymp" >> /etc/sddm.conf.d/1580-autologin-user.conf
 hostname | grep m1580-2 && date +"%F" | grep 2025-10-25 && exit
 
-[ -f /etc/environment.1580 ] && mv /etc/environment.1580 /etc/environment
+[ -f /etc/environment.1580 ] && mv /etc/environment.1580 /etc/environment && echo "[Autologin]" > /etc/sddm.conf.d/1580-autologin-user.conf && echo "User=student" >> /etc/sddm.conf.d/1580-autologin-user.conf
 
 # not block inet on pannels
 hostname | grep p1580 && exit
