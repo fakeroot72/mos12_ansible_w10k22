@@ -101,15 +101,15 @@ hostname | grep n1580-2-418-28 && date +"%F%R" | grep 2025-10-2409 && echo "[Aut
 hostname | grep n1580-2-418-28 && date +"%F%R" | grep 2025-10-2409 && echo "User=olymp" >> /etc/sddm.conf.d/1580-autologin-user.conf
 hostname | grep n1580-2-418-28 && date +"%F%R" | grep 2025-10-2409 && exit
 
-hostname | grep m1580-1 && date +"%F" | grep 2025-10-25 && [ -f /etc/environment ] && mv /etc/environment /etc/environment.1580
-hostname | grep m1580-1 && date +"%F" | grep 2025-10-25 && echo "[Autologin]" > /etc/sddm.conf.d/1580-autologin-user.conf
-hostname | grep m1580-1 && date +"%F" | grep 2025-10-25 && echo "User=olymp" >> /etc/sddm.conf.d/1580-autologin-user.conf
-hostname | grep m1580-1 && date +"%F" | grep 2025-10-25 && exit
+hostname | grep m1580-1 && date +"%F" | grep 2025-10-30 && [ -f /etc/environment ] && mv /etc/environment /etc/environment.1580
+hostname | grep m1580-1 && date +"%F" | grep 2025-10-30 && echo "[Autologin]" > /etc/sddm.conf.d/1580-autologin-user.conf
+hostname | grep m1580-1 && date +"%F" | grep 2025-10-30 && echo "User=olymp" >> /etc/sddm.conf.d/1580-autologin-user.conf
+hostname | grep m1580-1 && date +"%F" | grep 2025-10-30 && exit
 
-hostname | grep m1580-2 && date +"%F" | grep 2025-10-25 && [ -f /etc/environment ] && mv /etc/environment /etc/environment.1580
-hostname | grep m1580-2 && date +"%F" | grep 2025-10-25 && echo "[Autologin]" > /etc/sddm.conf.d/1580-autologin-user.conf
-hostname | grep m1580-2 && date +"%F" | grep 2025-10-25 && echo "User=olymp" >> /etc/sddm.conf.d/1580-autologin-user.conf
-hostname | grep m1580-2 && date +"%F" | grep 2025-10-25 && exit
+hostname | grep m1580-2 && date +"%F" | grep 2025-10-30 && [ -f /etc/environment ] && mv /etc/environment /etc/environment.1580
+hostname | grep m1580-2 && date +"%F" | grep 2025-10-30 && echo "[Autologin]" > /etc/sddm.conf.d/1580-autologin-user.conf
+hostname | grep m1580-2 && date +"%F" | grep 2025-10-30 && echo "User=olymp" >> /etc/sddm.conf.d/1580-autologin-user.conf
+hostname | grep m1580-2 && date +"%F" | grep 2025-10-30 && exit
 
 [ -f /etc/environment.1580 ] && mv /etc/environment.1580 /etc/environment && echo "[Autologin]" > /etc/sddm.conf.d/1580-autologin-user.conf && echo "User=student" >> /etc/sddm.conf.d/1580-autologin-user.conf
 
