@@ -23,7 +23,7 @@
     - xc1580-2-it2
     - xn1580-2-it3
     - xn1580-2-it4
-    - xn1580-4-320
+    - n1580-4-320
   loop_control:
     loop_var: shutdown_item
   when: shutdown_item in ansible_hostname
