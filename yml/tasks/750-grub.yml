@@ -1,7 +1,11 @@
 ---
 # not testing
 - name: configure grub boot 0 default
-  ansible.builtin.command: "sed -i 's/GRUB_DEFAULT.*/GRUB_DEFAULT=0/' /etc/default/grub"
+  #  ansible.builtin.command: "sed -i 's/GRUB_DEFAULT.*/GRUB_DEFAULT=0/' /etc/default/grub"
+  ansible.builtin.replace:
+    path: /etc/default/grub
+    regexp: '^GRUB_DEFAULT=(.*)$'
+    replace: 'GRUB_DEFAULT=0'
 
 - name: grub mkconfig
   ansible.builtin.command: "grub2-mkconfig -o /boot/grub2/grub.cfg"
