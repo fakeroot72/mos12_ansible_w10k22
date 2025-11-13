@@ -20,6 +20,7 @@
       <MachineEntry uuid="{b7854556-71d7-4afc-b91f-fb08b96c4c44}" src="/home/student/VirtualBox VMs/olymp-linux/olymp-linux.vbox"/>
       <MachineEntry uuid="{c1df1809-8aba-4590-8b44-c9def608005c}" src="/home/student/VirtualBox VMs/w10pabc/w10pabc.vbox"/>
       <MachineEntry uuid="{a31a8f08-24af-4446-89c8-2744ea09dd30}" src="/home/student/VirtualBox VMs/w10k22/w10k22.vbox"/>
+      <MachineEntry uuid="{3000a2ce-191d-4b1e-84c5-99f6d35aa9b3}" src="/home/student/VirtualBox VMs/w10k23/w10k23.vbox"/>
       <MachineEntry uuid="{7b454271-afaf-4415-a23a-884e1a64a88d}" src="/home/student/VirtualBox VMs/w10tfc17/w10tfc17.vbox"/>
       <MachineEntry uuid="{4ba47d01-2790-49bb-84d7-d6ff9c52c075}" src="/home/student/VirtualBox VMs/w10ev3/w10ev3.vbox"/>
       <MachineEntry uuid="{00fd8dde-d306-4ac8-96f4-592e3e7271d3}" src="/home/student/VirtualBox VMs/w10vs2022/w10vs2022.vbox"/>
