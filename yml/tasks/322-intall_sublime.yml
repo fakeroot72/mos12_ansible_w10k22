@@ -16,7 +16,7 @@
 
 - name: add sublime-text repo
   ansible.builtin.yum_repository:
-    #    name: example-repo
+    name: sublime-text-stable-repo
     #description: ""
     baseurl: "https://download.sublimetext.com/rpm/stable/x86_64/sublime-text.repo"
     gpgcheck: yes
