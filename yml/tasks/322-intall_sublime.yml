@@ -23,6 +23,11 @@
     gpgkey: "https://download.sublimetext.com/sublimehq-rpm-pub.gpg"
     enabled: yes
 
+- name: update repositories for sublime-repo
+  ansible.builtin.dnf:
+    update_cache: true
+  changed_when: false
+
 - name: install sublime-text
   ansible.builtin.dnf:
     name:
