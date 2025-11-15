@@ -1,18 +1,27 @@
 ---
-- name: import a key for sublime-txt
-  ansible.builtin.rpm_key:
-    state: present
-    key: https://download.sublimetext.com/sublimehq-rpm-pub.gpg
+#- name: import a key for sublime-txt
+#  ansible.builtin.rpm_key:
+#    state: present
+#    key: https://download.sublimetext.com/sublimehq-rpm-pub.gpg
 
-- name: Install the community.general collection
-  community.general.ansible_galaxy_install:
-    type: collection
-    name: community.general
+#- name: Install the community.general collection
+#  community.general.ansible_galaxy_install:
+#    type: collection
+#    name: community.general
 
-- name: Add a new DNF repository using dnf_config_manager
-  community.general.dnf_config_manager:
-    add_repo: https://download.sublimetext.com/rpm/stable/x86_64/sublime-text.repo
-    state: present
+#- name: Add a new DNF repository using dnf_config_manager
+#  community.general.dnf_config_manager:
+#    add_repo: https://download.sublimetext.com/rpm/stable/x86_64/sublime-text.repo
+#    state: present
+
+- name: add sublime-text repo
+  ansible.builtin.yum_repository:
+    #    name: example-repo
+    #description: ""
+    baseurl: "https://download.sublimetext.com/rpm/stable/x86_64/sublime-text.repo"
+    gpgcheck: yes
+    gpgkey: "https://download.sublimetext.com/sublimehq-rpm-pub.gpg"
+    enabled: yes
 
 - name: install sublime-text
   ansible.builtin.dnf:
