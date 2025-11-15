@@ -1,0 +1,20 @@
+---
+- name: import a key for sublime-txt
+  ansible.builtin.rpm_key:
+    state: present
+    key: https://download.sublimetext.com/sublimehq-rpm-pub.gpg
+
+- name: Install the community.general collection
+  community.general.ansible_galaxy_install:
+    type: collection
+    name: community.general
+
+- name: Add a new DNF repository using dnf_config_manager
+  community.general.dnf_config_manager:
+    add_repo: https://download.sublimetext.com/rpm/stable/x86_64/sublime-text.repo
+    state: present
+
+- name: install sublime-text
+  ansible.builtin.dnf:
+    name:
+    - sublime-text
