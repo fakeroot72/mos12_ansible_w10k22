@@ -1,14 +1,14 @@
 ---
 
-- name: set chromium flags - disable
-  ansible.builtin.copy:
-    dest: /etc/profile.d/10-chromium-default-incognito.sh
-    content: |
-      #!/bin/sh
-      # export CHROMIUM_USER_FLAGS="--incognito"
-    owner: root
-    group: root
-    mode: 0755
+#- name: set chromium flags - disable
+#  ansible.builtin.copy:
+#    dest: /etc/profile.d/10-chromium-default-incognito.sh
+#    content: |
+#      #!/bin/sh
+#      # export CHROMIUM_USER_FLAGS="--incognito"
+#    owner: root
+#    group: root
+#    mode: 0755
 
 - name: create chromium politics directory
   ansible.builtin.file:
