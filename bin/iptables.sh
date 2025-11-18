@@ -24,6 +24,10 @@ iptables -A OUTPUT -p udp --dport 5353 -j ACCEPT
 # Разрешаем соединения на UDP порт 123 для работы NTP
 iptables -A OUTPUT -p udp --dport 123 -j ACCEPT
 
+# Разрешаем соединения на порт 51413 для работы transmission
+iptables -A OUTPUT -p tcp --dport 51413 -j ACCEPT
+iptables -A OUTPUT -p udp --dport 51413 -j ACCEPT
+
 # Разрешаем sdo.1580.ru
 iptables -A OUTPUT -d 217.107.34.59 -j ACCEPT
 
