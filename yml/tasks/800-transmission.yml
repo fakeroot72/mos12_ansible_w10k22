@@ -11,7 +11,7 @@
 
 - name: create transmission-daemon directory
   ansible.builtin.file:
-    path: "{{ base_path }}/local/{{ td_item }}/"
+    path: "local/{{ td_item }}/"
     state: directory
     owner: transmission
     group: ansible
@@ -184,7 +184,6 @@
   loop_control:
     loop_var: w10k23_item
   when: w10k23_item in ansible_hostname and ansible_hostname not in w10k23_exclude
-
 
 - name: enable and restart transmission-daemon service
   ansible.builtin.systemd:
