@@ -18,10 +18,10 @@
     password: "$6$buTXdEN1iPfkP6hw$lJZYntugYdGIw8ehcc3dFdp4.eqN7vzY967zZ0mOeOtGvBAtMRVA2BlCcJ6budwt7KgyodwrkjoKQZFVf7L5g0"
     groups: dialout, olymp, student, vboxusers
 
-- name: change passw for admin
-  ansible.builtin.user:
-    name: admin
-    password: "$6$4IJwkShZEnT4W5Vd$uMb30QX1f/qKDfdbbsgkC1A4FWIBukttmmnpePm0iiaNqEhfQx08ecMPzFENC5iNNikoaFllB19tzG1Kjxdd1/"
+#- name: change passw for admin
+#  ansible.builtin.user:
+#    name: admin
+#    password: "$6$4IJwkShZEnT4W5Vd$uMb30QX1f/qKDfdbbsgkC1A4FWIBukttmmnpePm0iiaNqEhfQx08ecMPzFENC5iNNikoaFllB19tzG1Kjxdd1/"
 
 - name: deny cron use for student and teacher
   ansible.builtin.copy:
