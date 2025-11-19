@@ -22,7 +22,7 @@
   loop_control:
     loop_var: td_item
 
-- name: create transmission-daemon directory
+- name: delete wrong transmission-daemon directory
   ansible.builtin.file:
     path: "{{ base_path }}/{{ td_item2 }}/"
     state: absent
@@ -162,7 +162,7 @@
     - xm1580-1-209
     - xm1580-1-215
     - xm1580-2-210
-    - xm1580-2-418
+    - m1580-2-418
     - xn1580-2-418
     - xm1580-2-419
     - xn1580-2-420
