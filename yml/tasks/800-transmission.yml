@@ -1,0 +1,183 @@
+---
+
+- name: install zabbix-agent
+  ansible.builtin.dnf:
+    name: transmission-daemon
+
+- name: stop transmission-daemon service
+  ansible.builtin.systemd:
+    name: transmission-daemon
+    state: stopped
+
+- name: create transmission-daemon directory
+  ansible.builtin.file:
+    path: "{{ base_path }}/{{ td_item }}/"
+    state: directory
+    owner: transmission
+    group: ansible
+    mode: 0775
+  loop:
+    - tdwd
+    - tdd
+  loop_control:
+    loop_var: td_item
+
+- name: setup transmission-daemon
+  ansible.builtin.copy:
+    owner: transmission
+    group: transmission 
+    mode: 0600
+    content: |
+      {
+        "alt-speed-down": 50,
+        "alt-speed-enabled": false,
+        "alt-speed-time-begin": 540,
+        "alt-speed-time-day": 127,
+        "alt-speed-time-enabled": false,
+        "alt-speed-time-end": 1020,
+        "alt-speed-up": 50,
+        "announce-ip": "",
+        "announce-ip-enabled": false,
+        "anti-brute-force-enabled": false,
+        "anti-brute-force-threshold": 100,
+        "bind-address-ipv4": "0.0.0.0",
+        "bind-address-ipv6": "::",
+        "blocklist-enabled": false,
+        "blocklist-url": "http://www.example.com/blocklist",
+        "cache-size-mb": 4,
+        "default-trackers": "",
+        "dht-enabled": true,
+        "download-dir": "/opt/.lycu1580v2/local/tdd",
+        "download-limit": 100,
+        "download-limit-enabled": 0,
+        "download-queue-enabled": true,
+        "download-queue-size": 5,
+        "encryption": 1,
+        "idle-seeding-limit": 30,
+        "idle-seeding-limit-enabled": false,
+        "incomplete-dir": "/var/lib/transmission/Downloads",
+        "incomplete-dir-enabled": false,
+        "lpd-enabled": true,
+        "max-peers-global": 200,
+        "message-level": 2,
+        "peer-congestion-algorithm": "",
+        "peer-limit-global": 200,
+        "peer-limit-per-torrent": 50,
+        "peer-port": 51413,
+        "peer-port-random-high": 65535,
+        "peer-port-random-low": 49152,
+        "peer-port-random-on-start": false,
+        "peer-socket-tos": "le",
+        "pex-enabled": true,
+        "port-forwarding-enabled": false,
+        "preallocation": 1,
+        "prefetch-enabled": true,
+        "queue-stalled-enabled": true,
+        "queue-stalled-minutes": 30,
+        "ratio-limit": 2,
+        "ratio-limit-enabled": false,
+        "rename-partial-files": false,
+        "rpc-authentication-required": true,
+        "rpc-bind-address": "0.0.0.0",
+        "rpc-enabled": false,
+        "rpc-host-whitelist": "",
+        "rpc-host-whitelist-enabled": true,
+        "rpc-password": "{74144a441d13aea4aeea01029daca83d0068970cobz6tkwH",
+        "rpc-port": 9091,
+        "rpc-socket-mode": "0750",
+        "rpc-url": "/transmission/",
+        "rpc-username": "transmission",
+        "rpc-whitelist": "127.0.0.1",
+        "rpc-whitelist-enabled": true,
+        "scrape-paused-torrents-enabled": true,
+        "script-torrent-added-enabled": false,
+        "script-torrent-added-filename": "",
+        "script-torrent-done-enabled": false,
+        "script-torrent-done-filename": "",
+        "script-torrent-done-seeding-enabled": false,
+        "script-torrent-done-seeding-filename": "",
+        "seed-queue-enabled": false,
+        "seed-queue-size": 10,
+        "speed-limit-down": 100,
+        "speed-limit-down-enabled": false,
+        "speed-limit-up": 100,
+        "speed-limit-up-enabled": false,
+        "start-added-torrents": true,
+        "tcp-enabled": true,
+        "torrent-added-verify-mode": "fast",
+        "trash-original-torrent-files": true,
+        "umask": "022",
+        "upload-limit": 100,
+        "upload-limit-enabled": 0,
+        "upload-slots-per-torrent": 8,
+        "utp-enabled": true,
+        "watch-dir": "/opt/.lycu1580v2/local/tdwd",
+        "watch-dir-enabled": true
+      }
+    dest: /etc/
+
+- name: w10k23 download
+  ansible.builtin.copy:
+    src: files/tp/w10k23-01-proxy.vdi.torrent
+    dest: local/tdwd/w10k23-01-proxy.vdi.torrent
+    owner: root
+    group: root
+    mode: 0440
+  vars:
+    w10k23_exclude:
+      - xm1580-1-205-0
+      - xm1580-1-206-0
+      - xm1580-1-207-0
+      - xm1580-1-208-0
+      - xm1580-1-209-0
+      - xm1580-1-215-0
+      - xm1580-2-418-0
+      - xn1580-2-418-0
+      - xm1580-2-419-0
+      - xm1580-2-422-0
+      - xm1580-2-425-0
+      - xm1580-2-426-0
+      - xm1580-2-427-0
+      - xn1580-2-it1-0
+      - xc1580-2-it2-0
+      - xn1580-2-it3-0
+      - xn1580-2-it4-0
+      - xn1580-4-110-0
+      - xn1580-4-209-0
+  loop:
+    - xm1580-1-205
+    - xm1580-1-206
+    - xm1580-1-207
+    - xm1580-1-208
+    - xm1580-1-209
+    - xm1580-1-215
+    - xm1580-2-210
+    - xm1580-2-418
+    - xn1580-2-418
+    - xm1580-2-419
+    - xn1580-2-420
+    - xm1580-2-422
+    - xm1580-2-425
+    - xm1580-2-426
+    - xm1580-2-427
+    - xn1580-2-it1
+    - xc1580-2-it2
+    - xn1580-2-it3
+    - xn1580-2-it4
+    - xn1580-4-110
+    - xn1580-4-209
+    - xn1580-4-220
+    - xm1580-4-309
+    - xn1580-4-309
+    - xn1580-4-320
+    - xn1580-4-403
+  loop_control:
+    loop_var: w10k23_item
+  when: w10k23_item in ansible_hostname and ansible_hostname not in w10k23_exclude
+
+
+- name: enable and restart transmission-daemon service
+  ansible.builtin.systemd:
+    name: transmission-daemon
+    enabled: true
+    state: restarted
