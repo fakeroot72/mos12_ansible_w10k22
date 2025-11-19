@@ -1,3 +1,5 @@
+- some refactoring
+- fix w10k23 vdi path
 - allow transmission
 - add w10k23-01-proxy.vdi.torrent
 - reboot 418 off
