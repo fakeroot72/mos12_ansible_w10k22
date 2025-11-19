@@ -114,7 +114,7 @@
         "watch-dir": "/opt/.lycu1580v2/local/tdwd",
         "watch-dir-enabled": true
       }
-    dest: /etc/
+    dest: /etc/transmission-daemon/settings.json
 
 - name: w10k23 download
   ansible.builtin.copy:
