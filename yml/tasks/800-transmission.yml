@@ -11,7 +11,7 @@
 
 - name: create transmission-daemon directory
   ansible.builtin.file:
-    path: "{{ base_path }}/{{ td_item }}/"
+    path: "{{ base_path }}/local/{{ td_item }}/"
     state: directory
     owner: transmission
     group: ansible
@@ -21,6 +21,16 @@
     - tdd
   loop_control:
     loop_var: td_item
+
+- name: create transmission-daemon directory
+  ansible.builtin.file:
+    path: "{{ base_path }}/{{ td_item2 }}/"
+    state: absent
+  loop:
+    - tdwd
+    - tdd
+  loop_control:
+    loop_var: td_item2
 
 - name: setup transmission-daemon
   ansible.builtin.copy:
