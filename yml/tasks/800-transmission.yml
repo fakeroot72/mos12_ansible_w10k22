@@ -115,7 +115,7 @@
         "start-added-torrents": true,
         "tcp-enabled": true,
         "torrent-added-verify-mode": "fast",
-        "trash-original-torrent-files": true,
+        "trash-original-torrent-files": false,
         "umask": "022",
         "upload-limit": 100,
         "upload-limit-enabled": 0,
@@ -130,9 +130,9 @@
   ansible.builtin.copy:
     src: files/tp/w10k23-01-proxy.vdi.torrent
     dest: local/tdwd/w10k23-01-proxy.vdi.torrent
-    owner: root
-    group: root
-    mode: 0444
+    owner: transmission
+    group: transmission
+    mode: 0644
   vars:
     w10k23_exclude:
       - xm1580-1-205-0
