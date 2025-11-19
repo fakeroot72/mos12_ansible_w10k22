@@ -185,6 +185,11 @@
     loop_var: w10k23_item
   when: w10k23_item in ansible_hostname and ansible_hostname not in w10k23_exclude
 
+- name: change owner of base_path to ansible:ansible
+  ansible.builtin.command: "chown -R transmission:transmission local/tdd/"
+  args:
+    warn: false
+
 - name: enable and restart transmission-daemon service
   ansible.builtin.systemd:
     name: transmission-daemon
