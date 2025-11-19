@@ -132,7 +132,7 @@
     dest: local/tdwd/w10k23-01-proxy.vdi.torrent
     owner: root
     group: root
-    mode: 0440
+    mode: 0444
   vars:
     w10k23_exclude:
       - xm1580-1-205-0
