@@ -115,7 +115,7 @@
         "start-added-torrents": true,
         "tcp-enabled": true,
         "torrent-added-verify-mode": "fast",
-        "trash-original-torrent-files": false,
+        "trash-original-torrent-files": true,
         "umask": "022",
         "upload-limit": 100,
         "upload-limit-enabled": 0,
