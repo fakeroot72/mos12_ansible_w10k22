@@ -1,3 +1,4 @@
+- iptables off
 - fix w10k23 path and name
 - set permission
 - change path
