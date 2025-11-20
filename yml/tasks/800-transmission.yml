@@ -26,11 +26,11 @@
   ansible.builtin.file:
     path: "{{ td_item2 }}"
     state: absent
-  loop:
-    - "/var/lib/transmission/.config/transmission-daemon/resume/*"
-    - "/var/lib/transmission/.config/transmission-daemon/torrents/*"
-  loop_control:
-    loop_var: td_item2
+  with_fileglob:
+    - /var/lib/transmission/.config/transmission-daemon/resume/*
+    - /var/lib/transmission/.config/transmission-daemon/torrents/*
+#  loop_control:
+#    loop_var: td_item2
 
 - name: setup transmission-daemon
   ansible.builtin.copy:
