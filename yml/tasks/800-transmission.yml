@@ -9,28 +9,35 @@
     name: transmission-daemon
     state: stopped
 
-- name: create transmission-daemon directory
-  ansible.builtin.file:
-    path: "local/{{ td_item }}/"
-    state: directory
-    owner: transmission
-    group: ansible
-    mode: 0775
-  loop:
-    - tdwd
-    - tdd
-  loop_control:
-    loop_var: td_item
-
-- name: delete transmission-daemon files
+- name: delete transmission-daemon files and dirs
   ansible.builtin.file:
     path: "{{ td_item2 }}"
     state: absent
-  with_fileglob:
-    - /var/lib/transmission/.config/transmission-daemon/resume/*
-    - /var/lib/transmission/.config/transmission-daemon/torrents/*
-#  loop_control:
-#    loop_var: td_item2
+  loop:
+    - /var/lib/transmission/.config/transmission-daemon/resume/
+    - /var/lib/transmission/.config/transmission-daemon/torrents/
+  loop_control:
+    loop_var: td_item2
+
+- name: create transmission-daemon directory
+  ansible.builtin.file:
+    path: "{{ td_item }}"
+    state: directory
+    owner: transmission
+    group: transmission
+    mode: 0775
+  loop:
+    - /var/lib/transmission/.config/transmission-daemon/resume/
+    - /var/lib/transmission/.config/transmission-daemon/torrents/
+    - local/tdwd/
+    - local/tdd/
+  loop_control:
+    loop_var: td_item
+
+- name: change owner of base_path to ansible:ansible
+  ansible.builtin.command: "chown -R transmission:transmission local/tdd/"
+  args:
+    warn: false
 
 - name: setup transmission-daemon
   ansible.builtin.copy:
@@ -184,11 +191,6 @@
   loop_control:
     loop_var: w10k23_item
   when: w10k23_item in ansible_hostname and ansible_hostname not in w10k23_exclude
-
-- name: change owner of base_path to ansible:ansible
-  ansible.builtin.command: "chown -R transmission:transmission local/tdd/"
-  args:
-    warn: false
 
 - name: enable and restart transmission-daemon service
   ansible.builtin.systemd:
