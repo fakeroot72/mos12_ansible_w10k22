@@ -117,7 +117,7 @@
         "speed-limit-up-enabled": false,
         "start-added-torrents": true,
         "tcp-enabled": true,
-        "torrent-added-verify-mode": "fast",
+        "torrent-added-verify-mode": "full",
         "trash-original-torrent-files": true,
         "umask": "022",
         "upload-limit": 100,
