@@ -29,6 +29,7 @@
   loop:
     - tdwd
     - tdd
+    - local/tdd/w10k23-01-proxy.vdi
     - local/tdwd/w10k23-01-proxy.vdi.torrent.added
     - /var/lib/transmission/.config/transmission-daemon/resume/*
     - /var/lib/transmission/.config/transmission-daemon/torrents/*
@@ -165,7 +166,7 @@
     - xm1580-1-209
     - xm1580-1-215
     - xm1580-2-210
-    - m1580-2-418
+    - xm1580-2-418
     - xn1580-2-418
     - xm1580-2-419
     - xn1580-2-420
