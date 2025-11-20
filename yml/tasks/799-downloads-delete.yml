@@ -1,0 +1,57 @@
+---
+
+- name: remove processing.tar
+  ansible.builtin.file:
+    path: "{{ base_path }}/local/processing_tar/"
+    state: absent
+  loop: "{{ processing_r }}"
+  loop_control:
+    loop_var: processing_item_r
+  when: processing_item_r in ansible_hostname
+
+- name: remove idea-IC.tar
+  ansible.builtin.file:
+    path: "{{ base_path }}/local/idea_ic_tar/"
+    state: absent
+  loop: "{{ idea_ic_r }}"
+  loop_control:
+    loop_var: idea_ic_item_r
+  when: idea_ic_item_r in ansible_hostname
+
+- name: remove w10pabc.vdi
+  ansible.builtin.file:
+    path: "{{ base_path }}/local/w10pabc_vdi/"
+    state: absent
+  loop: "{{ w10pabc_r }}"
+  loop_control:
+    loop_var: w10pabc_item_r
+  when: w10pabc_item_r in ansible_hostname
+
+- name: remove w10k22.vdi
+  ansible.builtin.file:
+    path: "{{ base_path }}/local/w10k22_vdi/"
+    state: absent
+  loop: "{{ w10k22_r }}"
+  loop_control:
+    loop_var: w10k22_r_item
+  when: "w10k22_r_item in ansible_hostname"
+
+- name: remove w10tfc17.vdi
+  ansible.builtin.file:
+    path: "{{ base_path }}/local/w10tfc17_vdi/"
+    state: absent
+
+- name: remove w10ev3.vdi
+  ansible.builtin.file:
+    path: "{{ base_path }}/local/w10ev3_vdi/"
+    state: absent
+
+- name: remove w10vs2022.vdi
+  ansible.builtin.file:
+    path: "{{ base_path }}/local/w10vs2022_vdi/"
+    state: absent
+
+- name: delete olymp-windows_vdi directory
+  ansible.builtin.file:
+    path: "{{ base_path }}/local/olymp-windows_vdi/"
+    state: absent
