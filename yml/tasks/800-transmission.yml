@@ -22,7 +22,7 @@
   loop_control:
     loop_var: td_item
 
-- name: delete wrong transmission-daemon directory
+- name: delete transmission-daemon files
   ansible.builtin.file:
     path: "{{ td_item2 }}"
     state: absent
@@ -30,6 +30,8 @@
     - tdwd
     - tdd
     - local/tdwd/w10k23-01-proxy.vdi.torrent.added
+    - /var/lib/transmission/.config/transmission-daemon/resume/*
+    - /var/lib/transmission/.config/transmission-daemon/torrents/*
   loop_control:
     loop_var: td_item2
 
