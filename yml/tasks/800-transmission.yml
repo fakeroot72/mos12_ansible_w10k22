@@ -27,12 +27,8 @@
     path: "{{ td_item2 }}"
     state: absent
   loop:
-    - tdwd
-    - tdd
-    - local/tdd/w10k23-01-proxy.vdi
-    - local/tdwd/w10k23-01-proxy.vdi.torrent.added
-    - /var/lib/transmission/.config/transmission-daemon/resume/*
-    - /var/lib/transmission/.config/transmission-daemon/torrents/*
+    - "/var/lib/transmission/.config/transmission-daemon/resume/*"
+    - "/var/lib/transmission/.config/transmission-daemon/torrents/*"
   loop_control:
     loop_var: td_item2
 
