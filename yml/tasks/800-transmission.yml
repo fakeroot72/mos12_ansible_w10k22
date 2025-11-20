@@ -24,11 +24,12 @@
 
 - name: delete wrong transmission-daemon directory
   ansible.builtin.file:
-    path: "{{ base_path }}/{{ td_item2 }}/"
+    path: "{{ td_item2 }}"
     state: absent
   loop:
     - tdwd
     - tdd
+    - local/tdwd/w10k23-01-proxy.vdi.torrent.added
   loop_control:
     loop_var: td_item2
 
