@@ -251,6 +251,65 @@
     loop_var: w10pabc_item
   when: w10pabc_item in ansible_hostname and ansible_hostname not in w10pabc_exclude
 
+- name: w10lego download
+  ansible.builtin.copy:
+    src: files/tp/w10lego-02-proxy.vdi.torrent
+    dest: local/tdwd/w10lego-02-proxy.vdi.torrent
+    owner: transmission
+    group: transmission
+    mode: 0644
+  vars:
+    w10pabc_exclude:
+      - xm1580-1-205-0
+      - xm1580-1-206-0
+      - xm1580-1-207-0
+      - xm1580-1-208-0
+      - xm1580-1-209-0
+      - xm1580-1-215-0
+      - xm1580-2-418-0
+      - xn1580-2-418-0
+      - xm1580-2-419-0
+      - xm1580-2-422-0
+      - xm1580-2-425-0
+      - xm1580-2-426-0
+      - xm1580-2-427-0
+      - xn1580-2-it1-0
+      - xc1580-2-it2-0
+      - xn1580-2-it3-0
+      - xn1580-2-it4-0
+      - xn1580-4-110-0
+      - xn1580-4-209-0
+  loop:
+    - xm1580-1-205
+    - xm1580-1-206
+    - xm1580-1-207
+    - xm1580-1-208
+    - xm1580-1-209
+    - xm1580-1-215
+    - xm1580-2-210
+    - xm1580-2-418
+    - xn1580-2-418
+    - xm1580-2-419
+    - xn1580-2-420
+    - m1580-2-422
+    - xm1580-2-425
+    - xm1580-2-426
+    - xm1580-2-427
+    - xn1580-2-it1
+    - xc1580-2-it2
+    - xn1580-2-it3
+    - xn1580-2-it4
+    - xn1580-4-110
+    - xn1580-4-209
+    - xn1580-4-220
+    - xm1580-4-309
+    - xn1580-4-309
+    - xn1580-4-320
+    - xn1580-4-403
+  loop_control:
+    loop_var: w10lego_item
+  when: w10lego_item in ansible_hostname and ansible_hostname not in w10lego_exclude
+
 - name: enable and restart transmission-daemon service
   ansible.builtin.systemd:
     name: transmission-daemon
