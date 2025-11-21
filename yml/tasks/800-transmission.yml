@@ -133,6 +133,24 @@
       }
     dest: /etc/transmission-daemon/settings.json
 
+- name: w10k23 remove
+  ansible.builtin.file:
+    path: local/tdd/w10k23-01-proxy.vdi
+    state: absent
+  vars:
+    w10k23_exclude_r:
+      - nowhere
+  loop:
+    - xm1580-1-205
+    - xm1580-1-206
+    - xm1580-1-207
+    - xm1580-1-208
+    - xm1580-1-209
+    - m1580-2-418
+  loop_control:
+    loop_var: w10k23_item_r
+  when: w10k23_item_r in ansible_hostname and ansible_hostname not in w10k23_exclude_r
+
 - name: w10k23 download
   ansible.builtin.copy:
     src: files/tp/w10k23-01-proxy.vdi.torrent
@@ -142,55 +160,35 @@
     mode: 0644
   vars:
     w10k23_exclude:
-      - xm1580-1-205-0
-      - xm1580-1-206-0
-      - xm1580-1-207-0
-      - xm1580-1-208-0
-      - xm1580-1-209-0
-      - xm1580-1-215-0
-      - xm1580-2-418-0
-      - xn1580-2-418-0
-      - xm1580-2-419-0
-      - xm1580-2-422-0
-      - xm1580-2-425-0
-      - xm1580-2-426-0
-      - xm1580-2-427-0
-      - xn1580-2-it1-0
-      - xc1580-2-it2-0
-      - xn1580-2-it3-0
-      - xn1580-2-it4-0
-      - xn1580-4-110-0
-      - xn1580-4-209-0
+      - nowhere
   loop:
     - m1580-1-205
     - xm1580-1-206
     - xm1580-1-207
     - xm1580-1-208
     - xm1580-1-209
-    - xm1580-1-215
-    - xm1580-2-210
-    - m1580-2-418
-    - xn1580-2-418
+  loop_control:
+    loop_var: w10k23_item
+  when: w10k23_item in ansible_hostname and ansible_hostname not in w10k23_exclude
+
+- name: w10pabc remove
+  ansible.builtin.file:
+    dest: local/tdd/w10pabc-02-proxy.vdi
+    state: absent
+  vars:
+    w10pabc_exclude_r:
+      - nowhere
+  loop:
+    - m1580-1-205
+    - xm1580-2-418
     - xm1580-2-419
-    - xn1580-2-420
     - xm1580-2-422
     - xm1580-2-425
     - xm1580-2-426
     - xm1580-2-427
-    - xn1580-2-it1
-    - xc1580-2-it2
-    - xn1580-2-it3
-    - xn1580-2-it4
-    - xn1580-4-110
-    - xn1580-4-209
-    - xn1580-4-220
-    - xm1580-4-309
-    - xn1580-4-309
-    - xn1580-4-320
-    - xn1580-4-403
   loop_control:
-    loop_var: w10k23_item
-  when: w10k23_item in ansible_hostname and ansible_hostname not in w10k23_exclude
+    loop_var: w10pabc_item_r
+  when: w10pabc_item_r in ansible_hostname and ansible_hostname not in w10pabc_exclude_r
 
 - name: w10pabc download
   ansible.builtin.copy:
@@ -201,55 +199,36 @@
     mode: 0644
   vars:
     w10pabc_exclude:
-      - xm1580-1-205-0
-      - xm1580-1-206-0
-      - xm1580-1-207-0
-      - xm1580-1-208-0
-      - xm1580-1-209-0
-      - xm1580-1-215-0
-      - xm1580-2-418-0
-      - xn1580-2-418-0
-      - xm1580-2-419-0
-      - xm1580-2-422-0
-      - xm1580-2-425-0
-      - xm1580-2-426-0
-      - xm1580-2-427-0
-      - xn1580-2-it1-0
-      - xc1580-2-it2-0
-      - xn1580-2-it3-0
-      - xn1580-2-it4-0
-      - xn1580-4-110-0
-      - xn1580-4-209-0
+      - nowhere
   loop:
-    - m1580-1-205
-    - xm1580-1-206
-    - xm1580-1-207
-    - xm1580-1-208
-    - xm1580-1-209
-    - xm1580-1-215
+    - m1580-2-418
+    - m1580-2-419
+    - m1580-2-422
+    - m1580-2-425
+    - m1580-2-426
+    - m1580-2-427
+  loop_control:
+    loop_var: w10pabc_item
+  when: w10pabc_item in ansible_hostname and ansible_hostname not in w10pabc_exclude
+
+- name: w10lego remove
+  ansible.builtin.file:
+    dest: local/tdd/w10lego-02-proxy.vdi
+    state: absent
+  vars:
+    w10pabc_exclude_r:
+      - nowhere
+  loop:
     - xm1580-2-210
     - xm1580-2-418
-    - xn1580-2-418
-    - m1580-2-419
-    - xn1580-2-420
+    - xm1580-2-419
     - xm1580-2-422
     - xm1580-2-425
     - xm1580-2-426
     - xm1580-2-427
-    - xn1580-2-it1
-    - xc1580-2-it2
-    - xn1580-2-it3
-    - xn1580-2-it4
-    - xn1580-4-110
-    - xn1580-4-209
-    - xn1580-4-220
-    - xm1580-4-309
-    - xn1580-4-309
-    - xn1580-4-320
-    - xn1580-4-403
   loop_control:
-    loop_var: w10pabc_item
-  when: w10pabc_item in ansible_hostname and ansible_hostname not in w10pabc_exclude
+    loop_var: w10lego_item_r
+  when: w10lego_item_r in ansible_hostname and ansible_hostname not in w10lego_exclude_r
 
 - name: w10lego download
   ansible.builtin.copy:
@@ -260,52 +239,15 @@
     mode: 0644
   vars:
     w10pabc_exclude:
-      - xm1580-1-205-0
-      - xm1580-1-206-0
-      - xm1580-1-207-0
-      - xm1580-1-208-0
-      - xm1580-1-209-0
-      - xm1580-1-215-0
-      - xm1580-2-418-0
-      - xn1580-2-418-0
-      - xm1580-2-419-0
-      - xm1580-2-422-0
-      - xm1580-2-425-0
-      - xm1580-2-426-0
-      - xm1580-2-427-0
-      - xn1580-2-it1-0
-      - xc1580-2-it2-0
-      - xn1580-2-it3-0
-      - xn1580-2-it4-0
-      - xn1580-4-110-0
-      - xn1580-4-209-0
+      - nowhere
   loop:
-    - xm1580-1-205
-    - xm1580-1-206
-    - xm1580-1-207
-    - xm1580-1-208
-    - xm1580-1-209
-    - xm1580-1-215
     - xm1580-2-210
     - xm1580-2-418
-    - xn1580-2-418
     - xm1580-2-419
-    - xn1580-2-420
     - m1580-2-422
     - xm1580-2-425
     - xm1580-2-426
     - xm1580-2-427
-    - xn1580-2-it1
-    - xc1580-2-it2
-    - xn1580-2-it3
-    - xn1580-2-it4
-    - xn1580-4-110
-    - xn1580-4-209
-    - xn1580-4-220
-    - xm1580-4-309
-    - xn1580-4-309
-    - xn1580-4-320
-    - xn1580-4-403
   loop_control:
     loop_var: w10lego_item
   when: w10lego_item in ansible_hostname and ansible_hostname not in w10lego_exclude

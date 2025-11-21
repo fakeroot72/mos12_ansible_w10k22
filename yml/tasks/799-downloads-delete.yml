@@ -22,10 +22,6 @@
   ansible.builtin.file:
     path: "{{ base_path }}/local/w10pabc_vdi/"
     state: absent
-  loop: "{{ w10pabc_r }}"
-  loop_control:
-    loop_var: w10pabc_item_r
-  when: w10pabc_item_r in ansible_hostname
 
 - name: remove w10k22.vdi
   ansible.builtin.file:
