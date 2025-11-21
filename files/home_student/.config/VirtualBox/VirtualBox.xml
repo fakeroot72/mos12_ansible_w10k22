@@ -17,7 +17,8 @@
     <MachineRegistry>
       <MachineEntry uuid="{3000a2ce-191d-4b1e-84c5-99f6d35aa9b3}" src="/home/student/VirtualBox VMs/w10k23/w10k23.vbox"/>
       <MachineEntry uuid="{a31a8f08-24af-4446-89c8-2744ea09dd30}" src="/home/student/VirtualBox VMs/w10k22/w10k22.vbox"/>
-      <MachineEntry uuid="{c1df1809-8aba-4590-8b44-c9def608005c}" src="/home/student/VirtualBox VMs/w10pabc/w10pabc.vbox"/>
+      <MachineEntry uuid="{c1df1809-8aba-4590-8b44-c9def608005c}" src="/home/student/VirtualBox VMs/w10pabc_old/w10pabc.vbox"/>
+      <MachineEntry uuid="{6c933731-7ac7-4607-bfe7-9b27524121ab}" src="/home/student/VirtualBox VMs/w10pabc/w10pabc.vbox"/>
       <MachineEntry uuid="{e1f444c1-51a4-49d1-ac5b-1ae1c3c6b115}" src="/home/student/VirtualBox VMs/ege-windows/ege-windows.vbox"/>
     </MachineRegistry>
     <NetserviceRegistry>
