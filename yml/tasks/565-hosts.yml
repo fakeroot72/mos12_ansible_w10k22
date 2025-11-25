@@ -33,17 +33,25 @@
     - m1580-2-425
     - m1580-2-426
     - m1580-2-427
+  loop_control:
+    loop_var: hosts_item
+  when: hosts_item in ansible_hostname and ansible_hostname not in hosts_exclude
+
+- name: set /etc/hosts in 1580-2-it
+  ansible.builtin.copy:
+    content: |
+      127.0.0.1       localhost.localdomain localhost
+      ::1             localhost6.localdomain6 localhost6
+      172.20.20.101   sdo.1580.ru
+    dest: /etc/hosts
+  vars:
+    hostsit_exclude:
+      - nowrere
+  loop:
     - xn1580-2-it1
     - xc1580-2-it2
     - xn1580-2-it3
     - xn1580-2-it4
-    - xn1580-4-110
-    - xn1580-4-209
-    - xn1580-4-220
-    - xm1580-4-309
-    - xn1580-4-309
-    - xn1580-4-320
-    - xn1580-4-403
   loop_control:
-    loop_var: hosts_item
-  when: hosts_item in ansible_hostname and ansible_hostname not in hosts_exclude
+    loop_var: hostsit_item
+  when: hostsit_item in ansible_hostname and ansible_hostname not in hostsit_exclude
