@@ -30,6 +30,8 @@ iptables -A OUTPUT -p udp --dport 51413 -j ACCEPT
 
 # Разрешаем sdo.1580.ru
 iptables -A OUTPUT -d 217.107.34.59 -j ACCEPT
+iptables -A OUTPUT -d 172.18.164.66 -j ACCEPT
+iptables -A OUTPUT -d 172.20.20.101 -j ACCEPT
 
 # Разрешаем squid.1580.ru
 iptables -A OUTPUT -d 195.161.114.165 -j ACCEPT
