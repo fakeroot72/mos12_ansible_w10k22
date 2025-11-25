@@ -1,3 +1,4 @@
+- fix sdo ip for iptables
 - try ipt 418
 - prerare polygon nginx
 - try hosts in 2-4xx
