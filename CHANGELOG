@@ -1,3 +1,4 @@
+- fix add arduino ide ip to iptables
 - fix sdo ip for iptables
 - try ipt 418
 - prerare polygon nginx
