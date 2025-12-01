@@ -1,1 +1,0 @@
-/opt/.lycu1580v2/local/idea_ic_tar/idea-IC/bin/idea.sh
