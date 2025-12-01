@@ -235,7 +235,7 @@
     group: transmission
     mode: 0644
   vars:
-    w10pabc_exclude:
+    w10lego_exclude:
       - nowhere
   loop:
     - xm1580-2-210
