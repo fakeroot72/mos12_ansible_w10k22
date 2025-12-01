@@ -5,6 +5,10 @@
     name:
     - snapd
 
+- name: pause for 10 seconds
+  ansible.builtin.pause:
+    seconds: 10
+
 - name: install snapd snap package
 #  community.general.snap:
 #    name: snapd
