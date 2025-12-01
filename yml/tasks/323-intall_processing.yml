@@ -21,4 +21,4 @@
 #    name: processing
 #    state: present
 #    classic: yes
-  ansible.builtin.command: "snap install processing --stable"
+  ansible.builtin.command: "snap install processing --classic"
