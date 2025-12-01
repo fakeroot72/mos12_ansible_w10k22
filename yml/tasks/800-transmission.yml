@@ -83,7 +83,7 @@
         "peer-port": 51413,
         "peer-port-random-high": 65535,
         "peer-port-random-low": 49152,
-        "peer-port-random-on-start": false,
+        "peer-port-random-on-start": true,
         "peer-socket-tos": "le",
         "pex-enabled": true,
         "port-forwarding-enabled": false,
@@ -163,10 +163,10 @@
       - nowhere
   loop:
     - m1580-1-205
-    - xm1580-1-206
+    - m1580-1-206
     - m1580-1-207
     - m1580-1-208
-    - xm1580-1-209
+    - m1580-1-209
   loop_control:
     loop_var: w10k23_item
   when: w10k23_item in ansible_hostname and ansible_hostname not in w10k23_exclude
@@ -179,7 +179,7 @@
     w10pabc_exclude_r:
       - nowhere
   loop:
-    - m1580-1-205
+    - xm1580-1-205
     - xm1580-2-418
     - xm1580-2-419
     - xm1580-2-422
@@ -222,7 +222,7 @@
     - xm1580-2-210
     - xm1580-2-418
     - xm1580-2-419
-    - xm1580-2-422
+    - xxm1580-2-422
     - xm1580-2-425
     - xm1580-2-426
     - xm1580-2-427
@@ -242,10 +242,10 @@
       - nowhere
   loop:
     - xm1580-2-210
-    - xm1580-2-418
+    - m1580-2-418
     - xm1580-2-419
-    - m1580-2-422
-    - xm1580-2-425
+    - xm1580-2-422
+    - m1580-2-425
     - xm1580-2-426
     - xm1580-2-427
   loop_control:
