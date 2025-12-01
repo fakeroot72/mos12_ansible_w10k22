@@ -28,7 +28,7 @@
     update_cache: true
   changed_when: false
 
-#- name: install sublime-text
-#  ansible.builtin.dnf:
-#    name:
-#    - sublime-text
+- name: install sublime-text
+  ansible.builtin.dnf:
+    name:
+    - sublime-text
