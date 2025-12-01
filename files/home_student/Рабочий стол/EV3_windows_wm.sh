@@ -1,3 +1,3 @@
 #!/bin/sh
 
-VBoxManage startvm w10ev3
+VBoxManage startvm w10lego

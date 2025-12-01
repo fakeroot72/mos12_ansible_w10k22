@@ -51,10 +51,11 @@ rm -f /home/student/.config/autostart/mos-welcome-pages.desktop
 [ ! -f $base_path/local/ege-windows_vdi/ege-windows.vdi ] && rm /home/student/Рабочий\ стол/ege-windows_vm.sh
 [ ! -f $base_path/local/olymp-windows_vdi/olymp-windows.vdi ] && rm /home/student/Рабочий\ стол/olymp-windows_vm.sh
 [ ! -f $base_path/local/olymp-linux_vdi/olymp-linux.vdi ] && rm /home/student/Рабочий\ стол/olymp-linux_vm.sh
-[ ! -f $base_path/local/w10pabc_vdi/ready01.timestamp ] && rm /home/student/Рабочий\ стол/PascalABC_windows_vm.sh
+[ ! -f $base_path/local/w10pabc-02-proxy.vdi ] && rm /home/student/Рабочий\ стол/PascalABC_windows_vm.sh
 [ ! -f $base_path/local/w10k22_vdi/ready04.timestamp ] && rm /home/student/Рабочий\ стол/KOMPAS_3D_22_windows_vm.sh
+[ ! -f $base_path/local/w10k23-01-proxy.vdi ] && rm /home/student/Рабочий\ стол/KOMPAS_3D_23_windows_vm.sh
 [ ! -f $base_path/local/w10tfc17_vdi/ready01.timestamp ] && rm /home/student/Рабочий\ стол/T-FLEX_CAD_17_windows_wm.sh
-[ ! -f $base_path/local/w10ev3_vdi/ready01.timestamp ] && rm /home/student/Рабочий\ стол/EV3_windows_wm.sh
+[ ! -f $base_path/local/w10lego-02-proxy.vdi ] && rm /home/student/Рабочий\ стол/EV3_windows_wm.sh
 [ ! -f $base_path/local/w10vs2022_vdi/ready04.timestamp ] && rm /home/student/Рабочий\ стол/Visual_Studio_2022_windows_vm.sh
 
 [ ! -f $base_path/local/processing_tar/ready01.timestamp ] && rm /home/student/Рабочий\ стол/processing.sh

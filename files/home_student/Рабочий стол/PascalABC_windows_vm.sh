@@ -1,3 +1,3 @@
 #!/bin/sh
 
-VBoxManage startvm w10pabc
+VBoxManage startvm w10pabc02
