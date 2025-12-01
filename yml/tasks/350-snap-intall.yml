@@ -25,3 +25,17 @@
     name:
     - snapd
   when: "'snapd' not in ansible_facts.packages"
+
+- name: set proxy for snapd
+  ansible.builtin.copy:
+    content: |
+      SNAP_REEXEC=0
+      http_proxy="http://squid.1580.ru:80"
+      https_proxy="http://squid.1580.ru:80"
+  when: "'snapd' not in ansible_facts.packages"
+
+- name: restart snapd
+  ansible.builtin.systemd:
+    name: snapd
+    state: restarted
+  when: "'snapd' not in ansible_facts.packages"
