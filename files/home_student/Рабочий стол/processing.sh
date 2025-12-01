@@ -1,1 +1,3 @@
-/opt/.lycu1580v2/local/processing_tar/processing/processing
+#!/bin/sh
+
+snap run processing
