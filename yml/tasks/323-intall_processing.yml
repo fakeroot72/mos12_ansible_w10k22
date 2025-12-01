@@ -6,13 +6,15 @@
     - snapd
 
 - name: install snapd snap package
-  community.general.snap:
-    name: snapd
-    state: present
-#    classic: yes
+#  community.general.snap:
+#    name: snapd
+#    state: present
+##    classic: yes
+  ansible.builtin.command: "snap install snapd"
 
 - name: install processing snap package
-  community.general.snap:
-    name: processing
-    state: present
-    classic: yes
+#  community.general.snap:
+#    name: processing
+#    state: present
+#    classic: yes
+  ansible.builtin.command: "snap install processing --stable"
