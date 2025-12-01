@@ -1,0 +1,27 @@
+---
+
+- name: Получить факты о пакетах
+  package_facts:
+    manager: auto
+
+- name: refresh snap 
+  ansible.builtin.command: "snap refresh"
+  when: "'snapd' in ansible_facts.packages"
+
+- name: install snapd snap package
+  ansible.builtin.command: "snap install snapd"
+  when: "'snapd' in ansible_facts.packages"
+
+- name: install processing snap package
+  ansible.builtin.command: "snap install processing --classic"
+  when: "'snapd' in ansible_facts.packages"
+
+- name: install intellij-idea snap package
+  ansible.builtin.command: "snap install intellij-idea-community --classic"
+  when: "'snapd' in ansible_facts.packages"
+
+- name: install snapd if in absent for next run
+  ansible.builtin.dnf:
+    name:
+    - snapd
+  when: "'snapd' not in ansible_facts.packages"
