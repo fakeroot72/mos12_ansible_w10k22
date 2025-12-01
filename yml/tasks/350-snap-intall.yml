@@ -2,7 +2,7 @@
 
 - name: Получить факты о пакетах
   package_facts:
-    manager: auto
+    manager: yum
 
 - name: refresh snap 
   ansible.builtin.command: "snap refresh"
