@@ -5,9 +5,9 @@
     name:
     - snapd
 
-- name: pause for 120 seconds
+- name: pause for 300 seconds
   ansible.builtin.pause:
-    seconds: 120
+    seconds: 300
 
 - name: refresh snap 
   ansible.builtin.command: "snap refresh"

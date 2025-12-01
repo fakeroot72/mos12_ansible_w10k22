@@ -1,3 +1,4 @@
+- fix lego download
 - increase pause after install snap
 - try refresh snap
 - move processing to processing_snap.sh
