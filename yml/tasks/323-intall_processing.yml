@@ -5,9 +5,12 @@
     name:
     - snapd
 
-- name: pause for 60 seconds
-  ansible.builtin.pause:
-    seconds: 60
+      #- name: pause for 60 seconds
+      #  ansible.builtin.pause:
+      #    seconds: 60
+
+- name: refresh snap 
+  ansible.builtin.command: "snap refresh"
 
 - name: install snapd snap package
 #  community.general.snap:
