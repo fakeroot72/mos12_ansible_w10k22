@@ -2,7 +2,7 @@
 
 - name: Получить факты о пакетах
   package_facts:
-    manager: dnf
+    manager: auto
 
 - name: refresh snap 
   ansible.builtin.command: "snap refresh"
