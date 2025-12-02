@@ -168,6 +168,7 @@
     - m1580-1-208
     - m1580-1-209
     - m1580-2-418-17
+    - n1580-2-418-6
   loop_control:
     loop_var: w10k23_item
   when: w10k23_item in ansible_hostname and ansible_hostname not in w10k23_exclude
@@ -210,6 +211,7 @@
     - m1580-2-425
     - m1580-2-426
     - m1580-2-427
+    - n1580-2-418-6
   loop_control:
     loop_var: w10pabc_item
   when: w10pabc_item in ansible_hostname and ansible_hostname not in w10pabc_exclude
@@ -238,14 +240,9 @@
     w10lego_exclude:
       - nowhere
   loop:
-    - xm1580-2-210
     - m1580-2-418
-    - xm1580-2-418-17
-    - xm1580-2-419
-    - xm1580-2-422
+    - n1580-2-418-6
     - m1580-2-425
-    - xm1580-2-426
-    - xm1580-2-427
   loop_control:
     loop_var: w10lego_item
   when: w10lego_item in ansible_hostname and ansible_hostname not in w10lego_exclude
