@@ -28,6 +28,7 @@
 
 - name: set proxy for snapd
   ansible.builtin.copy:
+    dest: /etc/sysconfig/snapd
     content: |
       SNAP_REEXEC=0
       http_proxy="http://squid.1580.ru:80"
