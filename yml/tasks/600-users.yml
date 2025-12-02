@@ -26,6 +26,7 @@
 - name: deny cron use for student and teacher
   ansible.builtin.copy:
     content: |
+      olymp
       student
       teacher
     dest: /etc/cron.deny
@@ -35,7 +36,7 @@
 
 - name: deny ssh for student and teacher
   ansible.builtin.copy:
-    content: 'DenyUsers student teacher'
+    content: 'DenyUsers olymp student teacher'
     dest: /etc/ssh/sshd_config.d/deny_ssh_student_and_teacher.conf
 
 - name: restart sshd
