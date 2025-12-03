@@ -1,0 +1,17 @@
+---
+
+- name: install software for ib
+  ansible.builtin.dnf:
+    name:
+    - hashcat
+    - netcat
+    - binwalk
+    - wireshark
+    - binutils
+    - python3-pip
+
+- name: Install or upgrade the 'pwntools' Python package
+  ansible.builtin.pip:
+    name: pwntools
+    state: latest
+    executable: pip3

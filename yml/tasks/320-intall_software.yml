@@ -63,9 +63,3 @@
     - yandex-browser
 # lite version
     - xfce
-# for vsosh ib
-    - hashcat
-    - netcat
-    - binwalk
-    - wireshark
-    - binutils
