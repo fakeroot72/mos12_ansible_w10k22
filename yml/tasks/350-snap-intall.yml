@@ -20,6 +20,10 @@
   ansible.builtin.command: "snap install intellij-idea-community --classic"
   when: "'snapd' in ansible_facts.packages"
 
+- name: install ghidra snap package
+  ansible.builtin.command: "snap install ghidra"
+  when: "'snapd' in ansible_facts.packages"
+
 - name: install snapd if in absent for next run
   ansible.builtin.dnf:
     name:

@@ -1,3 +1,4 @@
+- fix: set transmisson peer-limit-global to 1
 - fix: set transmisson peer-limit-global to 5
 - fix: add mos.ru without proxy
 - feat: local ip for tp.1580.ru in it-pol
