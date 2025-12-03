@@ -18,12 +18,6 @@
     hosts_exclude:
       - nowrere
   loop:
-    - xm1580-1-205
-    - xm1580-1-206
-    - xm1580-1-207
-    - xm1580-1-208
-    - xm1580-1-209
-    - xm1580-1-215
     - m1580-2-210
     - m1580-2-418
     - n1580-2-418
@@ -43,6 +37,7 @@
       127.0.0.1       localhost.localdomain localhost
       ::1             localhost6.localdomain6 localhost6
       172.20.20.101   sdo.1580.ru
+      172.20.20.97    tp.1580.ru
     dest: /etc/hosts
   vars:
     hostsit_exclude:
