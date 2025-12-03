@@ -13,6 +13,7 @@
       127.0.0.1       localhost.localdomain localhost
       ::1             localhost6.localdomain6 localhost6
       172.18.164.66   sdo.1580.ru
+      172.18.164.66   tp.1580.ru
     dest: /etc/hosts
   vars:
     hosts_exclude:
