@@ -4,11 +4,15 @@
   ansible.builtin.dnf:
     name:
     - hashcat
-    - netcat
     - binwalk
     - wireshark
     - binutils
     - python3-pip
+    - python3.12-idle
+    - python3.12-pip
+    - openssh-clients
+    - netcat-openbsd
+    - vscode
 
 - name: Install or upgrade the 'pwntools' Python package
   ansible.builtin.pip:
