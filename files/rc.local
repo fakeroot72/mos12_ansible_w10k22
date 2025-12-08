@@ -48,9 +48,9 @@ rm -f /home/student/.config/autostart/mos-welcome-pages.desktop
 #rm /home/student/Рабочий\ стол/KOMPAS_3D_21.sh
 
 # remove VistualBox start scripts if no ready
-[ ! -f $base_path/local/w10pabc-02-proxy.vdi ] && rm /home/student/Рабочий\ стол/PascalABC_windows_vm.sh
-[ ! -f $base_path/local/w10k23-01-proxy.vdi ] && rm /home/student/Рабочий\ стол/KOMPAS_3D_windows_vm.sh
-[ ! -f $base_path/local/w10lego-02-proxy.vdi ] && rm /home/student/Рабочий\ стол/LEGO_windows_wm.sh
+[ ! -f $base_path/local/tdd/w10pabc-02-proxy.vdi ] && rm /home/student/Рабочий\ стол/PascalABC_windows_vm.sh
+[ ! -f $base_path/local/tdd/w10k23-01-proxy.vdi ] && rm /home/student/Рабочий\ стол/KOMPAS_3D_windows_vm.sh
+[ ! -f $base_path/local/tdd/w10lego-02-proxy.vdi ] && rm /home/student/Рабочий\ стол/LEGO_windows_wm.sh
 
 [ ! -f $base_path/local/ege-windows_vdi/ege-windows.vdi ] && rm /home/student/Рабочий\ стол/ege-windows_vm.sh
 
