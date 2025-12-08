@@ -1,11 +1,36 @@
 ---
-# not testing
+
 - name: configure grub boot 0 default
   #  ansible.builtin.command: "sed -i 's/GRUB_DEFAULT.*/GRUB_DEFAULT=0/' /etc/default/grub"
   ansible.builtin.replace:
     path: /etc/default/grub
     regexp: '^GRUB_DEFAULT=(.*)$'
     replace: 'GRUB_DEFAULT=0'
+
+      #- name: configure grub
+      #  ansible.builtin.copy:
+      #    content: |
+      #GRUB_GFXPAYLOAD_LINUX=keep
+      #GRUB_DISABLE_RECOVERY=true
+      #GRUB_DISTRIBUTOR="ROSA"
+      #GRUB_GFXMODE=1024x768,1024x600,800x600,640x480
+      #GRUB_DEFAULT=0
+      #GRUB_SAVEDEFAULT=true
+      #GRUB_TIMEOUT=0
+      #GRUB_CMDLINE_LINUX_DEFAULT='splash=silent logo.nologo quiet'
+      #GRUB_DISABLE_OS_PROBER=false
+      #GRUB_HIDDEN_TIMEOUT=3
+      #GRUB_THEME="/boot/grub2/themes/mos/theme.txt"
+      #dest: /etc/default/grub
+
+- name: configure grub
+  ansible.builtin.copy:
+    content: |
+      GRUB2_PASSWORD="grub.pbkdf2.sha512.10000.4E3F7222FE1163CA47F901A1E05090BF753DEF736E32D9872B1BD82F755FAF680494BEC8E6AC6A79E13DC31F8A4FF3CA7EC3277D4BDF0B50951C5E67A3C599D6.AE82A349071574B9464E8211996DAEF79AB4336AC2BDC21B7FBAC0F13D38D69267B780AD3ADE18E24B98E3BC0A19A8E318B9481F6C99877B3BA0668EF13DD99C"
+  dest: /boot/grub2/users.cfg
+    owner: root
+    group: root
+    mode: 0400
 
 - name: grub mkconfig
   ansible.builtin.command: "grub2-mkconfig -o /boot/grub2/grub.cfg"
