@@ -28,8 +28,10 @@ iptables -A OUTPUT -p udp --dport 123 -j ACCEPT
 iptables -A OUTPUT -p icmp --icmp-type echo-request -j ACCEPT
 
 # Разрешаем соединения на порт 51413 для работы transmission
-iptables -A OUTPUT -p tcp --dport 51413 -j ACCEPT
-iptables -A OUTPUT -p udp --dport 51413 -j ACCEPT
+#iptables -A OUTPUT -p tcp --dport 51413 -j ACCEPT
+#iptables -A OUTPUT -p udp --dport 51413 -j ACCEPT
+iptables -A OUTPUT -p tcp --match multiport --dports 49152:65535 -j ACCEPT
+iptables -A OUTPUT -p udp --match multiport --dports 49152:65535 -j ACCEPT
 
 # Разрешаем sdo.1580.ru
 iptables -A OUTPUT -d 217.107.34.59 -j ACCEPT
