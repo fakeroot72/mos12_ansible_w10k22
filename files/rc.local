@@ -11,10 +11,10 @@ chown root:teacher $BACKUP
 chmod 0750 $BACKUP
 
 # backup olymp
-# BACKUP=/home/backup-olymp-from-`date +%Y_%m_%d-%H_%M_%S`
-# mv /home/olymp/ $BACKUP
-# chown root:teacher $BACKUP
-# chmod 0750 $BACKUP
+BACKUP=/home/backup-olymp-from-`date +%Y_%m_%d-%H_%M_%S`
+mv /home/olymp/ $BACKUP
+chown root:teacher $BACKUP
+chmod 0750 $BACKUP
 
 # create new standart student home
 rsync -a --chown=student:student /etc/skel/ /home/student/
@@ -29,23 +29,11 @@ echo 'export CHROMIUM_USER_FLAGS="--incognito"' >> /home/student/.bashrc
 rsync -a --chown=olymp:olymp /etc/skel/ /home/olymp/
 
 # add 1580 files for olymp
-#rsync -a --chown=olymp:olymp $base_path/files/home_olymp/ /home/olymp/
-
-#for olymp
-#[ ! -f /home/olymp/Рабочий\ стол/olymp-windows_vm.sh ] && 
-#rsync -au --chown=olymp:olymp $base_path/files/home_olymp/ /home/olymp/
-#cp $base_path/files/home_olymp/.config/powermanagementprofilesrc /home/olymp/.config/powermanagementprofilesrc
-#cp $base_path/files/home_olymp/ /home/olymp/.config/powermanagementprofilesrc
-#cp $base_path/files/home_olymp/: /home/olymp/.config/powermanagementprofilesrc
-#chown olymp $base_path/local/olymp-windows_vdi/olymp-windows.vdi
-#chown olymp $base_path/local/olymp-linux_vdi/olymp-linux.vdi
+rsync -a --chown=olymp:olymp $base_path/files/home_olymp/ /home/olymp/
 
 # remove mos welcome
+rm -f /home/olymp/.config/autostart/mos-welcome-pages.desktop
 rm -f /home/student/.config/autostart/mos-welcome-pages.desktop
-
-# remove kompas 21 if not 1580
-# [ ! `hostname | grep 1580` ] && 
-#rm /home/student/Рабочий\ стол/KOMPAS_3D_21.sh
 
 # remove VistualBox start scripts if no ready
 [ ! -f $base_path/local/tdd/w10pabc-02-proxy.vdi ] && rm /home/student/Рабочий\ стол/PascalABC_windows_vm.sh
@@ -54,8 +42,8 @@ rm -f /home/student/.config/autostart/mos-welcome-pages.desktop
 
 [ ! -f $base_path/local/ege-windows_vdi/ege-windows.vdi ] && rm /home/student/Рабочий\ стол/ege-windows_vm.sh
 
-[ ! -f $base_path/local/olymp-windows_vdi/olymp-windows.vdi ] && rm /home/student/Рабочий\ стол/olymp-windows_vm.sh
-[ ! -f $base_path/local/olymp-linux_vdi/olymp-linux.vdi ] && rm /home/student/Рабочий\ стол/olymp-linux_vm.sh
+[ ! -f $base_path/local/tdd/olymp-windows-251111.vdi ] && rm /home/student/Рабочий\ стол/olymp-windows_vm.sh
+[ ! -f $base_path/local/tdd/olymp-linux-251111.vdi ] && rm /home/student/Рабочий\ стол/olymp-linux_vm.sh
 
 # do not automatically start chromium on pannels
 [ `hostname | grep p1580` ] && rm /home/student/.config/autostart/chromium.desktop
@@ -65,17 +53,6 @@ rm -f /home/student/.config/autostart/mos-welcome-pages.desktop
 
 # set pannel power managment settings in IT-polygon
 [ `hostname | grep p1580` ] && rsync -a --chown=student:student $base_path/files/powermanagementprofilesrc-p1580 /home/student/.config/powermanagementprofilesrc
-
-# update dot wine
-# rsync -a --delete --chown=student:student /opt/.lycu1580/files/opt_1580/student_dot_wine-kompas/ 
-# rm -rf /home/student_dot_wine-kompas_current/
-
-# remove PascalABC old script if it is absent
-#[ ! -f /opt/.lycu1580/local/student_dot_wine_klt_pabc_tbz/ready01.timestamp ] && rm /home/student/Рабочий\ стол/PascalABC_old.sh
-
-# update student_dot_wine_klt_pabc_current
-# [ -f /opt/.lycu1580/local/student_dot_wine_klt_pabc_tbz/ready01.timestamp ] && rsync -a --delete --chown=student:student /opt/.lycu1580/local/student_dot_wine_klt_pabc_tbz/student_dot_wine_klt_pabc/ 
-# rm -rf /home/student_dot_wine_klt_pabc_current/
 
 # delete old (not today) backups
 DATE=`date +%Y_%m_%d`
@@ -88,25 +65,35 @@ done
 rmmod vboxnetflt
 
 # for oge
-gpasswd olymp -a examen
-
+#gpasswd olymp -a examen
 
 # date +"%F%R" - with time
 
-hostname | grep n1580-2-418-28 && date +"%F%R" | grep 2025-11-1411 && [ -f /etc/environment ] && mv /etc/environment /etc/environment.1580
-hostname | grep n1580-2-418-28 && date +"%F%R" | grep 2025-11-1411 && echo "[Autologin]" > /etc/sddm.conf.d/1580-autologin-user.conf
-hostname | grep n1580-2-418-28 && date +"%F%R" | grep 2025-11-1411 && echo "User=olymp" >> /etc/sddm.conf.d/1580-autologin-user.conf
-hostname | grep n1580-2-418-28 && date +"%F%R" | grep 2025-11-1411 && exit
+hostname | grep n1580-2-418-28 && date +"%F%R" | grep 2025-12-1009 && /opt/.lycu1580v2/bin/iptables.sh
+hostname | grep n1580-2-418-28 && date +"%F%R" | grep 2025-12-1009 && [ -f /etc/environment ] && mv /etc/environment /etc/environment.1580
+hostname | grep n1580-2-418-28 && date +"%F%R" | grep 2025-12-1009 && echo "[Autologin]" > /etc/sddm.conf.d/1580-autologin-user.conf
+hostname | grep n1580-2-418-28 && date +"%F%R" | grep 2025-12-1009 && echo "User=olymp" >> /etc/sddm.conf.d/1580-autologin-user.conf
+hostname | grep n1580-2-418-28 && date +"%F%R" | grep 2025-12-1009 && exit
 
-hostname | grep m1580-1 && date +"%F" | grep 2025-11-15 && [ -f /etc/environment ] && mv /etc/environment /etc/environment.1580
-hostname | grep m1580-1 && date +"%F" | grep 2025-11-15 && echo "[Autologin]" > /etc/sddm.conf.d/1580-autologin-user.conf
-hostname | grep m1580-1 && date +"%F" | grep 2025-11-15 && echo "User=olymp" >> /etc/sddm.conf.d/1580-autologin-user.conf
-hostname | grep m1580-1 && date +"%F" | grep 2025-11-15 && exit
+hostname | grep m1580-1 && date +"%F%R" | grep 2025-11-15 && [ -f /etc/environment ] && mv /etc/environment /etc/environment.1580
+hostname | grep m1580-1 && date +"%F%R" | grep 2025-11-15 && echo "[Autologin]" > /etc/sddm.conf.d/1580-autologin-user.conf
+hostname | grep m1580-1 && date +"%F%R" | grep 2025-11-15 && echo "User=olymp" >> /etc/sddm.conf.d/1580-autologin-user.conf
+hostname | grep m1580-1 && date +"%F%R" | grep 2025-11-15 && exit
 
-hostname | grep m1580-2 && date +"%F" | grep 2025-11-15 && [ -f /etc/environment ] && mv /etc/environment /etc/environment.1580
-hostname | grep m1580-2 && date +"%F" | grep 2025-11-15 && echo "[Autologin]" > /etc/sddm.conf.d/1580-autologin-user.conf
-hostname | grep m1580-2 && date +"%F" | grep 2025-11-15 && echo "User=olymp" >> /etc/sddm.conf.d/1580-autologin-user.conf
-hostname | grep m1580-2 && date +"%F" | grep 2025-11-15 && exit
+hostname | grep m1580-2 && date +"%F%R" | grep 2025-12-1015 && /opt/.lycu1580v2/bin/iptables.sh
+hostname | grep m1580-2 && date +"%F%R" | grep 2025-12-1015 && [ -f /etc/environment ] && mv /etc/environment /etc/environment.1580
+hostname | grep m1580-2 && date +"%F%R" | grep 2025-12-1015 && echo "[Autologin]" > /etc/sddm.conf.d/1580-autologin-user.conf
+hostname | grep m1580-2 && date +"%F%R" | grep 2025-12-1015 && echo "User=olymp" >> /etc/sddm.conf.d/1580-autologin-user.conf
+hostname | grep m1580-2 && date +"%F%R" | grep 2025-12-1015 && exit
+
+hostname | grep m1580-2 && date +"%F%R" | grep 2025-12-1016 && /opt/.lycu1580v2/bin/iptables.sh
+hostname | grep m1580-2 && date +"%F%R" | grep 2025-12-1016 && [ -f /etc/environment ] && mv /etc/environment /etc/environment.1580
+hostname | grep m1580-2 && date +"%F%R" | grep 2025-12-1016 && echo "[Autologin]" > /etc/sddm.conf.d/1580-autologin-user.conf
+hostname | grep m1580-2 && date +"%F%R" | grep 2025-12-1016 && echo "User=olymp" >> /etc/sddm.conf.d/1580-autologin-user.conf
+hostname | grep m1580-2 && date +"%F%R" | grep 2025-12-1016 && exit
+
+hostname | grep m1580-2 && date +"%F%R" | grep 2025-12-1016 && /opt/.lycu1580v2/bin/iptables.sh
+hostname | grep m1580-2 && date +"%F%R" | grep 2025-12-10 && exit
 
 [ -f /etc/environment.1580 ] && mv /etc/environment.1580 /etc/environment && echo "[Autologin]" > /etc/sddm.conf.d/1580-autologin-user.conf && echo "User=student" >> /etc/sddm.conf.d/1580-autologin-user.conf
 
@@ -137,9 +124,6 @@ hostname | grep m1580-4-309-0 && exit
 hostname | grep n1580-4-309-0 && exit
 hostname | grep n1580-4-320-0 && exit
 hostname | grep n1580-4-403-0 && exit
-
-date +"%F" | grep 2025-10-24 && hostname | grep c1580-2 && /opt/.lycu1580v2/bin/iptables.sh
-date +"%F" | grep 2025-10-24 && hostname | grep m1580-2 && /opt/.lycu1580v2/bin/iptables.sh
 
 exit
 hostname | grep m1580-1-205 && /opt/.lycu1580v2/bin/iptables.sh
