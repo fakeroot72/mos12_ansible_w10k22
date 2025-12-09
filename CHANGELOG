@@ -1,3 +1,4 @@
+- fix: set transmisson speed 1000
 - try: grub passw
 - fix: snapd restart error
 - fix: snapd restart error

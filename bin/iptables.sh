@@ -24,6 +24,9 @@ iptables -A OUTPUT -p udp --dport 5353 -j ACCEPT
 # Разрешаем соединения на UDP порт 123 для работы NTP
 iptables -A OUTPUT -p udp --dport 123 -j ACCEPT
 
+# Разрешаем ping
+iptables -A OUTPUT -p icmp --icmp-type echo-request -j ACCEPT
+
 # Разрешаем соединения на порт 51413 для работы transmission
 iptables -A OUTPUT -p tcp --dport 51413 -j ACCEPT
 iptables -A OUTPUT -p udp --dport 51413 -j ACCEPT
@@ -41,9 +44,6 @@ iptables -A OUTPUT -d 37.79.254.196 -j ACCEPT
 
 # Разрешаем bf726e13342a.hosting.myjino.ru
 iptables -A OUTPUT -d 81.177.136.113 -j ACCEPT
-
-# Разрешаем hub.mos.ru
-iptables -A OUTPUT -d 94.79.51.0/24 -j ACCEPT
 
 # Разрешаем arduino ide
 iptables -A OUTPUT -d 104.18.10.21 -j ACCEPT
@@ -73,11 +73,11 @@ iptables -A OUTPUT -d 104.18.10.21 -j ACCEPT
 # Локальная сеть ДОНМ для доступа ко всем ресурсам, для простоты конфигурирования
 iptables -A OUTPUT -d 10.0.0.0/8 -j ACCEPT
 
+# Разрешаем мэш.mos.ru
+iptables -A OUTPUT -d 94.79.51.0/24 -j ACCEPT
+
 # school.mos.ru Необходим для работы тестирующей системы МЭШ и "Магазина приложений" МОС
 # uchebnik.mos.ru Необходим для работы тестирующей системы МЭШ
-iptables -A OUTPUT -d 94.79.51.81 -j ACCEPT
-iptables -A OUTPUT -d 94.79.51.82 -j ACCEPT
-iptables -A OUTPUT -d 94.79.51.83 -j ACCEPT
 iptables -A OUTPUT -d 94.79.51.184 -j ACCEPT
 iptables -A OUTPUT -d 94.79.51.185 -j ACCEPT
 iptables -A OUTPUT -d 94.79.51.186 -j ACCEPT
@@ -86,52 +86,57 @@ iptables -A OUTPUT -d 94.79.51.186 -j ACCEPT
 iptables -A OUTPUT -d 94.79.51.169 -j ACCEPT
 iptables -A OUTPUT -d 94.79.51.170 -j ACCEPT
 iptables -A OUTPUT -d 94.79.51.171 -j ACCEPT
+#?
 iptables -A OUTPUT -d 94.79.51.136 -j ACCEPT
 iptables -A OUTPUT -d 94.79.51.137 -j ACCEPT
 
 # online.olimpiada.ru Резервная тестирующая система
-#iptables -A OUTPUT -d 46.235.186.69 -j ACCEPT
-#iptables -A OUTPUT -d 46.235.188.68 -j ACCEPT
-#iptables -A OUTPUT -d 78.41.110.69 -j ACCEPT
-#iptables -A OUTPUT -d 93.93.88.23 -j ACCEPT
-#iptables -A OUTPUT -d 212.193.144.0/20 -j ACCEPT
+iptables -A OUTPUT -d 46.235.186.69 -j ACCEPT
+iptables -A OUTPUT -d 46.235.188.68 -j ACCEPT
+iptables -A OUTPUT -d 78.41.110.69 -j ACCEPT
+iptables -A OUTPUT -d 93.93.88.23 -j ACCEPT
+iptables -A OUTPUT -d 212.193.144.0/20 -j ACCEPT
 
 # vos.olimpiada.ru Сайт ВсОШ в Москве
-#iptables -A OUTPUT -d 185.178.208.183 -j ACCEPT
+iptables -A OUTPUT -d 185.178.208.183 -j ACCEPT
 
 # всош.цпм.рф Сайт ВсОШ в Москве (xn--b1ayi3a.xn--l1afu.xn--p1ai)
-#iptables -A OUTPUT -d 185.30.228.25 -j ACCEPT
+iptables -A OUTPUT -d 185.30.228.25 -j ACCEPT
 
 # olympiads.ru Сайт городской предметно-методической комиссии ВсОШ по информатике
-#iptables -A OUTPUT -d 194.58.88.173 -j ACCEPT
+iptables -A OUTPUT -d 194.58.88.173 -j ACCEPT
 
 # mc.yandex.ru Метрика яндекса, если заблокировать, то браузер будет долго загружать страницу os.mos.ru
-#iptables -A OUTPUT -d 87.250.250.119 -j ACCEPT
-#iptables -A OUTPUT -d 87.250.251.119 -j ACCEPT
-#iptables -A OUTPUT -d 93.158.134.119 -j ACCEPT
-#iptables -A OUTPUT -d 77.88.21.119 -j ACCEPT
+iptables -A OUTPUT -d 87.250.250.119 -j ACCEPT
+iptables -A OUTPUT -d 87.250.251.119 -j ACCEPT
+iptables -A OUTPUT -d 93.158.134.119 -j ACCEPT
+iptables -A OUTPUT -d 77.88.21.119 -j ACCEPT
 
 # repo.os.mos.ru Репозитории МОС, для установки пакетов, если возникнет необходимость доставить приложения.
 iptables -A OUTPUT -d 37.230.149.17 -j ACCEPT
 
 # marketplace.visualstudio.com Магазин расширений для VSCode
-#iptables -A OUTPUT -d 13.107.42.18 -j ACCEPT
+iptables -A OUTPUT -d  150.171.73.16 -j ACCEPT
+iptables -A OUTPUT -d  150.171.74.16 -j ACCEPT
 
-# ms-vscode.gallerycdn.vsassets.io Необходим для скачивания расширений для VSCode
-#iptables -A OUTPUT -d 68.232.34.200 -j ACCEPT
+# main.vscode-cdn.net Необходим для скачивания расширений для VSCode
+iptables -A OUTPUT -d 13.107.246.53 -j ACCEPT
+iptables -A OUTPUT -d 13.107.213.53 -j ACCEPT
 
-# ms-vscode.gallery.vsassets.io Необходим для скачивания расширений для VSCode
-#iptables -A OUTPUT -d 13.107.6.175 -j ACCEPT
-
-# az764295.vo.msecnd.net Необходим для скачивания расширений для VSCode
-#iptables -A OUTPUT -d 152.199.19.160 -j ACCEPT
+# ms-python.gallerycdn.vsassets.io Необходим для скачивания расширений для VSCode
+iptables -A OUTPUT -d 2.23.167.106/24 -j ACCEPT
+iptables -A OUTPUT -d 212.188.39.24/24 -j ACCEPT
 
 # it-help-school.ru Этот сайт, для доступа к техническим инструкциям
-#iptables -A OUTPUT -d 91.221.70.4 -j ACCEPT
+iptables -A OUTPUT -d 91.221.70.4 -j ACCEPT
 
 # vsoch reg 2025
 #iptables -A OUTPUT -d 194.58.88.173 -j ACCEPT # olympiads.ru
 #iptables -A OUTPUT -d 89.169.165.116 -j ACCEPT # msk-ejudge.ru
+
+# vos - inf - ib
+iptables -A OUTPUT -d 84.201.144.118 -j ACCEPT
+
 
 # block
 iptables -A OUTPUT -p tcp --dport 80 -j REJECT # блокируем исходящий http
