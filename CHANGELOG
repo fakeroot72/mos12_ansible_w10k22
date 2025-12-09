@@ -1,3 +1,4 @@
+- try: grub passw
 - fix: snapd restart error
 - fix: snapd restart error
 - fix: rc.local vm files delete
