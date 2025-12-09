@@ -41,4 +41,4 @@
 - name: restart snapd
   ansible.builtin.systemd:
     name: snapd
-    state: start
+    state: started
