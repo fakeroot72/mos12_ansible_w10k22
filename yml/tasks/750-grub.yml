@@ -32,5 +32,10 @@
     group: root
     mode: 0600
 
+- name: delete configure grub password
+  ansible.builtin.file:
+    path: /boot/grub2/user.cfg
+    state: absent
+
 - name: grub mkconfig
   ansible.builtin.command: "grub2-mkconfig -o /boot/grub2/grub.cfg"

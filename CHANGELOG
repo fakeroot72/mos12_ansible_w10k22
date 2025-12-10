@@ -1,3 +1,4 @@
+- try: update rc.local for 101225
 - fix: allow transmission ports
 - try firewall enable in 1-2:
 - many changes: iptables, zabbix to 80 port
