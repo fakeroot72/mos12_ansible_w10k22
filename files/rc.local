@@ -11,10 +11,10 @@ chown root:teacher $BACKUP
 chmod 0750 $BACKUP
 
 # backup olymp
-BACKUP=/home/backup-olymp-from-`date +%Y_%m_%d-%H_%M_%S`
-mv /home/olymp/ $BACKUP
-chown root:teacher $BACKUP
-chmod 0750 $BACKUP
+#BACKUP=/home/backup-olymp-from-`date +%Y_%m_%d-%H_%M_%S`
+#mv /home/olymp/ $BACKUP
+#chown root:teacher $BACKUP
+#chmod 0750 $BACKUP
 
 # create new standart student home
 rsync -a --chown=student:student /etc/skel/ /home/student/
