@@ -37,11 +37,13 @@
     group: root
     mode: 0600
   vars:
-    exclude:
+    grub_exclude:
       - nowhere
   loop:
-    - m1580-1
-  when: item in ansible_hostname and ansible_hostname not in exclude
+    - xm1580-1
+  loop_control:
+    loop_var: grub_item
+  when: grub_item in ansible_hostname and ansible_hostname not in grub_exclude
 
 - name: grub mkconfig
   ansible.builtin.command: "grub2-mkconfig -o /boot/grub2/grub.cfg"
