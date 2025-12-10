@@ -183,7 +183,7 @@
   loop:
     - xm1580-1-205
     - xm1580-2-418
-    - m1580-2-418-17
+    - xm1580-2-418-17
     - xm1580-2-419
     - xm1580-2-422
     - xm1580-2-425
@@ -206,12 +206,12 @@
   loop:
     - m1580-2-418
     - xm1580-2-418-17
+    - n1580-2-418-6
     - m1580-2-419
     - m1580-2-422
     - m1580-2-425
     - m1580-2-426
     - m1580-2-427
-    - n1580-2-418-6
   loop_control:
     loop_var: w10pabc_item
   when: w10pabc_item in ansible_hostname and ansible_hostname not in w10pabc_exclude
@@ -246,6 +246,64 @@
   loop_control:
     loop_var: w10lego_item
   when: w10lego_item in ansible_hostname and ansible_hostname not in w10lego_exclude
+
+- name: olymp-windows remove
+  ansible.builtin.file:
+    dest: local/tdd/olymp-windows-2025-11-11.vdi
+    state: absent
+  vars:
+    olymp_windows_exclude_r:
+      - nowhere
+  loop:
+    - nowhere
+  loop_control:
+    loop_var: olymp_windows_item_r
+  when: olymp_windows_item_r in ansible_hostname and ansible_hostname not in olymp_windows_exclude_r
+  
+- name: olymp_windows download
+  ansible.builtin.copy:
+    src: files/tp/olymp-windows-2025-11-11.vdi.torrent
+    dest: local/tdwd/olymp-windows-2025-11-11.vdi.torrent
+    owner: transmission
+    group: transmission
+    mode: 0644
+      - nowhere
+  loop:
+    - m1580-2-418-17
+    - n1580-2-418-6
+    - xm1580-2-425
+  loop_control:
+    loop_var: olymp_windows_item
+  when: olymp_windows_item in ansible_hostname and ansible_hostname not in olymp_windows_exclude
+
+- name: olymp-linux remove
+  ansible.builtin.file:
+    dest: local/tdd/olymp-linux-2025-11-11.vdi
+    state: absent
+  vars:
+    olymp_linux_exclude_r:
+      - nowhere
+  loop:
+    - nowhere
+  loop_control:
+    loop_var: olymp_linux_item_r
+  when: olymp_linux_item_r in ansible_hostname and ansible_hostname not in olymp_linux_exclude_r
+  
+- name: olymp_linux download
+  ansible.builtin.copy:
+    src: files/tp/olymp-linux-2025-11-11.vdi.torrent
+    dest: local/tdwd/olymp-linux-2025-11-11.vdi.torrent
+    owner: transmission
+    group: transmission
+    mode: 0644
+      - nowhere
+  loop:
+    - 1580-2-418-17
+    - n1580-2-418-6
+    - xm1580-2-425
+  loop_control:
+    loop_var: olymp_linux_item
+  when: olymp_linux_item in ansible_hostname and ansible_hostname not in olymp_linux_exclude
 
 - name: enable and restart transmission-daemon service
   ansible.builtin.systemd:

@@ -1,3 +1,5 @@
+- tmp: add torrents
+- tmp: add olymp vm skel
 - fix: delete grub passw
 - try: update rc.local for 101225
 - fix: allow transmission ports
