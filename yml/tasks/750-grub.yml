@@ -23,6 +23,11 @@
       #GRUB_THEME="/boot/grub2/themes/mos/theme.txt"
       #dest: /etc/default/grub
 
+- name: delete configure grub password
+  ansible.builtin.file:
+    path: /boot/grub2/user.cfg
+    state: absent
+
 - name: configure grub password
   ansible.builtin.copy:
     content: |
@@ -31,11 +36,12 @@
     owner: root
     group: root
     mode: 0600
-
-- name: delete configure grub password
-  ansible.builtin.file:
-    path: /boot/grub2/user.cfg
-    state: absent
+  vars:
+    exclude:
+      - nowhere
+  loop:
+    - m1580-1
+  when: item in ansible_hostname and ansible_hostname not in exclude
 
 - name: grub mkconfig
   ansible.builtin.command: "grub2-mkconfig -o /boot/grub2/grub.cfg"
