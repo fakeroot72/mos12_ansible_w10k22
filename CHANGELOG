@@ -1,3 +1,4 @@
+- fix iptables for ib
 - fix rc.local
 - fix transm
 - tmp: snap install off

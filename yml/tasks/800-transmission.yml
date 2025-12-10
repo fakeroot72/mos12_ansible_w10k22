@@ -302,7 +302,7 @@
     olymp_linux_exclude:
       - nowhere
   loop:
-    - 1580-2-418-17
+    - m1580-2-418-17
     - n1580-2-418-6
     - xm1580-2-425
   loop_control:
