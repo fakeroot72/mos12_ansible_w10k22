@@ -11,10 +11,10 @@ chown root:teacher $BACKUP
 chmod 0750 $BACKUP
 
 # backup olymp
-#BACKUP=/home/backup-olymp-from-`date +%Y_%m_%d-%H_%M_%S`
-#mv /home/olymp/ $BACKUP
-#chown root:teacher $BACKUP
-#chmod 0750 $BACKUP
+BACKUP=/home/backup-olymp-from-`date +%Y_%m_%d-%H_%M_%S`
+mv /home/olymp/ $BACKUP
+chown root:teacher $BACKUP
+chmod 0750 $BACKUP
 
 # create new standart student home
 rsync -a --chown=student:student /etc/skel/ /home/student/
@@ -87,6 +87,8 @@ hostname | grep m1580-2 && date +"%F%R" | grep 2025-12-10 && echo "User=olymp" >
 hostname | grep m1580-2 && date +"%F%R" | grep 2025-12-10 && exit
 
 [ -f /etc/environment.1580 ] && mv /etc/environment.1580 /etc/environment && echo "[Autologin]" > /etc/sddm.conf.d/1580-autologin-user.conf && echo "User=student" >> /etc/sddm.conf.d/1580-autologin-user.conf
+
+hostname | grep m1580-2 && date +"%F%R" | grep 2025-12-11 && /opt/.lycu1580v2/bin/iptables.sh
 
 # not block inet on pannels
 hostname | grep p1580 && exit
