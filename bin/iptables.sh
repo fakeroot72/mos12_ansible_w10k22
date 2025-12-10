@@ -139,6 +139,10 @@ iptables -A OUTPUT -d 91.221.70.4 -j ACCEPT
 # vos - inf - ib
 iptables -A OUTPUT -d 84.201.144.118 -j ACCEPT
 
+iptables -A OUTPUT -d 58.160.212.177 -j ACCEPT
+iptables -A OUTPUT -d 158.160.193.221 -j ACCEPT
+iptables -A OUTPUT -d 158.160.195.100 -j ACCEPT
+iptables -A OUTPUT -d 130.193.57.26 -j ACCEPT
 
 # block
 iptables -A OUTPUT -p tcp --dport 80 -j REJECT # блокируем исходящий http
