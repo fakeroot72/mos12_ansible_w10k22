@@ -267,6 +267,8 @@
     owner: transmission
     group: transmission
     mode: 0644
+  vars:
+    olymp_windows_exclude:
       - nowhere
   loop:
     - m1580-2-418-17
@@ -296,6 +298,8 @@
     owner: transmission
     group: transmission
     mode: 0644
+  vars:
+    olymp_linux_exclude:
       - nowhere
   loop:
     - 1580-2-418-17
