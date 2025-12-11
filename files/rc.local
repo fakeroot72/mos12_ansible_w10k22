@@ -88,7 +88,9 @@ hostname | grep m1580-2 && date +"%F%R" | grep 2025-12-10 && exit
 
 [ -f /etc/environment.1580 ] && mv /etc/environment.1580 /etc/environment && echo "[Autologin]" > /etc/sddm.conf.d/1580-autologin-user.conf && echo "User=student" >> /etc/sddm.conf.d/1580-autologin-user.conf
 
+hostname | grep m1580-1 && date +"%F%R" | grep 2025-12-11 && /opt/.lycu1580v2/bin/iptables.sh
 hostname | grep m1580-2 && date +"%F%R" | grep 2025-12-11 && /opt/.lycu1580v2/bin/iptables.sh
+hostname | grep m1580-4 && date +"%F%R" | grep 2025-12-11 && /opt/.lycu1580v2/bin/iptables.sh
 
 # not block inet on pannels
 hostname | grep p1580 && exit

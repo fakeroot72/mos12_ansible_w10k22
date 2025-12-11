@@ -1,4 +1,5 @@
 - state: sem work
+- state: sem work
 - state: reboot2all
 - state: reboot2all
 - fix: set grub passw vars name
