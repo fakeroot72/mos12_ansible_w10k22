@@ -27,6 +27,7 @@
     - pycharm-community
     - wing-101
     - wing-personal
+    - python3
     - python3-sqlite3
     - python3-matplotlib
     - python3-numpy
@@ -40,10 +41,16 @@
     - fpc
     - lazarus
     - pascalabcnet
+# kumir
+    - kumir
 # java
-    - java-17-openjdk-devel
+#    - java-17-openjdk-devel
+    - java-21-openjdk
+    - java-21-openjdk-devel
 # go
     - golang
+# php
+    - php-cli
 # rust
     - rust
 # scrarch
@@ -63,3 +70,4 @@
     - yandex-browser
 # lite version
     - xfce
+    - libreoffice
