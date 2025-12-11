@@ -43,13 +43,13 @@
     - c1580-2-it2
     - n1580-2-it3
     - n1580-2-it4
-    - xn1580-4-110
-    - xn1580-4-209
-    - xn1580-4-220
-    - xm1580-4-309
-    - xn1580-4-309
-    - xn1580-4-320
-    - xn1580-4-403
+    - n1580-4-110
+    - n1580-4-209
+    - n1580-4-220
+    - m1580-4-309
+    - n1580-4-309
+    - n1580-4-320
+    - n1580-4-403
   loop_control:
     loop_var: iptables_item
   when: iptables_item in ansible_hostname and ansible_hostname not in iptables_exclude
