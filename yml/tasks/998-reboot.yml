@@ -36,13 +36,13 @@
     - m1580-2-419
     - xn1580-2-420
     - m1580-2-422
-    - xm1580-2-425
+    - m1580-2-425
     - m1580-2-426
     - m1580-2-427
     - xn1580-2-it1
     - xc1580-2-it2
-    - xn1580-2-it3
-    - xn1580-2-it4
+    - n1580-2-it3
+    - n1580-2-it4
   loop_control:
     loop_var: reboot_item
   when: reboot_item in ansible_hostname and ansible_hostname not in reboot_exclude

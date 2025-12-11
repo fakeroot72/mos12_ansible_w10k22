@@ -1,3 +1,4 @@
+- fix: set grub passw vars name
 - try: set grub passw in 1-all
 - fix: VM files path and dosk sets
 - ready for 11.12
