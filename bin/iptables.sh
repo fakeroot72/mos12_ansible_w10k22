@@ -41,6 +41,9 @@ iptables -A OUTPUT -d 172.20.20.101 -j ACCEPT
 # Разрешаем squid.1580.ru
 iptables -A OUTPUT -d 195.161.114.165 -j ACCEPT
 
+# Разрешаем tp.1580.ru
+iptables -A OUTPUT -d 81.177.140.242 -j ACCEPT
+
 # Разрешаем silvertests.ru
 iptables -A OUTPUT -d 37.79.254.196 -j ACCEPT
 
