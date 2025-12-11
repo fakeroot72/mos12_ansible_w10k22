@@ -9,7 +9,7 @@
   <Machine uuid="{4aeba88c-0565-458f-9ded-b7baf551827d}" name="w10lego" OSType="Windows10_64" snapshotFolder="Snapshots" lastStateChange="2025-11-21T09:19:17Z">
     <MediaRegistry>
       <HardDisks>
-        <HardDisk uuid="{b2aff612-505c-4f55-bb4b-50a2a7ad2716}" location="/opt/.lycu1580v2/local/tdd/w10lego-02-proxy.vdi" format="vdi" type="Normal">
+        <HardDisk uuid="{b2aff612-505c-4f55-bb4b-50a2a7ad2716}" location="/opt/.lycu1580v2/local/tdd/w10lego-02-proxy.vdi" format="vdi" type="Immutable">
           <HardDisk uuid="{ce49202b-bbce-4228-9fe7-fc5f63fdaba9}" location="Snapshots/{ce49202b-bbce-4228-9fe7-fc5f63fdaba9}.vdi" format="vdi" autoReset="false"/>
         </HardDisk>
       </HardDisks>

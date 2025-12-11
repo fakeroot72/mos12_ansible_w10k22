@@ -15,8 +15,8 @@
       <ExtraDataItem name="GUI/SuppressMessages" value="remindAboutAutoCapture,remindAboutMouseIntegration"/>
     </ExtraData>
     <MachineRegistry>
-      <MachineEntry uuid="{555dbb05-439b-4a2a-8dc2-015231c2d663}" src="/home/olymp/VirtualBox VMs/olymp-windows/olymp-windows.vbox"/>
-      <MachineEntry uuid="{b7854556-71d7-4afc-b91f-fb08b96c4c44}" src="/home/olymp/VirtualBox VMs/olymp-linux/olymp-linux.vbox"/>
+      <MachineEntry uuid="{47a13eea-b0ad-4e33-a9c4-fa767eebdb46}" src="/home/olymp/VirtualBox VMs/olymp-linux/olymp-linux.vbox"/>
+      <MachineEntry uuid="{fb012976-aa6f-4aa5-9143-ca0b44153b53}" src="/home/olymp/VirtualBox VMs/olymp-windows/olymp-windows.vbox"/>
     </MachineRegistry>
     <NetserviceRegistry>
       <DHCPServers>

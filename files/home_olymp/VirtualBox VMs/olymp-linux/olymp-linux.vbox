@@ -6,32 +6,38 @@
 ** Use VBoxManage or the VirtualBox Manager GUI to make changes.
 -->
 <VirtualBox xmlns="http://www.virtualbox.org/" version="1.19-linux">
-  <Machine uuid="{b7854556-71d7-4afc-b91f-fb08b96c4c44}" name="olymp-linux" OSType="Ubuntu_64" snapshotFolder="Snapshots" lastStateChange="2024-12-06T12:24:45Z">
+  <Machine uuid="{47a13eea-b0ad-4e33-a9c4-fa767eebdb46}" name="olymp-linux" OSType="Ubuntu_64" snapshotFolder="Snapshots" lastStateChange="2025-12-10T06:22:40Z">
+    <Description>&#x41E;&#x431;&#x440;&#x430;&#x437; &#x441;&#x438;&#x441;&#x442;&#x435;&#x43C;&#x44B; Linux (&#x43D;&#x430; &#x431;&#x430;&#x437;&#x435; Lubuntu 25.04) &#x434;&#x43B;&#x44F; &#x43F;&#x440;&#x43E;&#x432;&#x435;&#x434;&#x435;&#x43D;&#x438;&#x44F; &#x43E;&#x43B;&#x438;&#x43C;&#x43F;&#x438;&#x430;&#x434; &#x43F;&#x43E; &#x43F;&#x440;&#x43E;&#x433;&#x440;&#x430;&#x43C;&#x43C;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x43D;&#x438;&#x44E; - &#x440;&#x435;&#x433;&#x438;&#x43E;&#x43D;&#x430;&#x43B;&#x44C;&#x43D;&#x43E;&#x433;&#x43E; &#x44D;&#x442;&#x430;&#x43F;&#x430; &#x412;&#x441;&#x41E;&#x428; &#x438; &#x434;&#x440;&#x443;&#x433;&#x438;&#x445; &#x43E;&#x43B;&#x438;&#x43C;&#x43F;&#x438;&#x430;&#x434;. &#x42F;&#x43D;&#x432;&#x430;&#x440;&#x44C;, 2026.</Description>
     <MediaRegistry>
       <HardDisks>
-        <HardDisk uuid="{fa916c50-acd3-4ef8-9fcd-b09dc4f4759d}" location="/opt/.lycu1580v2/local/olymp-linux_vdi/olymp-linux.vdi" format="vdi" type="Normal">
-          <HardDisk uuid="{7795592c-5866-4f4c-9248-ba3014b51daf}" location="Snapshots/{7795592c-5866-4f4c-9248-ba3014b51daf}.vdi" format="vdi" autoReset="false"/>
+        <HardDisk uuid="{ecf42666-a661-4274-98c3-35e4792fc860}" location="/opt/.lycu1580v2/local/tdd/olymp-linux-2025-11-11.vdi" format="vdi" type="Immutable">
+          <HardDisk uuid="{00181793-e02f-4ee7-8bca-762085f810d4}" location="Snapshots/{00181793-e02f-4ee7-8bca-762085f810d4}.vdi" format="vdi" autoReset="false"/>
         </HardDisk>
       </HardDisks>
     </MediaRegistry>
     <ExtraData>
       <ExtraDataItem name="GUI/Fullscreen" value="true"/>
-      <ExtraDataItem name="GUI/LastGuestSizeHint" value="800,600"/>
-      <ExtraDataItem name="GUI/LastNormalWindowPosition" value="558,246,1360,768"/>
-      <ExtraDataItem name="GUI/MenuBar/Enabled" value="false"/>
-      <ExtraDataItem name="GUI/ShowMiniToolBar" value="false"/>
+      <ExtraDataItem name="GUI/LastCloseAction" value="PowerOff"/>
+      <ExtraDataItem name="GUI/LastGuestSizeHint" value="1920,979"/>
+      <ExtraDataItem name="GUI/LastNormalWindowPosition" value="558,246,1360,768,max"/>
       <ExtraDataItem name="GUI/StatusBar/Enabled" value="false"/>
     </ExtraData>
     <Hardware>
-      <CPU count="10">
+      <CPU count="4">
         <PAE enabled="false"/>
         <LongMode enabled="true"/>
         <X2APIC enabled="true"/>
         <HardwareVirtExLargePages enabled="true"/>
       </CPU>
-      <Memory RAMSize="12288"/>
+      <Memory RAMSize="8192"/>
       <HID Pointing="USBTablet"/>
-      <Display controller="VMSVGA" VRAMSize="16"/>
+      <Boot>
+        <Order position="1" device="DVD"/>
+        <Order position="2" device="HardDisk"/>
+        <Order position="3" device="None"/>
+        <Order position="4" device="None"/>
+      </Boot>
+      <Display controller="VMSVGA" VRAMSize="32"/>
       <BIOS>
         <IOAPIC enabled="true"/>
         <SmbiosUuidLittleEndian enabled="true"/>
@@ -50,49 +56,49 @@
         </Adapter>
         <Adapter slot="1" type="82540EM">
           <DisabledModes>
-            <NAT>
+            <NAT localhost-reachable="true">
               <DNS use-host-resolver="true"/>
             </NAT>
           </DisabledModes>
         </Adapter>
         <Adapter slot="2" type="82540EM">
           <DisabledModes>
-            <NAT>
+            <NAT localhost-reachable="true">
               <DNS use-host-resolver="true"/>
             </NAT>
           </DisabledModes>
         </Adapter>
         <Adapter slot="3" type="82540EM">
           <DisabledModes>
-            <NAT>
+            <NAT localhost-reachable="true">
               <DNS use-host-resolver="true"/>
             </NAT>
           </DisabledModes>
         </Adapter>
         <Adapter slot="4" type="82540EM">
           <DisabledModes>
-            <NAT>
+            <NAT localhost-reachable="true">
               <DNS use-host-resolver="true"/>
             </NAT>
           </DisabledModes>
         </Adapter>
         <Adapter slot="5" type="82540EM">
           <DisabledModes>
-            <NAT>
+            <NAT localhost-reachable="true">
               <DNS use-host-resolver="true"/>
             </NAT>
           </DisabledModes>
         </Adapter>
         <Adapter slot="6" type="82540EM">
           <DisabledModes>
-            <NAT>
+            <NAT localhost-reachable="true">
               <DNS use-host-resolver="true"/>
             </NAT>
           </DisabledModes>
         </Adapter>
         <Adapter slot="7" type="82540EM">
           <DisabledModes>
-            <NAT>
+            <NAT localhost-reachable="true">
               <DNS use-host-resolver="true"/>
             </NAT>
           </DisabledModes>
@@ -102,22 +108,22 @@
       <RTC localOrUTC="UTC"/>
       <Clipboard mode="Bidirectional"/>
       <GuestProperties>
-        <GuestProperty name="/VirtualBox/GuestAdd/HostVerLastChecked" value="7.0.16" timestamp="1731864602483874000" flags=""/>
-        <GuestProperty name="/VirtualBox/GuestAdd/Revision" value="163906" timestamp="1731864597934081000" flags=""/>
-        <GuestProperty name="/VirtualBox/GuestAdd/Version" value="7.0.20" timestamp="1731864597933985000" flags=""/>
-        <GuestProperty name="/VirtualBox/GuestAdd/VersionExt" value="7.0.20_Ubuntu" timestamp="1731864597934039000" flags=""/>
-        <GuestProperty name="/VirtualBox/GuestInfo/Net/0/MAC" value="080027B6F59B" timestamp="1731864602937660000" flags=""/>
-        <GuestProperty name="/VirtualBox/GuestInfo/Net/0/Name" value="enp0s3" timestamp="1731864602937812000" flags=""/>
-        <GuestProperty name="/VirtualBox/GuestInfo/Net/0/Status" value="Up" timestamp="1731864602937744000" flags=""/>
-        <GuestProperty name="/VirtualBox/GuestInfo/Net/0/V4/Broadcast" value="10.0.2.255" timestamp="1731864602937339000" flags=""/>
-        <GuestProperty name="/VirtualBox/GuestInfo/Net/0/V4/IP" value="10.0.2.15" timestamp="1731864602937149000" flags=""/>
-        <GuestProperty name="/VirtualBox/GuestInfo/Net/0/V4/Netmask" value="255.255.255.0" timestamp="1731864602937515000" flags=""/>
-        <GuestProperty name="/VirtualBox/GuestInfo/Net/Count" value="1" timestamp="1731864607939054000" flags=""/>
-        <GuestProperty name="/VirtualBox/GuestInfo/OS/Product" value="Linux" timestamp="1731864597933359000" flags=""/>
-        <GuestProperty name="/VirtualBox/GuestInfo/OS/Release" value="6.11.0-8-generic" timestamp="1731864597933692000" flags=""/>
-        <GuestProperty name="/VirtualBox/GuestInfo/OS/ServicePack" value="" timestamp="1731864597933931000" flags=""/>
-        <GuestProperty name="/VirtualBox/GuestInfo/OS/Version" value="#8-Ubuntu SMP PREEMPT_DYNAMIC Mon Sep 16 13:41:20 UTC 2024" timestamp="1731864597933871000" flags=""/>
-        <GuestProperty name="/VirtualBox/HostInfo/GUI/LanguageID" value="en_US" timestamp="1731864612048772000" flags="RDONLYGUEST"/>
+        <GuestProperty name="/VirtualBox/GuestAdd/HostVerLastChecked" value="7.0.16" timestamp="1762850403021757000" flags=""/>
+        <GuestProperty name="/VirtualBox/GuestAdd/Revision" value="163906" timestamp="1762850400475124000" flags=""/>
+        <GuestProperty name="/VirtualBox/GuestAdd/Version" value="7.0.20" timestamp="1762850400474511000" flags=""/>
+        <GuestProperty name="/VirtualBox/GuestAdd/VersionExt" value="7.0.20_Ubuntu" timestamp="1762850400474951000" flags=""/>
+        <GuestProperty name="/VirtualBox/GuestInfo/Net/0/MAC" value="080027B6F59B" timestamp="1762850405482759000" flags=""/>
+        <GuestProperty name="/VirtualBox/GuestInfo/Net/0/Name" value="enp0s3" timestamp="1762850405482955000" flags=""/>
+        <GuestProperty name="/VirtualBox/GuestInfo/Net/0/Status" value="Up" timestamp="1762850405482894000" flags=""/>
+        <GuestProperty name="/VirtualBox/GuestInfo/Net/0/V4/Broadcast" value="10.0.2.255" timestamp="1762850405482562000" flags=""/>
+        <GuestProperty name="/VirtualBox/GuestInfo/Net/0/V4/IP" value="10.0.2.15" timestamp="1762850405482494000" flags=""/>
+        <GuestProperty name="/VirtualBox/GuestInfo/Net/0/V4/Netmask" value="255.255.255.0" timestamp="1762850405482621000" flags=""/>
+        <GuestProperty name="/VirtualBox/GuestInfo/Net/Count" value="1" timestamp="1762850420517635000" flags=""/>
+        <GuestProperty name="/VirtualBox/GuestInfo/OS/Product" value="Linux" timestamp="1762850400472862000" flags=""/>
+        <GuestProperty name="/VirtualBox/GuestInfo/OS/Release" value="6.14.0-33-generic" timestamp="1762850400473225000" flags=""/>
+        <GuestProperty name="/VirtualBox/GuestInfo/OS/ServicePack" value="" timestamp="1762850400473869000" flags=""/>
+        <GuestProperty name="/VirtualBox/GuestInfo/OS/Version" value="#33-Ubuntu SMP PREEMPT_DYNAMIC Wed Sep 17 23:22:02 UTC 2025" timestamp="1762850400473738000" flags=""/>
+        <GuestProperty name="/VirtualBox/HostInfo/GUI/LanguageID" value="en_US" timestamp="1762850423490304000" flags="RDONLYGUEST"/>
       </GuestProperties>
       <StorageControllers>
         <StorageController name="IDE" type="PIIX4" PortCount="2" useHostIOCache="true" Bootable="true">
@@ -125,7 +131,7 @@
         </StorageController>
         <StorageController name="SATA" type="AHCI" PortCount="1" useHostIOCache="false" Bootable="true" IDE0MasterEmulationPort="0" IDE0SlaveEmulationPort="1" IDE1MasterEmulationPort="2" IDE1SlaveEmulationPort="3">
           <AttachedDevice type="HardDisk" hotpluggable="false" port="0" device="0">
-            <Image uuid="{7795592c-5866-4f4c-9248-ba3014b51daf}"/>
+            <Image uuid="{00181793-e02f-4ee7-8bca-762085f810d4}"/>
           </AttachedDevice>
         </StorageController>
       </StorageControllers>

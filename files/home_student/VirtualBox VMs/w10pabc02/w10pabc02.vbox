@@ -9,7 +9,7 @@
   <Machine uuid="{6c933731-7ac7-4607-bfe7-9b27524121ab}" name="w10pabc" OSType="Windows10_64" snapshotFolder="Snapshots" lastStateChange="2025-11-20T15:27:33Z">
     <MediaRegistry>
       <HardDisks>
-        <HardDisk uuid="{11c8e356-9101-42ee-b08c-2c8a6db7d5fe}" location="/opt/.lycu1580v2/local/tdd/w10pabc-02-proxy.vdi" format="vdi" type="Normal">
+        <HardDisk uuid="{11c8e356-9101-42ee-b08c-2c8a6db7d5fe}" location="/opt/.lycu1580v2/local/tdd/w10pabc-02-proxy.vdi" format="vdi" type="Immutable">
           <HardDisk uuid="{09fd2ff0-6df8-4a20-85ee-b1aaa1bfeea8}" location="Snapshots/{09fd2ff0-6df8-4a20-85ee-b1aaa1bfeea8}.vdi" format="vdi" autoReset="false"/>
         </HardDisk>
       </HardDisks>

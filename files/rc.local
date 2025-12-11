@@ -6,13 +6,13 @@ source /opt/.lycu1580v2/bin/config.sh
 
 # backup student
 BACKUP=/home/backup-student-from-`date +%Y_%m_%d-%H_%M_%S`
-mv /home/student/ $BACKUP
+date +"%F%R" | grep -v 2025-12-14 && mv /home/student/ $BACKUP
 chown root:teacher $BACKUP
 chmod 0750 $BACKUP
 
 # backup olymp
 BACKUP=/home/backup-olymp-from-`date +%Y_%m_%d-%H_%M_%S`
-mv /home/olymp/ $BACKUP
+date +"%F%R" | grep -v 2025-12-14 && mv /home/olymp/ $BACKUP
 chown root:teacher $BACKUP
 chmod 0750 $BACKUP
 
@@ -69,28 +69,30 @@ rmmod vboxnetflt
 
 # date +"%F%R" - with time
 
+hostname | grep m1580-1 && date +"%F%R" | grep 2025-12-11 && /opt/.lycu1580v2/bin/iptables.sh
+hostname | grep m1580-2 && date +"%F%R" | grep 2025-12-11 && /opt/.lycu1580v2/bin/iptables.sh
+hostname | grep m1580-4 && date +"%F%R" | grep 2025-12-11 && /opt/.lycu1580v2/bin/iptables.sh
+
+hostname | grep m1580-1 && date +"%F%R" | grep 2025-12-14 && /opt/.lycu1580v2/bin/iptables.sh
+hostname | grep m1580-2 && date +"%F%R" | grep 2025-12-14 && /opt/.lycu1580v2/bin/iptables.sh
+
 hostname | grep n1580-2-418-28 && date +"%F%R" | grep 2025-12-1009 && /opt/.lycu1580v2/bin/iptables.sh
 hostname | grep n1580-2-418-28 && date +"%F%R" | grep 2025-12-1009 && [ -f /etc/environment ] && mv /etc/environment /etc/environment.1580
 hostname | grep n1580-2-418-28 && date +"%F%R" | grep 2025-12-1009 && echo "[Autologin]" > /etc/sddm.conf.d/1580-autologin-user.conf
 hostname | grep n1580-2-418-28 && date +"%F%R" | grep 2025-12-1009 && echo "User=olymp" >> /etc/sddm.conf.d/1580-autologin-user.conf
 hostname | grep n1580-2-418-28 && date +"%F%R" | grep 2025-12-1009 && exit
 
-hostname | grep m1580-1 && date +"%F%R" | grep 2025-11-15 && [ -f /etc/environment ] && mv /etc/environment /etc/environment.1580
-hostname | grep m1580-1 && date +"%F%R" | grep 2025-11-15 && echo "[Autologin]" > /etc/sddm.conf.d/1580-autologin-user.conf
-hostname | grep m1580-1 && date +"%F%R" | grep 2025-11-15 && echo "User=olymp" >> /etc/sddm.conf.d/1580-autologin-user.conf
-hostname | grep m1580-1 && date +"%F%R" | grep 2025-11-15 && exit
+hostname | grep m1580-1 && date +"%F%R" | grep 2025-12-14 && [ -f /etc/environment ] && mv /etc/environment /etc/environment.1580
+hostname | grep m1580-1 && date +"%F%R" | grep 2025-12-14 && echo "[Autologin]" > /etc/sddm.conf.d/1580-autologin-user.conf
+hostname | grep m1580-1 && date +"%F%R" | grep 2025-12-14 && echo "User=olymp" >> /etc/sddm.conf.d/1580-autologin-user.conf
+hostname | grep m1580-1 && date +"%F%R" | grep 2025-12-14 && exit
 
-hostname | grep m1580-2 && date +"%F%R" | grep 2025-12-10 && /opt/.lycu1580v2/bin/iptables.sh
-hostname | grep m1580-2 && date +"%F%R" | grep 2025-12-10 && [ -f /etc/environment ] && mv /etc/environment /etc/environment.1580
-hostname | grep m1580-2 && date +"%F%R" | grep 2025-12-10 && echo "[Autologin]" > /etc/sddm.conf.d/1580-autologin-user.conf
-hostname | grep m1580-2 && date +"%F%R" | grep 2025-12-10 && echo "User=olymp" >> /etc/sddm.conf.d/1580-autologin-user.conf
-hostname | grep m1580-2 && date +"%F%R" | grep 2025-12-10 && exit
+hostname | grep m1580-2 && date +"%F%R" | grep 2025-12-14 && [ -f /etc/environment ] && mv /etc/environment /etc/environment.1580
+hostname | grep m1580-2 && date +"%F%R" | grep 2025-12-14 && echo "[Autologin]" > /etc/sddm.conf.d/1580-autologin-user.conf
+hostname | grep m1580-2 && date +"%F%R" | grep 2025-12-14 && echo "User=olymp" >> /etc/sddm.conf.d/1580-autologin-user.conf
+hostname | grep m1580-2 && date +"%F%R" | grep 2025-12-14 && exit
 
 [ -f /etc/environment.1580 ] && mv /etc/environment.1580 /etc/environment && echo "[Autologin]" > /etc/sddm.conf.d/1580-autologin-user.conf && echo "User=student" >> /etc/sddm.conf.d/1580-autologin-user.conf
-
-hostname | grep m1580-1 && date +"%F%R" | grep 2025-12-11 && /opt/.lycu1580v2/bin/iptables.sh
-hostname | grep m1580-2 && date +"%F%R" | grep 2025-12-11 && /opt/.lycu1580v2/bin/iptables.sh
-hostname | grep m1580-4 && date +"%F%R" | grep 2025-12-11 && /opt/.lycu1580v2/bin/iptables.sh
 
 # not block inet on pannels
 hostname | grep p1580 && exit
