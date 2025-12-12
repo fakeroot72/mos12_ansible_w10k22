@@ -44,6 +44,9 @@ iptables -A OUTPUT -d 195.161.114.165 -j ACCEPT
 # Разрешаем tp.1580.ru
 iptables -A OUTPUT -d 81.177.140.242 -j ACCEPT
 
+# Разрешаем hub.mos.ru
+iptables -A OUTPUT -d 94.79.51.149 -j ACCEPT
+
 # Разрешаем silvertests.ru
 iptables -A OUTPUT -d 37.79.254.196 -j ACCEPT
 
@@ -101,6 +104,7 @@ iptables -A OUTPUT -d 46.235.188.68 -j ACCEPT
 iptables -A OUTPUT -d 78.41.110.69 -j ACCEPT
 iptables -A OUTPUT -d 93.93.88.23 -j ACCEPT
 iptables -A OUTPUT -d 212.193.144.0/20 -j ACCEPT
+iptables -A OUTPUT -d 212.193.155.35 -j ACCEPT
 
 # vos.olimpiada.ru Сайт ВсОШ в Москве
 iptables -A OUTPUT -d 185.178.208.183 -j ACCEPT
@@ -119,6 +123,9 @@ iptables -A OUTPUT -d 77.88.21.119 -j ACCEPT
 
 # repo.os.mos.ru Репозитории МОС, для установки пакетов, если возникнет необходимость доставить приложения.
 iptables -A OUTPUT -d 37.230.149.17 -j ACCEPT
+
+# fonts.googleapis.com Шрифты для online.olimpiada.ru
+iptables -A OUTPUT -d 142.250.184.234 -j ACCEPT
 
 # marketplace.visualstudio.com Магазин расширений для VSCode
 iptables -A OUTPUT -d  150.171.73.16 -j ACCEPT

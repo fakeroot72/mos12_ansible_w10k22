@@ -40,7 +40,7 @@
     grub_exclude:
       - nowhere
   loop:
-    - xm1580-1
+    - m1580-1
   loop_control:
     loop_var: grub_item
   when: grub_item in ansible_hostname and ansible_hostname not in grub_exclude

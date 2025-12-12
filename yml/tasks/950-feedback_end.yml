@@ -4,3 +4,9 @@
   ansible.builtin.uri:
     url: "{{ base_url }}/{{ base_name }}/touch/{{ ansible_hostname }}/end/{{ base_version }}/"
   failed_when: false
+
+- name: write date and time when script end
+  lineinfile:
+    path: local/timestamp_end.log
+    line: "end at: {{ ansible_date_time.iso8601 }}"
+    create: yes
