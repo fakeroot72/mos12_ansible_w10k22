@@ -1,3 +1,4 @@
+- state: for 13 olymp mode add
 - fix: stop transmission in vmi copy scripts
 - feat: install soft for prog
 - stat: inet on
