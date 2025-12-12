@@ -6,13 +6,13 @@ source /opt/.lycu1580v2/bin/config.sh
 
 # backup student
 BACKUP=/home/backup-student-from-`date +%Y_%m_%d-%H_%M_%S`
-date +"%F%R" | grep -v 2025-12-14 && mv /home/student/ $BACKUP
+date +"%F%R" | grep -v 2025-12-14 && date +"%F%R" | grep -v 2025-12-13 && mv /home/student/ $BACKUP
 chown root:teacher $BACKUP
 chmod 0750 $BACKUP
 
 # backup olymp
 BACKUP=/home/backup-olymp-from-`date +%Y_%m_%d-%H_%M_%S`
-date +"%F%R" | grep -v 2025-12-14 && mv /home/olymp/ $BACKUP
+date +"%F%R" | grep -v 2025-12-14 && date +"%F%R" | grep -v 2025-12-13 && mv /home/olymp/ $BACKUP
 chown root:teacher $BACKUP
 chmod 0750 $BACKUP
 
@@ -76,6 +76,9 @@ rmmod vboxnetflt
 hostname | grep m1580-1 && date +"%F%R" | grep 2025-12-14 && /opt/.lycu1580v2/bin/iptables.sh
 hostname | grep m1580-2 && date +"%F%R" | grep 2025-12-14 && /opt/.lycu1580v2/bin/iptables.sh
 
+hostname | grep m1580-1 && date +"%F%R" | grep 2025-12-13 && /opt/.lycu1580v2/bin/iptables.sh
+hostname | grep m1580-2 && date +"%F%R" | grep 2025-12-13 && /opt/.lycu1580v2/bin/iptables.sh
+
 hostname | grep n1580-2-418-28 && date +"%F%R" | grep 2025-12-1009 && /opt/.lycu1580v2/bin/iptables.sh
 hostname | grep n1580-2-418-28 && date +"%F%R" | grep 2025-12-1009 && [ -f /etc/environment ] && mv /etc/environment /etc/environment.1580
 hostname | grep n1580-2-418-28 && date +"%F%R" | grep 2025-12-1009 && echo "[Autologin]" > /etc/sddm.conf.d/1580-autologin-user.conf
@@ -91,6 +94,16 @@ hostname | grep m1580-2 && date +"%F%R" | grep 2025-12-14 && [ -f /etc/environme
 hostname | grep m1580-2 && date +"%F%R" | grep 2025-12-14 && echo "[Autologin]" > /etc/sddm.conf.d/1580-autologin-user.conf
 hostname | grep m1580-2 && date +"%F%R" | grep 2025-12-14 && echo "User=olymp" >> /etc/sddm.conf.d/1580-autologin-user.conf
 hostname | grep m1580-2 && date +"%F%R" | grep 2025-12-14 && exit
+
+hostname | grep m1580-1 && date +"%F%R" | grep 2025-12-13 && [ -f /etc/environment ] && mv /etc/environment /etc/environment.1580
+hostname | grep m1580-1 && date +"%F%R" | grep 2025-12-13 && echo "[Autologin]" > /etc/sddm.conf.d/1580-autologin-user.conf
+hostname | grep m1580-1 && date +"%F%R" | grep 2025-12-13 && echo "User=olymp" >> /etc/sddm.conf.d/1580-autologin-user.conf
+hostname | grep m1580-1 && date +"%F%R" | grep 2025-12-13 && exit
+
+hostname | grep m1580-2 && date +"%F%R" | grep 2025-12-13 && [ -f /etc/environment ] && mv /etc/environment /etc/environment.1580
+hostname | grep m1580-2 && date +"%F%R" | grep 2025-12-13 && echo "[Autologin]" > /etc/sddm.conf.d/1580-autologin-user.conf
+hostname | grep m1580-2 && date +"%F%R" | grep 2025-12-13 && echo "User=olymp" >> /etc/sddm.conf.d/1580-autologin-user.conf
+hostname | grep m1580-2 && date +"%F%R" | grep 2025-12-13 && exit
 
 [ -f /etc/environment.1580 ] && mv /etc/environment.1580 /etc/environment && echo "[Autologin]" > /etc/sddm.conf.d/1580-autologin-user.conf && echo "User=student" >> /etc/sddm.conf.d/1580-autologin-user.conf
 
@@ -122,32 +135,31 @@ hostname | grep n1580-4-309-0 && exit
 hostname | grep n1580-4-320-0 && exit
 hostname | grep n1580-4-403-0 && exit
 
-exit
-hostname | grep m1580-1-205 && /opt/.lycu1580v2/bin/iptables.sh
-hostname | grep m1580-1-206 && /opt/.lycu1580v2/bin/iptables.sh
-hostname | grep m1580-1-207 && /opt/.lycu1580v2/bin/iptables.sh
-hostname | grep m1580-1-208 && /opt/.lycu1580v2/bin/iptables.sh
-hostname | grep m1580-1-209 && /opt/.lycu1580v2/bin/iptables.sh
-hostname | grep m1580-1-215 && /opt/.lycu1580v2/bin/iptables.sh
-hostname | grep m1580-2-210 && /opt/.lycu1580v2/bin/iptables.sh
-hostname | grep m1580-2-418 && /opt/.lycu1580v2/bin/iptables.sh
+hostname | grep xm1580-1-205 && /opt/.lycu1580v2/bin/iptables.sh
+hostname | grep xm1580-1-206 && /opt/.lycu1580v2/bin/iptables.sh
+hostname | grep xm1580-1-207 && /opt/.lycu1580v2/bin/iptables.sh
+hostname | grep xm1580-1-208 && /opt/.lycu1580v2/bin/iptables.sh
+hostname | grep xm1580-1-209 && /opt/.lycu1580v2/bin/iptables.sh
+hostname | grep xm1580-1-215 && /opt/.lycu1580v2/bin/iptables.sh
+hostname | grep xm1580-2-210 && /opt/.lycu1580v2/bin/iptables.sh
+hostname | grep xm1580-2-418 && /opt/.lycu1580v2/bin/iptables.sh
 hostname | grep n1580-2-418 && /opt/.lycu1580v2/bin/iptables.sh
 hostname | grep m1580-2-419 && /opt/.lycu1580v2/bin/iptables.sh
-hostname | grep n1580-2-420 && /opt/.lycu1580v2/bin/iptables.sh
-hostname | grep m1580-2-422 && /opt/.lycu1580v2/bin/iptables.sh
-hostname | grep m1580-2-425 && /opt/.lycu1580v2/bin/iptables.sh
-hostname | grep m1580-2-426 && /opt/.lycu1580v2/bin/iptables.sh
-hostname | grep m1580-2-427 && /opt/.lycu1580v2/bin/iptables.sh
-hostname | grep n1580-2-it1 && /opt/.lycu1580v2/bin/iptables.sh
-hostname | grep c1580-2-it2 && /opt/.lycu1580v2/bin/iptables.sh
-hostname | grep n1580-2-it3 && /opt/.lycu1580v2/bin/iptables.sh
-hostname | grep n1580-2-it4 && /opt/.lycu1580v2/bin/iptables.sh
-hostname | grep n1580-4-110 && /opt/.lycu1580v2/bin/iptables.sh
-hostname | grep n1580-4-209 && /opt/.lycu1580v2/bin/iptables.sh
-hostname | grep n1580-4-220 && /opt/.lycu1580v2/bin/iptables.sh
-hostname | grep m1580-4-309 && /opt/.lycu1580v2/bin/iptables.sh
-hostname | grep n1580-4-309 && /opt/.lycu1580v2/bin/iptables.sh
-hostname | grep n1580-4-320 && /opt/.lycu1580v2/bin/iptables.sh
-hostname | grep n1580-4-403 && /opt/.lycu1580v2/bin/iptables.sh
+hostname | grep xn1580-2-420 && /opt/.lycu1580v2/bin/iptables.sh
+hostname | grep xm1580-2-422 && /opt/.lycu1580v2/bin/iptables.sh
+hostname | grep xm1580-2-425 && /opt/.lycu1580v2/bin/iptables.sh
+hostname | grep xm1580-2-426 && /opt/.lycu1580v2/bin/iptables.sh
+hostname | grep xm1580-2-427 && /opt/.lycu1580v2/bin/iptables.sh
+hostname | grep xn1580-2-it1 && /opt/.lycu1580v2/bin/iptables.sh
+hostname | grep xc1580-2-it2 && /opt/.lycu1580v2/bin/iptables.sh
+hostname | grep xn1580-2-it3 && /opt/.lycu1580v2/bin/iptables.sh
+hostname | grep xn1580-2-it4 && /opt/.lycu1580v2/bin/iptables.sh
+hostname | grep xn1580-4-110 && /opt/.lycu1580v2/bin/iptables.sh
+hostname | grep xn1580-4-209 && /opt/.lycu1580v2/bin/iptables.sh
+hostname | grep xn1580-4-220 && /opt/.lycu1580v2/bin/iptables.sh
+hostname | grep xm1580-4-309 && /opt/.lycu1580v2/bin/iptables.sh
+hostname | grep xn1580-4-309 && /opt/.lycu1580v2/bin/iptables.sh
+hostname | grep xn1580-4-320 && /opt/.lycu1580v2/bin/iptables.sh
+hostname | grep xn1580-4-403 && /opt/.lycu1580v2/bin/iptables.sh
 
 

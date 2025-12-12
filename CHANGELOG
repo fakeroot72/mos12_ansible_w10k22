@@ -1,3 +1,4 @@
+- fix: stop transmission in vmi copy scripts
 - feat: install soft for prog
 - stat: inet on
 - feat: add tp.1580 in iptables
