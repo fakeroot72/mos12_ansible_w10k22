@@ -41,6 +41,9 @@ date +"%F%R" | grep -v 2025-12-14 && iptables -A OUTPUT -d 172.20.20.101 -j ACCE
 # Разрешаем squid.1580.ru
 iptables -A OUTPUT -d 195.161.114.165 -j ACCEPT
 
+# Разрешаем zabbix.1580.ru
+iptables -A OUTPUT -d 81.177.135.203 -j ACCEPT
+
 # Разрешаем tp.1580.ru
 iptables -A OUTPUT -d 81.177.140.242 -j ACCEPT
 
