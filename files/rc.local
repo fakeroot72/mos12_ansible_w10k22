@@ -40,7 +40,7 @@ rm -f /home/student/.config/autostart/mos-welcome-pages.desktop
 [ ! -f $base_path/local/tdd/w10k23-01-proxy.vdi ] && rm /home/student/Рабочий\ стол/KOMPAS_3D_windows_vm.sh
 [ ! -f $base_path/local/tdd/w10lego-02-proxy.vdi ] && rm /home/student/Рабочий\ стол/LEGO_windows_wm.sh
 
-[ ! -f $base_path/local/ege-windows_vdi/ege-windows.vdi ] && rm /home/student/Рабочий\ стол/ege-windows_vm.sh
+[ ! -f $base_path/local/tdd/ege-windows-02-proxy.vdi ] && rm /home/student/Рабочий\ стол/ege-windows_vm.sh
 
 [ ! -f $base_path/local/tdd/olymp-windows-251111.vdi ] && rm /home/student/Рабочий\ стол/olymp-windows_vm.sh
 [ ! -f $base_path/local/tdd/olymp-linux-251111.vdi ] && rm /home/student/Рабочий\ стол/olymp-linux_vm.sh

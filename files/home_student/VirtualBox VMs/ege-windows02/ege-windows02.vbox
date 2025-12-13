@@ -6,7 +6,7 @@
 ** Use VBoxManage or the VirtualBox Manager GUI to make changes.
 -->
 <VirtualBox xmlns="http://www.virtualbox.org/" version="1.19-linux">
-  <Machine uuid="{e1f444c1-51a4-49d1-ac5b-1ae1c3c6b115}" name="ege-windows" OSType="Windows10_64" snapshotFolder="Snapshots" lastStateChange="2025-12-13T09:45:19Z">
+  <Machine uuid="{e1f444c1-51a4-49d1-ac5b-1ae1c3c6b115}" name="ege-windows02" OSType="Windows10_64" snapshotFolder="Snapshots" lastStateChange="2025-12-13T09:45:19Z">
     <Description>&#x41E;&#x431;&#x440;&#x430;&#x437; &#x432;&#x438;&#x440;&#x442;&#x443;&#x430;&#x43B;&#x44C;&#x43D;&#x43E;&#x439; &#x43C;&#x430;&#x448;&#x438;&#x43D;&#x44B; &#x434;&#x43B;&#x44F; &#x43F;&#x440;&#x43E;&#x432;&#x435;&#x434;&#x435;&#x43D;&#x438;&#x44F; &#x440;&#x435;&#x433;&#x438;&#x43E;&#x43D;&#x430;&#x43B;&#x44C;&#x43D;&#x43E;&#x433;&#x43E; &#x44D;&#x442;&#x430;&#x43F;&#x430; &#x412;&#x441;&#x41E;&#x428; &#x43F;&#x43E; &#x438;&#x43D;&#x444;&#x43E;&#x440;&#x43C;&#x430;&#x442;&#x438;&#x43A;&#x435; &#x432; &#x41C;&#x43E;&#x441;&#x43A;&#x432;&#x435;, &#x44F;&#x43D;&#x432;&#x430;&#x440;&#x44C;, 2025</Description>
     <MediaRegistry>
       <HardDisks>
