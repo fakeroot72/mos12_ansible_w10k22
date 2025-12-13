@@ -6,12 +6,12 @@
 ** Use VBoxManage or the VirtualBox Manager GUI to make changes.
 -->
 <VirtualBox xmlns="http://www.virtualbox.org/" version="1.19-linux">
-  <Machine uuid="{e1f444c1-51a4-49d1-ac5b-1ae1c3c6b115}" name="ege-windows" OSType="Windows10_64" snapshotFolder="Snapshots" lastStateChange="2025-02-15T08:32:47Z">
+  <Machine uuid="{e1f444c1-51a4-49d1-ac5b-1ae1c3c6b115}" name="ege-windows" OSType="Windows10_64" snapshotFolder="Snapshots" lastStateChange="2025-12-13T09:45:19Z">
     <Description>&#x41E;&#x431;&#x440;&#x430;&#x437; &#x432;&#x438;&#x440;&#x442;&#x443;&#x430;&#x43B;&#x44C;&#x43D;&#x43E;&#x439; &#x43C;&#x430;&#x448;&#x438;&#x43D;&#x44B; &#x434;&#x43B;&#x44F; &#x43F;&#x440;&#x43E;&#x432;&#x435;&#x434;&#x435;&#x43D;&#x438;&#x44F; &#x440;&#x435;&#x433;&#x438;&#x43E;&#x43D;&#x430;&#x43B;&#x44C;&#x43D;&#x43E;&#x433;&#x43E; &#x44D;&#x442;&#x430;&#x43F;&#x430; &#x412;&#x441;&#x41E;&#x428; &#x43F;&#x43E; &#x438;&#x43D;&#x444;&#x43E;&#x440;&#x43C;&#x430;&#x442;&#x438;&#x43A;&#x435; &#x432; &#x41C;&#x43E;&#x441;&#x43A;&#x432;&#x435;, &#x44F;&#x43D;&#x432;&#x430;&#x440;&#x44C;, 2025</Description>
     <MediaRegistry>
       <HardDisks>
-        <HardDisk uuid="{5188a28a-4b6b-41c0-8e4b-6896a3418003}" location="/opt/.lycu1580v2/local/ege-windows_vdi/ege-windows.vdi" format="vdi" type="Immutable">
-          <HardDisk uuid="{878e183e-1897-4bd2-acdb-bb653171dc3a}" location="Snapshots/{878e183e-1897-4bd2-acdb-bb653171dc3a}.vdi" format="vdi" autoReset="false"/>
+        <HardDisk uuid="{5188a28a-4b6b-41c0-8e4b-6896a3418003}" location="/opt/.lycu1580v2/local/tdd/ege-windows-02-proxy.vdi" format="vdi" type="Immutable">
+          <HardDisk uuid="{0f3b85bc-8669-4440-bc49-d732bf1fce2b}" location="Snapshots/{0f3b85bc-8669-4440-bc49-d732bf1fce2b}.vdi" format="vdi" autoReset="false"/>
         </HardDisk>
       </HardDisks>
     </MediaRegistry>
@@ -49,7 +49,7 @@
         </Controllers>
       </USB>
       <Network>
-        <Adapter slot="0" enabled="true" MACAddress="080027E6E559" type="82540EM">
+        <Adapter slot="0" enabled="true" MACAddress="080027E6E559" cable="true" type="82540EM">
           <NAT localhost-reachable="true">
             <DNS use-host-resolver="true"/>
           </NAT>
@@ -141,7 +141,7 @@
         <StorageController name="IDE Controller" type="PIIX4" PortCount="2" useHostIOCache="true" Bootable="true">
           <AttachedDevice passthrough="false" type="DVD" hotpluggable="false" port="0" device="1"/>
           <AttachedDevice type="HardDisk" hotpluggable="false" port="0" device="0">
-            <Image uuid="{878e183e-1897-4bd2-acdb-bb653171dc3a}"/>
+            <Image uuid="{0f3b85bc-8669-4440-bc49-d732bf1fce2b}"/>
           </AttachedDevice>
         </StorageController>
       </StorageControllers>
