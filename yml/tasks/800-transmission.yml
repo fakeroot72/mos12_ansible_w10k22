@@ -147,7 +147,6 @@
     - xm1580-1-207
     - xm1580-1-208
     - xm1580-1-209
-    - m1580-2
   loop_control:
     loop_var: w10k23_item_r
   when: w10k23_item_r in ansible_hostname and ansible_hostname not in w10k23_exclude_r
@@ -184,7 +183,7 @@
       - n1580-2-418-6
       - n1580-2-418-28
   loop:
-    - m1580-2
+    - xm1580-2
   loop_control:
     loop_var: w10pabc_item_r
   when: w10pabc_item_r in ansible_hostname and ansible_hostname not in w10pabc_exclude_r
@@ -223,7 +222,7 @@
       - n1580-2-418-6
       - n1580-2-418-28
   loop:
-    - m1580-2
+    - xm1580-2
   loop_control:
     loop_var: w10lego_item_r
   when: w10lego_item_r in ansible_hostname and ansible_hostname not in w10lego_exclude_r
@@ -275,11 +274,11 @@
       - nowhere
   loop:
     - m1580-1-205
-    - xm1580-1-206
-    - xm1580-1-207
-    - xm1580-1-208
-    - xm1580-1-209
-    - xm1580-2-418
+    - m1580-2-418-1
+    - m1580-2-418-3
+    - m1580-2-418-5
+    - m1580-2-418-7
+    - m1580-2-418-9
     - xm1580-2-418-17
     - n1580-2-418-6
     - n1580-2-418-28
@@ -302,8 +301,7 @@
       - n1580-2-418-6
       - n1580-2-418-28
   loop:
-    - m1580-1
-    - m1580-2
+    - xm1580-2
   loop_control:
     loop_var: olymp_linux_item_r
   when: olymp_linux_item_r in ansible_hostname and ansible_hostname not in olymp_linux_exclude_r
@@ -319,20 +317,13 @@
     olymp_linux_exclude:
       - m1580-2-418-5
   loop:
-    - xm1580-1-205
-    - xm1580-1-206
-    - xm1580-1-207
-    - xm1580-1-208
-    - xm1580-1-209
-    - xm1580-2-418
+    - m1580-2-418-2
+    - m1580-2-418-4
+    - m1580-2-418-6
+    - m1580-2-418-9
     - m1580-2-418-17
     - n1580-2-418-6
     - n1580-2-418-28
-    - xm1580-2-419
-    - xm1580-2-422
-    - xm1580-2-425
-    - xm1580-2-426
-    - xm1580-2-427
   loop_control:
     loop_var: olymp_linux_item
   when: olymp_linux_item in ansible_hostname and ansible_hostname not in olymp_linux_exclude
@@ -363,7 +354,7 @@
     ege_windows_exclude:
       - nowhere
   loop:
-    - xm1580-1-205
+    - m1580-1-205
     - xm1580-1-206
     - xm1580-1-207
     - xm1580-1-208
@@ -372,11 +363,6 @@
     - m1580-2-418-17
     - n1580-2-418-6
     - n1580-2-418-28
-    - xm1580-2-419
-    - xm1580-2-422
-    - xm1580-2-425
-    - xm1580-2-426
-    - xm1580-2-427
   loop_control:
     loop_var: ege_windows_item
   when: ege_windows_item in ansible_hostname and ansible_hostname not in ege_windows_exclude

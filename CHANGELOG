@@ -1,3 +1,4 @@
+- state: student login
 - fix: transm
 - fix: epic fail delete all linux vm
 - feat: block inet for all hosts
