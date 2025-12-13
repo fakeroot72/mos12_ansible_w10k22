@@ -274,7 +274,7 @@
     olymp_windows_exclude:
       - nowhere
   loop:
-    - xm1580-1-205
+    - m1580-1-205
     - xm1580-1-206
     - xm1580-1-207
     - xm1580-1-208
