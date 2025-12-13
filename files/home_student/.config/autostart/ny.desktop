@@ -1,0 +1,19 @@
+[Desktop Entry]
+Comment[ru_RU]=
+Comment=
+Exec=/opt/.lycu1580v2/bin/ny-launcher.sh
+GenericName[ru_RU]=
+GenericName=
+Hidden=false
+MimeType=
+Name[ru_RU]=My Script
+Name=My Script
+NoDisplay=false
+Path=
+StartupNotify=true
+Terminal=false
+TerminalOptions=
+Type=Application
+X-GNOME-Autostart-enabled=true
+X-KDE-SubstituteUID=false
+X-KDE-Username=

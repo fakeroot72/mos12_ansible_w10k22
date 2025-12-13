@@ -2,7 +2,7 @@
 Categories=GTK;Network;WebBrowser;
 Comment[ru_RU]=Доступ в Интернет
 Comment=Access the Internet
-Exec=chromium-browser http://sdo.1580.ru/
+Exec=chromium-browser --window-size=1000,1080 --window-position=0,0 http://sdo.1580.ru/
 GenericName[ru_RU]=Веб-браузер Chromium
 GenericName=Chromium Web Browser
 Icon=chromium
