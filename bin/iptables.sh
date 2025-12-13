@@ -34,9 +34,9 @@ iptables -A OUTPUT -p tcp --match multiport --dports 49152:65535 -j ACCEPT
 iptables -A OUTPUT -p udp --match multiport --dports 49152:65535 -j ACCEPT
 
 # Разрешаем sdo.1580.ru
-iptables -A OUTPUT -d 217.107.34.59 -j ACCEPT
-iptables -A OUTPUT -d 172.18.164.66 -j ACCEPT
-iptables -A OUTPUT -d 172.20.20.101 -j ACCEPT
+date +"%F%R" | grep -v 2025-12-14 && iptables -A OUTPUT -d 217.107.34.59 -j ACCEPT
+date +"%F%R" | grep -v 2025-12-14 && iptables -A OUTPUT -d 172.18.164.66 -j ACCEPT
+date +"%F%R" | grep -v 2025-12-14 && iptables -A OUTPUT -d 172.20.20.101 -j ACCEPT
 
 # Разрешаем squid.1580.ru
 iptables -A OUTPUT -d 195.161.114.165 -j ACCEPT
@@ -48,7 +48,7 @@ iptables -A OUTPUT -d 81.177.140.242 -j ACCEPT
 iptables -A OUTPUT -d 94.79.51.149 -j ACCEPT
 
 # Разрешаем silvertests.ru
-iptables -A OUTPUT -d 37.79.254.196 -j ACCEPT
+date +"%F%R" | grep -v 2025-12-14 && iptables -A OUTPUT -d 37.79.254.196 -j ACCEPT
 
 # Разрешаем bf726e13342a.hosting.myjino.ru
 iptables -A OUTPUT -d 81.177.136.113 -j ACCEPT
@@ -147,8 +147,9 @@ iptables -A OUTPUT -d 91.221.70.4 -j ACCEPT
 #iptables -A OUTPUT -d 89.169.165.116 -j ACCEPT # msk-ejudge.ru
 
 # vos - inf - ib
+#test
 iptables -A OUTPUT -d 84.201.144.118 -j ACCEPT
-
+#olymp
 iptables -A OUTPUT -d 58.160.212.177 -j ACCEPT
 iptables -A OUTPUT -d 158.160.193.221 -j ACCEPT
 iptables -A OUTPUT -d 158.160.195.100 -j ACCEPT

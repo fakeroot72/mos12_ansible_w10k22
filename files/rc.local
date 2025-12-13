@@ -73,6 +73,8 @@ rmmod vboxnetflt
 #hostname | grep m1580-2 && date +"%F%R" | grep 2025-12-11 && /opt/.lycu1580v2/bin/iptables.sh
 #hostname | grep m1580-4 && date +"%F%R" | grep 2025-12-11 && /opt/.lycu1580v2/bin/iptables.sh
 
+hostname | grep m1580-1-208 && exit
+hostname | grep m1580-1-209 && exit
 hostname | grep m1580-1 && date +"%F%R" | grep 2025-12-14 && /opt/.lycu1580v2/bin/iptables.sh
 hostname | grep m1580-2 && date +"%F%R" | grep 2025-12-14 && /opt/.lycu1580v2/bin/iptables.sh
 
@@ -134,6 +136,7 @@ hostname | grep m1580-4-309-0 && exit
 hostname | grep n1580-4-309-0 && exit
 hostname | grep n1580-4-320-0 && exit
 hostname | grep n1580-4-403-0 && exit
+
 
 hostname | grep m1580-1-205 && /opt/.lycu1580v2/bin/iptables.sh
 hostname | grep m1580-1-206 && /opt/.lycu1580v2/bin/iptables.sh
