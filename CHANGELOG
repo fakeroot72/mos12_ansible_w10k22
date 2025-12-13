@@ -1,3 +1,4 @@
+- state: disable firewall in 1-208, 209 on 13.12
 - state: disable reboot 1-208, 209
 - allow zabbix
 - 1-208 209 inet on
