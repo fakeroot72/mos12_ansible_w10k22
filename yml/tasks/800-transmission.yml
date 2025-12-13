@@ -339,6 +339,50 @@
     loop_var: olymp_linux_item
   when: olymp_linux_item in ansible_hostname and ansible_hostname not in olymp_linux_exclude
 
+- name: ege-windows remove
+  ansible.builtin.file:
+    dest: local/tdd/ege-windows-02-proxy.vdi
+    state: absent
+  vars:
+    ege_windows_exclude_r:
+      - m1580-2-418-17
+      - n1580-2-418-6
+      - n1580-2-418-28
+  loop:
+    - xm1580-1
+  loop_control:
+    loop_var: ege_windows_item_r
+  when: ege_windows_item_r in ansible_hostname and ansible_hostname not in ege_windows_exclude_r
+  
+- name: ege_windows download
+  ansible.builtin.copy:
+    src: files/tp/ege-windows-02-proxy.vdi.torrent
+    dest: local/tdwd/ege-windows-02-proxy.vdi.torrent
+    owner: transmission
+    group: transmission
+    mode: 0644
+  vars:
+    olymp_windows_exclude:
+      - nowhere
+  loop:
+    - xm1580-1-205
+    - xm1580-1-206
+    - xm1580-1-207
+    - xm1580-1-208
+    - xm1580-1-209
+    - xm1580-2-418
+    - m1580-2-418-17
+    - n1580-2-418-6
+    - n1580-2-418-28
+    - xm1580-2-419
+    - xm1580-2-422
+    - xm1580-2-425
+    - xm1580-2-426
+    - xm1580-2-427
+  loop_control:
+    loop_var: ege_windows_item
+  when: ege_windows_item in ansible_hostname and ansible_hostname not in ege_windows_exclude
+
 - name: enable and restart transmission-daemon service
   ansible.builtin.systemd:
     name: transmission-daemon

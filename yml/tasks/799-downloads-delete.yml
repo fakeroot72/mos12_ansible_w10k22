@@ -44,3 +44,8 @@
   ansible.builtin.file:
     path: "{{ base_path }}/local/olymp-linux_vdi/"
     state: absent
+
+- name: ege-windows
+  ansible.builtin.file:
+    path: "{{ base_path }}/local/ege-windows_vdi/"
+    state: absent
