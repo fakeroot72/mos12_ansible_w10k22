@@ -1,3 +1,5 @@
+- prer: add wea.sh
+- state: download ow in 1-205
 - state: disable reboot 1-208, 209
 - state: disable firewall in 1-208, 209 on 13.12
 - state: disable reboot 1-208, 209
