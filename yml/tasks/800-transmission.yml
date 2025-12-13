@@ -285,10 +285,10 @@
     - n1580-2-418-6
     - n1580-2-418-28
     - m1580-2-419
-    - m1580-2-422
-    - m1580-2-425
-    - m1580-2-426
-    - m1580-2-427
+    - xm1580-2-422
+    - xm1580-2-425
+    - xm1580-2-426
+    - xm1580-2-427
   loop_control:
     loop_var: olymp_windows_item
   when: olymp_windows_item in ansible_hostname and ansible_hostname not in olymp_windows_exclude
