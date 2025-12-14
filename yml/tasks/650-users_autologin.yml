@@ -5,6 +5,15 @@
     path: /etc/sddm.conf.d/1580.conf
     state: absent
 
+- name: delete /etc/sddm.conf.d/1580-autologin-user.conf
+  ansible.builtin.file:
+    path: /etc/sddm.conf.d/1580-autologin-user.conf
+    state: absent
+
+- name: delete /etc/sddm.conf.d/1580-autologin-session.conf
+  ansible.builtin.file:
+    path: /etc/sddm.conf.d/1580-autologin-session.conf
+    state: absent
 
 - name: disable default sddm.conf
   ansible.builtin.copy:
@@ -26,7 +35,7 @@
       #Relogin=false
       #Session=01plasma
       User=student
-    dest: /etc/sddm.conf.d/1580-autologin-user.conf
+    dest: /etc/sddm.conf.d/zzz1580-autologin-user.conf
     owner: root
     group: root
     mode: 0644
@@ -48,7 +57,7 @@
       [Autologin]
       #Relogin=false
       Session=xfce
-    dest:  /etc/sddm.conf.d/1580-autologin-session.conf
+    dest:  /etc/sddm.conf.d/zzz1580-autologin-session.conf
     owner: root
     group: root
     mode: 0644
