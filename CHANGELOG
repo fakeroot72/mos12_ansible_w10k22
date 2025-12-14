@@ -1,3 +1,4 @@
+- state: set transm
 - state: student login
 - fix: transm
 - fix: epic fail delete all linux vm
