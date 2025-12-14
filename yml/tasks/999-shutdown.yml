@@ -4,12 +4,14 @@
 #  community.general.shutdown:
   ansible.builtin.command: /sbin/shutdown -h now
   loop:
+    - m1580-1
     - xm1580-1-205
     - xm1580-1-206
     - xm1580-1-207
     - xm1580-1-208
     - xm1580-1-209
     - xm1580-1-215
+    - m1580-2
     - xm1580-2-210
     - xm1580-2-418
     - xn1580-2-418
