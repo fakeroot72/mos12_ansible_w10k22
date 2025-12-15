@@ -3,26 +3,6 @@
 - name: reboot 
 #  ansible.builtin.reboot:
   ansible.builtin.command: /sbin/reboot
-  vars:
-    reboot_exclude:
-      - xm1580-1-205-0
-      - xm1580-1-206-0
-      - xm1580-1-207-0
-      - xm1580-1-208-0
-      - xm1580-1-209-0
-      - xm1580-1-215-0
-      - xm1580-2-418-0
-      - xm1580-2-419-0
-      - xm1580-2-422-0
-      - xm1580-2-425-0
-      - xm1580-2-426-0
-      - xm1580-2-427-0
-      - xn1580-2-it1-0
-      - xc1580-2-it2-0
-      - xn1580-2-it3-0
-      - xn1580-2-it4-0
-      - xn1580-4-110-0
-      - xn1580-4-209-0
   loop:
     - xm1580-1-205
     - xm1580-1-206
@@ -45,4 +25,4 @@
     - xn1580-2-it4
   loop_control:
     loop_var: reboot_item
-  when: reboot_item in ansible_hostname and ansible_hostname not in reboot_exclude
+  when: reboot_item in ansible_hostname
