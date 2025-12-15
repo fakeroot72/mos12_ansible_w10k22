@@ -51,7 +51,8 @@ iptables -A OUTPUT -d 81.177.140.242 -j ACCEPT
 iptables -A OUTPUT -d 94.79.51.149 -j ACCEPT
 
 # Разрешаем silvertests.ru
-date +"%F%R" | grep -v 2025-12-14 && iptables -A OUTPUT -d 37.79.254.196 -j ACCEPT
+date +"%F%R" | grep -v 2025-12-17 && iptables -A OUTPUT -d 37.79.254.196 -j ACCEPT
+date +"%F%R" | grep 2025-12-17 && hostname | grep -v 1580-2 && iptables -A OUTPUT -d 37.79.254.196 -j ACCEPT
 
 # Разрешаем bf726e13342a.hosting.myjino.ru
 iptables -A OUTPUT -d 81.177.136.113 -j ACCEPT
