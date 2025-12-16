@@ -67,6 +67,8 @@ rmmod vboxnetflt
 # for oge
 #gpasswd olymp -a examen
 
+date +"%F%R" | grep 2025-12-17 && /opt/.lycu1580v2/bin/iptables.sh
+
 #hostname | grep m1580-2 && date +"%F%R" | grep 2025-12-14 && /opt/.lycu1580v2/bin/iptables.sh
 #hostname | grep m1580-2 && date +"%F%R" | grep 2025-12-14 && [ -f /etc/environment ] && mv /etc/environment /etc/environment.1580
 #hostname | grep m1580-2 && date +"%F%R" | grep 2025-12-14 && echo "[Autologin]" > /etc/sddm.conf.d/zzz1580-autologin-user.conf
