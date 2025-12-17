@@ -32,6 +32,7 @@
     - python3-matplotlib
     - python3-numpy
     - python3-pandas
+    - tkinter3
 # c++
     - gcc-c++ 
     - gdb
