@@ -1,3 +1,4 @@
+- fix: no passwd grub in 1-205
 - state: install tkinter and turn on snap install
 - state: iptables everywere 17.12
 - state: block silver 17.12
