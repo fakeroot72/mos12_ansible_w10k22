@@ -1,3 +1,4 @@
+- state: turn on proxy and firewall in 2-210
 - fix: iptabes allow arduino ide
 - state: no snap intall
 - state: no proxy and firewall in 2-210
