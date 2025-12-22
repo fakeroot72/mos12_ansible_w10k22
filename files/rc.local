@@ -114,7 +114,7 @@ hostname | grep m1580-1-207 && /opt/.lycu1580v2/bin/iptables.sh
 hostname | grep m1580-1-208 && /opt/.lycu1580v2/bin/iptables.sh
 hostname | grep m1580-1-209 && /opt/.lycu1580v2/bin/iptables.sh
 hostname | grep m1580-1-215 && /opt/.lycu1580v2/bin/iptables.sh
-hostname | grep m1580-2-210 && /opt/.lycu1580v2/bin/iptables.sh
+# hostname | grep m1580-2-210 && /opt/.lycu1580v2/bin/iptables.sh
 hostname | grep m1580-2-418 && /opt/.lycu1580v2/bin/iptables.sh
 hostname | grep n1580-2-418 && /opt/.lycu1580v2/bin/iptables.sh
 hostname | grep m1580-2-419 && /opt/.lycu1580v2/bin/iptables.sh
