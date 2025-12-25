@@ -1,3 +1,4 @@
+- state: set olymp user in 17, 19.01 and 25, 29.12
 - fix: default session path:
 - state: not backup olymp 17, 19.01.2026
 - state: downloads.arduino.cc without proxy
