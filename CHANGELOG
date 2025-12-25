@@ -1,3 +1,4 @@
+- state: downloads.arduino.cc without proxy
 - state: turn on proxy and firewall in 2-210
 - fix: iptabes allow arduino ide
 - state: no snap intall
