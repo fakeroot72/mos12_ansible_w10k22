@@ -45,8 +45,8 @@ rm -f /home/student/.config/autostart/mos-welcome-pages.desktop
 [ ! -f $base_path/local/tdd/olymp-windows-251111.vdi ] && rm /home/student/Рабочий\ стол/olymp-windows_vm.sh
 [ ! -f $base_path/local/tdd/olymp-linux-251111.vdi ] && rm /home/student/Рабочий\ стол/olymp-linux_vm.sh
 
-#auto start arduino in 2-210
-hostname | grep m1580-1-209-2 && cp /usr/share/applications/arduino-ide-v2.desktop /home/student/.config/autostart/
+#autostart arduino in 2-210
+hostname | grep m1580-1-210 && cp /usr/share/applications/arduino-ide-v2.desktop /home/student/.config/autostart/
 
 # do not automatically start chromium on pannels
 [ `hostname | grep p1580` ] && rm /home/student/.config/autostart/chromium.desktop
