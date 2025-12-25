@@ -1,3 +1,4 @@
+- state: not backup olymp 17, 19.01.2026
 - state: downloads.arduino.cc without proxy
 - state: turn on proxy and firewall in 2-210
 - fix: iptabes allow arduino ide

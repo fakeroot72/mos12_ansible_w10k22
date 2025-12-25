@@ -46,7 +46,7 @@
       #[Autologin]
       #Relogin=false
       #Session=xfce
-    dest:  /etc/sddm.conf.d/1580-autologin-session.conf
+    dest:  /etc/sddm.conf.d/zzz1580-autologin-session.conf
     owner: root
     group: root
     mode: 0644
