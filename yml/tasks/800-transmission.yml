@@ -300,7 +300,7 @@
       - n1580-2-418-6
       - n1580-2-418-28
   loop:
-    - xm1580-2
+    - m1580-2-418-9
   loop_control:
     loop_var: olymp_linux_item_r
   when: olymp_linux_item_r in ansible_hostname and ansible_hostname not in olymp_linux_exclude_r
@@ -319,7 +319,7 @@
     - m1580-2-418-2
     - m1580-2-418-4
     - m1580-2-418-6
-    - m1580-2-418-9
+    - m1580-2-418-8
     - m1580-2-418-17
     - n1580-2-418-6
     - n1580-2-418-28
