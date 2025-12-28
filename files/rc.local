@@ -46,7 +46,7 @@ rm -f /home/student/.config/autostart/mos-welcome-pages.desktop
 [ ! -f $base_path/local/tdd/olymp-linux-251111.vdi ] && rm /home/student/Рабочий\ стол/olymp-linux_vm.sh
 
 #autostart arduino in 2-210
-hostname | grep m1580-1-210 && cp /usr/share/applications/arduino-ide-v2.desktop /home/student/.config/autostart/
+hostname | grep m1580-2-210 && cp /usr/share/applications/arduino-ide-v2.desktop /home/student/.config/autostart/
 
 # do not automatically start chromium on pannels
 [ `hostname | grep p1580` ] && rm /home/student/.config/autostart/chromium.desktop
@@ -69,12 +69,6 @@ rmmod vboxnetflt
 
 # for oge
 #gpasswd olymp -a examen
-
-hostname | grep m1580-1 && date +"%F%R" | grep 2025-12-25 && /opt/.lycu1580v2/bin/iptables.sh
-hostname | grep m1580-1 && date +"%F%R" | grep 2025-12-25 && [ -f /etc/environment ] && mv /etc/environment /etc/environment.1580
-hostname | grep m1580-1 && date +"%F%R" | grep 2025-12-25 && echo "[Autologin]" > /etc/sddm.conf.d/zzz1580-autologin-user.conf
-hostname | grep m1580-1 && date +"%F%R" | grep 2025-12-25 && echo "User=olymp" >> /etc/sddm.conf.d/zzz1580-autologin-user.conf
-hostname | grep m1580-1 && date +"%F%R" | grep 2025-12-25 && exit
 
 hostname | grep m1580-1 && date +"%F%R" | grep 2026-01-17 && /opt/.lycu1580v2/bin/iptables.sh
 hostname | grep m1580-1 && date +"%F%R" | grep 2026-01-17 && [ -f /etc/environment ] && mv /etc/environment /etc/environment.1580
