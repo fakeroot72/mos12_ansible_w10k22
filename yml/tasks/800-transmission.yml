@@ -258,6 +258,7 @@
       - n1580-2-418-28
   loop:
     - m1580-1
+    - m1580-2-419-8
     - m1580-2-427
   loop_control:
     loop_var: olymp_windows_item_r
@@ -273,6 +274,7 @@
   vars:
     olymp_windows_exclude:
       - nowhere
+      - m1580-2-419-8
   loop:
     - m1580-2-418-1
     - m1580-2-418-3
