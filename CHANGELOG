@@ -1,3 +1,4 @@
+- state: no olymp-wiindows in 419-8
 - fix: linus download
 - fix 2-210 hostname for arduino and remove 25.12:
 - state: autoreboot 2-210

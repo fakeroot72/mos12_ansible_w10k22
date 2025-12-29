@@ -42,8 +42,8 @@ rm -f /home/student/.config/autostart/mos-welcome-pages.desktop
 
 [ ! -f $base_path/local/tdd/ege-windows-02-proxy.vdi ] && rm /home/student/Рабочий\ стол/ege-windows_vm.sh
 
-[ ! -f $base_path/local/tdd/olymp-windows-251111.vdi ] && rm /home/student/Рабочий\ стол/olymp-windows_vm.sh
-[ ! -f $base_path/local/tdd/olymp-linux-251111.vdi ] && rm /home/student/Рабочий\ стол/olymp-linux_vm.sh
+[ ! -f $base_path/local/tdd/olymp-windows-2025-11-11.vdi ] && rm /home/student/Рабочий\ стол/olymp-windows_vm.sh
+[ ! -f $base_path/local/tdd/olymp-linux-2025-11-11.vdi ] && rm /home/student/Рабочий\ стол/olymp-linux_vm.sh
 
 #autostart arduino in 2-210
 hostname | grep m1580-2-210 && cp /usr/share/applications/arduino-ide-v2.desktop /home/student/.config/autostart/
