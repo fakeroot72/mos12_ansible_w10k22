@@ -1,3 +1,4 @@
+- state: enable snapinstall at the end
 - state: no autoreboot in 2-210
 - fix: olymp vmi names in rc.local
 - state: no olymp-wiindows in 419-8
