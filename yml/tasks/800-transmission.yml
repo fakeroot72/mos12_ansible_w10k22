@@ -265,8 +265,8 @@
   
 - name: olymp_windows download
   ansible.builtin.copy:
-    src: files/tp/olymp-windows-2025-11-11.vdi.torrent
-    dest: local/tdwd/olymp-windows-2025-11-11.vdi.torrent
+    src: files/tp/olymp-windows-2025-11-22.vdi.torrent
+    dest: local/tdwd/olymp-windows-2025-11-22.vdi.torrent
     owner: transmission
     group: transmission
     mode: 0644
