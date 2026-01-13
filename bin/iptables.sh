@@ -120,7 +120,7 @@ iptables -A OUTPUT -d 185.30.228.25 -j ACCEPT
 # olympiads.ru Сайт городской предметно-методической комиссии ВсОШ по информатике
 iptables -A OUTPUT -d 194.58.88.173 -j ACCEPT
 
-# judge-msk.ru
+# ejudge-msk.ru
 iptables -A OUTPUT -d 158.160.12.212 -j ACCEPT
 
 # mc.yandex.ru Метрика яндекса, если заблокировать, то браузер будет долго загружать страницу os.mos.ru
