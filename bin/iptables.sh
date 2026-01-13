@@ -96,20 +96,19 @@ iptables -A OUTPUT -d 94.79.51.185 -j ACCEPT
 iptables -A OUTPUT -d 94.79.51.186 -j ACCEPT
 
 # login.mos.ru Необходим для авторизации в МЭШ. Сам сайт login.mos.ru открывать не нужно, он делает редирект на mos.ru
-iptables -A OUTPUT -d 94.79.51.169 -j ACCEPT
-iptables -A OUTPUT -d 94.79.51.170 -j ACCEPT
-iptables -A OUTPUT -d 94.79.51.171 -j ACCEPT
-#?
-iptables -A OUTPUT -d 94.79.51.136 -j ACCEPT
-iptables -A OUTPUT -d 94.79.51.137 -j ACCEPT
+iptables -A OUTPUT -d 94.79.51.0/24 -j ACCEPT
 
 # online.olimpiada.ru Резервная тестирующая система
+iptables -A OUTPUT -d 212.193.155.35 -j ACCEPT
 iptables -A OUTPUT -d 46.235.186.69 -j ACCEPT
 iptables -A OUTPUT -d 46.235.188.68 -j ACCEPT
-iptables -A OUTPUT -d 78.41.110.69 -j ACCEPT
-iptables -A OUTPUT -d 93.93.88.23 -j ACCEPT
-iptables -A OUTPUT -d 212.193.144.0/20 -j ACCEPT
-iptables -A OUTPUT -d 212.193.155.35 -j ACCEPT
+
+#iptables -A OUTPUT -d 78.41.110.69 -j ACCEPT
+#iptables -A OUTPUT -d 93.93.88.23 -j ACCEPT
+#iptables -A OUTPUT -d 212.193.144.0/20 -j ACCEPT
+
+# fonts.googleapis.com Шрифты для online.olimpiada.ru
+iptables -A OUTPUT -d 142.250.184.234 -j ACCEPT
 
 # vos.olimpiada.ru Сайт ВсОШ в Москве
 iptables -A OUTPUT -d 185.178.208.183 -j ACCEPT
@@ -120,20 +119,14 @@ iptables -A OUTPUT -d 185.30.228.25 -j ACCEPT
 # olympiads.ru Сайт городской предметно-методической комиссии ВсОШ по информатике
 iptables -A OUTPUT -d 194.58.88.173 -j ACCEPT
 
-# ejudge-msk.ru
-iptables -A OUTPUT -d 158.160.12.212 -j ACCEPT
-
 # mc.yandex.ru Метрика яндекса, если заблокировать, то браузер будет долго загружать страницу os.mos.ru
 iptables -A OUTPUT -d 87.250.250.119 -j ACCEPT
 iptables -A OUTPUT -d 87.250.251.119 -j ACCEPT
 iptables -A OUTPUT -d 93.158.134.119 -j ACCEPT
 iptables -A OUTPUT -d 77.88.21.119 -j ACCEPT
 
-# repo.os.mos.ru Репозитории МОС, для установки пакетов, если возникнет необходимость доставить приложения.
+# os.mos.ru repo.os.mos.ru Репозитории МОС, для установки пакетов, если возникнет необходимость доставить приложения.
 iptables -A OUTPUT -d 37.230.149.17 -j ACCEPT
-
-# fonts.googleapis.com Шрифты для online.olimpiada.ru
-iptables -A OUTPUT -d 142.250.184.234 -j ACCEPT
 
 # marketplace.visualstudio.com Магазин расширений для VSCode
 iptables -A OUTPUT -d  150.171.73.16 -j ACCEPT
@@ -150,18 +143,21 @@ iptables -A OUTPUT -d 212.188.39.24/24 -j ACCEPT
 # it-help-school.ru Этот сайт, для доступа к техническим инструкциям
 iptables -A OUTPUT -d 91.221.70.4 -j ACCEPT
 
+# ejudge-msk.ru
+iptables -A OUTPUT -d 158.160.12.212 -j ACCEPT
+
 # vsoch reg 2025
 #iptables -A OUTPUT -d 194.58.88.173 -j ACCEPT # olympiads.ru
 #iptables -A OUTPUT -d 89.169.165.116 -j ACCEPT # msk-ejudge.ru
 
 # vos - inf - ib
 #test
-iptables -A OUTPUT -d 84.201.144.118 -j ACCEPT
+#iptables -A OUTPUT -d 84.201.144.118 -j ACCEPT
 #olymp
-iptables -A OUTPUT -d 58.160.212.177 -j ACCEPT
-iptables -A OUTPUT -d 158.160.193.221 -j ACCEPT
-iptables -A OUTPUT -d 158.160.195.100 -j ACCEPT
-iptables -A OUTPUT -d 130.193.57.26 -j ACCEPT
+#iptables -A OUTPUT -d 58.160.212.177 -j ACCEPT
+#iptables -A OUTPUT -d 158.160.193.221 -j ACCEPT
+#iptables -A OUTPUT -d 158.160.195.100 -j ACCEPT
+#iptables -A OUTPUT -d 130.193.57.26 -j ACCEPT
 
 # block
 iptables -A OUTPUT -p tcp --dport 80 -j REJECT # блокируем исходящий http
