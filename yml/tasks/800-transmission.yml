@@ -265,8 +265,8 @@
   
 - name: olymp_windows download
   ansible.builtin.copy:
-    src: files/tp/olymp-windows-2025-11-21.vdi.torrent
-    dest: local/tdwd/olymp-windows-2025-11-21.vdi.torrent
+    src: files/tp/olymp-windows-2025-11-11.vdi.torrent
+    dest: local/tdwd/olymp-windows-2025-11-11.vdi.torrent
     owner: transmission
     group: transmission
     mode: 0644
@@ -275,18 +275,18 @@
       - nowhere
       - m1580-2-419-8
   loop:
-    - xm1580-2-418-1
-    - xm1580-2-418-3
-    - xm1580-2-418-5
-    - xm1580-2-418-7
-    - xm1580-2-418-9
-    - xm1580-2-418-17
-    - xn1580-2-418-6
+    - m1580-2-418-1
+    - m1580-2-418-3
+    - m1580-2-418-5
+    - m1580-2-418-7
+    - m1580-2-418-9
+    - m1580-2-418-17
+    - n1580-2-418-6
     - xn1580-2-418-28
-    - xm1580-2-419
-    - xm1580-2-422
-    - xm1580-2-425
-    - xm1580-2-426
+    - m1580-2-419
+    - m1580-2-422
+    - m1580-2-425
+    - m1580-2-426
   loop_control:
     loop_var: olymp_windows_item
   when: olymp_windows_item in ansible_hostname and ansible_hostname not in olymp_windows_exclude
