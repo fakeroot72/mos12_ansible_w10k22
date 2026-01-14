@@ -158,6 +158,28 @@ iptables -A OUTPUT -d 158.160.12.212 -j ACCEPT
 #iptables -A OUTPUT -d 194.58.88.173 -j ACCEPT # olympiads.ru
 #iptables -A OUTPUT -d 89.169.165.116 -j ACCEPT # msk-ejudge.ru
 
+# vos - ii
+ext.contest.yandex.ru contest.yandex *
+iptables -A OUTPUT -d 87.250.250.200 -j ACCEPT
+iptables -A OUTPUT -d 2a02:6b8::360 -j ACCEPT
+
+# clck.yandex.ru
+iptables -A OUTPUT -d 77.88.21.14 -j ACCEPT
+iptables -A OUTPUT -d 87.250.250.14 -j ACCEPT
+iptables -A OUTPUT -d 87.250.251.14 -j ACCEPT
+iptables -A OUTPUT -d 93.158.134.14 -j ACCEPT
+iptables -A OUTPUT -d 213.180.193.14 -j ACCEPT
+iptables -A OUTPUT -d 213.180.204.14 -j ACCEPT
+iptables -A OUTPUT -d 2a02:6b8::14 -j ACCEPT
+
+# yastatic.net yandex.st
+iptables -A OUTPUT -d 37.9.64.225 -j ACCEPT
+iptables -A OUTPUT -d 2a02:6b8:23::225 -j ACCEPT
+
+# contest-problem-files.s3-private.mds.yandex.net contest-hidden.s3-private.mds.yandex.net contest-public.s3-private.mds.yandex.net
+iptables -A OUTPUT -d 87.250.251.158 -j ACCEPT
+iptables -A OUTPUT -d 2a02:6b8::3:158 -j ACCEPT
+
 # vos - inf - ib
 #test
 #iptables -A OUTPUT -d 84.201.144.118 -j ACCEPT
