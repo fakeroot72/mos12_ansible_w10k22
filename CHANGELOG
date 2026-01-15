@@ -1,3 +1,4 @@
+- fix: vbox brige deny
 - fix: disable vbox brige
 - state: turn off snap install
 - state: download linux ai at 418-0
