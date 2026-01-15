@@ -1,3 +1,4 @@
+- state: backup olymp
 - state: no backup olymp
 - state: set admin passwd default
 - fix: remove CHARGLOG
