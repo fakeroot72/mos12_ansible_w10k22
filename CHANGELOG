@@ -1,3 +1,4 @@
+- fix: disable vbox brige
 - state: turn off snap install
 - state: download linux ai at 418-0
 - feat: add olymp linux ai torrent

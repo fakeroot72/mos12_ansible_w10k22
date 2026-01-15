@@ -12,14 +12,14 @@
     group: root
     mode: 0644
 
+- name: fix stop vbox brige on exit
+  ansible.builtin.replace:
+    path: /lib/systemd/system/virtualbox.service
+    regexp: '^# ExecStop=/sbin/modprobe -r vboxnetflt$'
+    replace: 'ExecStop=/sbin/modprobe -r vboxnetflt'
+
 - name: turn off virtualbox network brige
   ansible.builtin.replace:
     path: /lib/systemd/system/virtualbox.service
-    regexp: '^ExecStop=/sbin/modprobe -r vboxnetflt$'
-    replace: '# ExecStop=/sbin/modprobe -r vboxnetflt'
-
-- name: turn off virtualbox network brige2
-  ansible.builtin.replace:
-    path: /lib/systemd/system/virtualbox.service
-    regexp: '^ExecStop=/sbin/modprobe vboxnetflt$'
-    replace: '# ExecStop=/sbin/modprobe vboxnetflt'
+    regexp: '^ExecStart=/sbin/modprobe vboxnetflt$'
+    replace: '# ExecStart=/sbin/modprobe vboxnetflt'
