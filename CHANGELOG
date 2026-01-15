@@ -1,4 +1,5 @@
 - fix: remove snapd for free space
+- fix: remove snapd for free space
 - state: increase transm. limit
 - feat: add linux ai runner to rc.local
 - fix: w10k filename
