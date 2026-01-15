@@ -4,10 +4,16 @@
   ansible.builtin.dnf:
     name: virtualbox
 
-- name: turn off virtualbox network brige
+- name: add virtualbox network brige to blacklists
   ansible.builtin.copy:
     content: "blacklist vboxnetflt"
     dest: /etc/modprobe.d/blacklist-vboxnetflt.conf
     owner: root
     group: root
     mode: 0644
+
+- name: turn off virtualbox network brige
+  ansible.builtin.replace:
+    path: /lib/systemd/system/virtualbox.service
+    regexp: '^ExecStop=/sbin/modprobe -r vboxnetflt$'
+    replace: '# ExecStop=/sbin/modprobe -r vboxnetflt'
