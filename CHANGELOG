@@ -1,3 +1,4 @@
+- state: no backup olymp
 - state: set admin passwd default
 - fix: remove CHARGLOG
 - feat: remove snap only m1580-2
