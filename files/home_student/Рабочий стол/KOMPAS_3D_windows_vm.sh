@@ -1,3 +1,3 @@
 #!/bin/sh
 
-VBoxManage startvm w10k23
+VBoxManage startvm w10k

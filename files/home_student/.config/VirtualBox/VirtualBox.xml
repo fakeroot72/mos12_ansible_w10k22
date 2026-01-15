@@ -15,10 +15,10 @@
       <ExtraDataItem name="GUI/SuppressMessages" value="remindAboutAutoCapture,remindAboutMouseIntegration"/>
     </ExtraData>
     <MachineRegistry>
-      <MachineEntry uuid="{3000a2ce-191d-4b1e-84c5-99f6d35aa9b3}" src="/home/student/VirtualBox VMs/w10k23/w10k23.vbox"/>
-      <MachineEntry uuid="{6c933731-7ac7-4607-bfe7-9b27524121ab}" src="/home/student/VirtualBox VMs/w10pabc02/w10pabc02.vbox"/>
-      <MachineEntry uuid="{4aeba88c-0565-458f-9ded-b7baf551827d}" src="/home/student/VirtualBox VMs/w10lego02/w10lego02.vbox"/>
-      <MachineEntry uuid="{e1f444c1-51a4-49d1-ac5b-1ae1c3c6b115}" src="/home/student/VirtualBox VMs/ege-windows02/ege-windows02.vbox"/>
+      <MachineEntry uuid="{3000a2ce-191d-4b1e-84c5-99f6d35aa9b3}" src="/home/student/VirtualBox VMs/w10k/w10k.vbox"/>
+      <MachineEntry uuid="{6c933731-7ac7-4607-bfe7-9b27524121ab}" src="/home/student/VirtualBox VMs/w10pabc/w10pabc.vbox"/>
+      <MachineEntry uuid="{4aeba88c-0565-458f-9ded-b7baf551827d}" src="/home/student/VirtualBox VMs/w10lego/w10lego.vbox"/>
+      <MachineEntry uuid="{e1f444c1-51a4-49d1-ac5b-1ae1c3c6b115}" src="/home/student/VirtualBox VMs/ege-windows/ege-windows.vbox"/>
       <MachineEntry uuid="{47a13eea-b0ad-4e33-a9c4-fa767eebdb46}" src="/home/student/VirtualBox VMs/olymp-linux/olymp-linux.vbox"/>
       <MachineEntry uuid="{fb012976-aa6f-4aa5-9143-ca0b44153b53}" src="/home/student/VirtualBox VMs/olymp-windows/olymp-windows.vbox"/>
     </MachineRegistry>

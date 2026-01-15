@@ -1,3 +1,3 @@
 #!/bin/sh
 
-VBoxManage startvm ege-windows02
+VBoxManage startvm ege-windows
