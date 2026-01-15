@@ -1,3 +1,4 @@
+- fix: w10k filename
 - fix: vbox brige deny
 - fix: disable vbox brige
 - state: turn off snap install
