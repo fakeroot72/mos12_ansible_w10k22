@@ -1,3 +1,4 @@
+- state: set admin passwd default
 - fix: remove CHARGLOG
 - feat: remove snap only m1580-2
 - state: decrease transm. limit
