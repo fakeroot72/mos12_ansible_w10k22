@@ -1,7 +1,0 @@
----
-
-- name: remove snapd
-  ansible.builtin.dnf:
-    name:
-      - snapd
-    state: absent

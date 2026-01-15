@@ -1,0 +1,15 @@
+---
+
+- name: remove snapd
+  ansible.builtin.dnf:
+    name:
+      - snapd
+    state: absent
+  vars:
+    snap_remove_exclude:
+      - nowhere
+  loop:
+    - m1580-2
+  loop_control:
+    loop_var: snap_remove_item
+  when: snap_remove_item in ansible_hostname and ansible_hostname not in snap_remove_exclude

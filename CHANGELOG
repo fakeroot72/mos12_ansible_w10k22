@@ -1,3 +1,4 @@
+- state: decrease transm. limit
 - fix: remove snapd for free space
 - fix: remove snapd for free space
 - state: increase transm. limit
