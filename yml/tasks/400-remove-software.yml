@@ -4,10 +4,10 @@
   ansible.builtin.dnf:
     name:
       - snapd
-       - pycharm-community
-       - arduino-ide
-       - lazarus
-       - lazbuild
+      - pycharm-community
+      - arduino-ide
+      - lazarus
+      - lazbuild
       # - mostechoffice 
     state: absent
   vars:
