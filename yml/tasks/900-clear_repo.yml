@@ -1,5 +1,10 @@
 ---
 
+- name: remove not needed packages
+  ansible.builtin.command: dnf autoremove
+  args:
+    warn: false
+
 - name: clear dnf cache
   ansible.builtin.command: dnf clean all
   args:

@@ -4,12 +4,21 @@
   ansible.builtin.dnf:
     name:
       - snapd
+       - pycharm-community
+       - arduino-ide
+       - lazarus
+       - lazbuild
+      # - mostechoffice 
     state: absent
   vars:
     snap_remove_exclude:
       - nowhere
   loop:
-    - m1580-2
+    - m1580-2-418
+    - m1580-2-419
+    - m1580-2-422
+    - m1580-2-425
+    - m1580-2-426
   loop_control:
     loop_var: snap_remove_item
   when: snap_remove_item in ansible_hostname and ansible_hostname not in snap_remove_exclude

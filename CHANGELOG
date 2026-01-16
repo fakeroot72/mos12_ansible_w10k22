@@ -1,3 +1,4 @@
+- state: disable software updates
 - fix: iptables rules
 - state: backup olymp
 - state: no backup olymp
