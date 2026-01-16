@@ -6,7 +6,7 @@
 ** Use VBoxManage or the VirtualBox Manager GUI to make changes.
 -->
 <VirtualBox xmlns="http://www.virtualbox.org/" version="1.19-linux">
-  <Machine uuid="{3000a2ce-191d-4b1e-84c5-99f6d35aa9b3}" name="w10k23" OSType="Windows10_64" snapshotFolder="Snapshots" lastStateChange="2025-11-11T13:00:42Z">
+  <Machine uuid="{3000a2ce-191d-4b1e-84c5-99f6d35aa9b3}" name="w10k" OSType="Windows10_64" snapshotFolder="Snapshots" lastStateChange="2025-11-11T13:00:42Z">
     <MediaRegistry>
       <HardDisks>
         <HardDisk uuid="{a25621fb-de80-46ee-8b9a-0c885cfb2f59}" location="/opt/.lycu1580v2/local/tdd/w10k23-01-proxy.vdi" format="vdi" type="Immutable">
