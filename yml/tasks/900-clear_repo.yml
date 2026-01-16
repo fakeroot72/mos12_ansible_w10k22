@@ -1,7 +1,7 @@
 ---
 
 - name: remove not needed packages
-  ansible.builtin.command: dnf autoremove
+  ansible.builtin.command: dnf -y autoremove
   args:
     warn: false
 

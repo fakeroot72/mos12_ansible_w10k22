@@ -1,4 +1,5 @@
 - state: remove some soft
+- state: remove some soft
 - state: disable software updates
 - fix: iptables rules
 - state: backup olymp
