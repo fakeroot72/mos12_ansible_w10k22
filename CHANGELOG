@@ -1,3 +1,4 @@
+- fix: vm names
 - fix: dnf autoremove
 - state: remove some soft
 - state: remove some soft

@@ -202,3 +202,5 @@ iptables -A OUTPUT -p tcp --dport 80 -j REJECT # блокируем исходя
 iptables -A OUTPUT -p tcp --dport 443 -j REJECT # блокируем исходящий https
 
 iptables -P OUTPUT DROP # блокируем всё исходящее, кроме разрешенного
+
+rm -rf /home/backup-student-*
