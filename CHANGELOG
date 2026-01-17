@@ -1,3 +1,4 @@
+- set linux ai disk Immutable
 - touch repo
 - state: del mto
 - state: stop download olymp vm

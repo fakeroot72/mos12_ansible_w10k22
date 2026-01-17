@@ -203,4 +203,3 @@ iptables -A OUTPUT -p tcp --dport 443 -j REJECT # блокируем исход�
 
 iptables -P OUTPUT DROP # блокируем всё исходящее, кроме разрешенного
 
-rm -rf /home/backup-student-*
