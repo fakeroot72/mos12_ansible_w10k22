@@ -1,3 +1,4 @@
+- state: no delete backups
 - set linux ai disk Immutable
 - touch repo
 - state: del mto
