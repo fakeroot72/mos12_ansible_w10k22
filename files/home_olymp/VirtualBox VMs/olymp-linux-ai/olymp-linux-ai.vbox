@@ -10,7 +10,7 @@
     <Description>&#x41E;&#x431;&#x440;&#x430;&#x437; &#x441;&#x438;&#x441;&#x442;&#x435;&#x43C;&#x44B; Linux (&#x43D;&#x430; &#x431;&#x430;&#x437;&#x435; Lubuntu 25.04) &#x434;&#x43B;&#x44F; &#x43F;&#x440;&#x43E;&#x432;&#x435;&#x434;&#x435;&#x43D;&#x438;&#x44F; &#x43E;&#x43B;&#x438;&#x43C;&#x43F;&#x438;&#x430;&#x434; &#x43F;&#x43E; &#x43F;&#x440;&#x43E;&#x433;&#x440;&#x430;&#x43C;&#x43C;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x43D;&#x438;&#x44E; - &#x440;&#x435;&#x433;&#x438;&#x43E;&#x43D;&#x430;&#x43B;&#x44C;&#x43D;&#x43E;&#x433;&#x43E; &#x44D;&#x442;&#x430;&#x43F;&#x430; &#x412;&#x441;&#x41E;&#x428; &#x438; &#x434;&#x440;&#x443;&#x433;&#x438;&#x445; &#x43E;&#x43B;&#x438;&#x43C;&#x43F;&#x438;&#x430;&#x434;. &#x42F;&#x43D;&#x432;&#x430;&#x440;&#x44C;, 2026.</Description>
     <MediaRegistry>
       <HardDisks>
-        <HardDisk uuid="{0778094c-1fc0-449b-849e-7f1b6a647840}" location="/opt/.lycu1580v2/local/tdd/olymp-linux-ai-2026-01-15.vdi" format="vdi" type="Normal">
+        <HardDisk uuid="{0778094c-1fc0-449b-849e-7f1b6a647840}" location="/opt/.lycu1580v2/local/tdd/olymp-linux-ai-2026-01-15.vdi" format="vdi" type="Immutable">
           <HardDisk uuid="{79ea3b02-3841-4c1a-80d1-55b356347ad1}" location="Snapshots/{79ea3b02-3841-4c1a-80d1-55b356347ad1}.vdi" format="vdi" autoReset="false"/>
         </HardDisk>
       </HardDisks>
