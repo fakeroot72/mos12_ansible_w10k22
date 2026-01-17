@@ -1,3 +1,4 @@
+- state: stop download olymp vm
 - state: delete all student backups and not backup olymp
 - fix: vm names
 - fix: dnf autoremove

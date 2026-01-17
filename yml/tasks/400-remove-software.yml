@@ -8,7 +8,7 @@
       - arduino-ide
       - lazarus
       - lazbuild
-      # - mostechoffice 
+      - mostechoffice 
     state: absent
   vars:
     snap_remove_exclude:
