@@ -1,3 +1,4 @@
+- fix: not remove data after reboot
 - fix: remove data after reboot
 - state: no delete backups
 - set linux ai disk Immutable
