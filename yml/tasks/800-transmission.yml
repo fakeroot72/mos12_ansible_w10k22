@@ -199,15 +199,15 @@
     w10pabc_exclude:
       - nowhere
   loop:
-    - xm1580-2-418
+    - m1580-2-418
     - m1580-2-418-17
     - n1580-2-418-6
     - n1580-2-418-28
-    - xm1580-2-419
-    - xm1580-2-422
-    - xm1580-2-425
-    - xm1580-2-426
-    - xm1580-2-427
+    - m1580-2-419
+    - m1580-2-422
+    - m1580-2-425
+    - m1580-2-426
+    - m1580-2-427
   loop_control:
     loop_var: w10pabc_item
   when: w10pabc_item in ansible_hostname and ansible_hostname not in w10pabc_exclude
@@ -238,11 +238,11 @@
     w10lego_exclude:
       - nowhere
   loop:
-    - xm1580-2-418
+    - m1580-2-418
     - m1580-2-418-17
     - n1580-2-418-6
     - n1580-2-418-28
-    - xm1580-2-425
+    - m1580-2-425
   loop_control:
     loop_var: w10lego_item
   when: w10lego_item in ansible_hostname and ansible_hostname not in w10lego_exclude
@@ -317,7 +317,7 @@
     olymp_linuxi_ai_exclude_r:
       - nowhere
   loop:
-    - xm1580-1
+    - m1580-1
   loop_control:
     loop_var: olymp_linux_ai_item_r
   when: olymp_linux_ai_item_r in ansible_hostname and ansible_hostname not in olymp_linux_ai_exclude_r
