@@ -1,3 +1,4 @@
+- state: no reboot
 - state: olymp off and some else changes
 - state: olymp off and some else changes
 - fix: set disk Normal in vm
