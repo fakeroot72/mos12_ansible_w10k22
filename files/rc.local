@@ -12,7 +12,7 @@ chmod 0750 $BACKUP
 
 # backup olymp
 BACKUP=/home/backup-olymp-from-`date +%Y_%m_%d-%H_%M_%S`
-# date +"%F%R" | grep -v 2026-01-17 && date +"%F%R" | grep -v 2026-01-19 && mv /home/olymp/ $BACKUP
+date +"%F%R" | grep -v 2026-01-17 && date +"%F%R" | grep -v 2026-01-19 && mv /home/olymp/ $BACKUP
 chown root:teacher $BACKUP
 chmod 0750 $BACKUP
 
@@ -26,10 +26,10 @@ rsync -a --chown=student:student $base_path/files/home_student/ /home/student/
 echo 'export CHROMIUM_USER_FLAGS="--incognito"' >> /home/student/.bashrc
 
 # create new standart olymp home
-# rsync -a --chown=olymp:olymp /etc/skel/ /home/olymp/
+rsync -a --chown=olymp:olymp /etc/skel/ /home/olymp/
 
 # add 1580 files for olymp
-# rsync -a --chown=olymp:olymp $base_path/files/home_olymp/ /home/olymp/
+rsync -a --chown=olymp:olymp $base_path/files/home_olymp/ /home/olymp/
 
 # remove mos welcome
 rm -f /home/olymp/.config/autostart/mos-welcome-pages.desktop
@@ -82,12 +82,6 @@ rmmod vboxnetflt
 #hostname | grep m1580-1 && date +"%F%R" | grep 2026-01-19 && echo "[Autologin]" > /etc/sddm.conf.d/zzz1580-autologin-user.conf
 #hostname | grep m1580-1 && date +"%F%R" | grep 2026-01-19 && echo "User=olymp" >> /etc/sddm.conf.d/zzz1580-autologin-user.conf
 #hostname | grep m1580-1 && date +"%F%R" | grep 2026-01-19 && exit
-
-#hostname | grep m1580-2 && date +"%F%R" | grep 2025-12-29 && /opt/.lycu1580v2/bin/iptables.sh
-#hostname | grep m1580-2 && date +"%F%R" | grep 2025-12-29 && [ -f /etc/environment ] && mv /etc/environment /etc/environment.1580
-#hostname | grep m1580-2 && date +"%F%R" | grep 2025-12-29 && echo "[Autologin]" > /etc/sddm.conf.d/zzz1580-autologin-user.conf
-#hostname | grep m1580-2 && date +"%F%R" | grep 2025-12-29 && echo "User=olymp" >> /etc/sddm.conf.d/zzz1580-autologin-user.conf
-#hostname | grep m1580-2 && date +"%F%R" | grep 2025-12-29 && exit
 
 #hostname | grep m1580-2 && date +"%F%R" | grep 2026-01-17 && /opt/.lycu1580v2/bin/iptables.sh
 #hostname | grep m1580-2 && date +"%F%R" | grep 2026-01-17 && [ -f /etc/environment ] && mv /etc/environment /etc/environment.1580
@@ -160,5 +154,3 @@ hostname | grep xm1580-4-309 && /opt/.lycu1580v2/bin/iptables.sh
 hostname | grep xn1580-4-309 && /opt/.lycu1580v2/bin/iptables.sh
 hostname | grep xn1580-4-320 && /opt/.lycu1580v2/bin/iptables.sh
 hostname | grep xn1580-4-403 && /opt/.lycu1580v2/bin/iptables.sh
-
-

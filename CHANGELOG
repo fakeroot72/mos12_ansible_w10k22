@@ -1,3 +1,4 @@
+- state: olymp off and some else changes
 - fix: set disk Normal in vm
 - fix: not remove data after reboot
 - fix: remove data after reboot

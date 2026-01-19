@@ -34,25 +34,27 @@ iptables -A OUTPUT -p tcp --match multiport --dports 49152:65535 -j ACCEPT
 iptables -A OUTPUT -p udp --match multiport --dports 49152:65535 -j ACCEPT
 
 # Разрешаем sdo.1580.ru
-
-hostname | grep -v 1580-1 && hostname | grep -v 1580-2 && iptables -A OUTPUT -d 217.107.34.59 -j ACCEPT
-date +"%F%R" | grep -v 2026-01-17 && date +"%F%R" | grep -v 2026-01-19 && iptables -A OUTPUT -d 217.107.34.59 -j ACCEPT
-hostname | grep 1580-1-215 && iptables -A OUTPUT -d 217.107.34.59 -j ACCEPT
-
-date +"%F%R" | grep -v 2026-01-17 && date +"%F%R" | grep -v 2026-01-19 && iptables -A OUTPUT -d 172.18.164.66 -j ACCEPT
-hostname | grep 1580-2-427 && iptables -A OUTPUT -d 172.18.164.66 -j ACCEPT
-
+iptables -A OUTPUT -d 217.107.34.59 -j ACCEPT
+iptables -A OUTPUT -d 172.18.164.66 -j ACCEPT
+iptables -A OUTPUT -d 172.23.105.77 -j ACCEPT
 iptables -A OUTPUT -d 172.20.20.101 -j ACCEPT
 
+#hostname | grep -v 1580-1 && hostname | grep -v 1580-2 && iptables -A OUTPUT -d 217.107.34.59 -j ACCEPT
+#date +"%F%R" | grep -v 2026-01-17 && date +"%F%R" | grep -v 2026-01-19 && iptables -A OUTPUT -d 217.107.34.59 -j ACCEPT
+#hostname | grep 1580-1-215 && iptables -A OUTPUT -d 217.107.34.59 -j ACCEPT
+
+#date +"%F%R" | grep -v 2026-01-17 && date +"%F%R" | grep -v 2026-01-19 && iptables -A OUTPUT -d 172.18.164.66 -j ACCEPT
+#hostname | grep 1580-2-427 && iptables -A OUTPUT -d 172.18.164.66 -j ACCEPT
+
 # Разрешаем squid.1580.ru
-#iptables -A OUTPUT -d 195.161.114.165 -j ACCEPT
+iptables -A OUTPUT -d 195.161.114.165 -j ACCEPT
 
-hostname | grep -v 1580-1 && hostname | grep -v 1580-2 && iptables -A OUTPUT -d 195.161.114.165 -j ACCEPT
-date +"%F%R" | grep -v 2026-01-17 && date +"%F%R" | grep -v 2026-01-19 && iptables -A OUTPUT -d 195.161.114.165 -j ACCEPT
+#hostname | grep -v 1580-1 && hostname | grep -v 1580-2 && iptables -A OUTPUT -d 195.161.114.165 -j ACCEPT
+#date +"%F%R" | grep -v 2026-01-17 && date +"%F%R" | grep -v 2026-01-19 && iptables -A OUTPUT -d 195.161.114.165 -j ACCEPT
 
-hostname | grep 1580-1-215 && iptables -A OUTPUT -d 195.161.114.165 -j ACCEPT
-hostname | grep 1580-2-427 && iptables -A OUTPUT -d 195.161.114.165 -j ACCEPT
-hostname | grep 1580-2-it && iptables -A OUTPUT -d 195.161.114.165 -j ACCEPT
+#hostname | grep 1580-1-215 && iptables -A OUTPUT -d 195.161.114.165 -j ACCEPT
+#hostname | grep 1580-2-427 && iptables -A OUTPUT -d 195.161.114.165 -j ACCEPT
+#hostname | grep 1580-2-it && iptables -A OUTPUT -d 195.161.114.165 -j ACCEPT
 
 # Разрешаем zabbix.1580.ru
 iptables -A OUTPUT -d 81.177.135.203 -j ACCEPT
@@ -64,14 +66,14 @@ iptables -A OUTPUT -d 81.177.140.242 -j ACCEPT
 iptables -A OUTPUT -d 94.79.51.149 -j ACCEPT
 
 # Разрешаем silvertests.ru
-#iptables -A OUTPUT -d 37.79.254.196 -j ACCEPT
+iptables -A OUTPUT -d 37.79.254.196 -j ACCEPT
 
-hostname | grep -v 1580-1 && hostname | grep -v 1580-2 && iptables -A OUTPUT -d 37.79.254.196 -j ACCEPT
-date +"%F%R" | grep -v 2026-01-17 && date +"%F%R" | grep -v 2026-01-19 && iptables -A OUTPUT -d 37.79.254.196 -j ACCEPT
+#hostname | grep -v 1580-1 && hostname | grep -v 1580-2 && iptables -A OUTPUT -d 37.79.254.196 -j ACCEPT
+#date +"%F%R" | grep -v 2026-01-17 && date +"%F%R" | grep -v 2026-01-19 && iptables -A OUTPUT -d 37.79.254.196 -j ACCEPT
 
-hostname | grep 1580-1-215 && iptables -A OUTPUT -d 37.79.254.196 -j ACCEPT
-hostname | grep 1580-2-427 && iptables -A OUTPUT -d 37.79.254.196 -j ACCEPT
-hostname | grep 1580-2-it && iptables -A OUTPUT -d 37.79.254.196 -j ACCEPT
+#hostname | grep 1580-1-215 && iptables -A OUTPUT -d 37.79.254.196 -j ACCEPT
+#hostname | grep 1580-2-427 && iptables -A OUTPUT -d 37.79.254.196 -j ACCEPT
+#hostname | grep 1580-2-it && iptables -A OUTPUT -d 37.79.254.196 -j ACCEPT
 
 # Разрешаем bf726e13342a.hosting.myjino.ru
 iptables -A OUTPUT -d 81.177.136.113 -j ACCEPT
