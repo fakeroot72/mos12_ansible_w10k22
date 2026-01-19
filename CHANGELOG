@@ -1,3 +1,4 @@
+- fix: set disk Normal in vm
 - fix: not remove data after reboot
 - fix: remove data after reboot
 - state: no delete backups

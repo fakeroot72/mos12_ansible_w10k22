@@ -1,6 +1,6 @@
 ---
 
-- name: remove snapd
+- name: remove software
   ansible.builtin.dnf:
     name:
       - snapd
@@ -11,14 +11,10 @@
       - mostechoffice 
     state: absent
   vars:
-    snap_remove_exclude:
+    software_remove_exclude:
       - nowhere
   loop:
-    - m1580-2-418
-    - m1580-2-419
-    - m1580-2-422
-    - m1580-2-425
-    - m1580-2-426
+    - nowhere
   loop_control:
-    loop_var: snap_remove_item
-  when: snap_remove_item in ansible_hostname and ansible_hostname not in snap_remove_exclude
+    loop_var: software_remove_item
+  when: software_remove_item in ansible_hostname and ansible_hostname not in software_remove_exclude

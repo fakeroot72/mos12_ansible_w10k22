@@ -183,7 +183,7 @@
       - n1580-2-418-6
       - n1580-2-418-28
   loop:
-    - m1580-2
+    - xm1580-2
   loop_control:
     loop_var: w10pabc_item_r
   when: w10pabc_item_r in ansible_hostname and ansible_hostname not in w10pabc_exclude_r
@@ -222,7 +222,7 @@
       - n1580-2-418-6
       - n1580-2-418-28
   loop:
-    - m1580-2
+    - xm1580-2
   loop_control:
     loop_var: w10lego_item_r
   when: w10lego_item_r in ansible_hostname and ansible_hostname not in w10lego_exclude_r
@@ -257,8 +257,7 @@
       - n1580-2-418-6
       - n1580-2-418-28
   loop:
-    - xxxx
-    - xxxx
+    - m1580-2
   loop_control:
     loop_var: olymp_windows_item_r
   when: olymp_windows_item_r in ansible_hostname and ansible_hostname not in olymp_windows_exclude_r
@@ -273,29 +272,8 @@
   vars:
     olymp_windows_exclude:
       - nowhere
-      - m1580-2-418-2
-      - m1580-2-418-4
-      - m1580-2-418-6
-      - m1580-2-418-8
-      - m1580-2-418-10
-      - m1580-2-418-12
-      - m1580-2-418-13
-      - m1580-2-418-14
-      - m1580-2-418-15
-      - m1580-2-419-8
   loop:
-    - xm1580-2-418-1
-    - xm1580-2-418-3
-    - xm1580-2-418-5
-    - xm1580-2-418-7
-    - xm1580-2-418-9
-    - xm1580-2-418-17
-    - xn1580-2-418-6
-    - xn1580-2-418-28
-    - xm1580-2-419
-    - xm1580-2-422
-    - xm1580-2-425
-    - xm1580-2-426
+    - nowhere
   loop_control:
     loop_var: olymp_windows_item
   when: olymp_windows_item in ansible_hostname and ansible_hostname not in olymp_windows_exclude
@@ -310,7 +288,7 @@
       - n1580-2-418-6
       - n1580-2-418-28
   loop:
-    - xm1580-2-418-9
+    - m1580-2
   loop_control:
     loop_var: olymp_linux_item_r
   when: olymp_linux_item_r in ansible_hostname and ansible_hostname not in olymp_linux_exclude_r
@@ -324,20 +302,9 @@
     mode: 0644
   vars:
     olymp_linux_exclude:
-      - xxx
+      - nowhere
   loop:
-    - xm1580-2-418-2
-    - xm1580-2-418-4
-    - xm1580-2-418-6
-    - xm1580-2-418-8
-    - xm1580-2-418-10
-    - xm1580-2-418-12
-    - xm1580-2-418-13
-    - xm1580-2-418-14
-    - xm1580-2-418-15
-    - xm1580-2-418-17
-    - xn1580-2-418-6
-    - xn1580-2-418-28
+    - nowhere
   loop_control:
     loop_var: olymp_linux_item
   when: olymp_linux_item in ansible_hostname and ansible_hostname not in olymp_linux_exclude
@@ -350,8 +317,7 @@
     olymp_linuxi_ai_exclude_r:
       - nowhere
   loop:
-    - xxxx
-    - xxxx
+    - xm1580-1
   loop_control:
     loop_var: olymp_linux_ai_item_r
   when: olymp_linux_ai_item_r in ansible_hostname and ansible_hostname not in olymp_linux_ai_exclude_r
@@ -365,17 +331,9 @@
     mode: 0644
   vars:
     olymp_linux_ai_exclude:
-      - xm1580-2
+      - nowhere
   loop:
-    - xm1580-1-205
-    - xm1580-1-206
-    - xm1580-1-207
-    - xm1580-1-208
-    - xm1580-1-209
-    - xm1580-2-418-0
-    - xm1580-2-418-17
-    - xn1580-2-418-6
-    - xn1580-2-418-28
+    - nowhere
   loop_control:
     loop_var: olymp_linux_ai_item
   when: olymp_linux_ai_item in ansible_hostname and ansible_hostname not in olymp_linux_ai_exclude
