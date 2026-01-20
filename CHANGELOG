@@ -1,3 +1,4 @@
+- state: download enable
 - state: turn on install soft
 - state: no reboot
 - state: olymp off and some else changes
