@@ -1,4 +1,5 @@
 - state enable snap
+- state enable snap
 - touch repo
 - state: download enable
 - state: turn on install soft
