@@ -314,7 +314,7 @@
     dest: local/tdd/olymp-linux-ai-2026-01-15.vdi
     state: absent
   vars:
-    olymp_linuxi_ai_exclude_r:
+    olymp_linux_ai_exclude_r:
       - nowhere
   loop:
     - m1580-1
