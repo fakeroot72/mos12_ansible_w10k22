@@ -14,27 +14,27 @@
     - netcat-openbsd
     - vscode
 
-- name: Install or upgrade the 'pwntools' Python package
-  ansible.builtin.pip:
-    name: pwntools
-    state: latest
-    executable: pip3
-
-- name: Install or upgrade the 'requests' Python package
-  ansible.builtin.pip:
-    name: requests
-    state: latest
-    executable: pip3
-
-- name: Install or upgrade the 'pwntools' Python package in 3.12
-  ansible.builtin.pip:
-    name: pwntools
-    state: latest
-    executable: pip3.12
-
-- name: Install or upgrade the 'requests' Python package in 3.12
-  ansible.builtin.pip:
-    name: requests
-    state: latest
-    executable: pip3.12
+#- name: Install or upgrade the 'pwntools' Python package
+#  ansible.builtin.pip:
+#    name: pwntools
+#    state: latest
+#    executable: pip3
+#
+#- name: Install or upgrade the 'requests' Python package
+#  ansible.builtin.pip:
+#    name: requests
+#    state: latest
+#    executable: pip3
+#
+#- name: Install or upgrade the 'pwntools' Python package in 3.12
+#  ansible.builtin.pip:
+#    name: pwntools
+#    state: latest
+#    executable: pip3.12
+#
+#- name: Install or upgrade the 'requests' Python package in 3.12
+#  ansible.builtin.pip:
+#    name: requests
+#    state: latest
+#    executable: pip3.12
 
