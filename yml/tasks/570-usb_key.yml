@@ -27,7 +27,7 @@
       session      include       postlogin
     dest: /etc/pam.d/sddm
 
-- name: set /etc/environment
+- name: activate usb key check
   ansible.builtin.copy:
     content: |
       #%PAM-1.0
@@ -37,7 +37,7 @@
 
       #USB Check
       auth  [success=1 default=ignore] pam_succeed_if.so user != admin
-      auth  required pam_exec.so quiet/opt/.lycu1580v2/bin/usb_key_check.sh 
+      auth  required pam_exec.so quiet /opt/.lycu1580v2/bin/usb_key_check.sh 
 
       auth         substack      system-auth
       -auth        optional      pam_gnome_keyring.so
