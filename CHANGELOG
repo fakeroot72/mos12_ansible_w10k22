@@ -1,3 +1,5 @@
+- tmp: add usb checker sh
+- feat: sshd passwords login
 - tmp: disable pip install
 - feat: install idea not everywhere
 - touch repo
