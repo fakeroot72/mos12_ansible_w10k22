@@ -24,6 +24,7 @@
   loop:
     - x1580-1
     - 1580-2-418
+    - 1580-2-419
   loop_control:
     loop_var: install_intellij_idea
   when: install_intellij_idea in ansible_hostname and ansible_hostname not in install_intellij_idea_exclude and 'snapd' in ansible_facts.packages
