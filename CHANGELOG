@@ -1,3 +1,4 @@
+- touch repo
 - state: check usb key turn on at 1-2
 - feat: check usb key in login
 - fix: task name and sddm conf
