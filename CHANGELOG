@@ -1,3 +1,4 @@
+- feat: check usb key in su
 - state: install_intellij_idea in 2-419 too
 - touch repo
 - touch repo
