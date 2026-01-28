@@ -1,3 +1,4 @@
+- feat: disable pam in sshd
 - fix: allow su for wheel only
 - feat: check usb key in su
 - state: install_intellij_idea in 2-419 too

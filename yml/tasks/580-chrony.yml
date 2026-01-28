@@ -1,0 +1,11 @@
+---
+
+- name: install chrony
+  ansible.builtin.dnf:
+    name: chrony
+
+- name: Enable and restart chronyd service
+  ansible.builtin.systemd:
+    name: chronyd
+    enabled: true
+    state: restarted
