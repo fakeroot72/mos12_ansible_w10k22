@@ -1,3 +1,4 @@
+- state: install_intellij_idea in 2-419 too
 - touch repo
 - touch repo
 - state: check usb key turn on at 1-2
