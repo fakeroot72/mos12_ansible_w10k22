@@ -44,6 +44,12 @@
     content: 'PasswordAuthentication no'
     dest: /etc/ssh/sshd_config.d/disable_passords_auth.conf
 
+- name: disable use PAM in sshd
+  ansible.builtin.replace:
+    path: /etc/ssh/sshd_config
+    regexp: '^UsePAM(.*)$'
+    replace: 'UsePAM no'
+
 - name: restart sshd
   ansible.builtin.systemd:
     name: sshd
