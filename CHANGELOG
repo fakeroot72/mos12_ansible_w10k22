@@ -1,3 +1,4 @@
+- feat: enable chrony service
 - feat: disable pam in sshd
 - fix: allow su for wheel only
 - feat: check usb key in su
