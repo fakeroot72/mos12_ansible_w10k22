@@ -35,7 +35,16 @@
 
 - name: install processing snap package
   ansible.builtin.command: "snap install processing --classic"
-  when: "'snapd' in ansible_facts.packages"
+  vars:
+    install_processing_exclude:
+      - nowhwre
+  loop:
+    - 1580-1-208
+    - x1580-2-418
+    - x1580-2-419
+  loop_control:
+    loop_var: install_processing
+  when: install_processing in ansible_hostname and ansible_hostname not in install_processing_exclude and 'snapd' in ansible_facts.packages
 
 - name: install intellij-idea snap package
   ansible.builtin.command: "snap install intellij-idea-community --classic"
@@ -74,7 +83,7 @@
     - xm1580-1-205
     - xm1580-1-206
     - xm1580-1-207
-    - m1580-1-208
+    - 1580-1-208
     - xm1580-1-209
     - xm1580-1-215
     - xm1580-2

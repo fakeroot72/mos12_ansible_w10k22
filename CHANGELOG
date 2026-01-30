@@ -1,3 +1,4 @@
+- state: remove snap everywhere exclude 1-2008
 - feat: snap rename
 - feat: add snap remove
 - state: add snap remove
