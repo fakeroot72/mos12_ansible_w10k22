@@ -23,15 +23,24 @@
       - nowhwre
   loop:
     - x1580-1
-    - 1580-2-418
-    - 1580-2-419
+    - x1580-2-418
+    - x1580-2-419
   loop_control:
     loop_var: install_intellij_idea
   when: install_intellij_idea in ansible_hostname and ansible_hostname not in install_intellij_idea_exclude and 'snapd' in ansible_facts.packages
 
 - name: install ghidra snap package
   ansible.builtin.command: "snap install ghidra"
-  when: "'snapd' in ansible_facts.packages"
+  vars:
+    install_ghidra_exclude:
+      - nowhwre
+  loop:
+    - x1580-1
+    - x1580-2-418
+    - x1580-2-419
+  loop_control:
+    loop_var: install_ghidra
+  when: install_ghidra in ansible_hostname and ansible_hostname not in install_ghidra_exclude and 'snapd' in ansible_facts.packages
 
 - name: install snapd if in absent for next run
   ansible.builtin.dnf:
@@ -50,4 +59,5 @@
 - name: restart snapd
   ansible.builtin.systemd:
     name: snapd
+    # enabled: true
     state: started
