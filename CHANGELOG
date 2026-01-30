@@ -1,3 +1,4 @@
+- state: add snap remove
 - state: enable snap install
 - state: disable snap install
 - feat: enable chrony service
