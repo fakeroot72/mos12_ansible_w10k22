@@ -1,3 +1,4 @@
+- feat: snap rename
 - feat: add snap remove
 - state: add snap remove
 - state: enable snap install

@@ -3,7 +3,6 @@
 - name: remove software
   ansible.builtin.dnf:
     name:
-      - snapd
       - pycharm-community
       - arduino-ide
       - lazarus

@@ -1,5 +1,26 @@
 ---
 
+- name: remove 
+  ansible.builtin.dnf:
+    name:
+      - snapd
+    state: absent
+  vars:
+    remove_snapd_exclude:
+      - nowhere
+  loop:
+    - m1580-1-205
+    - m1580-1-206
+    - m1580-1-207
+    - xm1580-1-208
+    - m1580-1-209
+    - m1580-1-215
+    - m1580-2
+    - m1580-4
+  loop_control:
+    loop_var: remove_snapd_item
+  when: remove_snapd_item in ansible_hostname and ansible_hostname not in remove_snapd_exclude
+
 - name: Получить факты о пакетах
   package_facts:
     manager: auto
@@ -16,19 +37,6 @@
   ansible.builtin.command: "snap install processing --classic"
   when: "'snapd' in ansible_facts.packages"
 
-- name: remove intellij-idea snap package
-  ansible.builtin.command: "snap remove intellij-idea-community"
-  vars:
-    remove_intellij_idea_exclude:
-      - nowhwre
-  loop:
-    - 1580-1
-    - 1580-2
-    - 1580-4
-  loop_control:
-    loop_var: remove_intellij_idea
-  when: remove_intellij_idea in ansible_hostname and ansible_hostname not in remove_intellij_idea_exclude and 'snapd' in ansible_facts.packages
-
 - name: install intellij-idea snap package
   ansible.builtin.command: "snap install intellij-idea-community --classic"
   vars:
@@ -41,19 +49,6 @@
   loop_control:
     loop_var: install_intellij_idea
   when: install_intellij_idea in ansible_hostname and ansible_hostname not in install_intellij_idea_exclude and 'snapd' in ansible_facts.packages
-
-- name: remove ghidra snap package
-  ansible.builtin.command: "snap remove ghidra"
-  vars:
-    install_ghidra_exclude:
-      - nowhwre
-  loop:
-    - x1580-1
-    - x1580-2
-    - x1580-4
-  loop_control:
-    loop_var: remove_ghidra
-  when: remove_ghidra in ansible_hostname and ansible_hostname not in remove_ghidra_exclude and 'snapd' in ansible_facts.packages
 
 - name: install ghidra snap package
   ansible.builtin.command: "snap install ghidra"
@@ -72,7 +67,21 @@
   ansible.builtin.dnf:
     name:
     - snapd
-  when: "'snapd' not in ansible_facts.packages"
+  vars:
+    install_snapd_exclude:
+      - nowhere
+  loop:
+    - xm1580-1-205
+    - xm1580-1-206
+    - xm1580-1-207
+    - m1580-1-208
+    - xm1580-1-209
+    - xm1580-1-215
+    - xm1580-2
+    - xm1580-4
+  loop_control:
+    loop_var: install_snapd_item
+  when: install_snapd_item in ansible_hostname and ansible_hostname not in install_snapd_exclude and 'snapd' not in ansible_facts.packages
 
 - name: set proxy for snapd
   ansible.builtin.copy:
@@ -81,9 +90,11 @@
       SNAP_REEXEC=0
       http_proxy="http://squid.1580.ru:80"
       https_proxy="http://squid.1580.ru:80"
+  when: "'snapd' in ansible_facts.packages"
 
 - name: restart snapd
   ansible.builtin.systemd:
     name: snapd
     # enabled: true # not need already enabled
     state: started
+  when: "'snapd' in ansible_facts.packages"
