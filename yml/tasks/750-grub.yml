@@ -13,7 +13,6 @@
     line: "GRUB_PASSWORD_PROTECT_ONLY_EDITING=true"
     state: present
 
-
 - name: delete configure grub password
   ansible.builtin.file:
     path: /boot/grub2/user.cfg
