@@ -7,6 +7,13 @@
     regexp: '^GRUB_DEFAULT=(.*)$'
     replace: 'GRUB_DEFAULT=0'
 
+- name: set grub password only for editing
+  ansible.builtin.lineinfile:
+    path: /etc/default/grub
+    line: "GRUB_PASSWORD_PROTECT_ONLY_EDITING=true"
+    state: present
+
+
 - name: delete configure grub password
   ansible.builtin.file:
     path: /boot/grub2/user.cfg
@@ -29,7 +36,7 @@
     - m1580-1-207
     - m1580-1-208
     - m1580-1-209
-    - xm1580-1-215
+    - m1580-1-215
   loop_control:
     loop_var: grub_item
   when: grub_item in ansible_hostname and ansible_hostname not in grub_exclude
