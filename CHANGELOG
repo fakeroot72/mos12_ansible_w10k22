@@ -1,3 +1,4 @@
+- feat: allow test-soop.fioco.ru direct connection
 - tmp: set +x to wigi script
 - tmp: add remove nonsystem wifi networks for testing
 - delete not needed line in grub yml
