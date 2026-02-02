@@ -26,20 +26,20 @@
     owner: root
     group: root
     mode: 0600
-  vars:
-    grub_exclude:
-      - nowhere
-  loop:
-    - m1580-1-205
-    - m1580-1-206
-    - m1580-1-207
-    - m1580-1-208
-    - m1580-1-209
-    - m1580-1-215
-    - 1580-2-418
-  loop_control:
-    loop_var: grub_item
-  when: grub_item in ansible_hostname and ansible_hostname not in grub_exclude
+      #  vars:
+      #    grub_exclude:
+      # - nowhere
+      #loop:
+      #- m1580-1-205
+      #- m1580-1-206
+      #- m1580-1-207
+      #- m1580-1-208
+      #- m1580-1-209
+      #- m1580-1-215
+      #- 1580-2-418
+      #loop_control:
+      #loop_var: grub_item
+      #when: grub_item in ansible_hostname and ansible_hostname not in grub_exclude
 
 - name: grub mkconfig
   ansible.builtin.command: "grub2-mkconfig -o /boot/grub2/grub.cfg"
