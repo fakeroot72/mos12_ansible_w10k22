@@ -202,6 +202,9 @@ iptables -A OUTPUT -d 2a02:6b8::3:158 -j ACCEPT
 #iptables -A OUTPUT -d 158.160.195.100 -j ACCEPT
 #iptables -A OUTPUT -d 130.193.57.26 -j ACCEPT
 
+# Разрешаем test-soop.fioco.ru
+iptables -A OUTPUT -d 80.250.167.50 -j ACCEPT
+
 # block
 iptables -A OUTPUT -p tcp --dport 80 -j REJECT # блокируем исходящий http
 iptables -A OUTPUT -p tcp --dport 443 -j REJECT # блокируем исходящий https

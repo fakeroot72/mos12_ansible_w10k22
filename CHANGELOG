@@ -1,3 +1,4 @@
+- tmp: set +x to wigi script
 - tmp: add remove nonsystem wifi networks for testing
 - delete not needed line in grub yml
 - feat: grup password only for editing and turn on grub passwd in 1-215

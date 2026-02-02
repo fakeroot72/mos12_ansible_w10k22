@@ -15,7 +15,7 @@
     content: |
       http_proxy="http://squid.1580.ru:80"
       https_proxy="http://squid.1580.ru:80"
-      no_proxy="localhost,127.0.0.1,10.0.0.0/8,172.0.0.0/8,bf726e13342a.hosting.myjino.ru,downloads.arduino.cc,login.mos.ru,mos.ru,online.olimpiada.ru,repo.os.mos.ru,school.mos.ru,sdo.1580.ru,silvertests.ru,spt.gppc.ru,tinkercad.com,uchebnik.mos.ru,www.tinkercad.com,dr43q.mcko.ru"
+      no_proxy="localhost,127.0.0.1,10.0.0.0/8,172.0.0.0/8,bf726e13342a.hosting.myjino.ru,downloads.arduino.cc,login.mos.ru,mos.ru,online.olimpiada.ru,repo.os.mos.ru,school.mos.ru,sdo.1580.ru,silvertests.ru,spt.gppc.ru,tinkercad.com,uchebnik.mos.ru,www.tinkercad.com,dr43q.mcko.ru,test-soop.fioco.ru"
     dest: /etc/environment
   vars:
     proxy_default_exclude:
