@@ -36,7 +36,7 @@
     - m1580-1-208
     - m1580-1-209
     - m1580-1-215
-    - m1580-2-418
+    - 1580-2-418
   loop_control:
     loop_var: grub_item
   when: grub_item in ansible_hostname and ansible_hostname not in grub_exclude
