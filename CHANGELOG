@@ -1,3 +1,4 @@
+- state: enable grub password
 - state: enable grub password in all 2-418
 - feat: new grub pass and enable in in 2-418
 - feat: allow test-soop.fioco.ru direct connection
