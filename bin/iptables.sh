@@ -82,6 +82,9 @@ iptables -A OUTPUT -d 81.177.136.113 -j ACCEPT
 iptables -A OUTPUT -d 104.18.10.21 -j ACCEPT
 iptables -A OUTPUT -d 104.18.11.21 -j ACCEPT
 
+# Разрешаем vkcalls
+iptables -A OUTPUT -d 155.212.200.14 -j ACCEPT
+
 # Разрешаем wokwi.com
 #iptables -A OUTPUT -d 188.114.99.224 -j ACCEPT
 #iptables -A OUTPUT -d 188.114.98.224 -j ACCEPT

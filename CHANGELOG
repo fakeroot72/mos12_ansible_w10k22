@@ -1,3 +1,4 @@
+- state: on it porox
 - state: off it porox
 - state: enable grub password
 - state: enable grub password in all 2-418
