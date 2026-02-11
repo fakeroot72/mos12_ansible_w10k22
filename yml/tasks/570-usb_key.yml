@@ -301,3 +301,78 @@
     loop_var: usb_key_su_item
   when: usb_key_su_item in ansible_hostname and ansible_hostname not in usb_key_su_exclude
 
+- name: turn off usb key when gui
+  ansible.builtin.blockinfile:
+    path: /etc/pam.d/polkit-1
+    marker: "### USB Check 1580 ###"
+    insertafter: "#%PAM-1.0"
+    state: absent
+    content: |
+      auth  [success=1 default=ignore] pam_succeed_if.so user != admin
+      auth  required pam_exec.so quiet /opt/.lycu1580v2/bin/usb_key_check.sh
+
+- name: turn on usb key when gui
+  ansible.builtin.blockinfile:
+    path: /etc/pam.d/polkit-1
+    marker: "### USB Check 1580 ###"
+    insertafter: "#%PAM-1.0"
+    state: absent
+    content: |
+      auth  [success=1 default=ignore] pam_succeed_if.so user != admin
+      auth  required pam_exec.so quiet /opt/.lycu1580v2/bin/usb_key_check.sh
+  vars:
+    usb_key_gui_exclude:
+      - xm1580-1-205-0
+      - xm1580-1-206-0
+      - xm1580-1-207-0
+      - xm1580-1-208-0
+      - xm1580-1-209-0
+      - xm1580-1-215-0
+      - xm1580-2-418-0
+      - xm1580-2-419-0
+      - xm1580-2-422-0
+      - xm1580-2-425-0
+      - xm1580-2-426-0
+      - xm1580-2-427-0
+      - xn1580-2-it1-0
+      - xc1580-2-it2-0
+      - xn1580-2-it3-0
+      - xn1580-2-it4-0
+      - n1580-4-110-0
+      - n1580-4-209-0
+      - n1580-4-220-0
+      - m1580-4-309-0
+      - n1580-4-309-0
+      - n1580-4-320-0
+      - n1580-4-403-0
+  loop:
+    - xm1580-1-205
+    - xm1580-1-206
+    - xm1580-1-207
+    - xm1580-1-208
+    - xm1580-1-209
+    - xm1580-1-215
+    - xm1580-2-210
+    - m1580-2-418
+    - xn1580-2-418
+    - xm1580-2-419
+    - xn1580-2-420
+    - xm1580-2-422
+    - xm1580-2-425
+    - xm1580-2-426
+    - xm1580-2-427
+    - xn1580-2-it1
+    - xc1580-2-it2
+    - xn1580-2-it3
+    - xn1580-2-it4
+    - xn1580-4-110
+    - xn1580-4-209
+    - xn1580-4-220
+    - xm1580-4-309
+    - xn1580-4-309
+    - xn1580-4-320
+    - xn1580-4-403
+  loop_control:
+    loop_var: usb_key_gui_item
+  when: usb_key_gui_item in ansible_hostname and ansible_hostname not in usb_key_gui_exclude
+
