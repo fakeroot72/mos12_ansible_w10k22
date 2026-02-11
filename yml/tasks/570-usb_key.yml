@@ -316,7 +316,6 @@
     path: /etc/pam.d/polkit-1
     marker: "### USB Check 1580 ###"
     insertafter: "#%PAM-1.0"
-    state: absent
     content: |
       auth  [success=1 default=ignore] pam_succeed_if.so user != admin
       auth  required pam_exec.so quiet /opt/.lycu1580v2/bin/usb_key_check.sh
