@@ -1,3 +1,4 @@
+- fix: required usb key from gui request in 2-418
 - feat: required usb key from gui request in 2-418
 - feat: add ip for vkcalls
 - state: on it porox
