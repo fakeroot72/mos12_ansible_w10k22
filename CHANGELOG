@@ -1,3 +1,4 @@
+- tmp: off required usb key from gui request in 2-418
 - tmp: disable install sublime in
 - fix: required usb key from gui request in 2-418
 - feat: required usb key from gui request in 2-418

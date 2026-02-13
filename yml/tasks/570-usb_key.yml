@@ -18,26 +18,13 @@
     dest: /etc/pam.d/login
 
 - name: activate usb key login check
-  ansible.builtin.copy:
+  ansible.builtin.blockinfile:
+    path: /etc/pam.d/login
+    marker: "### USB Check 1580 ###"
+    insertafter: "#%PAM-1.0"
     content: |
-      #%PAM-1.0
-
-      #USB Check
       auth  [success=1 default=ignore] pam_succeed_if.so user != admin
-      auth  required pam_exec.so quiet /opt/.lycu1580v2/bin/usb_key_check.sh 
-
-      auth       include      system-auth
-      account    required     pam_nologin.so
-      account    include      system-auth
-      password   include      system-auth
-      session    required     pam_loginuid.so
-      session    optional     pam_console.so
-      session    required     pam_namespace.so
-      session    optional     pam_keyinit.so force revoke
-      session    include      system-auth
-      session	   required	pam_selinux.so close
-      session    required	pam_selinux.so open
-    dest: /etc/pam.d/login
+      auth  required pam_exec.so quiet /opt/.lycu1580v2/bin/usb_key_check.sh
   vars:
     usb_key_login_exclude:
       - xm1580-1-205-0
@@ -225,26 +212,13 @@
     dest: /etc/pam.d/su
 
 - name: activate usb key su check
-  ansible.builtin.copy:
+  ansible.builtin.blockinfile:
+    path: /etc/pam.d/su
+    marker: "### USB Check 1580 ###"
+    insertafter: "#%PAM-1.0"
     content: |
-      #%PAM-1.0
-
-      #USB Check
-      #auth  [success=1 default=ignore] pam_succeed_if.so user != admin
-      #auth  required pam_exec.so quiet /opt/.lycu1580v2/bin/usb_key_check.sh 
-      
-      auth       sufficient   pam_rootok.so
-      # Uncomment the following line to implicitly trust users in the "wheel" group.
-      #auth       sufficient   pam_wheel.so trust use_uid
-      # Uncomment the following line to require a user to be in the "wheel" group.
-      auth       required     pam_wheel.so use_uid
-      auth       include      system-auth
-      account    include      system-auth
-      account    sufficient   pam_succeed_if.so uid = 0 use_uid quiet
-      password   include      system-auth
-      session    optional     pam_xauth.so
-      session    include      system-auth
-    dest: /etc/pam.d/su
+      auth  [success=1 default=ignore] pam_succeed_if.so user != admin
+      auth  required pam_exec.so quiet /opt/.lycu1580v2/bin/usb_key_check.sh
   vars:
     usb_key_su_exclude:
       - xm1580-1-205-0
