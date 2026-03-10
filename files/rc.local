@@ -46,6 +46,8 @@ rm -f /home/student/.config/autostart/mos-welcome-pages.desktop
 [ ! -f $base_path/local/tdd/olymp-linux-2025-11-11.vdi ] && rm /home/student/Рабочий\ стол/olymp-linux_vm.sh
 [ ! -f $base_path/local/tdd/olymp-linux-ai-2026-01-15.vdi ] && rm /home/student/Рабочий\ стол/olymp-linux_ai_vm.sh
 
+[ ! -f $base_path/local/tdd/anylogic-ple-8.9.8.linux.x86_64/start-anylogic.sh ] && rm /home/student/Рабочий\ стол/anylogic.sh
+
 #autostart arduino in 2-210
 hostname | grep m1580-2-210 && cp /usr/share/applications/arduino-ide-v2.desktop /home/student/.config/autostart/
 
@@ -78,16 +80,16 @@ rmmod vboxnetflt
 #hostname | grep m1580-1 && date +"%F%R" | grep 2026-01-17 && exit
 
 #hostname | grep m1580-1 && date +"%F%R" | grep 2026-01-19 && /opt/.lycu1580v2/bin/iptables.sh
-hostname | grep m1580-1 && date +"%F%R" | grep 2026-02-28 && [ -f /etc/environment ] && mv /etc/environment /etc/environment.1580
-hostname | grep m1580-1 && date +"%F%R" | grep 2026-02-28 && echo "[Autologin]" > /etc/sddm.conf.d/zzz1580-autologin-user.conf
-hostname | grep m1580-1 && date +"%F%R" | grep 2026-02-28 && echo "User=olymp" >> /etc/sddm.conf.d/zzz1580-autologin-user.conf
-hostname | grep m1580-1 && date +"%F%R" | grep 2026-01-19 && exit
+#hostname | grep m1580-1 && date +"%F%R" | grep 2026-02-28 && [ -f /etc/environment ] && mv /etc/environment /etc/environment.1580
+#hostname | grep m1580-1 && date +"%F%R" | grep 2026-02-28 && echo "[Autologin]" > /etc/sddm.conf.d/zzz1580-autologin-user.conf
+#hostname | grep m1580-1 && date +"%F%R" | grep 2026-02-28 && echo "User=olymp" >> /etc/sddm.conf.d/zzz1580-autologin-user.conf
+#hostname | grep m1580-1 && date +"%F%R" | grep 2026-01-19 && exit
 
 #hostname | grep m1580-2 && date +"%F%R" | grep 2026-02-28 && /opt/.lycu1580v2/bin/iptables.sh
-hostname | grep m1580-2 && date +"%F%R" | grep 2026-02-28 && [ -f /etc/environment ] && mv /etc/environment /etc/environment.1580
-hostname | grep m1580-2 && date +"%F%R" | grep 2026-02-28 && echo "[Autologin]" > /etc/sddm.conf.d/zzz1580-autologin-user.conf
-hostname | grep m1580-2 && date +"%F%R" | grep 2026-02-28 && echo "User=olymp" >> /etc/sddm.conf.d/zzz1580-autologin-user.conf
-hostname | grep m1580-2 && date +"%F%R" | grep 2026-02-28 && exit
+#hostname | grep m1580-2 && date +"%F%R" | grep 2026-02-28 && [ -f /etc/environment ] && mv /etc/environment /etc/environment.1580
+#hostname | grep m1580-2 && date +"%F%R" | grep 2026-02-28 && echo "[Autologin]" > /etc/sddm.conf.d/zzz1580-autologin-user.conf
+#hostname | grep m1580-2 && date +"%F%R" | grep 2026-02-28 && echo "User=olymp" >> /etc/sddm.conf.d/zzz1580-autologin-user.conf
+#hostname | grep m1580-2 && date +"%F%R" | grep 2026-02-28 && exit
 
 #hostname | grep m1580-2 && date +"%F%R" | grep 2026-01-19 && /opt/.lycu1580v2/bin/iptables.sh
 #hostname | grep m1580-2 && date +"%F%R" | grep 2026-01-19 && [ -f /etc/environment ] && mv /etc/environment /etc/environment.1580
