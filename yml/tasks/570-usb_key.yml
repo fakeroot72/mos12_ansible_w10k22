@@ -259,7 +259,7 @@
     dest: local/usb_key_check_wrapper
     owner: root
     group: root
-    mode: 4755
+    mode: 04755
 
 - name: turn off usb key when gui
   ansible.builtin.blockinfile:

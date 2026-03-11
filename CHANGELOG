@@ -1,3 +1,4 @@
+- feat: try gui usb key checker in 2-418
 - feat: add remove non system wifi in 2-418
 - feat: add log file to remove wifi script
 - fix: delete transmission etc torrents and resume
