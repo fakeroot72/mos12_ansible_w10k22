@@ -1,3 +1,4 @@
+- fix: usb key checker right
 - feat: try gui usb key checker in 2-418
 - feat: add remove non system wifi in 2-418
 - feat: add log file to remove wifi script
