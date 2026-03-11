@@ -20,7 +20,7 @@
 - name: activate usb key login check
   ansible.builtin.blockinfile:
     path: /etc/pam.d/login
-    marker: "### USB Check 1580 ###"
+    marker: "### {mark} USB Check 1580 ###"
     insertafter: "#%PAM-1.0"
     content: |
       auth  [success=1 default=ignore] pam_succeed_if.so user != admin
@@ -111,7 +111,7 @@
 - name: activate usb key sddm check
   ansible.builtin.blockinfile:
     path: /etc/pam.d/sddm
-    marker: "### USB Check 1580 ###"
+    marker: "### {mark} USB Check 1580 ###"
     insertafter: "auth         required      pam_succeed_if.so user != root quiet_success"
     content: |
       auth  [success=1 default=ignore] pam_succeed_if.so user != admin
@@ -192,7 +192,7 @@
 - name: activate usb key su check
   ansible.builtin.blockinfile:
     path: /etc/pam.d/su
-    marker: "### USB Check 1580 ###"
+    marker: "### {mark} USB Check 1580 ###"
     insertafter: "#%PAM-1.0"
     content: |
       auth  [success=1 default=ignore] pam_succeed_if.so user != admin
@@ -261,10 +261,21 @@
     group: root
     mode: 04755
 
+- name: set default polkit-1
+  ansible.builtin.copy:
+    content: |
+      #%PAM-1.0
+
+      auth       include      system-auth
+      account    include      system-auth
+      password   include      system-auth
+      session    include      system-auth
+    dest: /etc/pam.d/polkit-1
+
 - name: turn off usb key when gui
   ansible.builtin.blockinfile:
     path: /etc/pam.d/polkit-1
-    marker: "### USB Check 1580 ###"
+    marker: "### {mark} USB Check 1580 ###"
     insertafter: "#%PAM-1.0"
     state: absent
     content: |
@@ -274,7 +285,7 @@
 - name: turn on usb key when gui
   ansible.builtin.blockinfile:
     path: /etc/pam.d/polkit-1
-    marker: "### USB Check 1580 ###"
+    marker: "### {mark} USB Check 1580 ###"
     insertafter: "#%PAM-1.0"
     content: |
       auth  [success=1 default=ignore] pam_succeed_if.so user != admin
