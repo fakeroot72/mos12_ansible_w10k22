@@ -1,3 +1,4 @@
+- fix: delete transmission etc torrents and resume
 - feat: add anylogic script and download AL at 1- and 2- exept 2-it
 - state: anylogic in 1-205
 - tmp: add usb_key_wrapper files

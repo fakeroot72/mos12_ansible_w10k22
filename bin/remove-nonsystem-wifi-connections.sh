@@ -1,4 +1,9 @@
 #!/usr/bin/env sh
+
+exec >> /tmp/ansible-removewifi.log 2>&1
+
+source /opt/.lycu1580v2/bin/config.sh
+
 delete_if_nonsys_conn () {
     if [ ! -e "$1" ]; then
         return
