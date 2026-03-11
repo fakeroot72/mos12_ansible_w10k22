@@ -1,3 +1,4 @@
+- feat: add remove non system wifi in 2-418
 - feat: add log file to remove wifi script
 - fix: delete transmission etc torrents and resume
 - feat: add anylogic script and download AL at 1- and 2- exept 2-it

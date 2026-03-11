@@ -253,6 +253,14 @@
     loop_var: usb_key_su_item
   when: usb_key_su_item in ansible_hostname and ansible_hostname not in usb_key_su_exclude
 
+- name: create usb key checker with sureruser bit
+  ansible.builtin.copy:
+    src: bin/usb_key_check_wrapper
+    dest: local/usb_key_check_wrapper
+    owner: root
+    group: root
+    mode: 4755
+
 - name: turn off usb key when gui
   ansible.builtin.blockinfile:
     path: /etc/pam.d/polkit-1
@@ -270,7 +278,7 @@
     insertafter: "#%PAM-1.0"
     content: |
       auth  [success=1 default=ignore] pam_succeed_if.so user != admin
-      auth  required pam_exec.so quiet /opt/.lycu1580v2/bin/usb_key_check.sh
+      auth  required pam_exec.so quiet /opt/.lycu1580v2/local/usb_key_check_wrapper
   vars:
     usb_key_gui_exclude:
       - xm1580-1-205-0
@@ -304,7 +312,7 @@
     - xm1580-1-209
     - xm1580-1-215
     - xm1580-2-210
-    - xm1580-2-418
+    - m1580-2-418
     - xn1580-2-418
     - xm1580-2-419
     - xn1580-2-420
@@ -326,4 +334,3 @@
   loop_control:
     loop_var: usb_key_gui_item
   when: usb_key_gui_item in ansible_hostname and ansible_hostname not in usb_key_gui_exclude
-
