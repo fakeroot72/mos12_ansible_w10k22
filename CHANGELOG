@@ -1,3 +1,4 @@
+- state: remove nswifi in 2-4all
 - tmp: add usb_key_check_wrapper source
 - fix: markers in pam
 - touch repo
