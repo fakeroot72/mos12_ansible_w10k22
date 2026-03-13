@@ -3,7 +3,6 @@
   ansible.builtin.file:
     path: local
     state: directory
-    mode: '0755'
 
 - name: create user for ansible tasks
   ansible.builtin.user:
