@@ -1,4 +1,5 @@
 - fix: create local path
+- fix: create local path
 - state: trans exclude for 2-418 comp
 - state: remove nswifi in 2-4all
 - tmp: add usb_key_check_wrapper source
