@@ -1,3 +1,4 @@
+- fix: no revoot 1-207
 - state: enable usb token in 1- 2-
 - state: new grub pass
 - fix: create local path
