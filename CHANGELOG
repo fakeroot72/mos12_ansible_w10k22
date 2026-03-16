@@ -1,4 +1,5 @@
 - fix: del dublicate off file
+- fix: del dublicate off file
 - fix: add cronie to install sequence
 - state: disable usb gui token in 1- 2-
 - fix: no revoot 1-207
