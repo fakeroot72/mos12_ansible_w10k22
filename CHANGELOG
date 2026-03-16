@@ -1,3 +1,4 @@
+- state: new grub pass
 - fix: create local path
 - fix: create local path
 - state: trans exclude for 2-418 comp
