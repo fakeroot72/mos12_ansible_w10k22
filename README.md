@@ -5,7 +5,7 @@
 ```
 rm -rf /opt/.lycu1580v2/
 dnf -y update
-dnf -y install ansible git
+dnf -y install ansible git cronie
 ansible-pull -d /opt/.lycu1580v2/ -U https://hub.mos.ru/1580/mos12_ansible_w10k22.git 
 reboot
 ```
