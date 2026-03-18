@@ -85,17 +85,18 @@ rmmod vboxnetflt
 #hostname | grep m1580-1 && date +"%F%R" | grep 2026-02-28 && echo "User=olymp" >> /etc/sddm.conf.d/zzz1580-autologin-user.conf
 #hostname | grep m1580-1 && date +"%F%R" | grep 2026-01-19 && exit
 
-#hostname | grep m1580-2-it && date +"%F%R" | grep 2026-03-21 && /opt/.lycu1580v2/bin/iptables.sh
-#hostname | grep m1580-2-it && date +"%F%R" | grep 2026-03-21 && [ -f /etc/environment ] && mv /etc/environment /etc/environment.1580
-#hostname | grep m1580-2-it && date +"%F%R" | grep 2026-03-21 && echo "[Autologin]" > /etc/sddm.conf.d/zzz1580-autologin-user.conf
-#hostname | grep m1580-2-it && date +"%F%R" | grep 2026-03-21 && echo "User=olymp" >> /etc/sddm.conf.d/zzz1580-autologin-user.conf
-#hostname | grep m1580-2-it && date +"%F%R" | grep 2026-03-21 && exit
+hostname | grep m1580-2-it3 && date +"%F%R" | grep 2026-03-21 && /opt/.lycu1580v2/bin/iptables.sh
+hostname | grep m1580-2-it3 && date +"%F%R" | grep 2026-03-21 && [ -f /etc/environment ] && mv /etc/environment /etc/environment.1580
+#hostname | grep m1580-2-it3 && date +"%F%R" | grep 2026-03-21 && echo "[Autologin]" > /etc/sddm.conf.d/zzz1580-autologin-user.conf
+#hostname | grep m1580-2-it3 && date +"%F%R" | grep 2026-03-21 && echo "User=olymp" >> /etc/sddm.conf.d/zzz1580-autologin-user.conf
+hostname | grep m1580-2-it3 && date +"%F%R" | grep 2026-03-21 && exit
 
-#hostname | grep m1580-2 && date +"%F%R" | grep 2026-01-19 && /opt/.lycu1580v2/bin/iptables.sh
-#hostname | grep m1580-2 && date +"%F%R" | grep 2026-01-19 && [ -f /etc/environment ] && mv /etc/environment /etc/environment.1580
-#hostname | grep m1580-2 && date +"%F%R" | grep 2026-01-19 && echo "[Autologin]" > /etc/sddm.conf.d/zzz1580-autologin-user.conf
-#hostname | grep m1580-2 && date +"%F%R" | grep 2026-01-19 && echo "User=olymp" >> /etc/sddm.conf.d/zzz1580-autologin-user.conf
-#hostname | grep m1580-2 && date +"%F%R" | grep 2026-01-19 && exit
+hostname | grep m1580-2-it4 && date +"%F%R" | grep 2026-03-21 && /opt/.lycu1580v2/bin/iptables.sh
+hostname | grep m1580-2-it4 && date +"%F%R" | grep 2026-03-21 && [ -f /etc/environment ] && mv /etc/environment /etc/environment.1580
+#hostname | grep m1580-2-it4 && date +"%F%R" | grep 2026-03-21 && echo "[Autologin]" > /etc/sddm.conf.d/zzz1580-autologin-user.conf
+#hostname | grep m1580-2-it4 && date +"%F%R" | grep 2026-03-21 && echo "User=olymp" >> /etc/sddm.conf.d/zzz1580-autologin-user.conf
+hostname | grep m1580-2-it4 && date +"%F%R" | grep 2026-03-21 && exit
+
 
 #echo "[Autologin]" > /etc/sddm.conf.d/1580-autologin-user.conf && echo "User=student" >> /etc/sddm.conf.d/1580-autologin-user.conf
 
