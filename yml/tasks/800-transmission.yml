@@ -141,8 +141,7 @@
     state: absent
   vars:
     w10k23_exclude_r:
-      - xm1580-2-418-17
-      - xn1580-2-418-6
+      - nowhere
   loop:
     - xm1580-1-205
     - xm1580-1-206
@@ -169,8 +168,6 @@
     - m1580-1-207
     - m1580-1-208
     - m1580-1-209
-    - xm1580-2-418-17
-    - xn1580-2-418-6
   loop_control:
     loop_var: w10k23_item
   when: w10k23_item in ansible_hostname and ansible_hostname not in w10k23_exclude
@@ -181,9 +178,7 @@
     state: absent
   vars:
     w10pabc_exclude_r:
-      - xm1580-2-418-17
-      - xn1580-2-418-6
-      - xn1580-2-418-28
+      - nowhere
   loop:
     - xm1580-2
   loop_control:
@@ -202,9 +197,6 @@
       - nowhere
   loop:
     - m1580-2-418
-    - xm1580-2-418-17
-    - xn1580-2-418-6
-    - xn1580-2-418-28
     - m1580-2-419
     - m1580-2-422
     - m1580-2-425
@@ -220,9 +212,7 @@
     state: absent
   vars:
     w10lego_exclude_r:
-      - xm1580-2-418-17
-      - xn1580-2-418-6
-      - xn1580-2-418-28
+      - nowhere
   loop:
     - xm1580-2
   loop_control:
@@ -241,9 +231,6 @@
       - nowhere
   loop:
     - m1580-2-418
-    - xm1580-2-418-17
-    - xn1580-2-418-6
-    - xn1580-2-418-28
     - m1580-2-425
   loop_control:
     loop_var: w10lego_item
@@ -255,9 +242,7 @@
     state: absent
   vars:
     olymp_windows_exclude_r:
-      - xm1580-2-418-17
-      - xn1580-2-418-6
-      - xn1580-2-418-28
+      - nowhere
   loop:
     - m1580-2
   loop_control:
@@ -286,9 +271,7 @@
     state: absent
   vars:
     olymp_linux_exclude_r:
-      - xm1580-2-418-17
-      - xn1580-2-418-6
-      - xn1580-2-418-28
+      - nowhere
   loop:
     - m1580-2
   loop_control:
@@ -346,7 +329,7 @@
     state: absent
   vars:
     ege_windows_exclude_r:
-      - nowhwre
+      - nowhere
   loop:
     - xm1580-1
   loop_control:
@@ -369,10 +352,6 @@
     - m1580-1-207
     - m1580-1-208
     - m1580-1-209
-    - xm1580-2-418
-    - xm1580-2-418-17
-    - xn1580-2-418-6
-    - xn1580-2-418-28
   loop_control:
     loop_var: ege_windows_item
   when: ege_windows_item in ansible_hostname and ansible_hostname not in ege_windows_exclude
@@ -418,9 +397,6 @@
     - m1580-2-425
     - m1580-2-426
     - m1580-2-427
-    - xm1580-2-418-17
-    - xn1580-2-418-6
-    - xn1580-2-418-28
   loop_control:
     loop_var: anylogic_item
   when: anylogic_item in ansible_hostname and ansible_hostname not in anylogic_exclude
