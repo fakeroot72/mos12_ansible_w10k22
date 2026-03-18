@@ -14,10 +14,10 @@
     path: "{{ td_item2 }}"
     state: absent
   loop:
-    - /var/lib/transmission/.config/transmission-daemon/resume/
-    - /var/lib/transmission/.config/transmission-daemon/torrents/
-    - /etc/transmission-daemon/resume/
-    - /etc/transmission-daemon/torrents/
+    - /var/lib/transmission/.config/transmission-daemon/resume1/
+    - /var/lib/transmission/.config/transmission-daemon/torrents1/
+    - /etc/transmission-daemon/resume1/
+    - /etc/transmission-daemon/torrents1/
   loop_control:
     loop_var: td_item2
 
@@ -29,8 +29,8 @@
     group: transmission
     mode: 0775
   loop:
-    - /var/lib/transmission/.config/transmission-daemon/resume/
-    - /var/lib/transmission/.config/transmission-daemon/torrents/
+#    - /var/lib/transmission/.config/transmission-daemon/resume/
+#    - /var/lib/transmission/.config/transmission-daemon/torrents/
     - local/tdwd/
     - local/tdd/
   loop_control:
