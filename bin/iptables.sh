@@ -66,7 +66,7 @@ iptables -A OUTPUT -d 81.177.140.242 -j ACCEPT
 iptables -A OUTPUT -d 94.79.51.149 -j ACCEPT
 
 # Разрешаем silvertests.ru
-iptables -A OUTPUT -d 37.79.254.196 -j ACCEPT
+date +"%F%R" | grep -v 2026-03-21 && iptables -A OUTPUT -d 37.79.254.196 -j ACCEPT
 
 #hostname | grep -v 1580-1 && hostname | grep -v 1580-2 && iptables -A OUTPUT -d 37.79.254.196 -j ACCEPT
 #date +"%F%R" | grep -v 2026-01-17 && date +"%F%R" | grep -v 2026-01-19 && iptables -A OUTPUT -d 37.79.254.196 -j ACCEPT
@@ -207,6 +207,9 @@ iptables -A OUTPUT -d 2a02:6b8::3:158 -j ACCEPT
 
 # Разрешаем test-soop.fioco.ru
 iptables -A OUTPUT -d 80.250.167.50 -j ACCEPT
+
+hostname | grep m1580-2-it3 && date +"%F%R" | grep 2026-03-21 && exit
+hostname | grep m1580-2-it4 && date +"%F%R" | grep 2026-03-21 && exit
 
 # block
 iptables -A OUTPUT -p tcp --dport 80 -j REJECT # блокируем исходящий http
