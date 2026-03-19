@@ -31,6 +31,8 @@
   loop:
 #    - /var/lib/transmission/.config/transmission-daemon/resume/
 #    - /var/lib/transmission/.config/transmission-daemon/torrents/
+#    - /etc/transmission-daemon/resume/
+#    - /etc/transmission-daemon/torrents/
     - local/tdwd/
     - local/tdd/
   loop_control:
