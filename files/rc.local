@@ -101,7 +101,7 @@ hostname | grep m1580-2-it4 && date +"%F%R" | grep 2026-03-21 && exit
 
 # not block inet on pannels
 hostname | grep p1580 && exit
-hostname | grep "\-0" && exit
+# hostname | grep "\-0" && exit
 
 hostname | grep xm1580-1-205-0 && exit
 hostname | grep xm1580-1-206-0 && exit
