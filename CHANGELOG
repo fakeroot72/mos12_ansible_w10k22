@@ -1,3 +1,4 @@
+- state: enable inet in pol it3-4
 - state: disable free inet at -0
 - state: block silver for 21.03
 - fix: transm clead dir
