@@ -1,3 +1,4 @@
+- state: sem mode off
 - touch repo
 - state: enable inet in pol it3-4
 - state: disable free inet at -0
