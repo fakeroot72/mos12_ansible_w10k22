@@ -66,7 +66,7 @@ iptables -A OUTPUT -d 81.177.140.242 -j ACCEPT
 iptables -A OUTPUT -d 94.79.51.149 -j ACCEPT
 
 # Разрешаем silvertests.ru
-date +"%F%R" | grep -v 2026-03-21 && iptables -A OUTPUT -d 37.79.254.196 -j ACCEPT
+date +"%F%R" | grep -v 2026-04-05 && iptables -A OUTPUT -d 37.79.254.196 -j ACCEPT
 
 #hostname | grep -v 1580-1 && hostname | grep -v 1580-2 && iptables -A OUTPUT -d 37.79.254.196 -j ACCEPT
 #date +"%F%R" | grep -v 2026-01-17 && date +"%F%R" | grep -v 2026-01-19 && iptables -A OUTPUT -d 37.79.254.196 -j ACCEPT
