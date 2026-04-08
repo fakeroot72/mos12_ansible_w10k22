@@ -1,3 +1,4 @@
+- state: block silver
 - touch repo
 - state: sem mode off
 - touch repo

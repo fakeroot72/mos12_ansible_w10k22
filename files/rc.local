@@ -23,7 +23,7 @@ rsync -a --chown=student:student /etc/skel/ /home/student/
 rsync -a --chown=student:student $base_path/files/home_student/ /home/student/
 
 # add chromium incognito flag to student
-echo 'export CHROMIUM_USER_FLAGS="--incognito"' >> /home/student/.bashrc
+hostname | grep -v n1580-2-419 && echo 'export CHROMIUM_USER_FLAGS="--incognito"' >> /home/student/.bashrc
 
 # create new standart olymp home
 rsync -a --chown=olymp:olymp /etc/skel/ /home/olymp/
@@ -138,7 +138,8 @@ hostname | grep m1580-2-210 && /opt/.lycu1580v2/bin/iptables.sh
 hostname | grep m1580-2-418 && /opt/.lycu1580v2/bin/iptables.sh
 hostname | grep n1580-2-418 && /opt/.lycu1580v2/bin/iptables.sh
 hostname | grep m1580-2-419 && /opt/.lycu1580v2/bin/iptables.sh
-hostname | grep n1580-2-420 && /opt/.lycu1580v2/bin/iptables.sh
+# hostname | grep n1580-2-419 && /opt/.lycu1580v2/bin/iptables.sh
+# hostname | grep n1580-2-420 && /opt/.lycu1580v2/bin/iptables.sh
 hostname | grep m1580-2-422 && /opt/.lycu1580v2/bin/iptables.sh
 hostname | grep m1580-2-425 && /opt/.lycu1580v2/bin/iptables.sh
 hostname | grep m1580-2-426 && /opt/.lycu1580v2/bin/iptables.sh
