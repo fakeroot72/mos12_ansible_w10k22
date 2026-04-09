@@ -63,8 +63,8 @@
     - trik-studio
     - arduino-ide
 # kompas on wine prepare
-    - wine-stable
-    - kompas3d-wine-helper
+#    - wine-stable
+#    - kompas3d-wine-helper
 # sqlitebrowser
     - sqlitebrowser
 # internet

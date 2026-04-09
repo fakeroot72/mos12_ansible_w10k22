@@ -1,0 +1,6 @@
+---
+
+- name: install installer for kompas v24
+  ansible.builtin.dnf:
+    name:
+    - install-kompas-v24
