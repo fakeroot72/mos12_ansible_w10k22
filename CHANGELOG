@@ -1,3 +1,4 @@
+- state: no local proxy
 - fix: no local proxy in it labs
 - feat: del user from wheel
 - fix: install kumir-all instead kumir

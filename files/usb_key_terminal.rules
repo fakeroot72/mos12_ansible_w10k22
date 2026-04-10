@@ -1,0 +1,2 @@
+ACTION=="add", SUBSYSTEMS=="usb", SUBSYSTEM=="block", RUN{program}+="/usr/bin/setsid /opt/.lycu1580v2/bin/usb_key_terminal_start.sh '%E{DEVNAME}' >/dev/null 2>/dev/null < /dev/null &"
+ACTION=="remove", SUBSYSTEMS=="usb", SUBSYSTEM=="block", RUN{program}+="/opt/.lycu1580v2/bin/usb_key_terminal_stop.sh '%E{DEVNAME}'"
