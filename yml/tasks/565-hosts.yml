@@ -43,10 +43,10 @@
     hostsit_exclude:
       - nowrere
   loop:
-    - n1580-2-it1
-    - c1580-2-it2
-    - n1580-2-it3
-    - n1580-2-it4
+    - #n1580-2-it1
+    - #c1580-2-it2
+    - #n1580-2-it3
+    - #n1580-2-it4
   loop_control:
     loop_var: hostsit_item
   when: hostsit_item in ansible_hostname and ansible_hostname not in hostsit_exclude

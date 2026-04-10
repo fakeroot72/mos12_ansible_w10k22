@@ -1,3 +1,4 @@
+- feat: del user from wheel
 - fix: install kumir-all instead kumir
 - feat: install installer kompas v24
 - feat: disable printer browsing
