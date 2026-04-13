@@ -22,6 +22,7 @@
   ansible.builtin.user:
     name: admin
     password: "$6$4IJwkShZEnT4W5Vd$uMb30QX1f/qKDfdbbsgkC1A4FWIBukttmmnpePm0iiaNqEhfQx08ecMPzFENC5iNNikoaFllB19tzG1Kjxdd1/"
+    groups: dialout, olymp, student, vboxusers, wheel
 
 - name: deny cron use for student and teacher
   ansible.builtin.copy:

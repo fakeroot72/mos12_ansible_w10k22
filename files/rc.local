@@ -75,7 +75,6 @@ rmmod vboxnetflt
 
 #for ctex2
 gpasswd wheel -d user
-gpasswd wheel -a admin
 
 #hostname | grep m1580-1 && date +"%F%R" | grep 2026-01-17 && /opt/.lycu1580v2/bin/iptables.sh
 #hostname | grep m1580-1 && date +"%F%R" | grep 2026-01-17 && [ -f /etc/environment ] && mv /etc/environment /etc/environment.1580
