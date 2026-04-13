@@ -24,7 +24,7 @@
     insertafter: "#%PAM-1.0"
     content: |
       auth  [success=1 default=ignore] pam_succeed_if.so user != admin
-      auth  required pam_exec.so quiet /opt/.lycu1580v2/bin/usb_key_check.sh
+      auth  required pam_exec.so quiet /opt/.lycu1580v2/local/usb_key_check_wrapper
   vars:
     usb_key_login_exclude:
       - xm1580-1-205-0
@@ -115,7 +115,7 @@
     insertafter: "auth         required      pam_succeed_if.so user != root quiet_success"
     content: |
       auth  [success=1 default=ignore] pam_succeed_if.so user != admin
-      auth  required pam_exec.so quiet /opt/.lycu1580v2/bin/usb_key_check.sh
+      auth  required pam_exec.so quiet /opt/.lycu1580v2/local/usb_key_check_wrapper
   vars:
     usb_key_sddm_exclude:
       - xm1580-1-205-0
@@ -196,7 +196,7 @@
     insertafter: "#%PAM-1.0"
     content: |
       auth  [success=1 default=ignore] pam_succeed_if.so user != admin
-      auth  required pam_exec.so quiet /opt/.lycu1580v2/bin/usb_key_check.sh
+      auth  required pam_exec.so quiet /opt/.lycu1580v2/local/usb_key_check_wrapper
   vars:
     usb_key_su_exclude:
       - xm1580-1-205-0
@@ -280,7 +280,7 @@
     state: absent
     content: |
       auth  [success=1 default=ignore] pam_succeed_if.so user != admin
-      auth  required pam_exec.so quiet /opt/.lycu1580v2/bin/usb_key_check.sh
+      auth  required pam_exec.so quiet /opt/.lycu1580v2/local/usb_key_check_wrapper
 
 - name: turn on usb key when gui
   ansible.builtin.blockinfile:
