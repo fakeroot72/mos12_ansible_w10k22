@@ -1,3 +1,4 @@
+- start: reboot n419
 - feat: open mcko arter start
 - fix: switch usb cheker for wrapper instead sh script
 - try: load usb terminal in 418
