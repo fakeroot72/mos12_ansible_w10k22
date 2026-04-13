@@ -18,7 +18,7 @@
     group: root
     mode: 0755
 
-- name: set chromium politics
+- name: set common chromium politics
   ansible.builtin.copy:
     content: |
       {
@@ -39,3 +39,34 @@
     dest: /etc/chromium/policies/managed/policies.json
     owner: root
     group: root
+
+- name: set special chromium politics
+  ansible.builtin.copy:
+    content: |
+      {
+        "HomepageLocation":               "https://n10.mcko.ru/",
+        "HomepageIsNewTabPage":           true,
+        "NewTabPageLocation":             "https://n10.mcko.ru/",
+        "DefaultNotificationsSetting":    2,
+        "DefaultPopupsSetting":           2,
+        "PasswordManagerEnabled":         false,
+        "BlockExternalExtensions":        true,
+        "BackgroundModeEnabled":          false,
+        "BrowserAddPersonEnabled":        false,
+        "ChromeAppsEnabled":              false,
+        "DefaultSearchProviderEnabled":   true,
+        "DefaultSearchProviderSearchURL": "https://ya.ru/search/?text={searchTerms}",
+        "DefaultSearchProviderName":       "Яндекс"
+      }
+    dest: /etc/chromium/policies/managed/policies.json
+    owner: root
+    group: root
+  vars:
+    chromium_exclude:
+      - nowrere
+  loop:
+    - n1580-2-419
+  loop_control:
+    loop_var: chromium_item
+  when: chromium_item in ansible_hostname and ansible_hostname not in chromium_exclude
+

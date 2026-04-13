@@ -1,3 +1,4 @@
+- fix: switch usb cheker for wrapper instead sh script
 - try: load usb terminal in 418
 - tmp: prepare load usb terminal
 - state: no local proxy
