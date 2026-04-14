@@ -1,4 +1,5 @@
 - fix: install the laryok when it absent
+- fix: install the laryok when it absent
 - feat: install the laryok when it absent
 - feat: install the laryok
 - try: delete defautl pam login restore
