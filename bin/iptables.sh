@@ -85,6 +85,16 @@ iptables -A OUTPUT -d 104.18.11.21 -j ACCEPT
 # Разрешаем vkcalls
 iptables -A OUTPUT -d 155.212.200.14 -j ACCEPT
 
+# Разрешаем repo.ascon.ru
+iptables -A OUTPUT -d 46.235.186.152 -j ACCEPT
+iptables -A OUTPUT -d 46.235.186.158 -j ACCEPT
+iptables -A OUTPUT -d 195.209.67.234 -j ACCEPT
+iptables -A OUTPUT -d 195.209.67.210 -j ACCEPT
+iptables -A OUTPUT -d 46.235.186.159 -j ACCEPT
+iptables -A OUTPUT -d 46.235.186.160 -j ACCEPT
+iptables -A OUTPUT -d 195.209.66.220 -j ACCEPT
+iptables -A OUTPUT -d 212.193.153.73 -j ACCEPT
+
 # Разрешаем wokwi.com
 #iptables -A OUTPUT -d 188.114.99.224 -j ACCEPT
 #iptables -A OUTPUT -d 188.114.98.224 -j ACCEPT
