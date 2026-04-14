@@ -1,3 +1,4 @@
+- fix: add admin into wheel in yml instead rc.local
 - state: off tramsmission manage task
 - fix: add admin in wheel in n419
 - stat: full usb key in n419
