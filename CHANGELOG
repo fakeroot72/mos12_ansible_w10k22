@@ -1,3 +1,4 @@
+- state: allow ip repo.ascon.ru
 - state: on tramsmission manage task
 - fix: disable root login
 - fix: add admin into wheel in yml instead rc.local
