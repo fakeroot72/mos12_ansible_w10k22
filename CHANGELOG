@@ -1,3 +1,4 @@
+- state: term on usb key on all computers
 - state: disable transmission update
 - state: disable install kompas v24
 - feat: install kompas v24
