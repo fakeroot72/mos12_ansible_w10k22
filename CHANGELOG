@@ -1,3 +1,4 @@
+- state: disable transmission update
 - state: disable install kompas v24
 - feat: install kompas v24
 - : disable root login
