@@ -2,7 +2,7 @@
 
 - name: get packages state
   package_facts:
-    manager: dnf
+    manager: auto
 
 - name: intall the laryok is its absent
   ansible.builtin.dnf:
