@@ -1,3 +1,4 @@
+- feat: install kompas v24
 - : disable root login
 - state: allow ip repo.ascon.ru
 - state: on tramsmission manage task
