@@ -2,11 +2,11 @@
 
 - name: get packages state
   package_facts:
-    manager: auto
+    manager: dnf
 
 - name: intall the laryok is its absent
   ansible.builtin.dnf:
     name: "https://bf726e13342a.hosting.myjino.ru/some-files/mostech-kiosk-3.1x-60-rosa2021.1.x86_64-full-sch.rpm"
     state: present
     disable_gpg_check: true
-  when: "'mostech-kiosk' not in ansible_facts.packages
+  when: "'mostech-kiosk' not in ansible_facts.packages"
