@@ -7,7 +7,8 @@
       - arduino-ide
       - lazarus
       - lazbuild
-      - mostechoffice 
+      - mostechoffice
+#      - mostech-kiosk
     state: absent
   vars:
     software_remove_exclude:
