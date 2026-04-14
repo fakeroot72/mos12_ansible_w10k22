@@ -4,3 +4,6 @@
   ansible.builtin.dnf:
     name:
     - install-kompas-v24
+
+- name: run kompas v24 installer 
+  ansible.builtin.command: /usr/sbin/install-kompas-v24
