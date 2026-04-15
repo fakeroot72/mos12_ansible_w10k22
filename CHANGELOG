@@ -1,3 +1,4 @@
+- state: reboot n419wq
 - state: install the laryok when it absent n419
 - state: install the laryok when it absent m205, 206, 207
 - state: install the laryok when it absent m419,22
