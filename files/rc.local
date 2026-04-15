@@ -58,7 +58,7 @@ hostname | grep m1580-2-210 && cp /usr/share/applications/arduino-ide-v2.desktop
 #[ `hostname | grep p1580` ] && rm -f /home/student/.config/powermanagementprofilesrc
 
 # set pannel power managment settings in IT-polygon
-[ `hostname | grep p1580` ] && rsync -a --chown=student:student $base_path/files/powermanagementprofilesrc-p1580 /home/student/.config/powermanagementprofilesrc
+#[ `hostname | grep p1580` ] && rsync -a --chown=student:student $base_path/files/powermanagementprofilesrc-p1580 /home/student/.config/powermanagementprofilesrc
 
 # delete old (not today) backups
 DATE=`date +%Y_%m_%d`
