@@ -1,3 +1,4 @@
+- state: disable long work time on p1580
 - state: enable env and in 205-207 and 418-422
 - state: disable env and ipt in 205-207 and 418-422
 - state: no reboot
