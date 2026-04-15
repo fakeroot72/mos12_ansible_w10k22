@@ -27,29 +27,7 @@
       auth  required pam_exec.so quiet /opt/.lycu1580v2/local/usb_key_check_wrapper
   vars:
     usb_key_login_exclude:
-      - xm1580-1-205-0
-      - xm1580-1-206-0
-      - xm1580-1-207-0
-      - xm1580-1-208-0
-      - xm1580-1-209-0
-      - xm1580-1-215-0
-      - xm1580-2-418-0
-      - xm1580-2-419-0
-      - xm1580-2-422-0
-      - xm1580-2-425-0
-      - xm1580-2-426-0
-      - xm1580-2-427-0
-      - xn1580-2-it1-0
-      - xc1580-2-it2-0
-      - xn1580-2-it3-0
-      - xn1580-2-it4-0
-      - xn1580-4-110-0
-      - xn1580-4-209-0
-      - xn1580-4-220-0
-      - xm1580-4-309-0
-      - xn1580-4-309-0
-      - xn1580-4-320-0
-      - xn1580-4-403-0
+      - nowhere
   loop:
     - m1580-1-205
     - m1580-1-206
@@ -119,29 +97,7 @@
       auth  required pam_exec.so quiet /opt/.lycu1580v2/local/usb_key_check_wrapper
   vars:
     usb_key_sddm_exclude:
-      - xm1580-1-205-0
-      - xm1580-1-206-0
-      - xm1580-1-207-0
-      - xm1580-1-208-0
-      - xm1580-1-209-0
-      - xm1580-1-215-0
-      - xm1580-2-418-0
-      - xm1580-2-419-0
-      - xm1580-2-422-0
-      - xm1580-2-425-0
-      - xm1580-2-426-0
-      - xm1580-2-427-0
-      - xn1580-2-it1-0
-      - xc1580-2-it2-0
-      - xn1580-2-it3-0
-      - xn1580-2-it4-0
-      - xn1580-4-110-0
-      - xn1580-4-209-0
-      - xn1580-4-220-0
-      - xm1580-4-309-0
-      - xn1580-4-309-0
-      - xn1580-4-320-0
-      - xn1580-4-403-0
+      - nowhere
   loop:
     - m1580-1-205
     - m1580-1-206
@@ -174,22 +130,22 @@
     loop_var: usb_key_sddm_item
   when: usb_key_sddm_item in ansible_hostname and ansible_hostname not in usb_key_sddm_exclude
 
-- name: set default su pam.d
-  ansible.builtin.copy:
-    content: |
-      #%PAM-1.0
-      auth       sufficient   pam_rootok.so
-      # Uncomment the following line to implicitly trust users in the "wheel" group.
-      #auth       sufficient   pam_wheel.so trust use_uid
-      # Uncomment the following line to require a user to be in the "wheel" group.
-      #auth       required     pam_wheel.so use_uid
-      auth       include      system-auth
-      account    include      system-auth
-      account    sufficient   pam_succeed_if.so uid = 0 use_uid quiet
-      password   include      system-auth
-      session    optional     pam_xauth.so
-      session    include      system-auth
-    dest: /etc/pam.d/su
+#- name: set default su pam.d
+#  ansible.builtin.copy:
+#    content: |
+#      #%PAM-1.0
+#      auth       sufficient   pam_rootok.so
+#      # Uncomment the following line to implicitly trust users in the "wheel" group.
+#      #auth       sufficient   pam_wheel.so trust use_uid
+#      # Uncomment the following line to require a user to be in the "wheel" group.
+#      #auth       required     pam_wheel.so use_uid
+#      auth       include      system-auth
+#      account    include      system-auth
+#      account    sufficient   pam_succeed_if.so uid = 0 use_uid quiet
+#      password   include      system-auth
+#      session    optional     pam_xauth.so
+#      session    include      system-auth
+#    dest: /etc/pam.d/su
 
 - name: activate usb key su check
   ansible.builtin.blockinfile:
@@ -201,29 +157,7 @@
       auth  required pam_exec.so quiet /opt/.lycu1580v2/local/usb_key_check_wrapper
   vars:
     usb_key_su_exclude:
-      - xm1580-1-205-0
-      - xm1580-1-206-0
-      - xm1580-1-207-0
-      - xm1580-1-208-0
-      - xm1580-1-209-0
-      - xm1580-1-215-0
-      - xm1580-2-418-0
-      - xm1580-2-419-0
-      - xm1580-2-422-0
-      - xm1580-2-425-0
-      - xm1580-2-426-0
-      - xm1580-2-427-0
-      - xn1580-2-it1-0
-      - xc1580-2-it2-0
-      - xn1580-2-it3-0
-      - xn1580-2-it4-0
-      - xn1580-4-110-0
-      - xn1580-4-209-0
-      - xn1580-4-220-0
-      - xm1580-4-309-0
-      - xn1580-4-309-0
-      - xn1580-4-320-0
-      - xn1580-4-403-0
+      - nowhere
   loop:
     - m1580-1-205
     - m1580-1-206
@@ -265,26 +199,26 @@
     group: root
     mode: 04755
 
-- name: set default polkit-1
-  ansible.builtin.copy:
-    content: |
-      #%PAM-1.0
+#- name: set default polkit-1
+#  ansible.builtin.copy:
+#    content: |
+#      #%PAM-1.0
+#
+#      auth       include      system-auth
+#      account    include      system-auth
+#      password   include      system-auth
+#      session    include      system-auth
+#    dest: /etc/pam.d/polkit-1
 
-      auth       include      system-auth
-      account    include      system-auth
-      password   include      system-auth
-      session    include      system-auth
-    dest: /etc/pam.d/polkit-1
-
-- name: turn off usb key when gui
-  ansible.builtin.blockinfile:
-    path: /etc/pam.d/polkit-1
-    marker: "### {mark} USB Check 1580 ###"
-    insertafter: "#%PAM-1.0"
-    state: absent
-    content: |
-      auth  [success=1 default=ignore] pam_succeed_if.so user != admin
-      auth  required pam_exec.so quiet /opt/.lycu1580v2/local/usb_key_check_wrapper
+#- name: turn off usb key when gui
+#  ansible.builtin.blockinfile:
+#    path: /etc/pam.d/polkit-1
+#    marker: "### {mark} USB Check 1580 ###"
+#    insertafter: "#%PAM-1.0"
+#    state: absent
+#    content: |
+#      auth  [success=1 default=ignore] pam_succeed_if.so user != admin
+#      auth  required pam_exec.so quiet /opt/.lycu1580v2/local/usb_key_check_wrapper
 
 - name: turn on usb key when gui
   ansible.builtin.blockinfile:
@@ -296,29 +230,7 @@
       auth  required pam_exec.so quiet /opt/.lycu1580v2/local/usb_key_check_wrapper
   vars:
     usb_key_gui_exclude:
-      - xm1580-1-205-0
-      - xm1580-1-206-0
-      - xm1580-1-207-0
-      - xm1580-1-208-0
-      - xm1580-1-209-0
-      - xm1580-1-215-0
-      - xm1580-2-418-0
-      - xm1580-2-419-0
-      - xm1580-2-422-0
-      - xm1580-2-425-0
-      - xm1580-2-426-0
-      - xm1580-2-427-0
-      - xn1580-2-it1-0
-      - xc1580-2-it2-0
-      - xn1580-2-it3-0
-      - xn1580-2-it4-0
-      - xn1580-4-110-0
-      - xn1580-4-209-0
-      - xn1580-4-220-0
-      - xm1580-4-309-0
-      - xn1580-4-309-0
-      - xn1580-4-320-0
-      - xn1580-4-403-0
+      - nowhere
   loop:
     - m1580-1-205
     - m1580-1-206
