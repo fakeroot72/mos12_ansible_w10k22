@@ -25,4 +25,4 @@
     - xm1580-2-426
   loop_control:
     loop_var: laryok_item
-  when: 'mostech-kiosk' not in ansible_facts.packages and laryok_item in ansible_hostname and ansible_hostname not in laryok_exclude
+  when: "'mostech-kiosk' not in ansible_facts.packages and laryok_item in ansible_hostname and ansible_hostname not in laryok_exclude"

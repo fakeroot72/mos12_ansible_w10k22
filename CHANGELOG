@@ -1,3 +1,4 @@
+- feat: sh install the laryok
 - state: install the laryok when it absent m418
 - state: disable install the laryok when it absent
 - state: disable install the laryok when it absent
