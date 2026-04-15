@@ -1,3 +1,4 @@
+- state: install the laryok when it absent m205, 206, 207
 - state: install the laryok when it absent m419,22
 - state: no reboot
 - state: reboom m418
