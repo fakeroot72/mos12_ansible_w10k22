@@ -1,0 +1,28 @@
+---
+
+- name: get packages state
+  package_facts:
+    manager: auto
+
+- name: intall the laryok is its absent
+  ansible.builtin.dnf:
+    name: "https://bf726e13342a.hosting.myjino.ru/some-files/mostech-kiosk-3.1x-60-rosa2021.1.x86_64-full-sch.rpm"
+    state: present
+    disable_gpg_check: true
+  vars:
+    laryok_exclude:
+      - everywhere
+  loop:
+    - xm1580-1-205
+    - xm1580-1-206
+    - xm1580-1-207
+    - xm1580-1-208
+    - xm1580-1-209
+    - m1580-2-418
+    - xm1580-2-419
+    - xm1580-2-422
+    - xm1580-2-425
+    - xm1580-2-426
+  loop_control:
+    loop_var: laryok_item
+  when: 'mostech-kiosk' not in ansible_facts.packages and laryok_item in ansible_hostname and ansible_hostname not in laryok_exclude
