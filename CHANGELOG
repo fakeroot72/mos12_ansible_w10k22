@@ -1,3 +1,4 @@
+- state: no reboot
 - state: reboom m418
 - fix: install the laryok when it absent m418
 - feat: sh install the laryok
