@@ -218,6 +218,17 @@ iptables -A OUTPUT -d 2a02:6b8::3:158 -j ACCEPT
 # Разрешаем test-soop.fioco.ru
 iptables -A OUTPUT -d 80.250.167.50 -j ACCEPT
 
+# Разрешаем diag008.mcko.ru,diag013.mcko.ru,diag022.mcko.ru
+iptables -A OUTPUT -d 212.11.155.166 -j ACCEPT
+iptables -A OUTPUT -d 212.11.155.167 -j ACCEPT
+iptables -A OUTPUT -d 212.11.155.165 -j ACCEPT
+iptables -A OUTPUT -d 212.45.30.1 -j ACCEPT
+iptables -A OUTPUT -d 212.45.30.3 -j ACCEPT
+iptables -A OUTPUT -d 212.45.30.2 -j ACCEPT
+iptables -A OUTPUT -d 94.79.51.13 -j ACCEPT
+iptables -A OUTPUT -d 94.79.51.12 -j ACCEPT
+iptables -A OUTPUT -d 94.79.51.14 -j ACCEPT
+
 hostname | grep m1580-2-it3 && date +"%F%R" | grep 2026-03-21 && exit
 hostname | grep m1580-2-it4 && date +"%F%R" | grep 2026-03-21 && exit
 
