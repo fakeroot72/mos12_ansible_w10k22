@@ -1,3 +1,4 @@
+- state: no reboot
 - state: laryok in the end2
 - state: laryok in the end
 - state: disable default pamd
