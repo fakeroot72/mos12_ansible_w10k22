@@ -65,7 +65,7 @@
     chromium_exclude:
       - nowrere
   loop:
-    - n1580-2-419
+    - xn1580-2-419
   loop_control:
     loop_var: chromium_item
   when: chromium_item in ansible_hostname and ansible_hostname not in chromium_exclude
