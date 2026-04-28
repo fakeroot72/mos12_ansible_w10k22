@@ -142,10 +142,10 @@ hostname | grep m1580-2-422 && /opt/.lycu1580v2/bin/iptables.sh
 hostname | grep m1580-2-425 && /opt/.lycu1580v2/bin/iptables.sh
 hostname | grep m1580-2-426 && /opt/.lycu1580v2/bin/iptables.sh
 hostname | grep m1580-2-427 && /opt/.lycu1580v2/bin/iptables.sh
-hostname | grep n1580-2-it1 && /opt/.lycu1580v2/bin/iptables.sh
-hostname | grep c1580-2-it2 && /opt/.lycu1580v2/bin/iptables.sh
-hostname | grep n1580-2-it3 && /opt/.lycu1580v2/bin/iptables.sh
-hostname | grep n1580-2-it4 && /opt/.lycu1580v2/bin/iptables.sh
+hostname | grep xn1580-2-it1 && /opt/.lycu1580v2/bin/iptables.sh
+hostname | grep xc1580-2-it2 && /opt/.lycu1580v2/bin/iptables.sh
+hostname | grep xn1580-2-it3 && /opt/.lycu1580v2/bin/iptables.sh
+hostname | grep xn1580-2-it4 && /opt/.lycu1580v2/bin/iptables.sh
 hostname | grep xn1580-4-110 && /opt/.lycu1580v2/bin/iptables.sh
 hostname | grep xn1580-4-209 && /opt/.lycu1580v2/bin/iptables.sh
 hostname | grep xn1580-4-220 && /opt/.lycu1580v2/bin/iptables.sh
