@@ -1,3 +1,4 @@
+- state: reboot 205 206
 - remove all diag from no+proxy
 - prepare for 3004
 - fix: itpol
