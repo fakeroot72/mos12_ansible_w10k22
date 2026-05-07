@@ -99,6 +99,15 @@ iptables -A OUTPUT -d 212.193.153.73 -j ACCEPT
 #iptables -A OUTPUT -d 188.114.99.224 -j ACCEPT
 #iptables -A OUTPUT -d 188.114.98.224 -j ACCEPT
 
+# Разрешаем tinkercad.com
+iptables -A OUTPUT -d 18.64.211.102 -j ACCEPT
+iptables -A OUTPUT -d 18.64.211.115 -j ACCEPT
+iptables -A OUTPUT -d 18.64.211.24 -j ACCEPT
+iptables -A OUTPUT -d 18.64.211.63 -j ACCEPT
+iptables -A OUTPUT -d 52.203.137.237 -j ACCEPT
+iptables -A OUTPUT -d 44.218.37.188 -j ACCEPT
+iptables -A OUTPUT -d 35.172.168.129 -j ACCEPT
+
 # Разрешаем codeforces.com - требует проверки
 # iptables -A OUTPUT -d 95.163.252.67 -j ACCEPT
 # iptables -A OUTPUT -d 172.67.68.254 -j ACCEPT
