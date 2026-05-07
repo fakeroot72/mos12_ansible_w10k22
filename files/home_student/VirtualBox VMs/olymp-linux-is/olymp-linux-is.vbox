@@ -6,7 +6,7 @@
 ** Use VBoxManage or the VirtualBox Manager GUI to make changes.
 -->
 <VirtualBox xmlns="http://www.virtualbox.org/" version="1.19-linux">
-  <Machine uuid="{f00b7093-11ce-41f5-a5ec-1d3dd5bece2f}" name="kali-zakl-2026" OSType="Debian_64" snapshotFolder="Snapshots" lastStateChange="2026-05-07T10:01:55Z">
+  <Machine uuid="{f00b7093-11ce-41f5-a5ec-1d3dd5bece2f}" name="olymp-linux-is" OSType="Debian_64" snapshotFolder="Snapshots" lastStateChange="2026-05-07T10:01:55Z">
     <Description>Kali VSOSH-Region 2025-2026
 
 Username: kali
@@ -112,7 +112,7 @@ Password: kali</Description>
       <AudioAdapter codec="AD1980" driver="Pulse" enabled="true" enabledOut="true"/>
       <RTC localOrUTC="UTC"/>
       <SharedFolders>
-        <SharedFolder name="share" hostPath="C:\Users\PC\VirtualBox VMs\vb-debian-vsosh-2026-zakl-test\share" writable="true" autoMount="true" autoMountPoint="/mnt"/>
+	      <SharedFolder name="share" hostPath="/home/student/&#x420;&#x430;&#x431;&#x43E;&#x447;&#x438;&#x439; &#x441;&#x442;&#x43E;&#x43B;" writable="true" autoMount="true" autoMountPoint="/mnt"/>
       </SharedFolders>
       <Clipboard mode="Bidirectional"/>
       <DragAndDrop mode="Bidirectional"/>

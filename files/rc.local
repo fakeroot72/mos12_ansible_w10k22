@@ -42,9 +42,10 @@ rm -f /home/student/.config/autostart/mos-welcome-pages.desktop
 
 [ ! -f $base_path/local/tdd/ege-windows-02-proxy.vdi ] && rm /home/student/Рабочий\ стол/ege-windows_vm.sh
 
-[ ! -f $base_path/local/tdd/olymp-windows-2025-11-11.vdi ] && rm /home/student/Рабочий\ стол/olymp-windows_vm.sh
 [ ! -f $base_path/local/tdd/olymp-linux-2025-11-11.vdi ] && rm /home/student/Рабочий\ стол/olymp-linux_vm.sh
-[ ! -f $base_path/local/tdd/olymp-linux-ai-2026-01-15.vdi ] && rm /home/student/Рабочий\ стол/olymp-linux_ai_vm.sh
+[ ! -f $base_path/local/tdd/olymp-linux-ai-2026-01-15.vdi ] && rm /home/student/Рабочий\ стол/olymp-linux-ai_vm.sh
+[ ! -f $base_path/local/tdd/olymp-linux-is-2026-zakl.vdi ] && rm /home/student/Рабочий\ стол/olymp-linux-is_vm.sh
+[ ! -f $base_path/local/tdd/olymp-windows-2025-11-11.vdi ] && rm /home/student/Рабочий\ стол/olymp-windows_vm.sh
 
 [ ! -f $base_path/local/tdd/anylogic-ple-8.9.8.linux.x86_64/start-anylogic.sh ] && rm /home/student/Рабочий\ стол/anylogic.sh
 
