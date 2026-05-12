@@ -1,3 +1,4 @@
+- fix: path in ol is vm
 - fix: tinkercad's ip in iptables
 - feat: add olymp-linux-is files
 - fix: add olymp-linux-is name
