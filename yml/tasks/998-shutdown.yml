@@ -23,8 +23,8 @@
     - xm1580-2-427
     - xn1580-2-it1
     - xc1580-2-it2
-    - xn1580-2-it3
-    - xn1580-2-it4
+    - n1580-2-it3
+    - n1580-2-it4
     - xn1580-4-320
   loop_control:
     loop_var: shutdown_item

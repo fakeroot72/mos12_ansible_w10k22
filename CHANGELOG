@@ -1,3 +1,4 @@
+- state: ready 15.05
 - state: disable block on n419
 - touch repo
 - state: enable filter in 15.05
