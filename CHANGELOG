@@ -1,3 +1,4 @@
+- state: prepare for 22.05
 - state: disable iptables in ansible
 - state: disable xfce install
 - state: do not force xfce
