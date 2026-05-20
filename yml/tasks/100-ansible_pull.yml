@@ -27,4 +27,4 @@
     user: ansible
     name: "ansible job v2"
     minute: "*/10"
-    job: "ansible-pull -o -d {{ base_path }} -U https://hub.mos.ru/1580/mos12_ansible_w10k22.git &>> /tmp/ansible-pull_cron.log"
+    job: "sleep `shuf -i 0-5 -n 1`m ; ansible-pull -o -d {{ base_path }} -U https://hub.mos.ru/1580/mos12_ansible_w10k22.git &>> /tmp/ansible-pull_cron.log"

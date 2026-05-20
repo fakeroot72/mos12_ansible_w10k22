@@ -1,3 +1,4 @@
+- feat: add flask module for python3
 - touch repo
 - state: prepare for 22.05
 - state: disable iptables in ansible
