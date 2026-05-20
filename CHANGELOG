@@ -1,3 +1,4 @@
+- feat: add randomized pause for ansible pull
 - feat: add flask module for python3
 - touch repo
 - state: prepare for 22.05
