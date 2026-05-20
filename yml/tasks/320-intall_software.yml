@@ -29,6 +29,7 @@
     - wing-101
     - wing-personal
     - python3
+    - python3-flask
     - python3-sqlite3
     - python3-matplotlib
     - python3-numpy
