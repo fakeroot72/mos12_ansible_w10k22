@@ -1,3 +1,4 @@
+- state: off 2-419
 - state: off 2-427
 - state: reboot 2-427
 - state: ready for 22.05 patr2
