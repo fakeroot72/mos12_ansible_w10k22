@@ -124,10 +124,10 @@ hostname | grep n1580-2-it1 && /opt/.lycu1580v2/bin/iptables.sh
 hostname | grep c1580-2-it2 && /opt/.lycu1580v2/bin/iptables.sh
 hostname | grep n1580-2-it3 && /opt/.lycu1580v2/bin/iptables.sh
 hostname | grep n1580-2-it4 && /opt/.lycu1580v2/bin/iptables.sh
-hostname | grep xn1580-4-110 && /opt/.lycu1580v2/bin/iptables.sh
-hostname | grep xn1580-4-209 && /opt/.lycu1580v2/bin/iptables.sh
-hostname | grep xn1580-4-220 && /opt/.lycu1580v2/bin/iptables.sh
-hostname | grep xm1580-4-309 && /opt/.lycu1580v2/bin/iptables.sh
-hostname | grep xn1580-4-309 && /opt/.lycu1580v2/bin/iptables.sh
-hostname | grep xn1580-4-320 && /opt/.lycu1580v2/bin/iptables.sh
-hostname | grep xn1580-4-403 && /opt/.lycu1580v2/bin/iptables.sh
+hostname | grep n1580-4-110 && /opt/.lycu1580v2/bin/iptables.sh
+hostname | grep n1580-4-209 && /opt/.lycu1580v2/bin/iptables.sh
+hostname | grep n1580-4-220 && /opt/.lycu1580v2/bin/iptables.sh
+hostname | grep m1580-4-309 && /opt/.lycu1580v2/bin/iptables.sh
+hostname | grep n1580-4-309 && /opt/.lycu1580v2/bin/iptables.sh
+hostname | grep n1580-4-320 && /opt/.lycu1580v2/bin/iptables.sh
+hostname | grep n1580-4-403 && /opt/.lycu1580v2/bin/iptables.sh
