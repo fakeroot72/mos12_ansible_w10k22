@@ -3,18 +3,21 @@
 - name: remove software
   ansible.builtin.dnf:
     name:
-      - pycharm-community
-      - arduino-ide
-      - lazarus
-      - lazbuild
-      - mostechoffice
+#      - pycharm-community
+#      - arduino-ide
+#      - lazarus
+#      - lazbuild
+#      - mostechoffice
 #      - mostech-kiosk
+      - transmission-daemon
     state: absent
   vars:
     software_remove_exclude:
       - nowhere
   loop:
-    - nowhere
+    - m1580
+    - n1580
+    - c1580
   loop_control:
     loop_var: software_remove_item
   when: software_remove_item in ansible_hostname and ansible_hostname not in software_remove_exclude
