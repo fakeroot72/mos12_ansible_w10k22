@@ -26,7 +26,7 @@
         <LongMode enabled="true"/>
         <HardwareVirtExLargePages enabled="true"/>
       </CPU>
-      <Memory RAMSize="8192"/>
+      <Memory RAMSize="6144"/>
       <HID Pointing="USBTablet"/>
       <Display controller="VBoxSVGA" VRAMSize="128"/>
       <BIOS>

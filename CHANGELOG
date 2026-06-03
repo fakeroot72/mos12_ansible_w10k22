@@ -1,3 +1,4 @@
+- state: disable silver for 0106
 - state: remove transmission
 - state: enable transmission
 - touch repo
