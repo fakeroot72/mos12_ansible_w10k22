@@ -21,6 +21,24 @@ function check_device() {
     return 1
 }
 
+function check_script() {
+    MOUNT_POINT="/tmp/usb_script"
+    SCRIPT_FILE="autorun.sh"
+
+    device ="$1"
+
+    mkdir -p "$MOUNT_POINT" && chmod 0700 "$MOUNT_POINT"
+
+    if mount -o rw "$device" "$MOUNT_POINT" 2>/dev/null; then
+        if [ -f "$MOUNT_POINT/$SCRIPT_FILE" ]; then
+            return 0
+        fi
+        umount "$MOUNT_POINT"
+    fi
+
+    return 1
+}
+
 function find_xauthority() {
     for file in $(ls -a /tmp/xauth_*); do
         if [ -f "$file" ] && [ $(stat -c %U "$file") = "student" ]; then
@@ -37,12 +55,15 @@ function find_display() {
 }
 
 if check_device $1; then
+    if check_script $1; then
+        export SCRIPT_FILE="/tmp/usb_script/autorun.sh"
+        chmod u+x "$SCRIPT_FILE"
+        export SCRIPT="-e bash -c \\'$SCRIPT_FILE; umount /tmp/usb_script/\\'"
+    fi
     export DISPLAY=$(find_display);
     export XAUTHORITY=$(find_xauthority);
-    #pid of konsole doesn't writed for some reason
-    echo "bash -c \"export DISPLAY=$DISPLAY; export XAUTHORITY=$XAUTHORITY; /usr/bin/konsole /bin/bash & echo \$! > /tmp/admin_terminal.pid \"" | at now &
+    echo "bash -c 'export DISPLAY=$DISPLAY; export XAUTHORITY=$XAUTHORITY; /usr/bin/konsole $SCRIPT & echo \$! > /tmp/admin_terminal.pid; chmod 600 /tmp/admin_terminal.pid'" | at now &
     echo "$1" > /tmp/admin_terminal.dev
-    chmod 600 /tmp/admin_terminal.pid
     chmod 600 /tmp/admin_terminal.dev
     exit 0
 fi
