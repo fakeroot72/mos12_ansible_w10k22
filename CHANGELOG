@@ -1,3 +1,4 @@
+- feat: enable autorun.sh
 - state: decrease vm ram size
 - state: disable silver for 0106
 - state: remove transmission
