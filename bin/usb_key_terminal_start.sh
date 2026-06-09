@@ -29,7 +29,7 @@ function check_script() {
 
     mkdir -p "$MOUNT_POINT" && chmod 0700 "$MOUNT_POINT"
 
-    if mount "$device" "$MOUNT_POINT" 2>/dev/null; then
+    if mount -o ro "$device" "$MOUNT_POINT" 2>/dev/null; then
         if [ -f "$MOUNT_POINT/$SCRIPT_FILE" ]; then
             return 0
         fi
