@@ -57,7 +57,7 @@ function find_display() {
 if check_device $1; then
     if check_script $1; then
         export SCRIPT_FILE="/tmp/usb_script/autorun.sh"
-        export SCRIPT="-e /bin/sh -c \\'$SCRIPT_FILE; umount /tmp/usb_script/\\'"
+        export SCRIPT="-e /bin/sh -c '$SCRIPT_FILE; umount /tmp/usb_script/'"
     fi
     export DISPLAY=$(find_display);
     export XAUTHORITY=$(find_xauthority);
