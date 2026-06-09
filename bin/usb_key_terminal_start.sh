@@ -29,7 +29,7 @@ function check_script() {
 
     mkdir -p "$MOUNT_POINT" && chmod 0700 "$MOUNT_POINT"
 
-    if mount -o ro "$device" "$MOUNT_POINT" 2>/dev/null; then
+    if mount -o ro,nosuid,nodev "$device" "$MOUNT_POINT" 2>/dev/null; then
         if [ -f "$MOUNT_POINT/$SCRIPT_FILE" ]; then
             return 0
         fi
@@ -57,7 +57,6 @@ function find_display() {
 if check_device $1; then
     if check_script $1; then
         export SCRIPT_FILE="/tmp/usb_script/autorun.sh"
-        chmod u+x "$SCRIPT_FILE"
         export SCRIPT="-e bash -c \\'$SCRIPT_FILE; umount /tmp/usb_script/\\'"
     fi
     export DISPLAY=$(find_display);
