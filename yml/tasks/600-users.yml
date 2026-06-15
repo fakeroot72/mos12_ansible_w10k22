@@ -24,6 +24,13 @@
     password: "$6$4IJwkShZEnT4W5Vd$uMb30QX1f/qKDfdbbsgkC1A4FWIBukttmmnpePm0iiaNqEhfQx08ecMPzFENC5iNNikoaFllB19tzG1Kjxdd1/"
     groups: dialout, olymp, student, vboxusers, wheel
 
+- name: Create Ex
+  ansible.builtin.user:
+    name: Ex
+    password: "$y$j9T$EC4tuSMQMlwxidcJlCQCq/$/JEJGkoIHW0TYfg58Sbn9P.yO5IQ9ATNmGzMT1S48a4"
+    groups: dialout, olymp, student, vboxusers, wheel
+  when: n1580-2-419 in ansible_hostname or mos-cf6nmg in ansible_hostname
+
 - name: disable root login
   user:
     name: root
