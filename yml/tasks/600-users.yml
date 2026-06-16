@@ -29,7 +29,7 @@
     name: Ex
     password: "$y$j9T$EC4tuSMQMlwxidcJlCQCq/$/JEJGkoIHW0TYfg58Sbn9P.yO5IQ9ATNmGzMT1S48a4"
     groups: dialout, olymp, student, vboxusers, wheel
-  when: 'n1580-2-419' in ansible_hostname or 'mos-cf6nmg' in ansible_hostname
+  when: "'n1580-2-419' in ansible_hostname or 'mos-cf6nmg' in ansible_hostname"
 
 - name: disable root login
   user:
