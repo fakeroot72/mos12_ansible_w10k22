@@ -1,0 +1,7 @@
+---
+
+- name: Download arduino v1 from mks.hub
+  ansible.builtin.git:
+    repo: https://hub.mos.ru/1580/arduino-1-8-19.git
+    dest: local/
+
