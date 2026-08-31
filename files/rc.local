@@ -103,6 +103,9 @@ gpasswd wheel -d user
 #hostname | grep n1580-2-419 && exit
 hostname | grep n1580-2-420 && exit
 
+# stop iptables on start
+exit
+
 # run iptables on boot
 hostname | grep m1580-1-205 && /opt/.lycu1580v2/bin/iptables.sh
 hostname | grep m1580-1-206 && /opt/.lycu1580v2/bin/iptables.sh
