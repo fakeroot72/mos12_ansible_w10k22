@@ -77,6 +77,9 @@ rmmod vboxnetflt
 #for ctex2
 gpasswd wheel -d user
 
+# delete proxy conf
+rm /etc/environment
+
 # switch users and proxy if needed
 #hostname | grep m1580-1 && [ -f /etc/environment ] && mv /etc/environment /etc/environment.1580
 #hostname | grep m1580-1 && exit
