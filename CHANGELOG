@@ -1,3 +1,4 @@
+- state: disable arduino v1 download
 - state: disable iptables on boot and squid
 - state: disable autorun arduino ide v2 in 2-210
 - feat: add arduino v1 launcher to worktable
