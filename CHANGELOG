@@ -1,3 +1,4 @@
+- state: delete proxy conf on start
 - touch repo
 - state: disable arduino v1 download
 - state: disable iptables on boot and squid
