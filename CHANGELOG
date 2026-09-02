@@ -1,3 +1,4 @@
+- state: enable arduino v1 download
 - touch repo
 - state: delete proxy conf on start
 - touch repo
