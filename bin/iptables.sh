@@ -227,6 +227,10 @@ iptables -A OUTPUT -d 2a02:6b8::3:158 -j ACCEPT
 # Разрешаем test-soop.fioco.ru
 iptables -A OUTPUT -d 80.250.167.50 -j ACCEPT
 
+# МКОШП 2026 отбор https://mkoshp26.contest.codeforces.com/
+iptables -A OUTPUT -d 157.180.31.128 -j ACCEPT
+
+
 # Разрешаем diag008.mcko.ru,diag013.mcko.ru,diag022.mcko.ru
 iptables -A OUTPUT -d 212.11.155.166 -j ACCEPT
 iptables -A OUTPUT -d 212.11.155.167 -j ACCEPT
