@@ -1,3 +1,4 @@
+- state: inet block off
 - state: inet block for mkoshp
 - state: allow mkoshp26.contest.codeforces.com
 - touch repo
