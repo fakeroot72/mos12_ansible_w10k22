@@ -1,0 +1,6 @@
+---
+
+- name: install bitronix studio for linux
+  ansible.builtin.dnf:
+    name:
+    - https://www.download.bitronicslab.com/YN/soft/BS_YN/linux/btstudio5jn-5.3.8-1.x86_64.rpm
