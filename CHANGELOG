@@ -1,3 +1,4 @@
+- fix: validate off for bitronix
 - feat: install bitronix
 - state: install xfce
 - state: inet block off
