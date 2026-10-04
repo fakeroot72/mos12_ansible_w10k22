@@ -1,3 +1,4 @@
+- state: firewall on in 2-210
 - fix: validate off for bitronix
 - fix: validate off for bitronix
 - feat: install bitronix
