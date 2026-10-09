@@ -93,7 +93,7 @@ rm /etc/environment
 #hostname | grep m1580-1 && date +"%F%R" | grep 2026-04-21 && echo "User=olymp" >> /etc/sddm.conf.d/zzz1580-autologin-user.conf
 #hostname | grep m1580-1 && date +"%F%R" | grep -v 2026-05-22 && exit
 
-#hostname | grep m1580-2 && date +"%F%R" | grep 2026-09-26 && /opt/.lycu1580v2/bin/iptables.sh
+hostname | grep m1580-2 && date +"%F%R" | grep 2026-10-10 && /opt/.lycu1580v2/bin/iptables.sh
 #hostname | grep m1580-2 && date +"%F%R" | grep -v 2026-05-22 && [ -f /etc/environment ] && mv /etc/environment /etc/environment.1580
 #hostname | grep m1580-2 && date +"%F%R" | grep 2026-04-21 && echo "[Autologin]" > /etc/sddm.conf.d/zzz1580-autologin-user.conf
 #hostname | grep m1580-2 && date +"%F%R" | grep 2026-04-21 && echo "User=olymp" >> /etc/sddm.conf.d/zzz1580-autologin-user.conf

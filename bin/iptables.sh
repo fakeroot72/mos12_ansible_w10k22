@@ -30,14 +30,14 @@ iptables -A OUTPUT -p icmp --icmp-type echo-request -j ACCEPT
 # Разрешаем соединения на порт 51413 для работы transmission
 #iptables -A OUTPUT -p tcp --dport 51413 -j ACCEPT
 #iptables -A OUTPUT -p udp --dport 51413 -j ACCEPT
-iptables -A OUTPUT -p tcp --match multiport --dports 49152:65535 -j ACCEPT
-iptables -A OUTPUT -p udp --match multiport --dports 49152:65535 -j ACCEPT
+# iptables -A OUTPUT -p tcp --match multiport --dports 49152:65535 -j ACCEPT
+# iptables -A OUTPUT -p udp --match multiport --dports 49152:65535 -j ACCEPT
 
 # Разрешаем sdo.1580.ru
 iptables -A OUTPUT -d 217.107.34.59 -j ACCEPT
-iptables -A OUTPUT -d 172.18.164.66 -j ACCEPT
-iptables -A OUTPUT -d 172.23.105.77 -j ACCEPT
-iptables -A OUTPUT -d 172.20.20.101 -j ACCEPT
+# iptables -A OUTPUT -d 172.18.164.66 -j ACCEPT
+# iptables -A OUTPUT -d 172.23.105.77 -j ACCEPT
+# iptables -A OUTPUT -d 172.20.20.101 -j ACCEPT
 
 #hostname | grep -v 1580-1 && hostname | grep -v 1580-2 && iptables -A OUTPUT -d 217.107.34.59 -j ACCEPT
 #date +"%F%R" | grep -v 2026-01-17 && date +"%F%R" | grep -v 2026-01-19 && iptables -A OUTPUT -d 217.107.34.59 -j ACCEPT
@@ -47,7 +47,7 @@ iptables -A OUTPUT -d 172.20.20.101 -j ACCEPT
 #hostname | grep 1580-2-427 && iptables -A OUTPUT -d 172.18.164.66 -j ACCEPT
 
 # Разрешаем squid.1580.ru
-iptables -A OUTPUT -d 195.161.114.165 -j ACCEPT
+# iptables -A OUTPUT -d 195.161.114.165 -j ACCEPT
 
 #hostname | grep -v 1580-1 && hostname | grep -v 1580-2 && iptables -A OUTPUT -d 195.161.114.165 -j ACCEPT
 #date +"%F%R" | grep -v 2026-01-17 && date +"%F%R" | grep -v 2026-01-19 && iptables -A OUTPUT -d 195.161.114.165 -j ACCEPT
@@ -57,10 +57,10 @@ iptables -A OUTPUT -d 195.161.114.165 -j ACCEPT
 #hostname | grep 1580-2-it && iptables -A OUTPUT -d 195.161.114.165 -j ACCEPT
 
 # Разрешаем zabbix.1580.ru
-iptables -A OUTPUT -d 81.177.135.203 -j ACCEPT
+# iptables -A OUTPUT -d 81.177.135.203 -j ACCEPT
 
 # Разрешаем tp.1580.ru
-iptables -A OUTPUT -d 81.177.140.242 -j ACCEPT
+# iptables -A OUTPUT -d 81.177.140.242 -j ACCEPT
 
 # Разрешаем hub.mos.ru
 iptables -A OUTPUT -d 94.79.51.149 -j ACCEPT
@@ -163,10 +163,11 @@ iptables -A OUTPUT -d 185.30.228.25 -j ACCEPT
 iptables -A OUTPUT -d 194.58.88.173 -j ACCEPT
 
 # mc.yandex.ru Метрика яндекса, если заблокировать, то браузер будет долго загружать страницу os.mos.ru
+iptables -A OUTPUT -d 77.88.21.119 -j ACCEPT
 iptables -A OUTPUT -d 87.250.250.119 -j ACCEPT
 iptables -A OUTPUT -d 87.250.251.119 -j ACCEPT
 iptables -A OUTPUT -d 93.158.134.119 -j ACCEPT
-iptables -A OUTPUT -d 77.88.21.119 -j ACCEPT
+iptables -A OUTPUT -d 2a02:6b8::1:119 -j ACCEPT
 
 # os.mos.ru repo.os.mos.ru Репозитории МОС, для установки пакетов, если возникнет необходимость доставить приложения.
 iptables -A OUTPUT -d 37.230.149.17 -j ACCEPT
@@ -193,12 +194,20 @@ iptables -A OUTPUT -d 158.160.12.212 -j ACCEPT
 #iptables -A OUTPUT -d 194.58.88.173 -j ACCEPT # olympiads.ru
 #iptables -A OUTPUT -d 89.169.165.116 -j ACCEPT # msk-ejudge.ru
 
-# vos - ii
-ext.contest.yandex.ru contest.yandex *
+# vos - ii ext.contest.yandex.ru contest.yandex *
 iptables -A OUTPUT -d 87.250.250.200 -j ACCEPT
 iptables -A OUTPUT -d 2a02:6b8::360 -j ACCEPT
 
+# official.contest.yandex.ru
+# official.contest.yandex.com
+# int.contest.yandex.ru
+# int.contest.yandex.com
+# assets.contest.yandex.net
+iptables -A OUTPUT -d 87.250.251.40 -j ACCEPT
+iptables -A OUTPUT -d 2a02:6b8::29f -j ACCEPT
+
 # clck.yandex.ru
+# clck.yandex.com
 iptables -A OUTPUT -d 77.88.21.14 -j ACCEPT
 iptables -A OUTPUT -d 87.250.250.14 -j ACCEPT
 iptables -A OUTPUT -d 87.250.251.14 -j ACCEPT
@@ -207,11 +216,18 @@ iptables -A OUTPUT -d 213.180.193.14 -j ACCEPT
 iptables -A OUTPUT -d 213.180.204.14 -j ACCEPT
 iptables -A OUTPUT -d 2a02:6b8::14 -j ACCEPT
 
-# yastatic.net yandex.st
+# yastatic.net 
+# yandex.st
 iptables -A OUTPUT -d 37.9.64.225 -j ACCEPT
+iptables -A OUTPUT -d 178.154.131.215 -j ACCEPT
+iptables -A OUTPUT -d 178.154.131.216 -j ACCEPT
+iptables -A OUTPUT -d 178.154.131.217 -j ACCEPT
+iptables -A OUTPUT -d 2a02:6b8:20::215 -j ACCEPT
 iptables -A OUTPUT -d 2a02:6b8:23::225 -j ACCEPT
 
-# contest-problem-files.s3-private.mds.yandex.net contest-hidden.s3-private.mds.yandex.net contest-public.s3-private.mds.yandex.net
+# contest-problem-files.s3-private.mds.yandex.net
+# contest-hidden.s3-private.mds.yandex.net
+# contest-public.s3-private.mds.yandex.net
 iptables -A OUTPUT -d 87.250.251.158 -j ACCEPT
 iptables -A OUTPUT -d 2a02:6b8::3:158 -j ACCEPT
 
