@@ -249,7 +249,6 @@ iptables -A OUTPUT -d 157.180.31.128 -j ACCEPT
 # bandit.labs.overthewire.org
 iptables -A OUTPUT -d 13.51.99.177 -j ACCEPT
 
-
 # Разрешаем diag008.mcko.ru,diag013.mcko.ru,diag022.mcko.ru
 iptables -A OUTPUT -d 212.11.155.166 -j ACCEPT
 iptables -A OUTPUT -d 212.11.155.167 -j ACCEPT

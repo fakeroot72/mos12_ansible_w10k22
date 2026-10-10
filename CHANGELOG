@@ -1,3 +1,4 @@
+- state: allow bandit.labs.overthewire.org
 - state: block inet for 10.10
 - state: bitronix at the end
 - touch repo
