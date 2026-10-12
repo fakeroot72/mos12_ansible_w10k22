@@ -3,7 +3,7 @@
 MOUNT_POINT="/tmp/usb_check"
 KEY_FILE="key_admin.bin"
 KEY1="feb438dae3009275b5ef44622a58fe7f"
-KEY2="71443f74a6fe26dfc75f412d56d4679d"
+KEY2="7-1-4-4-3-f-7-4-a-6-f-e-2-6-d-f-c-7-5-f-4-1-2-d-5-6-d-4-6-7-9-d"
 
 mkdir -p "$MOUNT_POINT" && chmod 0700 "$MOUNT_POINT"
 
