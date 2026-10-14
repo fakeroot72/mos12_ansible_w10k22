@@ -1,3 +1,4 @@
+- feat: new key on sha256
 - state: disable admin key2
 - touch repo
 - state: stop block inet after 10.10
