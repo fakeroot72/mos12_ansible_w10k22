@@ -1,3 +1,4 @@
+- state: new key5 on sha256
 - feat: new key on sha256
 - state: disable admin key2
 - touch repo

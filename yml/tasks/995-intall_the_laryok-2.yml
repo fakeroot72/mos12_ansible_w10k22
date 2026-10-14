@@ -1,0 +1,6 @@
+---
+
+- name: install mwts-browser
+  ansible.builtin.dnf:
+    name:
+    - mwts-browser
