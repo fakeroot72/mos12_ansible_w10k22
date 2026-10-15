@@ -1,3 +1,4 @@
+- fix: new key5 on sha256
 - fix: move arduino install to the end
 - fix: move arduino install to the end
 - state: install the laryok-2

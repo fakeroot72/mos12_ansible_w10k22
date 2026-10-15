@@ -14,7 +14,7 @@ function check_device() {
     mkdir -p "$MOUNT_POINT" && chmod 0700 "$MOUNT_POINT"
 
     if mount -o ro,nosuid,nodev,noexec "$device" "$MOUNT_POINT" 2>/dev/null; then
-        if [ -f "$MOUNT_POINT/$KEY_FILE" ] && ;sha256sum $MOUNT_POINT/$KEY_FILE | grep -P "$KEY1|$KEY2|$KEY3|$KEY4|$KEY5" then
+        if [ -f "$MOUNT_POINT/$KEY_FILE" ] && sha256sum $MOUNT_POINT/$KEY_FILE | grep -P "$KEY1|$KEY2|$KEY3|$KEY4|$KEY5"; then
             umount "$MOUNT_POINT"
             return 0
         fi
