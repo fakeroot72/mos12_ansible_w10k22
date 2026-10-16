@@ -1,29 +1,8 @@
 #!/usr/bin/env bash
 
 function check_device() {
-    MOUNT_POINT="/tmp/usb_check"
-    KEY_FILE="key_admin.bin"
-    KEY1="f7ed8363362de013c440473c18829ea5f41345a1f1abc28c548250908e91c1af"
-    KEY2="1a0a6bfb3cb9bb6301bcf6e5123886c1e150291939fb5a495284ce80ae5a7f59"
-    KEY3="45e135d53ce907d3eea90007b4dae8d30cfc9c32f5dec4a7c56d2376c9559674"
-    KEY4="cc7a1458abb8ee1ab3032de6df357e62950095e168927ddf7ede4dae0c837bd5"
-    KEY5="17e7b2c2b1bea174e96e396198c0cba0e47b54dd847345f5a6f329a47c797147"
-    KEY6="3bc281ba6b5b0b36908ca202a168d4736a44d87568dd028e5c421bf00b8da59a"
-    KEY7="26cb73503b5961f4c3afbe3d2e06a470ce8459a8e2b01b562ef86b3e1303f8a5"
-
-    device="$1"
-
-    mkdir -p "$MOUNT_POINT" && chmod 0700 "$MOUNT_POINT"
-
-    if mount -o ro,nosuid,nodev,noexec "$device" "$MOUNT_POINT" 2>/dev/null; then
-        if [ -f "$MOUNT_POINT/$KEY_FILE" ] && sha256sum $MOUNT_POINT/$KEY_FILE | grep -P "$KEY1|$KEY2|$KEY3|$KEY4|$KEY5|$KEY6|$KEY7"; then
-            umount "$MOUNT_POINT"
-            return 0
-        fi
-        umount "$MOUNT_POINT"
-    fi
-
-    return 1
+    echo "$(dirname -- \"${BASH_SOURCE[0]}\"/usb_key_check.sh $1)"
+    return $?
 }
 
 function check_script() {

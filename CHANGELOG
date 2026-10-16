@@ -1,3 +1,4 @@
+- feat: make usb_key_check.sh universal for all key checks
 - touch repo
 - touch repo
 - fix: new key5 on sha256

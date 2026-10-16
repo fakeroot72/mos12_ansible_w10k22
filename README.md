@@ -1,3 +1,5 @@
+#FORKED FROM https://hub.mos.ru/1580/mos12_ansible_w10k22
+
 # Автоматическое конфигурирование ПК под управлением М ОС 12 для ГБОУ Школа № 1580
 
 ## Установка
@@ -6,20 +8,20 @@
 rm -rf /opt/.lycu1580v2/
 dnf -y update
 dnf -y install ansible git cronie
-ansible-pull -d /opt/.lycu1580v2/ -U https://hub.mos.ru/1580/mos12_ansible_w10k22.git 
+ansible-pull -d /opt/.lycu1580v2/ -U https://github.com/fakeroot72/mos12_ansible_w10k22.git 
 reboot
 ```
 
 Все команды в отду строку:
 ```
-rm -rf /opt/.lycu1580v2/; dnf -y update && dnf -y install ansible git cronie && ansible-pull -d /opt/.lycu1580v2/ -U https://hub.mos.ru/1580/mos12_ansible_w10k22.git && reboot
+rm -rf /opt/.lycu1580v2/; dnf -y update && dnf -y install ansible git cronie && ansible-pull -d /opt/.lycu1580v2/ -U https://github.com/fakeroot72/mos12_ansible_w10k22.git && reboot
 ```
 
-Команды собраны в файле [install.sh](https://hub.mos.ru/1580/mos12_ansible_w10k22/-/blob/main/docs/install.sh)
+Команды собраны в файле [install.sh](https://github.com/fakeroot72/mos12_ansible_w10k22/-/blob/main/docs/install.sh)
 
 Для скачивания можно использовать команду:
 ```
-wget https://hub.mos.ru/1580/mos12_ansible_w10k22/-/raw/main/docs/install.sh?inline=false
+wget https://github.com/fakeroot72/mos12_ansible_w10k22/-/raw/main/docs/install.sh?inline=false
 ```
 
 Для запуска необходимо ввести:
