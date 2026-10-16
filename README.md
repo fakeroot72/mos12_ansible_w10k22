@@ -1,4 +1,4 @@
-#FORKED FROM https://hub.mos.ru/1580/mos12_ansible_w10k22
+# FORKED FROM https://hub.mos.ru/1580/mos12_ansible_w10k22
 
 # Автоматическое конфигурирование ПК под управлением М ОС 12 для ГБОУ Школа № 1580
 

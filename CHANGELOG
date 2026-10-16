@@ -1,3 +1,4 @@
+- fix: typo fix in readme.md
 - fix: change email for questions
 - feat: make usb_key_check.sh universal for all key checks
 - touch repo
