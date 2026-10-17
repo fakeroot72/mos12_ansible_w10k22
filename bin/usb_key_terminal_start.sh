@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 function check_device() {
-    echo "$(dirname -- \"${BASH_SOURCE[0]}\"/usb_key_check.sh $1)"
+    "$(dirname -- \"${BASH_SOURCE[0]}\")/usb_key_check.sh" "$1"
     return $?
 }
 
