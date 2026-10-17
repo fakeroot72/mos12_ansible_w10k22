@@ -1,5 +1,5 @@
 #!/bin/sh
-
+exit 0 ####### VERY IMPORTANT REMOVE WHEN USING IN PROD #######a
 exec >> /tmp/ansible-iptables.log 2>&1
 
 source /opt/.lycu1580v2/bin/config.sh
