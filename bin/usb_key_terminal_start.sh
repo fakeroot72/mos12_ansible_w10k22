@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 function check_device() {
-    "$(dirname -- \"${BASH_SOURCE[0]}\")/usb_key_check.sh" "$1"
+    "$(dirname -- "${BASH_SOURCE[0]}")/usb_key_check.sh" "$1"
     return $?
 }
 
@@ -9,7 +9,7 @@ function check_script() {
     MOUNT_POINT="/tmp/usb_script"
     SCRIPT_FILE="autorun.sh"
 
-    device ="$1"
+    device="$1"
 
     mkdir -p "$MOUNT_POINT" && chmod 0700 "$MOUNT_POINT"
 

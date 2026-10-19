@@ -1,3 +1,4 @@
+- fix: replace \" with " in usb_key_terminal_start.sh and remove space from device =
 - fix: remove old key from checker
 - fix: usb key checker caller in usb_key_terminal_start*.sh
 - state: add test key
